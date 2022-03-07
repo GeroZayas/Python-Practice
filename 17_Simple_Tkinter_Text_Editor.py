@@ -12,14 +12,45 @@ root.geometry("1200x660")
 
 # Create new file function
 def new_file():
-    my_text.delete("1.0", END)
+    my_text.delete("1.0", END)  # first line is 1.0 and the last one is END
+    # Update status bars
     root.title('New File - TextPad!')
     status_bar.config(text="New File        ")
+
+
+# Open file function
+def open_file():
+    # Delete previous text
+    my_text.delete("1.0", END)  # first line is 1.0 and the last one is END
+
+    # Grab file name
+    text_file = filedialog.askopenfilename(
+        initialdir="./",
+        title="Open File",
+        filetypes=(("Text Files", "*.txt"),
+                   ("HTML Files", "*.html"),
+                   ("Python Files", "*.py"),
+                   ("All files", "*.*")))
+    # Update the Status bars
+    name = text_file
+    status_bar.config(text=f"{name}        ")
+    name = name.replace("C:/Users/Gero Zayas/Downloads/CODING/0 GERO PYTHON/2022/03 Marzo/05 marzo 2022/", '')
+    root.title(f'{name} - TextPad!')
+
+    # Open the file
+    text_file = open(text_file, 'r')
+    stuff = text_file.read()
+
+    # Add file to textbox
+    my_text.insert(END, stuff)
+
+    # Close the opened filed
+    text_file.close()
+
 
 # Create a main frame
 my_frame = Frame(root)
 my_frame.pack(pady=5)
-
 # Create a Scrollbar for the text box
 text_scroll = Scrollbar(my_frame)
 text_scroll.pack(side=RIGHT, fill=Y)
@@ -43,7 +74,7 @@ root.config(menu=my_menu)
 file_menu = Menu(my_menu, tearoff=False)
 my_menu.add_cascade(label='File', menu=file_menu)
 file_menu.add_command(label="New", command=new_file)
-file_menu.add_command(label="Open")
+file_menu.add_command(label="Open", command=open_file)
 file_menu.add_command(label="Save")
 file_menu.add_command(label="Save as")
 file_menu.add_separator()
