@@ -9,6 +9,21 @@ root.title("Gero's Text Editor")
 root.iconbitmap("./text.ico")
 root.geometry("1200x660")
 
+# Set variable for open file name
+global open_status_name
+open_status_name = False
+
+
+# Open Popup Box when we perform a command
+
+def open_popup(action, message):
+    top = Toplevel(root)
+    x = len(message) * 10 + 30
+    y = 70
+    top.geometry(f'{x}x{y}')
+    top.title(f"{action}")
+    Label(top, text=message, font=("Helvetica", 16)).place(x=10, y=20)
+
 
 # Create new file function
 def new_file():
@@ -16,6 +31,8 @@ def new_file():
     # Update status bars
     root.title('New File - TextPad!')
     status_bar.config(text="New File        ")
+    global open_status_name
+    open_status_name = False
 
 
 # Open file function
@@ -31,6 +48,13 @@ def open_file():
                    ("HTML Files", "*.html"),
                    ("Python Files", "*.py"),
                    ("All files", "*.*")))
+
+    # check to see if there's a file name
+    if text_file:
+        # make filename global so we can access it later
+        global open_status_name
+        open_status_name = text_file
+
     # Update the Status bars
     name = text_file
     status_bar.config(text=f"{name}        ")
@@ -68,7 +92,9 @@ def save_as_file():
         text_file.write(my_text.get(1.0, END))
         # Close the file
         text_file.close()
-        
+        open_popup("Saved file", f"Saved as {name}")
+
+
 # Save file function
 def save_file():
     global open_status_name
@@ -77,6 +103,9 @@ def save_file():
         text_file.write(my_text.get(1.0, END))
         # Close the file
         text_file.close()
+
+        # put status update or popup code
+
         status_bar.config(text=f"Saved: {open_status_name}        ")
     else:
         save_as_file()
@@ -109,7 +138,7 @@ file_menu = Menu(my_menu, tearoff=False)
 my_menu.add_cascade(label='File', menu=file_menu)
 file_menu.add_command(label="New", command=new_file)
 file_menu.add_command(label="Open", command=open_file)
-file_menu.add_command(label="Save")
+file_menu.add_command(label="Save", command=save_file)
 file_menu.add_command(label="Save as", command=save_as_file)
 file_menu.add_separator()
 file_menu.add_command(label="Exit", command=quit)
