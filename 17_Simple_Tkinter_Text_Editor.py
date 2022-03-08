@@ -13,9 +13,13 @@ root.geometry("1200x660")
 global open_status_name
 open_status_name = False
 
+global selected
+selected = False
+
+
+# # # FUNCTIONS -------------------------
 
 # Open Popup Box when we perform a command
-
 def open_popup(action, message):
     top = Toplevel(root)
     x = len(message) * 10 + 30
@@ -92,6 +96,8 @@ def save_as_file():
         text_file.write(my_text.get(1.0, END))
         # Close the file
         text_file.close()
+
+        # put status update or popup code
         open_popup("Saved file", f"Saved as {name}")
 
 
@@ -104,11 +110,51 @@ def save_file():
         # Close the file
         text_file.close()
 
-        # put status update or popup code
-
         status_bar.config(text=f"Saved: {open_status_name}        ")
     else:
         save_as_file()
+
+
+# Cut text
+def cut_text(e):
+    global selected
+    # check to see if we used keyboard shortcuts
+    if e:  # if there's an event
+        selected = root.clipboard_get()
+    else:
+        if my_text.selection_get():
+            # Grab selected text from text box
+            selected = my_text.selection_get()
+            # Delete selected text from text box
+            my_text.delete("sel.first", "sel.last")
+            # Clear the clipboard then append
+            root.clipboard_clear()
+            root.clipboard_append(selected)
+
+# Copy text
+def copy_text(e):
+    global selected
+    # check to see if we used keyboard shortcuts
+    if e:  # if there's an event
+        selected = root.clipboard_get()
+    if my_text.selection_get():
+        # Grab selected text from text box
+        selected = my_text.selection_get()
+        # Clear the clipboard then append
+        root.clipboard_clear()
+        root.clipboard_append(selected)
+
+
+# Paste text
+def paste_text(e):
+    global selected
+    # check to see if we used keyboard shortcuts
+    if e:  # if there's an event
+        selected = root.clipboard_get()
+    else:
+        if selected:
+            position = my_text.index(INSERT)
+            my_text.insert(position, selected)
 
 
 # Create a main frame
@@ -146,13 +192,19 @@ file_menu.add_command(label="Exit", command=quit)
 # Add Edit Menu
 edit_menu = Menu(my_menu, tearoff=False)
 my_menu.add_cascade(label='Edit', menu=edit_menu)
-edit_menu.add_command(label="Cut")
-edit_menu.add_command(label="Copy")
+edit_menu.add_command(label="Cut        (Control + x)", command=lambda: cut_text(False))
+edit_menu.add_command(label="Copy     (Control + c)", command=lambda: copy_text(False))
+edit_menu.add_command(label="Paste     (Control + v)", command=lambda: paste_text(False))
 edit_menu.add_command(label="Undo")
 edit_menu.add_command(label="Redo")
 
 # Add Status Bar to bottom of App
 status_bar = Label(root, text="Ready        ", anchor=E)
 status_bar.pack(fill=X, side=BOTTOM, ipady=5)
+
+# Edit bindings
+root.bind('<Control-Key-x>', cut_text)
+root.bind('<Control-Key-c>', copy_text)
+root.bind('<Control-Key-v>', paste_text)
 
 root.mainloop()
