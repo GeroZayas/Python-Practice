@@ -59,9 +59,15 @@ def save_as_file():
     if text_file:
         # update status bar
         name = text_file
-        status_bar.config(text=f"{name}        ")
+        status_bar.config(text=f"Saved: {name}        ")
         name = name.replace("C:/Users/Gero Zayas/Downloads/CODING/0 GERO PYTHON/2022/03 Marzo/05 marzo 2022/", '')
         root.title(f"{name} - TextPad!")
+
+        # Save the file
+        text_file = open(text_file, 'w')
+        text_file.write(my_text.get(1.0, END))
+        # Close the file
+        text_file.close()
 
 
 # Create a main frame
