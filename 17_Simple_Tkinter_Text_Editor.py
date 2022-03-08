@@ -68,6 +68,18 @@ def save_as_file():
         text_file.write(my_text.get(1.0, END))
         # Close the file
         text_file.close()
+        
+# Save file function
+def save_file():
+    global open_status_name
+    if open_status_name:
+        text_file = open(open_status_name, 'w')
+        text_file.write(my_text.get(1.0, END))
+        # Close the file
+        text_file.close()
+        status_bar.config(text=f"Saved: {open_status_name}        ")
+    else:
+        save_as_file()
 
 
 # Create a main frame
