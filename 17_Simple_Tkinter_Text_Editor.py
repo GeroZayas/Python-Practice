@@ -48,6 +48,22 @@ def open_file():
     text_file.close()
 
 
+def save_as_file():
+    text_file = filedialog.asksaveasfilename(defaultextension='.*',
+                                             initialdir="./",
+                                             title="Save file",
+                                             filetypes=(("Text Files", "*.txt"),
+                                                        ("HTML Files", "*.html"),
+                                                        ("Python Files", "*.py"),
+                                                        ("All files", "*.*")))
+    if text_file:
+        # update status bar
+        name = text_file
+        status_bar.config(text=f"{name}        ")
+        name = name.replace("C:/Users/Gero Zayas/Downloads/CODING/0 GERO PYTHON/2022/03 Marzo/05 marzo 2022/", '')
+        root.title(f"{name} - TextPad!")
+
+
 # Create a main frame
 my_frame = Frame(root)
 my_frame.pack(pady=5)
@@ -76,7 +92,7 @@ my_menu.add_cascade(label='File', menu=file_menu)
 file_menu.add_command(label="New", command=new_file)
 file_menu.add_command(label="Open", command=open_file)
 file_menu.add_command(label="Save")
-file_menu.add_command(label="Save as")
+file_menu.add_command(label="Save as", command=save_as_file)
 file_menu.add_separator()
 file_menu.add_command(label="Exit", command=quit)
 
