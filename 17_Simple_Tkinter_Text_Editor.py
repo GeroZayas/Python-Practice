@@ -195,8 +195,9 @@ my_menu.add_cascade(label='Edit', menu=edit_menu)
 edit_menu.add_command(label="Cut", command=lambda: cut_text(False), accelerator="(Control + x)")
 edit_menu.add_command(label="Copy", command=lambda: copy_text(False), accelerator="(Control + c)")
 edit_menu.add_command(label="Paste             ", command=lambda: paste_text(False), accelerator="(Control + v)")
-edit_menu.add_command(label="Undo")
-edit_menu.add_command(label="Redo")
+edit_menu.add_separator()
+edit_menu.add_command(label="Undo", command=my_text.edit_undo, accelerator="(Control+z)")
+edit_menu.add_command(label="Redo", command=my_text.edit_redo, accelerator="(Control+y)")
 
 # Add Status Bar to bottom of App
 status_bar = Label(root, text="Ready        ", anchor=E)
