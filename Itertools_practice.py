@@ -5,6 +5,7 @@ print(next(counter))  # 0
 print(next(counter))  # 1
 print(next(counter))  # 2
 print(next(counter))  # 3
+print(next(counter))  # 4
 
 data = ['a', 'b', 'c', 'd']
 
