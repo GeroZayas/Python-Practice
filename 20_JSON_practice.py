@@ -1,5 +1,4 @@
 import json
-import json
 
 # a Python object (dict):
 x = {
