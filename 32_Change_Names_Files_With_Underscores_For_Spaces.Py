@@ -3,7 +3,7 @@ import os
 """
 This simple program 
 a) changes spaces in the name of files to underscores.
-b) capitalizes every word in the name -> CamelCase
+b) capitalizes every word in the name
 
 ex. "file number 1" -> "File_Number_1"
 """
