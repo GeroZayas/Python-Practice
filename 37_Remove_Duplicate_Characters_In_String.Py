@@ -1,6 +1,6 @@
 # Remove duplicate characters in string
 
-my_string = "Python supports multiple programming paradigms, including object-oriented, imperative and functional programming or procedural styles. It features a dynamic type system and automatic memory management and has a large and comprehensive standard library"
+my_string = "This guy is an amazing programmer"
 
 print(my_string)
 
@@ -24,3 +24,16 @@ print("\n", new_string)
 # We can check how many individual characters we have in this case
 print("\nThe number of individual alpha characters is: ")
 print("\n", len(new_string.replace(" ", "")))
+
+
+# Another way to do it, keeping the order of characters
+def remove_duplicate(string):
+    result = ""
+    for char in string:
+        if char not in result and char != " ":
+            result += char
+    return result
+
+
+print("\n")
+print(remove_duplicate("This guy is an amazing programmer"))
