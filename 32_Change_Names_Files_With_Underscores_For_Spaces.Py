@@ -18,8 +18,9 @@ files_and_directories = os.listdir(currect_folder)
 
 
 def new_name_undescored(old_name):
-    words = old_name.split()
-    return "_".join(words).title()
+    name, extension = old_name.split(".")
+    name = name.replace(" ", "_")
+    return name.title() + f".{extension}"
 
 
 extension = input(
