@@ -53,3 +53,4 @@ def camelCasing(txt: str) -> str:
 
 print(camelCasing("snake_case"))  # snakeCase
 print(camelCasing("Hello World"))  # helloWorld
+print(camelCasing("tHe pRograMMer is HEre"))  # theProgrammerIsHere
