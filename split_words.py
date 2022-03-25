@@ -40,10 +40,25 @@ import re
 
 def split_words_separators(an_input: str) -> list:
     """Returns two lists, one with words, and one with the separators used in input string"""
-    words = []
     separators = []
-    print(words)
-    print(separators)
+
+    words = re.split(r"(\s)", an_input)
+    # words = an_input.split("")
+    for ele in words:
+        for inside_ele in ele:
+            if inside_ele in [" ", ","]:
+                separators.append(inside_ele)
+                ele.replace(inside_ele, "")
+    # print(words)
+    # print(separators)
+    final_list = [words, separators]
+    return final_list
 
 
-print(split_words_separators(first_input))
+print(split_words_separators(second_input))
+
+
+# assert split_words_separators(second_input) == [
+#     ["The", "dance", "held", "in", "the", "school", "gym", "ended", "at", "midnight."],
+#     [" ", ", ", " ", " ", " ", " ", ", ", " ", " "],
+# ], "different"
