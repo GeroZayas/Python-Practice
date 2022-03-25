@@ -1,4 +1,6 @@
 """
+https://www.w3resource.com/python-exercises/puzzles/index.php#EDITOR
+
 5. Write a Python program to check the nth-1 string is a proper substring of nth string in a given list of strings.
 
 Input:
