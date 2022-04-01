@@ -24,41 +24,22 @@ third_input = "The colors in my studyroom are blue, green, and yellow."
 import re
 
 
-# def split_words_separators(an_input: str) -> list:
-#     """Returns two lists, one with words, and one with the separators used in input string"""
-#     split_list = re.split(" |,", an_input)
-#     words = []
-#     separators = []
-#     for element in split_list:
-#         if str(element.isalpha()):
-#             words.append(element)
-#         else:
-#             separators.append(element)
-#     final_list_of_lists = [words, separators]
-#     return final_list_of_lists
-
-
 def split_words_separators(an_input: str) -> list:
     """Returns two lists, one with words, and one with the separators used in input string"""
-    separators = []
-
-    words = re.split(r"(\s)", an_input)
-    # words = an_input.split("")
-    for ele in words:
-        for inside_ele in ele:
-            if inside_ele in [" ", ","]:
-                separators.append(inside_ele)
-                ele.replace(inside_ele, "")
-    # print(words)
-    # print(separators)
-    final_list = [words, separators]
-    return final_list
+    merged = re.split(r"([ ,]+)", an_input)
+    # the [::2] is to get the even indexes, which are the words
+    # the [1::2] is to get the odd indexes, which are the separators
+    return [merged[::2], merged[1::2]]
 
 
+print("actual output")
 print(split_words_separators(second_input))
 
+print("-" * 60)
 
-# assert split_words_separators(second_input) == [
-#     ["The", "dance", "held", "in", "the", "school", "gym", "ended", "at", "midnight."],
-#     [" ", ", ", " ", " ", " ", " ", ", ", " ", " "],
-# ], "different"
+print("expected output")
+expected_output = [
+    ["The", "dance", "held", "in", "the", "school", "gym", "ended", "at", "midnight."],
+    [" ", ", ", " ", " ", " ", " ", ", ", " ", " "],
+]
+print(expected_output)
