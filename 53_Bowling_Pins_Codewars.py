@@ -25,6 +25,9 @@ Each Line must be 7 chars long
 Fill the missing pins with a whitespace
 """
 
+print("-" * 20 + " GERO'S " + "-" * 20)
+# ----------------------- MY SOLUTION (GERO ZAYAS MARCH 2022) -----------------------
+
 
 def bowling_pins(arr):
     # create rows
@@ -60,6 +63,26 @@ def bowling_pins(arr):
 
     # put them together with \n and .join()
     return "\n".join([row1, row2, row3, row4])
+
+
+print(bowling_pins([1, 2, 10]))
+print(bowling_pins([3, 5, 9]))
+
+# ----------------------- BEST PRACTICES (SOLUTIONS ON CODEWARS) -----------------------
+print("-" * 20 + " CODEWARS' " + "-" * 20)
+
+
+pins = "{7} {8} {9} {10}\n" + " {4} {5} {6} \n" + "  {2} {3}  \n" + "   {1}   "
+
+
+"""
+Notice the * operator in the function call. It is used to unpack the list.
+It has nothing to do with format. * unpacks the arguments so if there are, say 4 placeholders and 4 elements in your list, then format unpacks the args and fills the slots.
+"""
+
+
+def bowling_pins(arr):
+    return pins.format(*(" " if i in arr else "I" for i in range(11)))
 
 
 print(bowling_pins([1, 2, 10]))
