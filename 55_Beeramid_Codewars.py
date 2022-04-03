@@ -5,8 +5,10 @@ def beeramid(bonus, price):
     if beers == 4:
         levels = 1
     elif beers > 4:
-        levels = 2
-    print("levels", levels)
+        while beers > 0:
+            levels += 1
+            beers -= levels**2
+            # print("levels", levels)
     return levels
 
 
