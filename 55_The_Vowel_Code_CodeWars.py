@@ -39,3 +39,18 @@ def decode(st):
 
 print(encode("hello"))
 print(decode("h2ll4"))
+
+print("------------------------------------------------------ 1")
+# --------------------- Best Practices from CodeWars ---------------------
+
+
+def encode(s, t=str.maketrans("aeiou", "12345")):
+    return s.translate(t)
+
+
+def decode(s, t=str.maketrans("12345", "aeiou")):
+    return s.translate(t)
+
+
+print(encode("Hi my name is Gero"))
+print(decode("h2ll4"))
