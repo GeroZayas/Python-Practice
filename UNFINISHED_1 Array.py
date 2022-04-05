@@ -26,4 +26,4 @@ def up_array(arr):
     return None
 
 
-print(up_array([2, 3, 9]))
+print(up_array([1, 1]))
