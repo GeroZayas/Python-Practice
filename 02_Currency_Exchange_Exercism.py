@@ -18,7 +18,6 @@ def get_number_of_bills(budget, denomination):
 
 def exchangeable_value(budget, exchange_rate, spread, denomination):
     spread_rate = exchange_rate * spread / 100
-    # print(spread_rate)
     money = budget / (exchange_rate + spread_rate)
     # print(money)
     bills = get_number_of_bills(money, denomination)
