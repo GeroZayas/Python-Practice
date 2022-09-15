@@ -1,6 +1,6 @@
 from typing import List
 
-int_array = [4, 6, -4, -2, 1]
+int_array = [4, 6, -4, -2, 2]
 
 
 def hasZeroSumSubarray(nums: List[int]) -> bool:
