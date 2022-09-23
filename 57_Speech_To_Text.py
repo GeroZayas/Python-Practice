@@ -18,3 +18,19 @@ def speak(audio):
 
 def get():
     r = sr.Recognizer()
+
+    with sr.Microphone() as source:
+        print("Say something!")
+        audio = r.listen(source)
+        print("Done")
+    try:
+        text = r.recognize_google(audio)
+        print("google think you said: \n" + text)
+    except Exception as e:
+        print(e)
+
+    remember = open("output.txt", "w")
+    remember.write(text)
+    remember.close()
+    
+get()
