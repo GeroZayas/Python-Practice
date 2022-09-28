@@ -51,4 +51,28 @@ print("\n", mylist2)
 
 # ------------------------------------------------
 
-# POP item from list
+# REMOVE item from list
+
+item = mylist2.remove("name")
+
+print("\n", mylist2)
+
+# ------------------------------------------------
+
+# REMOVE ALL ITEMS from list
+
+item = mylist2.clear()
+
+print("\n", mylist2)
+
+# ------------------------------------------------
+
+# REVERSE  items in list
+
+mylist2 = ["superman", "spiderman", "batman", "aquaman"]
+
+print("\n", mylist2)
+
+item = mylist2.reverse()
+
+print("\n", mylist2)
