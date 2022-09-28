@@ -23,7 +23,7 @@ for i, x in enumerate(mylist1):
 
 print("*" * 20 + "\n")
 
-# -----------------------------
+# ------------------------------------------------
 
 # APPEND items to list
 
@@ -33,9 +33,22 @@ mylist2.append("nationality")
 
 print("\n", mylist2)
 
-# -----------------------------
+# ------------------------------------------------
 
 # INSERT items to list
 mylist2.insert(1, "language")
 
 print("\n", mylist2)
+
+# ------------------------------------------------
+
+# POP item from list
+
+item = mylist2.pop()
+
+print("\n", item)
+print("\n", mylist2)
+
+# ------------------------------------------------
+
+# POP item from list
