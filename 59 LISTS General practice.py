@@ -83,3 +83,15 @@ item = mylist2.reverse()
 print("\n", mylist2)
 
 # ------------------------------------------------
+
+# SORT  items in a list
+
+number_list = [9, 4, 6, 2, 8, 5, 3]
+print("\n", number_list)
+
+new_item = number_list.sort()
+print("\n", number_list)
+
+# ------------------------------------------------
+
+# SORT  items in a list
