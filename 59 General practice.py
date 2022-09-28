@@ -25,10 +25,17 @@ print("*" * 20 + "\n")
 
 # -----------------------------
 
-# Append things to list
+# APPEND items to list
 
 mylist2.append("name")
 mylist2.append("job")
 mylist2.append("nationality")
 
-print(mylist2)
+print("\n", mylist2)
+
+# -----------------------------
+
+# INSERT items to list
+mylist2.insert(1, "language")
+
+print("\n", mylist2)
