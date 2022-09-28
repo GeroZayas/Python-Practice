@@ -16,4 +16,9 @@ print(item2)
 print(item3)
 print(item4)
 
-for x
+print("*" * 20 + "\n")
+
+for i, x in enumerate(mylist1):
+    print(mylist1[i])
+
+print("*" * 20 + "\n")
