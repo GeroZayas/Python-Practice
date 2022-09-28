@@ -89,9 +89,79 @@ print("\n", mylist2)
 number_list = [9, 4, 6, 2, 8, 5, 3]
 print("\n", number_list)
 
-new_item = number_list.sort()
-print("\n", number_list)
+
+# the .sort() method changes the original list
+# number_list.sort()
+
+# for a new list, without changing the original, we use sorted()
+
+
+sorted_numbers_list = sorted(number_list)
+
+print("\n", sorted_numbers_list)
 
 # ------------------------------------------------
+# PUT Two lists together
 
-# SORT  items in a list
+new_list = mylist1 + mylist2
+
+print("\n", new_list)
+print("the length of the new list is ", len(new_list))
+
+# ------------------------------------------------
+# SLICING
+
+a_list = new_list[1:5]
+
+b_list = new_list[::2]  # takes every two items
+
+print("\n", a_list)
+print("\n", b_list)
+
+# ------------------------------------------------
+# to do an actual copy of a list you have to use the .copy() method
+
+c_list = a_list.copy() + ["hey"]
+
+print("\n", a_list)  #  ['gero', 5.6, 'zayas', 'aquaman']
+print("\n", c_list)  #  ['gero', 5.6, 'zayas', 'aquaman', 'hey']
+
+print(len(a_list))  # 4
+print(len(c_list))  # 5
+
+# Another way to do a copy is to use list() and, as argument, the original list
+
+animal_list = ["lion", "cat", "bird"]
+
+animal_and_fruits_list = list(animal_list) + ["orange"] + ["lemon"]
+
+print("\n", animal_list)
+print("\n", animal_and_fruits_list)
+
+# 3rd way to make a copy of a list -> SLICING [:] -> this means getting every item in the original list
+
+
+animal_list = ["lion", "cat", "bird"]
+
+animal_and_fruits_list = animal_list[:] + ["orange"] + ["lemon"]
+
+
+print("\n", animal_list)
+print("\n", animal_and_fruits_list)
+
+# ------------------------------------------------
+# list comprehension
+
+# make a new list with square numbers from original list
+
+print("\n", number_list)
+
+square_numb_list = [i * i for i in number_list]
+
+print("\n", square_numb_list)
+
+new_numbers_list = [i for i in number_list] + [
+    437
+]  # this creates a copy of the original list and in this case i'm also adding another item -> 437
+
+print("\n", new_numbers_list)
