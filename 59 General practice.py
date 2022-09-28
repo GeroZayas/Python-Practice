@@ -22,3 +22,13 @@ for i, x in enumerate(mylist1):
     print(mylist1[i])
 
 print("*" * 20 + "\n")
+
+# -----------------------------
+
+# Append things to list
+
+mylist2.append("name")
+mylist2.append("job")
+mylist2.append("nationality")
+
+print(mylist2)
