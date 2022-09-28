@@ -88,7 +88,6 @@ print("\n" + "*" * 25)  # LINE BREAK
 # it can be more efficient to iterate over a tuple
 # we import timeit to compare
 
-print("\n" + "*" * 25)  # LINE BREAK
 
 print(timeit.timeit(stmt="[0,1,2,3,4,5]", number=1000000))  # 0.1059750679996796
 print(timeit.timeit(stmt="(0,1,2,3,4,5)", number=1000000))  # 0.02168168599746423
