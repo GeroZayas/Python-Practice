@@ -34,3 +34,21 @@ my_set.add(9)
 
 for i in my_set:
     print(i)
+
+# ----- CHECK elements in SET -----
+if 7 in my_set:
+    print("YEAH BABY")
+
+# ----- UNION -> COMBINE elements from two SETS without duplication -----
+
+odds = {1, 3, 5, 7, 9}
+evens = {0, 2, 4, 6, 8}
+primes = {2, 3, 5, 7}
+
+all = odds.union(evens)
+print(all)  # {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+
+# INTERSECTION will only elements found in two SETS
+
+intersection_set = odds.intersection(primes)
+print(intersection_set)  # {3, 5, 7}
