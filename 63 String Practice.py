@@ -54,3 +54,11 @@ print(a)  # ['how', 'are', 'you', 'doing']
 my_string = "one,two,three"
 a = my_string.split(",")
 print(a)  # ['one', 'two', 'three']
+
+
+# JOIN elements of a list into a STRING
+my_list = ["How", "are", "you", "doing"]
+a = " ".join(
+    my_list
+)  # the given string is the separator, e.g. ' ' between each argument
+print(a)
