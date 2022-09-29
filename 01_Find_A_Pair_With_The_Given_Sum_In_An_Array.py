@@ -10,6 +10,7 @@ def find_pair_for_sum(array, target):
     # there is another number with which, if added together,
     # they yield target (example, if target = 10, and
     # first number = 8, the loop looks if there's a 2 in the array
+
     for n in array:
         second_num = target - n
         if second_num in array and second_num != n:
@@ -18,9 +19,11 @@ def find_pair_for_sum(array, target):
                 # I add them to a list name pair[]
                 pair.append(n)
                 pair.append(second_num)
+
     # if there are no pairs:
     if len(pair) == 0:
         print("Pair  not found")
+
     # if there are pairs:
     elif len(pair) > 0:
         # I set this counter so I can use it as index points to print the pairs that yield the target sum
