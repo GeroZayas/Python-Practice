@@ -52,3 +52,14 @@ print(all)  # {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
 
 intersection_set = odds.intersection(primes)
 print(intersection_set)  # {3, 5, 7}
+
+# Difference found in two SETS
+
+diff = all.difference(odds)
+
+print("This is the difference:", diff)
+
+# symmetric difference, takes elements from both sets that are different
+
+sym_diff = odds.symmetric_difference(primes)
+print("This is the symmetric difference:", sym_diff)
