@@ -63,3 +63,28 @@ print("This is the difference:", diff)
 
 sym_diff = odds.symmetric_difference(primes)
 print("This is the symmetric difference:", sym_diff)
+
+
+# ----- UPDATE a SET -----
+print("This is primes NOT updated:", primes)
+
+primes.update(evens)
+
+print("This is primes updated with 'evens': ", primes)
+
+
+# ----- CREATE a FROZEN SET -----
+"""Frozen set is just an immutable version of normal set. While elements of a set can be modified at any time, elements of frozen set remains the same after creation"""
+
+a = frozenset([0, 1, 2, 3, 4])
+
+# The following is not allowed:
+# a.add(5)
+# a.remove(1)
+# a.discard(1)
+# a.clear()
+
+# Also no update methods are allowed:
+# a.update([1,2,3])
+
+print(a)
