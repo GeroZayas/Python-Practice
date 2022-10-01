@@ -65,6 +65,7 @@ for key, group in group_obj:
     print(key, list(group))
 
 
+# ------------------------------------------------------
 print("*" * 40)
 
 persons = [
@@ -74,5 +75,9 @@ persons = [
     {"name": "Claire", "age": 28},
 ]
 
+
 for key, group in groupby(persons, key=lambda x: x["age"]):
     print(key, list(group))
+
+# ------------------------------------------------------
+print("*" * 40)
