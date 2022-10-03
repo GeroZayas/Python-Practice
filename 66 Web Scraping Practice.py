@@ -24,7 +24,7 @@ for article in articles:
 
 # print(article_texts)
 
-filename = "cat_phrases.doc"
+filename = "cat_phrases.txt"
 
 with open(filename, mode="w", newline="") as file:
     for article in article_texts:
