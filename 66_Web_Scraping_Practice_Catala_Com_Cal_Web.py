@@ -18,7 +18,7 @@ soup = BeautifulSoup(catala_com_cal_web_page, "html.parser")
 # wrong_phrases = soup.find_all(name="span", style="color: #cc0000;")
 # wrong_phrases_text = []
 
-phrases = soup.find_all(attrs={"style": "color: #cc0000;"})
+phrases = soup.find_all(name="span", attrs={"style": "color: #3333ff;"})
 phrases_text = []
 
 # print(phrases)
@@ -35,8 +35,8 @@ phrases_text = []
 #     wrong_phrases_text.append(text)
 
 for phrase in phrases:
-    text = phrase.getText()
-    phrases_text.append(text)
+    text = phrase.getText().replace(".", "")
+    phrases_text.append(text + "\n")
 
 # print(correct_phrases_text)
 
