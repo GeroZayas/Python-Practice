@@ -2,6 +2,8 @@ from bs4 import BeautifulSoup
 import requests
 import csv
 
+# GOAL -> create a GUI to run this program
+
 # The User Inserts here a valid viasona.cat link of a song lyric
 
 print("Insert Web Link from Viasona.Cat:\n")
