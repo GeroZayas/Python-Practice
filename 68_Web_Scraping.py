@@ -2,10 +2,9 @@ from bs4 import BeautifulSoup
 import requests
 import csv
 
-# https://www.viasona.cat/grup/4hiverns/4hiverns/miralls
+print("Insert Web Link from Viasona.Cat:\n")
 
-WEB = "https://www.viasona.cat/grup/4hiverns/4hiverns/miralls"
-
+WEB = input()
 
 # GOAL Get lyrics from this page
 
@@ -28,8 +27,8 @@ lyrics = soup.find_all(
 
 
 song_lyrics = []
-song_lyrics.append(song_title.text)
-song_lyrics.append(group_or_singer.text)
+song_lyrics.append("Title: " + song_title.text + "\n\n")
+song_lyrics.append("Group / Singer: " + group_or_singer.text + "\n\n")
 
 # print(song_lyrics)
 
