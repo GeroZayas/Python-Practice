@@ -12,22 +12,30 @@ soup = BeautifulSoup(catala_com_cal_web_page, "html.parser")
 # section_heading = soup.find(name='h3', class_='heading')
 # print(section_heading.get("class"))
 
-articles = soup.find_all(name="span", style="color: #cc0000;")
-article_texts = []
-article_links = []
+correct_phrases = soup.find_all(name="span", style="color: #3333ff;")
+correct_phrases_text = []
 
-# print(articles)
+wrong_phrases = soup.find_all(name="span", style="color: #cc0000;")
+wrong_phrases_text = []
 
-for article in articles:
-    text = article.getText()
-    article_texts.append(text)
 
-# print(article_texts)
+# print(correct_phrases)
 
-filename = "cat_phrases.txt"
+for phrase in correct_phrases:
+    text = phrase.getText()
+    correct_phrases_text.append(text)
+
+for phrase in wrong_phrases:
+    text = phrase.getText()
+    wrong_phrases_text.append(text)
+
+# print(correct_phrases_text)
+
+filename = "catalan_phrases.txt"
 
 with open(filename, mode="w", newline="") as file:
-    for article in article_texts:
-        file.write(article)
+    for phrase in correct_phrases_text:
+        file.write(phrase + "\n")
+
 
 print("Done")
