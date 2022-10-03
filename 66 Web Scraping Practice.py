@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
+import csv
 
 response = requests.get(
     "https://elcatalacomcal.blogspot.com/2008/03/sentir-i-escoltar.html"
@@ -21,4 +22,12 @@ for article in articles:
     text = article.getText()
     article_texts.append(text)
 
-print(article_texts)
+# print(article_texts)
+
+filename = "cat_phrases.doc"
+
+with open(filename, mode="w", newline="") as file:
+    for article in article_texts:
+        file.write(article)
+
+print("Done")
