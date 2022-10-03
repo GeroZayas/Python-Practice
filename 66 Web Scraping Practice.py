@@ -1,25 +1,24 @@
+from bs4 import BeautifulSoup
 import requests
-from bs4 import BeautifulSoup as bs
-import csv
 
-URL = 'https://www.geeksforgeeks.org/page/'
+response = requests.get(
+    "https://elcatalacomcal.blogspot.com/2008/03/sentir-i-escoltar.html"
+)
+catala_com_cal_web_page = response.text
 
-soup = bs(req.text, 'html.parser')
+soup = BeautifulSoup(catala_com_cal_web_page, "html.parser")
 
-titles = soup.find_all('div', attrs={'class', 'head'})
-titles_list = []
+# section_heading = soup.find(name='h3', class_='heading')
+# print(section_heading.get("class"))
 
-count = 1
-for title in titles:
-	d = {}
-	d['Title Number'] = f'Title {count}'
-	d['Title Name'] = title.text
-	count += 1
-	titles_list.append(d)
+articles = soup.find_all(name="span", style="color: #cc0000;")
+article_texts = []
+article_links = []
 
-filename = 'titles.csv'
-with open(filename, 'w', newline='') as f:
-	w = csv.DictWriter(f,['Title Number','Title Name'])
-	w.writeheader()
-	
-	w.writerows(titles_list)
+# print(articles)
+
+for article in articles:
+    text = article.getText()
+    article_texts.append(text)
+
+print(article_texts)
