@@ -17,6 +17,7 @@ maintitle = soup.find_all(name="span", attrs={"class": "maintitle"})
 
 with open("news_scraped/news_from_rtve.txt", "w") as file:
     for title in maintitle:
+        # This IF takes care of the problem of having the same line repeated on the txt file
         if "Telediario" in title.text:
             break
         file.write(title.get_text() + "\n\n")
