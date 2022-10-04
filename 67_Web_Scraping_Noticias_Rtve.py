@@ -9,9 +9,16 @@ soup = BeautifulSoup(noticias_rtve, "html.parser")
 
 maintitle = soup.find_all(name="span", attrs={"class": "maintitle"})
 
+# for title in maintitle:
+#     if "Telediario" in title.text:
+#         break
+#     print(title.text + "\n\n")
+
 
 with open("news_scraped/news_from_rtve.txt", "w") as file:
     for title in maintitle:
+        if "Telediario" in title.text:
+            break
         file.write(title.get_text() + "\n\n")
 
 print("DONE")
