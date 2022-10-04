@@ -1,4 +1,4 @@
 playground.py
 .vscode/settings.json
-./news_scraped/news_from_rtve.txt
-./lyrics_from_viasona/.
+news_scraped/
+lyrics_from_viasona/
