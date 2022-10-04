@@ -44,7 +44,9 @@ for lyric in lyrics:
     song_lyrics.append(lyric.text)
 
 # We create a new .txt file and add the lyrics to it
-with open(f"{song_title.text} from {group_or_singer.text}.txt", "w") as lyrics_file:
+with open(
+    f"lyrics_from_viasona/{song_title.text} from {group_or_singer.text}.txt", "w"
+) as lyrics_file:
     for line in song_lyrics:
         lyrics_file.write(line)
 
