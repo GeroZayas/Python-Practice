@@ -19,17 +19,21 @@ engine.setProperty("volume", 1)  # setting up volume level  between 0 and 1
 voices = engine.getProperty("voices")  # getting details of current voice
 # engine.setProperty('voice', voices[0].id)  #changing index, changes voices. o for male
 engine.setProperty(
-    "voice", voices[1].id
+    "voice", voices[0].id
 )  # changing index, changes voices. 1 for female
 
 text_string = ""
 
-with open("text_leer.txt", "r") as text:
+
+# OPEN TEXT FILE TO READ FROM --------
+with open("./news_scraped/news_from_rtve.txt", "r") as text:
     for line in text:
-        engine.say(line)
+        # engine.say(line)
         text_string += line + "\n"
 
 print(text_string)
+# ------------------------------------
+
 
 # engine.say("Gero!")
 # engine.say("What is up? my man.")
