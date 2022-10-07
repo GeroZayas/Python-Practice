@@ -8,3 +8,4 @@ my_data.csv
 playground/
 .idea/
 .ipynb_checkpoints/
+*.png
