@@ -22,11 +22,14 @@ engine.setProperty(
     "voice", voices[1].id
 )  # changing index, changes voices. 1 for female
 
+text_string = ""
 
 with open("text_leer.txt", "r") as text:
     for line in text:
         engine.say(line)
-        print(line)
+        text_string += line + "\n"
+
+print(text_string)
 
 # engine.say("Gero!")
 # engine.say("What is up? my man.")
@@ -35,5 +38,5 @@ engine.stop()
 
 """Saving Voice to a file"""
 # On linux make sure that 'espeak' and 'ffmpeg' are installed
-engine.save_to_file("Don't be a little bitch", "test.mp3")
+engine.save_to_file(text_string, "test.mp3")
 engine.runAndWait()
