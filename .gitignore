@@ -9,3 +9,5 @@ playground/
 .idea/
 .ipynb_checkpoints/
 *.png
+*.txt
+*.mp3
