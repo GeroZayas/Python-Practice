@@ -12,3 +12,4 @@ playground/
 *.txt
 *.mp3
 django_project_gero/
+env/
