@@ -56,19 +56,35 @@ activity_title.send_keys("THIS IS A TEST")
 
 # paste first column data into keyword column
 
+example_dict = {"one": "uno", "two": "dos", "three": "tres"}
+
 
 keyword_input = driver.find_element(
-    By.CLASS_NAME, "item-input.js-item-input.selectable"
+    By.XPATH,
+    "/html/body/div[2]/div[2]/div[6]/div[2]/div[3]/div/div[1]/div[3]/div[1]/div[5]/div",
 )
-keyword_input.send_keys("KEYWORD")
+
 
 # copy from text file second column
 # paste first column data into definition column
+
 
 definition_input = driver.find_element(
     By.XPATH,
     '//*[@id="editor_component_0"]/div[3]/div/div[1]/div[3]/div[2]/div[4]/div',
 )
+
+
+# TODO fix this part
+for key, value in example_dict.items():
+    keyword_input.send_keys(key)
+    keyword_input.send_keys(Keys.ENTER)
+    definition_input.send_keys(value)
+    definition_input.send_keys(Keys.ENTER)
+    keyword_input = driver.switch_to().activeElement()
+    # driver.switchTo().activeElement()
+    time.sleep(1)
+
 definition_input.send_keys("DEFINITION")
 time.sleep(1)
 
