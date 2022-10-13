@@ -39,11 +39,6 @@ for time in range(LEVELS):
 
     course_name = soup.find(name="h1", attrs={"class": "course-name"})
 
-    # TODO FIX this here> to get the level number
-    # how to get a strong inside a div with BeautifulSoup?
-
-    # level = soup.find("strong")
-
     catalan_words = soup.find_all(name="div", attrs={"class": "col_a col text"})
     english_words = soup.find_all(name="div", attrs={"class": "col_b col text"})
 
@@ -64,6 +59,8 @@ for time in range(LEVELS):
     # print(words_dict)
 
     course_name_string = course_name.get_text().strip()
+    if "/" in course_name_string:
+        course_name_string = course_name_string.replace("/", "-")
     # level_string = level.get_text().strip()
 
     if not os.path.exists(CURRENT_PATH + f"\{course_name_string}"):
