@@ -19,9 +19,9 @@ time.sleep(3)
 email = driver.find_element(By.ID, "Email")
 password = driver.find_element(By.ID, "Password")
 email.send_keys(WORDWALL_EMAIL)
-time.sleep(3)
+time.sleep(2)
 password.send_keys(WORDWALL_PASSWORD)
-time.sleep(3)
+time.sleep(2)
 
 log_in_btn = driver.find_element(
     By.XPATH, "/html/body/div[2]/div[2]/form/div[4]/div/button"
@@ -32,9 +32,16 @@ time.sleep(3)
 
 # go to create activity
 
-
 # select match up
+
+match_up_template = driver.get("https://wordwall.net/create/entercontent?templateId=3")
+
+time.sleep(3)
+
+
 # type in name in activity title
+
+
 # copy from text file first column
 # paste first column data into keyword column
 # copy from text file second column
