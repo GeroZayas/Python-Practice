@@ -41,6 +41,14 @@ time.sleep(3)
 
 # type in name in activity title
 
+activity_title = driver.find_element(By.CLASS_NAME, "js-activity-title")
+time.sleep(1)
+
+activity_title.send_keys(Keys.CONTROL + "a")
+activity_title.send_keys(Keys.DELETE)
+time.sleep(1)
+
+activity_title.send_keys("THIS IS A TEST")
 
 # copy from text file first column
 # paste first column data into keyword column
