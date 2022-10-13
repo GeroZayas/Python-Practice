@@ -1,3 +1,7 @@
+# IDEA:
+# Write a script that goes file for file inside folder and creates a wordwall for each file.
+
+
 import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -7,6 +11,11 @@ import pyperclip
 WORDWALL_EMAIL = "gerozayas@gmail.com"
 WORDWALL_PASSWORD = "clavegerozayas7"
 CHROME_DRIVER_PATH = "C:/Development/chromedriver.exe"
+
+print("HELLO! Welcome to the Wordwall Creator")
+print("Make sure the text file is in the same folder as this script!")
+print(":)")
+FILE = input("insert name of file: ")
 
 # go to wordwall.net -> log in
 
@@ -48,7 +57,19 @@ activity_title.send_keys(Keys.CONTROL + "a")
 activity_title.send_keys(Keys.DELETE)
 time.sleep(1)
 
-activity_title.send_keys("THIS IS A TEST")
+# # get activity title from file
+# with open(f"{FILE}", "r") as file:
+#     activity_name = file.readlines()[0]
+
+activity_title_string = FILE[:-4].split("_")[0]
+activity_level_string = FILE[:-4].split("_")[1]
+
+# print(f"{activity_title_string} - {activity_level_string}")
+
+
+activity_title.send_keys(
+    f"{activity_title_string} - Level {activity_level_string} from Memrise"
+)
 
 # copy from text file first column
 
@@ -67,7 +88,7 @@ keyword_input = driver.find_element(
 # ***** DETERMINE LIST LENGTH *****
 list_length = 0
 
-with open("test.txt", "r", encoding="utf-8") as file:
+with open(f"{FILE}", "r") as file:
     list_length += len(file.readlines())
 
 
@@ -76,7 +97,7 @@ print(list_length)
 
 # ***** END of DETERMINE LIST LENGTH *****
 
-with open("test.txt", "r", encoding="utf-8") as file:
+with open(f"{FILE}", "r") as file:
     first_column = file.readlines()[4 : list_length + 4]
 
 string_first_column = "".join(first_column)
@@ -96,7 +117,7 @@ definition_input = driver.find_element(
     '//*[@id="editor_component_0"]/div[3]/div/div[1]/div[3]/div[2]/div[4]/div',
 )
 
-with open("test.txt", "r", encoding="utf-8") as file:
+with open(f"{FILE}", "r") as file:
     second_column = file.readlines()[list_length + 5 :]
 
 string_second_column = "".join(second_column)
