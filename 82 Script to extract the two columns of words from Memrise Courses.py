@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 import csv
+import os
 
 # https://app.memrise.com/course/57117/angles-intermig/
 
@@ -10,6 +11,9 @@ LEVELS = int(input("Insert number of levels: "))
 
 counter_level = 0
 
+CURRENT_PATH = os.getcwd()
+
+print(CURRENT_PATH)
 
 for time in range(LEVELS):
 
@@ -50,6 +54,9 @@ for time in range(LEVELS):
     course_name_string = course_name.get_text().strip()
     # level_string = level.get_text().strip()
 
+    if not os.path.exists(CURRENT_PATH + f"\{course_name_string}"):
+        os.makedirs(f"{course_name_string}")
+
     with open(
         f"{course_name_string}/{course_name_string}_{counter_level}.txt", "w"
     ) as file:
@@ -68,3 +75,5 @@ print("DONE")
 # newpath = r'C:\Program Files\arbitrary'
 # if not os.path.exists(newpath):
 #     os.makedirs(newpath)
+
+# how to get current path in python? os.getcwd()
