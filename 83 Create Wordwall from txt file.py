@@ -1,9 +1,28 @@
 import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
 
-# go to wordwall.net
-# go to log in
+
+WORDWALL_EMAIL = "gerozayas@gmail.com"
+WORDWALL_PASSWORD = "clavegerozayas7"
+CHROME_DRIVER_PATH = "C:/Development/chromedriver.exe"
+
+# go to wordwall.net -> log in
+
+driver = webdriver.Chrome(executable_path=CHROME_DRIVER_PATH)
+
+wordwall_website = driver.get("https://wordwall.net/account/login")
+time.sleep(3)
+
+
+email = driver.find_element(By.ID, "Email")
+password = driver.find_element(By.ID, "Password")
+email.send_keys(WORDWALL_EMAIL)
+time.sleep(3)
+password.send_keys(WORDWALL_PASSWORD)
+time.sleep(3)
+
 # go to create activity
 # select match up
 # type in name in activity title
@@ -12,22 +31,3 @@ from selenium.webdriver.common.keys import Keys
 # copy from text file second column
 # paste first column data into definition column
 # click on Done
-
-
-WORDWALL_EMAIL = "gerozayas@gmail.com"
-WORDWALL_PASSWORD = "clavegerozayas7"
-CHROME_DRIVER_PATH = "C:/Development/chromedriver.exe"
-
-driver = webdriver.Chrome(executable_path=CHROME_DRIVER_PATH)
-
-wordwall_website = driver.get("https://wordwall.net/")
-time.sleep(3)
-
-create_activity_btn = driver.find_element_by_xpath(
-    '//*[@id="outer_wrapper"]/div[1]/div[1]/header/div[1]/a[1]'
-)
-
-create_activity_btn.send_keys(Keys.ENTER)
-
-time.sleep(3)
-driver.close()
