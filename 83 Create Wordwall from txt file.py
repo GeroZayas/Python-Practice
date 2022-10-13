@@ -14,22 +14,22 @@ CHROME_DRIVER_PATH = "C:/Development/chromedriver.exe"
 driver = webdriver.Chrome(executable_path=CHROME_DRIVER_PATH)
 
 wordwall_website = driver.get("https://wordwall.net/account/login")
-time.sleep(3)
+time.sleep(2)
 
 
 email = driver.find_element(By.ID, "Email")
 password = driver.find_element(By.ID, "Password")
 email.send_keys(WORDWALL_EMAIL)
-time.sleep(2)
+time.sleep(1)
 password.send_keys(WORDWALL_PASSWORD)
-time.sleep(2)
+time.sleep(1)
 
 log_in_btn = driver.find_element(
     By.XPATH, "/html/body/div[2]/div[2]/form/div[4]/div/button"
 )
 
 log_in_btn.click()
-time.sleep(3)
+time.sleep(2)
 
 # go to create activity
 
@@ -37,7 +37,7 @@ time.sleep(3)
 
 match_up_template = driver.get("https://wordwall.net/create/entercontent?templateId=3")
 
-time.sleep(3)
+time.sleep(2)
 
 
 # type in name in activity title
@@ -57,6 +57,7 @@ activity_title.send_keys("THIS IS A TEST")
 # paste first column data into keyword column
 
 example_dict = {"one": "uno", "two": "dos", "three": "tres"}
+example_list = ["one", "two", "three"]
 
 
 keyword_input = driver.find_element(
@@ -64,6 +65,9 @@ keyword_input = driver.find_element(
     "/html/body/div[2]/div[2]/div[6]/div[2]/div[3]/div/div[1]/div[3]/div[1]/div[5]/div",
 )
 
+# TODO make sure I control + c the keywords for this to work
+# TODO I just have to make sure to have what i want in clipboard (copied)
+keyword_input.send_keys(Keys.CONTROL + "v")
 
 # copy from text file second column
 # paste first column data into definition column
@@ -74,16 +78,6 @@ definition_input = driver.find_element(
     '//*[@id="editor_component_0"]/div[3]/div/div[1]/div[3]/div[2]/div[4]/div',
 )
 
-
-# TODO fix this part
-for key, value in example_dict.items():
-    keyword_input.send_keys(key)
-    keyword_input.send_keys(Keys.ENTER)
-    definition_input.send_keys(value)
-    definition_input.send_keys(Keys.ENTER)
-    keyword_input = driver.switch_to().activeElement()
-    # driver.switchTo().activeElement()
-    time.sleep(1)
 
 definition_input.send_keys("DEFINITION")
 time.sleep(1)
