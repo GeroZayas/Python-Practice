@@ -3,7 +3,7 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
-
+import pyperclip
 
 WORDWALL_EMAIL = "gerozayas@gmail.com"
 WORDWALL_PASSWORD = "clavegerozayas7"
@@ -67,7 +67,19 @@ keyword_input = driver.find_element(
 
 # TODO make sure I control + c the keywords for this to work
 # TODO I just have to make sure to have what i want in clipboard (copied)
+
+list_length = 29
+
+with open("test.txt", "r", encoding="utf-8") as file:
+    first_column = file.readlines()[4 : list_length + 4]
+
+string_first_column = "".join(first_column)
+
+pyperclip.copy(string_first_column)
+
 keyword_input.send_keys(Keys.CONTROL + "v")
+
+time.sleep(1)
 
 # copy from text file second column
 # paste first column data into definition column
