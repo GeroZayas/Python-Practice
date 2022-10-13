@@ -23,7 +23,16 @@ time.sleep(3)
 password.send_keys(WORDWALL_PASSWORD)
 time.sleep(3)
 
+log_in_btn = driver.find_element(
+    By.XPATH, "/html/body/div[2]/div[2]/form/div[4]/div/button"
+)
+
+log_in_btn.click()
+time.sleep(3)
+
 # go to create activity
+
+
 # select match up
 # type in name in activity title
 # copy from text file first column
