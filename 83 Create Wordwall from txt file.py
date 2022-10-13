@@ -90,11 +90,16 @@ definition_input = driver.find_element(
     '//*[@id="editor_component_0"]/div[3]/div/div[1]/div[3]/div[2]/div[4]/div',
 )
 
+with open("test.txt", "r", encoding="utf-8") as file:
+    second_column = file.readlines()[list_length + 5 :]
 
-definition_input.send_keys("DEFINITION")
-time.sleep(1)
+string_second_column = "".join(second_column)
 
-definition_input.send_keys(Keys.ENTER)
+pyperclip.copy(string_second_column)
+
+
+definition_input.send_keys(Keys.CONTROL + "v")
+
 time.sleep(1)
 
 
