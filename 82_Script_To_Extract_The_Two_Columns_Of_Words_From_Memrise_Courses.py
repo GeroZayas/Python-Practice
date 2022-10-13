@@ -7,7 +7,29 @@ import os
 
 WEB = input("Insert valid Memrise Course link: ")
 
-LEVELS = int(input("Insert number of levels: "))
+# LEVELS = int(input("Insert number of levels: ")) -> not necessary anymore
+
+# ******* GET Number of Levels ********
+response = requests.get(f"{WEB}")
+
+data = response.text
+
+soup = BeautifulSoup(data, "html.parser")
+
+level_number = soup.find_all(name="div", attrs={"class": "level-index"})
+
+level_number_list = []
+
+for level in level_number:
+    level_number_list.append(level.getText())
+
+
+LEVELS = int(level_number_list[-1])
+
+# print(LEVELS)
+
+
+# ********* END -> GET Number of Levels ******************
 
 counter_level = 0
 
