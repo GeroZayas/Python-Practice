@@ -2,53 +2,69 @@ from bs4 import BeautifulSoup
 import requests
 import csv
 
+# https://app.memrise.com/course/57117/angles-intermig/
 
-WEB = input("Insert valid Memrise link: ")
+WEB = input("Insert valid Memrise Course link: ")
 
-response = requests.get(WEB)
+LEVELS = int(input("Insert number of levels: "))
 
-words = response.text
-
-soup = BeautifulSoup(words, "html.parser")
-
-course_name = soup.find(name="h1", attrs={"class": "course-name"})
-
-# TODO FIX this here> to get the level number
-# how to get a strong inside a div with BeautifulSoup?
-
-level = soup.find("strong")
+counter_level = 0
 
 
-catalan_words = soup.find_all(name="div", attrs={"class": "col_a col text"})
-english_words = soup.find_all(name="div", attrs={"class": "col_b col text"})
+for time in range(LEVELS):
 
-catalan_words_list = []
-english_words_list = []
+    counter_level += 1
 
+    response = requests.get(f"{WEB}{counter_level}/")
 
-for cat in catalan_words:
-    # print(cat.get_text())
-    catalan_words_list.append(cat.get_text())
+    words = response.text
 
-for eng in english_words:
-    # print(eng.get_text())
-    english_words_list.append(eng.get_text())
+    soup = BeautifulSoup(words, "html.parser")
 
-# how to put two lists into a dictionary
-words_dict = dict(zip(catalan_words_list, english_words_list))
+    course_name = soup.find(name="h1", attrs={"class": "course-name"})
 
-# print(words_dict)
+    # TODO FIX this here> to get the level number
+    # how to get a strong inside a div with BeautifulSoup?
 
-course_name_string = course_name.get_text().strip()
-level_string = level.get_text().strip()
+    # level = soup.find("strong")
 
-with open(f"{course_name_string}/{course_name_string}_{level_string}.txt", "w") as file:
-    file.write("Course: " + course_name_string + "\n\n")
-    file.write("Level: " + level_string + "\n\n")
-    for cat in words_dict:
-        file.write(f"{cat}\n")
-    file.write("****" * 10 + "\n")
-    for eng in words_dict.values():
-        file.write(f"{eng}\n")
+    catalan_words = soup.find_all(name="div", attrs={"class": "col_a col text"})
+    english_words = soup.find_all(name="div", attrs={"class": "col_b col text"})
+
+    catalan_words_list = []
+    english_words_list = []
+
+    for cat in catalan_words:
+        # print(cat.get_text())
+        catalan_words_list.append(cat.get_text())
+
+    for eng in english_words:
+        # print(eng.get_text())
+        english_words_list.append(eng.get_text())
+
+    # how to put two lists into a dictionary
+    words_dict = dict(zip(catalan_words_list, english_words_list))
+
+    # print(words_dict)
+
+    course_name_string = course_name.get_text().strip()
+    # level_string = level.get_text().strip()
+
+    with open(
+        f"{course_name_string}/{course_name_string}_{counter_level}.txt", "w"
+    ) as file:
+        file.write("Course: " + course_name_string + "\n\n")
+        file.write("Level: " + str(counter_level) + "\n\n")
+        for cat in words_dict:
+            file.write(f"{cat}\n")
+        file.write("****" * 10 + "\n")
+        for eng in words_dict.values():
+            file.write(f"{eng}\n")
 
 print("DONE")
+
+
+# how to create a new folder in python?
+# newpath = r'C:\Program Files\arbitrary'
+# if not os.path.exists(newpath):
+#     os.makedirs(newpath)
