@@ -19,8 +19,17 @@ for time in range(LEVELS):
 
     counter_level += 1
 
+    # ***** Progress Bar *****
+
+    percentage = (counter_level / LEVELS) * 100
     progress_bar = "*"
-    print(progress_bar * counter_level)
+    print(
+        progress_bar * counter_level
+        + " " * (LEVELS - counter_level)
+        + f" {percentage:.1f}%"
+    )
+
+    # ***** END Progress Bar *****
 
     response = requests.get(f"{WEB}{counter_level}/")
 
@@ -61,7 +70,9 @@ for time in range(LEVELS):
         os.makedirs(f"{course_name_string}")
 
     with open(
-        f"{course_name_string}/{course_name_string}_{counter_level}.txt", "w"
+        f"{course_name_string}/{course_name_string}_{counter_level}.txt",
+        "w",
+        encoding="utf-8",
     ) as file:
         file.write("Course: " + course_name_string + "\n\n")
         file.write("Level: " + str(counter_level) + "\n\n")
