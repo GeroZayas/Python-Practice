@@ -1,3 +1,4 @@
+from ast import keyword
 import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -51,7 +52,28 @@ time.sleep(1)
 activity_title.send_keys("THIS IS A TEST")
 
 # copy from text file first column
+
+
 # paste first column data into keyword column
+
+
+keyword_input = driver.find_element(
+    By.CLASS_NAME, "item-input.js-item-input.selectable"
+)
+keyword_input.send_keys("KEYWORD")
+
 # copy from text file second column
 # paste first column data into definition column
+
+definition_input = driver.find_element(
+    By.XPATH,
+    '//*[@id="editor_component_0"]/div[3]/div/div[1]/div[3]/div[2]/div[4]/div',
+)
+definition_input.send_keys("DEFINITION")
+time.sleep(1)
+
+definition_input.send_keys(Keys.ENTER)
+time.sleep(1)
+
+
 # click on Done
