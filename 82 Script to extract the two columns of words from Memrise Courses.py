@@ -42,7 +42,7 @@ words_dict = dict(zip(catalan_words_list, english_words_list))
 course_name_string = course_name.get_text().strip()
 level_string = level.get_text().strip()
 
-with open(f"{course_name_string}_{level_string}.txt", "w") as file:
+with open(f"{course_name_string}/{course_name_string}_{level_string}.txt", "w") as file:
     file.write("Course: " + course_name_string + "\n\n")
     file.write("Level: " + level_string + "\n\n")
     for cat in words_dict:
