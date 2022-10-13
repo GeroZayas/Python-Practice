@@ -2,10 +2,8 @@ from bs4 import BeautifulSoup
 import requests
 import csv
 import os
-import time
-from Progress_time_bar import printProgressBar
 
-# https://app.memrise.com/course/57117/angles-intermig/
+# https://app.memrise.com/course/57117/angles-intermig/ -> EXAMPLE
 
 WEB = input("Insert valid Memrise Course link: ")
 
@@ -20,6 +18,9 @@ print(CURRENT_PATH)
 for time in range(LEVELS):
 
     counter_level += 1
+
+    progress_bar = "*"
+    print(progress_bar * counter_level)
 
     response = requests.get(f"{WEB}{counter_level}/")
 
