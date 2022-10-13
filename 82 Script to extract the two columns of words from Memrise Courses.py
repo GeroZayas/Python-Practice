@@ -2,6 +2,8 @@ from bs4 import BeautifulSoup
 import requests
 import csv
 import os
+import time
+from Progress_time_bar import printProgressBar
 
 # https://app.memrise.com/course/57117/angles-intermig/
 
@@ -69,11 +71,3 @@ for time in range(LEVELS):
             file.write(f"{eng}\n")
 
 print("DONE")
-
-
-# how to create a new folder in python?
-# newpath = r'C:\Program Files\arbitrary'
-# if not os.path.exists(newpath):
-#     os.makedirs(newpath)
-
-# how to get current path in python? os.getcwd()
