@@ -65,10 +65,17 @@ keyword_input = driver.find_element(
     "/html/body/div[2]/div[2]/div[6]/div[2]/div[3]/div/div[1]/div[3]/div[1]/div[5]/div",
 )
 
-# TODO make sure I control + c the keywords for this to work
-# TODO I just have to make sure to have what i want in clipboard (copied)
+# ***** DETERMINE LIST LENGTH *****
+list_length = 0
 
-list_length = 29
+with open("test.txt", "r", encoding="utf-8") as file:
+    list_length += len(file.readlines())
+
+
+list_length = list_length // 2 - 2
+print(list_length)
+
+# ***** END of DETERMINE LIST LENGTH *****
 
 with open("test.txt", "r", encoding="utf-8") as file:
     first_column = file.readlines()[4 : list_length + 4]
@@ -104,3 +111,6 @@ time.sleep(1)
 
 
 # click on Done
+
+done_btn = driver.find_element(By.CLASS_NAME, "default-btn.large.js-done-button")
+done_btn.click()
