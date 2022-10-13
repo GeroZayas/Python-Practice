@@ -71,11 +71,13 @@ for time in range(LEVELS):
         # print(cat.get_text())
         catalan_words_list.append(cat.get_text())
 
-    print(catalan_words_list)
+    # print(catalan_words_list)
 
     for eng in english_words:
         # print(eng.get_text())
         english_words_list.append(eng.get_text())
+
+    print(len(english_words_list))
 
     # how to put two lists into a dictionary
     words_dict = dict(zip(catalan_words_list, english_words_list))
