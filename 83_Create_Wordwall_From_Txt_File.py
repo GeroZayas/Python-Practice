@@ -8,6 +8,9 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 import pyperclip
 
+start = time.time()
+
+
 WORDWALL_EMAIL = "gerozayas@gmail.com"
 WORDWALL_PASSWORD = "clavegerozayas7"
 CHROME_DRIVER_PATH = "C:/Development/chromedriver.exe"
@@ -93,7 +96,7 @@ with open(f"{FILE}", "r") as file:
 
 
 list_length = list_length // 2 - 2
-print(list_length)
+# print(list_length)
 
 # ***** END of DETERMINE LIST LENGTH *****
 
@@ -134,3 +137,8 @@ time.sleep(1)
 
 done_btn = driver.find_element(By.CLASS_NAME, "default-btn.large.js-done-button")
 done_btn.click()
+
+
+end = time.time()
+
+print("TOTAL TIME OF EXECUTION:", int(end - start), "seconds")
