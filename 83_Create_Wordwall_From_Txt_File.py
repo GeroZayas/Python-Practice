@@ -1,5 +1,7 @@
 # IDEA:
 # Write a script that goes file for file inside folder and creates a wordwall for each file.
+# Also, sometimes it appears to need the utf-8 *encoding* to work properly.
+# Which I took away
 
 
 import time
