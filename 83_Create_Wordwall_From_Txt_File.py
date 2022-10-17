@@ -57,7 +57,7 @@ time.sleep(2)
 # type in name in activity title
 
 activity_title = driver.find_element(By.CLASS_NAME, "js-activity-title")
-time.sleep(1)
+
 
 activity_title.send_keys(Keys.CONTROL + "a")
 activity_title.send_keys(Keys.DELETE)
@@ -103,7 +103,7 @@ list_length = list_length // 2 - 2
 
 # ***** END of DETERMINE LIST LENGTH *****
 
-with open(f"{FILE}", "r") as file:
+with open(f"{FILE}", "r", encoding="utf-8") as file:
     first_column = file.readlines()[4 : list_length + 4]
 
 string_first_column = "".join(first_column)
@@ -123,7 +123,7 @@ definition_input = driver.find_element(
     '//*[@id="editor_component_0"]/div[3]/div/div[1]/div[3]/div[2]/div[4]/div',
 )
 
-with open(f"{FILE}", "r") as file:
+with open(f"{FILE}", "r", encoding="utf-8") as file:
     second_column = file.readlines()[list_length + 5 :]
 
 string_second_column = "".join(second_column)
