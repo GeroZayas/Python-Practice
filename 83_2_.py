@@ -6,6 +6,7 @@
 
 
 import time
+import os
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
@@ -23,136 +24,137 @@ print("Make sure the text file is in the same folder as this script!")
 print(":)")
 
 
-# FILE = input("insert name of file: ")
+NAME_OF_FOLDER = input("insert name of FOLDER: ")
 
 # TODO open all file names from file with names
+# IDEA: use os.listdir() to get all file names from folder
+# create function for all this and then run the function with every file name
 
 
 # go to wordwall.net -> log in
 
-driver = webdriver.Chrome(executable_path=CHROME_DRIVER_PATH)
 
-wordwall_website = driver.get("https://wordwall.net/account/login")
-time.sleep(2)
+def create_worwall(file_name):
 
+    driver = webdriver.Chrome(executable_path=CHROME_DRIVER_PATH)
 
-email = driver.find_element(By.ID, "Email")
-password = driver.find_element(By.ID, "Password")
-email.send_keys(WORDWALL_EMAIL)
-time.sleep(1)
-password.send_keys(WORDWALL_PASSWORD)
-time.sleep(1)
+    wordwall_website = driver.get("https://wordwall.net/account/login")
+    time.sleep(2)
 
-log_in_btn = driver.find_element(
-    By.XPATH, "/html/body/div[2]/div[2]/form/div[4]/div/button"
-)
+    email = driver.find_element(By.ID, "Email")
+    password = driver.find_element(By.ID, "Password")
+    email.send_keys(WORDWALL_EMAIL)
+    time.sleep(1)
+    password.send_keys(WORDWALL_PASSWORD)
+    time.sleep(1)
 
-log_in_btn.click()
-time.sleep(2)
+    log_in_btn = driver.find_element(
+        By.XPATH, "/html/body/div[2]/div[2]/form/div[4]/div/button"
+    )
 
-# go to create activity
+    log_in_btn.click()
+    time.sleep(2)
 
-# select match up
+    # go to create activity
 
-match_up_template = driver.get("https://wordwall.net/create/entercontent?templateId=3")
+    # select match up
 
-time.sleep(2)
+    match_up_template = driver.get(
+        "https://wordwall.net/create/entercontent?templateId=3"
+    )
 
+    time.sleep(2)
 
-# type in name in activity title
+    # type in name in activity title
 
-activity_title = driver.find_element(By.CLASS_NAME, "js-activity-title")
+    activity_title = driver.find_element(By.CLASS_NAME, "js-activity-title")
 
+    activity_title.send_keys(Keys.CONTROL + "a")
+    activity_title.send_keys(Keys.DELETE)
+    time.sleep(1)
 
-activity_title.send_keys(Keys.CONTROL + "a")
-activity_title.send_keys(Keys.DELETE)
-time.sleep(1)
+    # # get activity title from file
+    # with open(f"{FILE}", "r") as file:
+    #     activity_name = file.readlines()[0]
 
-# # get activity title from file
-# with open(f"{FILE}", "r") as file:
-#     activity_name = file.readlines()[0]
+    # TODO the idea here now is to loop over the file and automatically upload each one
+    # one by one
+    FILE = file_name
 
+    activity_title_string = FILE[:-4].split("_")[0]
+    activity_level_string = FILE[:-4].split("_")[1]
 
-# TODO the idea here now is to loop over the file and automatically upload each one
-# one by one
-with open("files_to_upload.txt", "r") as file:
-    FILE = file.readlines()[0]  # this takes the first line
+    # print(f"{activity_title_string} - {activity_level_string}")
 
-activity_title_string = FILE[:-4].split("_")[0]
-activity_level_string = FILE[:-4].split("_")[1]
+    activity_title.send_keys(
+        f"{activity_title_string} - Level {activity_level_string} from Memrise"
+    )
 
-# print(f"{activity_title_string} - {activity_level_string}")
+    # copy from text file first column
 
+    # paste first column data into keyword column
 
-activity_title.send_keys(
-    f"{activity_title_string} - Level {activity_level_string} from Memrise"
-)
+    keyword_input = driver.find_element(
+        By.XPATH,
+        "/html/body/div[2]/div[2]/div[6]/div[2]/div[3]/div/div[1]/div[3]/div[1]/div[5]/div",
+    )
 
-# copy from text file first column
+    # ***** DETERMINE LIST LENGTH *****
+    list_length = 0
 
+    with open(f"./{NAME_OF_FOLDER}/{FILE}", "r") as file:
+        list_length += len(file.readlines())
 
-# paste first column data into keyword column
+    list_length = list_length // 2 - 2
+    # print(list_length)
 
-example_dict = {"one": "uno", "two": "dos", "three": "tres"}
-example_list = ["one", "two", "three"]
+    # ***** END of DETERMINE LIST LENGTH *****
 
+    with open(f"./{NAME_OF_FOLDER}/{FILE}", "r", encoding="utf-8") as file:
+        first_column = file.readlines()[4 : list_length + 4]
 
-keyword_input = driver.find_element(
-    By.XPATH,
-    "/html/body/div[2]/div[2]/div[6]/div[2]/div[3]/div/div[1]/div[3]/div[1]/div[5]/div",
-)
+    string_first_column = "".join(first_column)
 
-# ***** DETERMINE LIST LENGTH *****
-list_length = 0
+    pyperclip.copy(string_first_column)
 
-with open(f"{FILE}", "r") as file:
-    list_length += len(file.readlines())
+    keyword_input.send_keys(Keys.CONTROL + "v")
 
+    time.sleep(2)
 
-list_length = list_length // 2 - 2
-# print(list_length)
+    # copy from text file second column
+    # paste first column data into definition column
 
-# ***** END of DETERMINE LIST LENGTH *****
+    definition_input = driver.find_element(
+        By.XPATH,
+        '//*[@id="editor_component_0"]/div[3]/div/div[1]/div[3]/div[2]/div[4]/div',
+    )
 
-with open(f"{FILE}", "r", encoding="utf-8") as file:
-    first_column = file.readlines()[4 : list_length + 4]
+    with open(f"./{NAME_OF_FOLDER}/{FILE}", "r", encoding="utf-8") as file:
+        second_column = file.readlines()[list_length + 5 :]
 
-string_first_column = "".join(first_column)
+    string_second_column = "".join(second_column)
 
-pyperclip.copy(string_first_column)
+    pyperclip.copy(string_second_column)
 
-keyword_input.send_keys(Keys.CONTROL + "v")
+    definition_input.send_keys(Keys.CONTROL + "v")
 
-time.sleep(1)
+    time.sleep(2)
 
-# copy from text file second column
-# paste first column data into definition column
+    # click on Done
 
+    done_btn = driver.find_element(By.CLASS_NAME, "default-btn.large.js-done-button")
+    done_btn.click()
 
-definition_input = driver.find_element(
-    By.XPATH,
-    '//*[@id="editor_component_0"]/div[3]/div/div[1]/div[3]/div[2]/div[4]/div',
-)
+    end = time.time()
 
-with open(f"{FILE}", "r", encoding="utf-8") as file:
-    second_column = file.readlines()[list_length + 5 :]
-
-string_second_column = "".join(second_column)
-
-pyperclip.copy(string_second_column)
-
-
-definition_input.send_keys(Keys.CONTROL + "v")
-
-time.sleep(1)
-
-
-# click on Done
-
-done_btn = driver.find_element(By.CLASS_NAME, "default-btn.large.js-done-button")
-done_btn.click()
+    print("TOTAL TIME OF EXECUTION:", int(end - start), "seconds")
 
 
-end = time.time()
+names_of_files = os.listdir(f"./{NAME_OF_FOLDER}")
 
-print("TOTAL TIME OF EXECUTION:", int(end - start), "seconds")
+
+print("**" * 20)
+print(names_of_files)
+
+for file in names_of_files:
+    create_worwall(file)
