@@ -13,9 +13,10 @@ from selenium.webdriver.common.by import By
 import pyperclip
 
 
-WORDWALL_EMAIL = "gerozayas@gmail.com"
-WORDWALL_PASSWORD = "clavegerozayas7"
+WORDWALL_EMAIL = os.environ.get("WORDWALL_USER")
+WORDWALL_PASSWORD = os.environ.get("WORDWALL_PASSWORD")
 CHROME_DRIVER_PATH = "C:/Development/chromedriver.exe"
+
 
 print("HELLO! Welcome to the Wordwall Creator")
 print("Make sure the text file is in the same folder as this script!")
