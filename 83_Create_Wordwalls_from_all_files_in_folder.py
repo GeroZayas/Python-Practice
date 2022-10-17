@@ -103,7 +103,7 @@ def create_worwall(file_name):
 
     # ***** END of DETERMINE LIST LENGTH *****
 
-    with open(f"./{NAME_OF_FOLDER}/{FILE}", "r", encoding="utf-8") as file:
+    with open(f"./{NAME_OF_FOLDER}/{FILE}", "r") as file:
         first_column = file.readlines()[4 : list_length + 4]
 
     string_first_column = "".join(first_column)
@@ -122,7 +122,7 @@ def create_worwall(file_name):
         '//*[@id="editor_component_0"]/div[3]/div/div[1]/div[3]/div[2]/div[4]/div',
     )
 
-    with open(f"./{NAME_OF_FOLDER}/{FILE}", "r", encoding="utf-8") as file:
+    with open(f"./{NAME_OF_FOLDER}/{FILE}", "r") as file:
         second_column = file.readlines()[list_length + 5 :]
 
     string_second_column = "".join(second_column)
