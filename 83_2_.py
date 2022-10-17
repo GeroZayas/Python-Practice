@@ -72,6 +72,12 @@ time.sleep(1)
 # with open(f"{FILE}", "r") as file:
 #     activity_name = file.readlines()[0]
 
+
+# TODO the idea here now is to loop over the file and automatically upload each one
+# one by one
+with open("files_to_upload.txt", "r") as file:
+    FILE = file.readlines()[0]  # this takes the first line
+
 activity_title_string = FILE[:-4].split("_")[0]
 activity_level_string = FILE[:-4].split("_")[1]
 
