@@ -12,8 +12,6 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 import pyperclip
 
-start = time.time()
-
 
 WORDWALL_EMAIL = "gerozayas@gmail.com"
 WORDWALL_PASSWORD = "clavegerozayas7"
@@ -26,15 +24,10 @@ print(":)")
 
 NAME_OF_FOLDER = input("insert name of FOLDER: ")
 
-# TODO open all file names from file with names
-# IDEA: use os.listdir() to get all file names from folder
-# create function for all this and then run the function with every file name
-
-
-# go to wordwall.net -> log in
-
 
 def create_worwall(file_name):
+
+    start = time.time()
 
     driver = webdriver.Chrome(executable_path=CHROME_DRIVER_PATH)
 
