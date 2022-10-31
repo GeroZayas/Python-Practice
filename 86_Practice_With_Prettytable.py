@@ -1,6 +1,10 @@
 from prettytable import PrettyTable
 
+
+
 pt = PrettyTable()
+
+
 
 pt.field_names = ["name", "profession", "age", "comments"]
 
