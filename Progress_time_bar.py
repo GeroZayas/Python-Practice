@@ -40,6 +40,6 @@ l = len(items)
 printProgressBar(0, l, prefix="Progress:", suffix="Complete", length=50)
 for i, item in enumerate(items):
     # Do stuff...
-    time.sleep(0.1)
+    time.sleep(0.2)
     # Update Progress Bar
     printProgressBar(i + 1, l, prefix="Progress:", suffix="Complete", length=50)
