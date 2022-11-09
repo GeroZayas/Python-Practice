@@ -5,7 +5,7 @@ from Extract_Vocab_From_Memrise_Courses import extract_vocab
 # TODO: b) ask if user wants to download another link (while loop?)
 # TODO: c) Beautify the GUI
 # TODO: d) Add own icon
-# TODO: e) Add own icon
+# TODO: e)
 
 
 # Define the window's contents
