@@ -2,6 +2,7 @@
 import functools
 
 
+# ------------------------ DECORATORS ------------------------
 def multiply_by_10(func):
     @functools.wraps(func)
     def wrapper():
@@ -10,6 +11,16 @@ def multiply_by_10(func):
         print("------------------------")
 
     return wrapper
+
+
+def name_and_repr(func):
+    def wrapper(*x):
+        return f"the name is '{func.__name__}' and the repr is =>{func.__repr__}"
+
+    return wrapper
+
+
+# ------------------------ END OF DECORATORS ------------------------
 
 
 @multiply_by_10
@@ -21,5 +32,12 @@ def some_number():
 some_number()
 
 
-print(help(some_number))
-print(some_number.__name__)
+# -----------------
+
+
+@name_and_repr
+def greetings(name):
+    return f"Hello {name}"
+
+
+print(greetings("Gero"))
