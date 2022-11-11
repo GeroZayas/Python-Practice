@@ -24,7 +24,7 @@ layout = [
 # Create the window
 window = sg.Window("Get Vocabulary from Memrise Course", layout)
 
-# Display and interact with the Window using an Event Loop
+# Display and interact with the Window using an Event Loop 
 while True:
     event, values = window.read()
     # See if user wants to quit or window was closed
