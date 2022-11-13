@@ -24,6 +24,8 @@ while running:
           """
     )
 
+    print() # add a line break
+
     if user_answer == "n" or user_answer == "N":
         break
     elif user_answer == "y" or user_answer == "Y":
@@ -39,6 +41,8 @@ while running:
 counter = 0
 for link in list_of_links:
 
+    print("--" * 30)
+
     counter += 1
     if link[0:5] == "https":
 
@@ -52,6 +56,7 @@ for link in list_of_links:
 
         video.download(path_to_download_folder)
 
+        print()  # add a line break
         print(f"Downloaded! :) here => {path_to_download_folder}")
     else:
         print("video url incorrect")
