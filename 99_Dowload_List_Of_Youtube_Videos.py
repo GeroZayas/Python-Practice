@@ -1,8 +1,12 @@
-# Youtube Downloade.remove()
+# Youtube Downloader
 
-from pytube import YouTube
 import os
 from pathlib import Path
+
+from pytube import YouTube
+
+
+from playsound import playsound as play
 
 # link = input("Enter link here: ")
 
@@ -24,7 +28,7 @@ while running:
           """
     )
 
-    print() # add a line break
+    print()  # add a line break
 
     if user_answer == "n" or user_answer == "N":
         break
@@ -48,16 +52,26 @@ for link in list_of_links:
 
         url = YouTube(link)
 
-        print(f"downloading.... {counter} => {link}")
+        video_size_bytes = url.streams.get_highest_resolution().filesize
+        # video_size_bytes = url.streams.get_by_itag(17).filesize
+        video_size_mb = f"{video_size_bytes/1048576:.2f} MB"
+        print("This is the video's size", video_size_mb)
+
+        video_name = url.streams[0].title
+        print(f"downloading.... {counter} => {video_name}")
 
         video = url.streams.get_highest_resolution()
 
-        path_to_download_folder = r"C:\Users\Gero Zayas\Downloads"
+        path_to_download_folder = (
+            r"C:\Users\Gero Zayas\Downloads\Downloaded_from_YouTube"
+        )
 
         video.download(path_to_download_folder)
 
         print()  # add a line break
         print(f"Downloaded! :) here => {path_to_download_folder}")
+        play("./sounds/video_dowloaded.mp3")
+
     else:
         print("video url incorrect")
 
@@ -68,6 +82,7 @@ print(
 
       """
 )
+play("./sounds/all_dowloads_completed.mp3")
 
 
 # this would save the file on the same folder as the script
