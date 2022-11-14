@@ -36,7 +36,7 @@ while running:
         continue
     else:
         print("WRONG INPUT")
-        break
+        continue
 
 
 # for link in list_of_links:
