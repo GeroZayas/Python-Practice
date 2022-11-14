@@ -66,11 +66,15 @@ for link in list_of_links:
             r"C:\Users\Gero Zayas\Downloads\Downloaded_from_YouTube"
         )
 
-        video.download(path_to_download_folder)
-
-        print()  # add a line break
-        print(f"Downloaded! :) here => {path_to_download_folder}")
-        play("./sounds/video_dowloaded.mp3")
+        try:
+            video.download(path_to_download_folder)
+            print()  # add a line break
+            print(f"Downloaded! :) here => {path_to_download_folder}")
+            play("./sounds/video_dowloaded.mp3")
+        except Exception:
+            print(f"Video -> {video_name} not downloaded -> SOME PROBLEM TOOK PLACE")
+            play("./sounds/some_video_didnt_work (enhanced).wav")
+            continue
 
     else:
         print("video url incorrect")
