@@ -23,7 +23,7 @@ print(num_processes)
 
 
 # create processes
-for i in range(num_processes):
+for i in range(4):
     p = Process(target=square_nums)
     processes.append(p)
 
