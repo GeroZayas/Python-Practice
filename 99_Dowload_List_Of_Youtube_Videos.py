@@ -1,6 +1,7 @@
 # Youtube Downloader
 
 # TODO: create a txt file with names of videos downloaded and time and date of download
+# TODO: create a progress bar to show the videos being downloaded
 
 import os
 from pathlib import Path
@@ -88,6 +89,8 @@ for link in list_of_links:
     else:
         print("video url incorrect")
 
+
+# --------------------- PROGRAM COMPLETED -------------------------------
 print(
     """
 
@@ -97,6 +100,7 @@ print(
 )
 play("./sounds/all_dowloads_completed.mp3")
 
+# -----------------------------------------------------------------------
 
 # this would save the file on the same folder as the script
 # print(f"Downloaded! :) here => {os.path.abspath(os.getcwd())}")
