@@ -64,7 +64,6 @@ for link in list_of_links:
         video_size_mb = f"{video_size_bytes/1048576:.2f} MB"
         print("This is the video's size", video_size_mb, "\n")
 
-
         video_name = url.streams[0].title
         print(f"downloading.... {counter} => {video_name}\n")
 
