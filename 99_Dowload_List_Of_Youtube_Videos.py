@@ -1,5 +1,7 @@
 # Youtube Downloader
 
+# TODO: create a txt file with names of videos downloaded and time and date of download
+
 import os
 from pathlib import Path
 
@@ -47,7 +49,10 @@ for link in list_of_links:
 
     print("--" * 30)
 
+    # We create a counter to number the elements being downloaded
     counter += 1
+
+    # We check if the input link is valid, only true if it starts with 'https'
     if link[0:5] == "https":
 
         url = YouTube(link)
@@ -72,8 +77,10 @@ for link in list_of_links:
             print(f"Downloaded! :) here => {path_to_download_folder}")
             play("./sounds/video_dowloaded.mp3")
         except Exception:
-            print(f"Video -> {video_name} not downloaded -> SOME PROBLEM TOOK PLACE")
-            play("./sounds/some_video_didnt_work (enhanced).wav")
+            print(
+                f"\nVideo -> {video_name} not downloaded -> SOME PROBLEM TOOK PLACE\n"
+            )
+            # play("./sounds/some_video_didnt_work (enhanced).wav")
             continue
 
     else:
