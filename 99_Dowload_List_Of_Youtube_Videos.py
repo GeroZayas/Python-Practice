@@ -7,13 +7,14 @@ from pathlib import Path
 
 from pytube import YouTube
 
-
+# we import playsound to be use sound markers after some tasks are completed or run
 from playsound import playsound as play
 
-# link = input("Enter link here: ")
 
+# We create a list of links to save them and be able to iterate over them later
 list_of_links = []
 
+# we create a boolean value 'running' to set program to be running or not
 running = True
 
 while running:
@@ -37,7 +38,7 @@ while running:
     elif user_answer == "y" or user_answer == "Y":
         continue
     else:
-        print("WRONG INPUT")
+        print("WRONG INPUT\n")
         continue
 
 
