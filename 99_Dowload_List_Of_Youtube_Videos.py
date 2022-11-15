@@ -17,7 +17,7 @@ import datetime
 
 date_time = datetime.datetime.now()
 
-the_date = date_time.strftime("%B %d, %Y -> %I:%M %p")
+the_date = date_time.strftime("%B %d %Y - %I %M %p")
 
 # -----------------------------------------------------------------------
 
@@ -57,6 +57,22 @@ while running:
         print("WRONG INPUT\n")
         continue
 
+# ---------------------------------------------------------------------
+
+# ------------------------ CREATE PRETTY TABLE ------------------------
+
+table_of_videos = PrettyTable(["Name of Video", "Size", "Date"])
+table_of_videos.padding_width = (
+    1  # One space between column edges and contents (default)
+)
+
+# Aligning columns
+table_of_videos.align["Name of Video"] = "l"
+table_of_videos.align["Size"] = "c"
+table_of_videos.align["Date"] = "c"
+table_of_videos._max_width = {"Name of Video": 30}
+
+# ---------------------------------------------------------------------
 
 # We create a counter to number the elements being downloaded
 counter = 0
@@ -93,7 +109,22 @@ for link in list_of_links:
             video.download(path_to_download_folder)
             print()  # add a line break
             print(f"Downloaded! :) here => {path_to_download_folder}")
-            play("./sounds/video_dowloaded.mp3")
+
+            # add row to pretty table
+            table_of_videos.add_row(
+                [
+                    f"{video_name}",
+                    f"{video_size_mb}",
+                    f"{the_date}",
+                ]
+            )
+
+            # we play the sound of successful download
+            try:
+                play("./sounds/video_dowloaded.mp3")
+            except Exception:
+                pass
+
         except Exception:
             print(
                 f"\nVideo -> {video_name} not downloaded -> SOME PROBLEM TOOK PLACE\n"
@@ -105,12 +136,15 @@ for link in list_of_links:
         print("video url incorrect")
 
 # --------------------- SAVE TXT FILE WITH DATA FROM PROGRAM -----------
-# CREATE PRETTY TABLE
-
-x = PrettyTable(["Name of Video", "Size", "Dowload Folder", "Date"])
-x.padding_width = 3  # One space between column edges and contents (default)
 
 
+try:
+    with open(
+        f"{path_to_download_folder}\Downloaded Videos on {the_date}.doc", "w"
+    ) as w:
+        w.write(str(table_of_videos))
+except Exception:
+    pass
 
 # --------------------- PROGRAM COMPLETED ------------------------------
 print(
@@ -120,8 +154,11 @@ print(
 
       """
 )
-play("./sounds/all_dowloads_completed.mp3")
 
+try:
+    play("./sounds/all_dowloads_completed.mp3")
+except Exception:
+    pass
 # ----------------------------------------------------------------------
 
 # this would save the file on the same folder as the script
