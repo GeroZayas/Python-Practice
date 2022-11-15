@@ -42,15 +42,12 @@ while running:
         continue
 
 
-# for link in list_of_links:
-#     print(link[0:5])
-
+# We create a counter to number the elements being downloaded
 counter = 0
 for link in list_of_links:
 
     print("--" * 30)
 
-    # We create a counter to number the elements being downloaded
     counter += 1
 
     # We check if the input link is valid, only true if it starts with 'https'
@@ -58,13 +55,18 @@ for link in list_of_links:
 
         url = YouTube(link)
 
+        # Here we want to know how big the file is and we let the user know
         video_size_bytes = url.streams.get_highest_resolution().filesize
+
         # video_size_bytes = url.streams.get_by_itag(17).filesize
+
+        # we convert bytes to megabytes to make more readable
         video_size_mb = f"{video_size_bytes/1048576:.2f} MB"
-        print("This is the video's size", video_size_mb)
+        print("This is the video's size", video_size_mb, "\n")
+
 
         video_name = url.streams[0].title
-        print(f"downloading.... {counter} => {video_name}")
+        print(f"downloading.... {counter} => {video_name}\n")
 
         video = url.streams.get_highest_resolution()
 
