@@ -1,14 +1,10 @@
 # Youtube Downloader
 
-# TODO: create a txt file with names of videos downloaded and time and date of download
 # TODO: create a progress bar to show the videos being downloaded
 
 import os
 
 # from pathlib import Path
-
-# -------------- IMPORT PRETTY TABLE -------------------------------
-from prettytable import PrettyTable
 
 # -----------------------------------------------------------------------
 
@@ -59,21 +55,6 @@ while running:
 
 # ---------------------------------------------------------------------
 
-# ------------------------ CREATE PRETTY TABLE ------------------------
-
-table_of_videos = PrettyTable(["Name of Video", "Size", "Date"])
-table_of_videos.padding_width = (
-    1  # One space between column edges and contents (default)
-)
-
-# Aligning columns
-table_of_videos.align["Name of Video"] = "l"
-table_of_videos.align["Size"] = "c"
-table_of_videos.align["Date"] = "c"
-table_of_videos._max_width = {"Name of Video": 30}
-
-# ---------------------------------------------------------------------
-
 # We create a counter to number the elements being downloaded
 counter = 0
 for link in list_of_links:
@@ -110,14 +91,15 @@ for link in list_of_links:
             print()  # add a line break
             print(f"Downloaded! :) here => {path_to_download_folder}")
 
-            # add row to pretty table
-            table_of_videos.add_row(
-                [
-                    f"{video_name}",
-                    f"{video_size_mb}",
-                    f"{the_date}",
-                ]
-            )
+            # --------------------- SAVE TXT FILE WITH DATA FROM PROGRAM -----------
+
+            try:
+                with open(
+                    f"{path_to_download_folder}\Downloaded Videos.doc", "a"
+                ) as file:
+                    file.write(f"\n{video_name} -> {the_date}")
+            except Exception:
+                pass
 
             # we play the sound of successful download
             try:
@@ -135,18 +117,9 @@ for link in list_of_links:
     else:
         print("video url incorrect")
 
-# --------------------- SAVE TXT FILE WITH DATA FROM PROGRAM -----------
-
-
-try:
-    with open(
-        f"{path_to_download_folder}\Downloaded Videos on {the_date}.doc", "w"
-    ) as w:
-        w.write(str(table_of_videos))
-except Exception:
-    pass
 
 # --------------------- PROGRAM COMPLETED ------------------------------
+
 print(
     """
 
@@ -155,10 +128,13 @@ print(
       """
 )
 
+
 try:
     play("./sounds/all_dowloads_completed.mp3")
 except Exception:
     pass
+
+
 # ----------------------------------------------------------------------
 
 # this would save the file on the same folder as the script
