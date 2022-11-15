@@ -89,6 +89,8 @@ for link in list_of_links:
     else:
         print("video url incorrect")
 
+# --------------------- SAVE TXT FILE WITH DATA FROM PROGRAM ------------
+
 
 # --------------------- PROGRAM COMPLETED -------------------------------
 print(
