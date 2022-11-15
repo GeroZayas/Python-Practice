@@ -4,7 +4,22 @@
 # TODO: create a progress bar to show the videos being downloaded
 
 import os
-from pathlib import Path
+
+# from pathlib import Path
+
+# -------------- IMPORT PRETTY TABLE -------------------------------
+from prettytable import PrettyTable
+
+# -----------------------------------------------------------------------
+
+# We import datetime to print the date of downloaded videos later
+import datetime
+
+date_time = datetime.datetime.now()
+
+the_date = date_time.strftime("%B %d, %Y -> %I:%M %p")
+
+# -----------------------------------------------------------------------
 
 from pytube import YouTube
 
@@ -89,10 +104,15 @@ for link in list_of_links:
     else:
         print("video url incorrect")
 
-# --------------------- SAVE TXT FILE WITH DATA FROM PROGRAM ------------
+# --------------------- SAVE TXT FILE WITH DATA FROM PROGRAM -----------
+# CREATE PRETTY TABLE
+
+x = PrettyTable(["Name of Video", "Size", "Dowload Folder", "Date"])
+x.padding_width = 3  # One space between column edges and contents (default)
 
 
-# --------------------- PROGRAM COMPLETED -------------------------------
+
+# --------------------- PROGRAM COMPLETED ------------------------------
 print(
     """
 
@@ -102,7 +122,7 @@ print(
 )
 play("./sounds/all_dowloads_completed.mp3")
 
-# -----------------------------------------------------------------------
+# ----------------------------------------------------------------------
 
 # this would save the file on the same folder as the script
 # print(f"Downloaded! :) here => {os.path.abspath(os.getcwd())}")
