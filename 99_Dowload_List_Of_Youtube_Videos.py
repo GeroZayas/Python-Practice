@@ -26,6 +26,24 @@ from pytube import YouTube
 # we import playsound to be use sound markers after some tasks are completed or run
 from playsound import playsound as play
 
+# ---------- PRINT TITLE ---------------
+
+# print(f"[bold yellow]{title}[/bold yellow]")
+
+print(
+    """
+                                [bold yellow]+-+-+-+-+-+-+        
+                                |G|e|r|o|'|s|        
+                                    +-+-+[/bold yellow][bold red]-+-+-+-+-+     
+                                    |Y|o|u|t|u|b|e|      
+                                    +-+-+-+-+-+-+-+[/bold red][bold blue]-+-+-+
+                                            [bold blue]|D|o|w|n|l|o|a|d|e|r|
+                                            +-+-+-+-+-+-+-+-+-+-+[/bold blue]
+      """
+)
+
+# ---------- END OF PRINT TITLE ---------------
+
 
 # We create a list of links to save them and be able to iterate over them later
 list_of_links = []
