@@ -44,7 +44,7 @@ print(
                         [bold yellow]+-+-+-+-+-+-+        
                         | G e r o ' s |        
                             +-+-+[/bold yellow][bold red]-+-+-+-+-+     
-                            | Y o u t u b e |      
+                            | Y o u T u b e |      
                             +-+-+-+-+-+-+-+[/bold red][bold blue]-+-+-+
                                     [bold blue]| D o w n l o a d e r |
                                     +-+-+-+-+-+-+-+-+-+-+[/bold blue]
@@ -103,17 +103,17 @@ for link in list_of_links:
         stream = yt.streams.get_highest_resolution()
         print(f"[bold yellow]downloading....[/bold yellow] {counter} =>\n")
         print(
-            f"[bold blue]Downloading video to[/bold blue] '[bold yellow]{stream.default_filename}[/bold yellow]'"
+            f"[bold blue]Downloading video [/bold blue] '[bold yellow]{stream.default_filename}[/bold yellow]'"
         )
 
         # Here we want to know how big the file is and we let the user know
-        # video_size_bytes = url.streams.get_highest_resolution().filesize
+        video_size_bytes = stream.filesize
 
         # video_size_bytes = url.streams.get_by_itag(17).filesize
 
         # # we convert bytes to megabytes to make more readable
-        # video_size_mb = f"{video_size_bytes/1048576:.2f} MB"
-        # print("[bold blue]This is the video's size[/bold blue]", video_size_mb, "\n")
+        video_size_mb = f"{video_size_bytes/1048576:.2f} MB"
+        print("[bold blue]This is the video's size ->[/bold blue]", video_size_mb, "\n")
 
         # video_name = url.streams[0].title
 
