@@ -1,7 +1,5 @@
 # Youtube Downloader
 
-# TODO: create a progress bar to show the videos being downloaded
-
 import os
 from rich import print
 
@@ -22,12 +20,20 @@ the_date = date_time.strftime("%B %d %Y - %I %M %p")
 # -----------------------------------------------------------------------
 
 from pytube import YouTube
+from pytube import Stream
+from tqdm import tqdm
+
 
 # we import playsound to be use sound markers after some tasks are completed or run
 from playsound import playsound as play
 
 
 # -----------------------------------------------------------------------
+
+
+def progress_callback(stream: Stream, data_chunk: bytes, bytes_remaining: int) -> None:
+    pbar.update(len(data_chunk))
+
 
 # ---------- PRINT TITLE ---------------
 
@@ -47,7 +53,6 @@ print(
 
 # ---------- END OF PRINT TITLE ---------------
 # -----------------------------------------------------------------------
-
 
 
 # We create a list of links to save them and be able to iterate over them later
@@ -93,28 +98,37 @@ for link in list_of_links:
     # We check if the input link is valid, only true if it starts with 'https'
     if link[0:5] == "https":
 
-        url = YouTube(link)
+        url = link
+        yt = YouTube(url, on_progress_callback=progress_callback)
+        stream = yt.streams.get_highest_resolution()
+        print(f"[bold yellow]downloading....[/bold yellow] {counter} =>\n")
+        print(
+            f"[bold blue]Downloading video to[/bold blue] '[bold yellow]{stream.default_filename}[/bold yellow]'"
+        )
 
         # Here we want to know how big the file is and we let the user know
-        video_size_bytes = url.streams.get_highest_resolution().filesize
+        # video_size_bytes = url.streams.get_highest_resolution().filesize
 
         # video_size_bytes = url.streams.get_by_itag(17).filesize
 
-        # we convert bytes to megabytes to make more readable
-        video_size_mb = f"{video_size_bytes/1048576:.2f} MB"
-        print("[bold blue]This is the video's size[/bold blue]", video_size_mb, "\n")
+        # # we convert bytes to megabytes to make more readable
+        # video_size_mb = f"{video_size_bytes/1048576:.2f} MB"
+        # print("[bold blue]This is the video's size[/bold blue]", video_size_mb, "\n")
 
-        video_name = url.streams[0].title
-        print(f"[bold yellow]downloading....[/bold yellow] {counter} => {video_name}\n")
+        # video_name = url.streams[0].title
 
-        video = url.streams.get_highest_resolution()
+        # video = url.streams.get_highest_resolution()
 
         path_to_download_folder = (
             r"C:\Users\Gero Zayas\Downloads\Downloaded_from_YouTube"
         )
 
         try:
-            video.download(path_to_download_folder)
+            # video.download(path_to_download_folder)
+            pbar = tqdm(total=stream.filesize, colour="green")
+            path = stream.download(path_to_download_folder)
+            pbar.close()
+
             print()  # add a line break
             print(
                 f"[bold red]Downloaded! :) here => [/bold red] {path_to_download_folder}"
@@ -128,7 +142,7 @@ for link in list_of_links:
                 ) as file:
                     file.write(
                         f"""
-{video_name} -> {the_date}
+{stream.default_filename} -> {the_date}
                                """
                     )
             except Exception:
@@ -142,7 +156,7 @@ for link in list_of_links:
 
         except Exception:
             print(
-                f"\n[bold yellow]Video ->[/bold yellow] {video_name} not downloaded -> SOME PROBLEM TOOK PLACE\n"
+                f"\n[bold yellow]Video ->[/bold yellow] {stream.default_filename} not downloaded -> SOME PROBLEM TOOK PLACE\n"
             )
             # play("./sounds/some_video_didnt_work (enhanced).wav")
             continue
