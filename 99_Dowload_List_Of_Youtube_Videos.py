@@ -3,6 +3,10 @@
 # TODO: create a progress bar to show the videos being downloaded
 
 import os
+from rich import print
+
+# from rich.progress import track
+
 
 # from pathlib import Path
 
@@ -30,7 +34,7 @@ list_of_links = []
 running = True
 
 while running:
-    print("Insert link")
+    print("[bold yellow]Insert Link[/bold yellow]")
     new_link = input("HERE: ")
     list_of_links.append(new_link)
 
@@ -59,7 +63,7 @@ while running:
 counter = 0
 for link in list_of_links:
 
-    print("--" * 30)
+    print("[bold yellow]--[/bold yellow]" * 30)
 
     counter += 1
 
@@ -75,10 +79,10 @@ for link in list_of_links:
 
         # we convert bytes to megabytes to make more readable
         video_size_mb = f"{video_size_bytes/1048576:.2f} MB"
-        print("This is the video's size", video_size_mb, "\n")
+        print("[bold blue]This is the video's size[/bold blue]", video_size_mb, "\n")
 
         video_name = url.streams[0].title
-        print(f"downloading.... {counter} => {video_name}\n")
+        print(f"[bold yellow]downloading....[/bold yellow] {counter} => {video_name}\n")
 
         video = url.streams.get_highest_resolution()
 
@@ -89,15 +93,21 @@ for link in list_of_links:
         try:
             video.download(path_to_download_folder)
             print()  # add a line break
-            print(f"Downloaded! :) here => {path_to_download_folder}")
+            print(
+                f"[bold red]Downloaded! :) here => [/bold red] {path_to_download_folder}"
+            )
 
             # --------------------- SAVE TXT FILE WITH DATA FROM PROGRAM -----------
 
             try:
                 with open(
-                    f"{path_to_download_folder}\Downloaded Videos.doc", "a"
+                    f"{path_to_download_folder}\Downloaded Videos.txt", "a"
                 ) as file:
-                    file.write(f"\n{video_name} -> {the_date}")
+                    file.write(
+                        f"""
+{video_name} -> {the_date}
+                               """
+                    )
             except Exception:
                 pass
 
@@ -109,7 +119,7 @@ for link in list_of_links:
 
         except Exception:
             print(
-                f"\nVideo -> {video_name} not downloaded -> SOME PROBLEM TOOK PLACE\n"
+                f"\n[bold yellow]Video ->[/bold yellow] {video_name} not downloaded -> SOME PROBLEM TOOK PLACE\n"
             )
             # play("./sounds/some_video_didnt_work (enhanced).wav")
             continue
@@ -123,7 +133,7 @@ for link in list_of_links:
 print(
     """
 
-      ALL DONE BABY!!!
+      [bold green]ALL DONE BABY!!![/bold green]
 
       """
 )
