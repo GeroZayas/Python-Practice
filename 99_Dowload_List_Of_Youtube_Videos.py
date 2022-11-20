@@ -1,37 +1,27 @@
 # Youtube Downloader
 
-import os
-from rich import print
-
-# from rich.progress import track
-
-
-# from pathlib import Path
-
 # -----------------------------------------------------------------------
 
-# We import datetime to print the date of downloaded videos later
+from pytube import YouTube
+from pytube import Stream
+from tqdm import tqdm
+from rich import print
+import os
+# we import playsound to be use sound markers after some tasks are completed
+# or run
+from playsound import playsound as play
+
+# We import datetime to print the date of
+# downloaded videos later
 import datetime
 
 date_time = datetime.datetime.now()
 
 the_date = date_time.strftime("%B %d %Y - %I %M %p")
 
-# -----------------------------------------------------------------------
 
-from pytube import YouTube
-from pytube import Stream
-from tqdm import tqdm
-
-
-# we import playsound to be use sound markers after some tasks are completed or run
-from playsound import playsound as play
-
-
-# -----------------------------------------------------------------------
-
-
-def progress_callback(stream: Stream, data_chunk: bytes, bytes_remaining: int) -> None:
+def progress_callback(the_stream: Stream, data_chunk: bytes,
+                      bytes_remaining: int) -> None:
     pbar.update(len(data_chunk))
 
 
@@ -103,7 +93,7 @@ for link in list_of_links:
         stream = yt.streams.get_highest_resolution()
         print(f"[bold yellow]downloading....[/bold yellow] {counter} =>\n")
         print(
-            f"[bold blue]Downloading video [/bold blue] '[bold yellow]{stream.default_filename}[/bold yellow]'"
+            f"[bold blue]Downloading video [/bold blue] '[bold yellow]{stream.default_filename}[/bold yellow]' "
         )
 
         # Here we want to know how big the file is and we let the user know
@@ -112,8 +102,9 @@ for link in list_of_links:
         # video_size_bytes = url.streams.get_by_itag(17).filesize
 
         # # we convert bytes to megabytes to make more readable
-        video_size_mb = f"{video_size_bytes/1048576:.2f} MB"
-        print("[bold blue]This is the video's size ->[/bold blue]", video_size_mb, "\n")
+        video_size_mb = f"{video_size_bytes / 1048576:.2f} MB"
+        print("[bold blue]This is the video's size ->[/bold blue]",
+              video_size_mb, "\n")
 
         # video_name = url.streams[0].title
 
@@ -131,14 +122,15 @@ for link in list_of_links:
 
             print()  # add a line break
             print(
-                f"[bold red]Downloaded! :) here => [/bold red] {path_to_download_folder}"
+                f"[bold red]Downloaded! :) here => [/bold red] {path_to_download_folder} "
             )
 
-            # --------------------- SAVE TXT FILE WITH DATA FROM PROGRAM -----------
+            # ----------- SAVE TXT FILE WITH DATA FROM PROGRAM --------
+
 
             try:
                 with open(
-                    f"{path_to_download_folder}\Downloaded Videos.txt", "a"
+                        f"{path_to_download_folder}\Downloaded Videos.txt", "a"
                 ) as file:
                     file.write(
                         f"""
@@ -164,7 +156,6 @@ for link in list_of_links:
     else:
         print("video url incorrect")
 
-
 # --------------------- PROGRAM COMPLETED ------------------------------
 
 print(
@@ -175,14 +166,8 @@ print(
       """
 )
 
-
 try:
     play("./sounds/all_dowloads_completed.mp3")
 except Exception:
     pass
 
-
-# ----------------------------------------------------------------------
-
-# this would save the file on the same folder as the script
-# print(f"Downloaded! :) here => {os.path.abspath(os.getcwd())}")

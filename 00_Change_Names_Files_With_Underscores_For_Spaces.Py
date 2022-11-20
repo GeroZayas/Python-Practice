@@ -9,11 +9,11 @@ ex. "file number 1" -> "File_Number_1"
 """
 
 # Get path
-currect_folder = os.getcwd()
-print(currect_folder)
+current_folder = os.getcwd()
+print(current_folder)
 
 
-files_and_directories = os.listdir(currect_folder)
+files_and_directories = os.listdir(current_folder)
 # print(files_and_directories)
 
 
