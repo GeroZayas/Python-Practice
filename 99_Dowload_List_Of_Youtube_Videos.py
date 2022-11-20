@@ -92,6 +92,7 @@ for link in list_of_links:
         yt = YouTube(url, on_progress_callback=progress_callback)
         stream = yt.streams.get_highest_resolution()
         print(f"[bold yellow]downloading....[/bold yellow] {counter} =>\n")
+
         print(
             f"[bold blue]Downloading video [/bold blue] '[bold yellow]{stream.default_filename}[/bold yellow]' "
         )
