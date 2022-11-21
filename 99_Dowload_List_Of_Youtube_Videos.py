@@ -1,4 +1,4 @@
-# Youtube Downloader
+# YouTube Downloader
 
 # -----------------------------------------------------------------------
 
@@ -6,7 +6,7 @@ from pytube import YouTube
 from pytube import Stream
 from tqdm import tqdm
 from rich import print
-import os
+
 # we import playsound to be use sound markers after some tasks are completed
 # or run
 from playsound import playsound as play
@@ -128,7 +128,6 @@ for link in list_of_links:
 
             # ----------- SAVE TXT FILE WITH DATA FROM PROGRAM --------
 
-
             try:
                 with open(
                         f"{path_to_download_folder}\Downloaded Videos.txt", "a"
@@ -171,4 +170,3 @@ try:
     play("./sounds/all_dowloads_completed.mp3")
 except Exception:
     pass
-
