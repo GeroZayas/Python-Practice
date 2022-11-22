@@ -150,7 +150,7 @@ for link in list_of_links:
             print(
                 f"\n[bold yellow]Video ->[/bold yellow] {stream.default_filename} not downloaded -> SOME PROBLEM TOOK PLACE\n"
             )
-            # play("./sounds/some_video_didnt_work (enhanced).wav")
+            # play("./sounds/some_video_did't_work (enhanced).wav")
             continue
 
     else:
