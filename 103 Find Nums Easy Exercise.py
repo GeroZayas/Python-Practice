@@ -16,3 +16,24 @@ Input:
 Output:
 True
 """
+
+the_input = [19, 19, 15, 5, 3, 5, 5, 2]
+
+
+def find_nums(an_input: list) -> bool:
+    counter_19 = 0
+    counter_5 = 0
+
+    for n in the_input:
+        if n == 19:
+            counter_19 += 1
+        if n == 5:
+            counter_5 += 1
+
+    if counter_19 == 2 and counter_5 >= 3:
+        return True
+
+    return False
+
+
+print(find_nums(the_input))
