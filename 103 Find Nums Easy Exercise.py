@@ -37,3 +37,10 @@ def find_nums(an_input: list) -> bool:
 
 
 print(find_nums(the_input))
+
+
+def find_nums_count(an_input: list) -> bool:
+    return an_input.count(19) == 2 and an_input.count(5) >= 3
+
+
+print(find_nums_count(the_input))
