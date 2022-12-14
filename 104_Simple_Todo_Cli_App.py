@@ -33,7 +33,9 @@ while True:
     elif choice == "3":
         print("Here are all your tasks:")
         for i, task in enumerate(tasks):
+            print("----------------------------")
             print(str(i) + ". " + task)
+            print("----------------------------")
 
     # quit the app
     elif choice == "4":
