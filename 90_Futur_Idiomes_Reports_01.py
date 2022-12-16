@@ -21,7 +21,7 @@ groups = {
         "Katerina",
         "Gerard",
         "Eric Aguado",
-        "Eric Muñoz",
+        "Erik Muñoz",
     ],
     "FCE L-M": ["Olivia", "Natalia", "Hannah", "Iker", "Judith", "Eva"],
     "FCE M-J": ["Gerard", "Andrea", "Hugo", "Lucia", "Kloe"],
