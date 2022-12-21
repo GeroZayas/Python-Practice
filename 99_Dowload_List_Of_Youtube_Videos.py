@@ -6,6 +6,7 @@ from pytube import YouTube
 from pytube import Stream
 from tqdm import tqdm
 from rich import print
+from Get_Urls_YouTube_List import get_video_urls_from_playlist
 
 # we import playsound to be use sound markers after some tasks are completed
 # or run
@@ -52,28 +53,46 @@ list_of_links = []
 running = True
 
 while running:
-    print("[bold yellow]Insert Link[/bold yellow]")
-    new_link = input("HERE: ")
-    list_of_links.append(new_link)
+    print("If you want to add [bold red]Link by Link[/bold red] insert '1'")
+    print() # ADD SOME SPACE
+    print("If you want to add a [bold red]Playlist[/bold red] link insert '2'")
+    print() # ADD SOME SPACE
+    user_answer_link_or_playlist = input(">>> ")
+    
+    
+    # In case of LINK BY LINK:
+    if user_answer_link_or_playlist == '1':
+        print("[bold yellow]Insert Link[/bold yellow]")
+        new_link = input("HERE: ")
+        list_of_links.append(new_link)
 
-    user_answer = input(
-        """
-          Another link? 
-          
-          Press 'y' or 'n'
-          
-          """
-    )
+        user_answer = input(
+            """
+            Another link? 
+            
+            Press 'y' or 'n'
+            
+            """
+        )
 
-    print()  # add a line break
+        print()  # add a line break
 
-    if user_answer == "n" or user_answer == "N":
+        if user_answer == "n" or user_answer == "N":
+            break
+        elif user_answer == "y" or user_answer == "Y":
+            continue
+        else:
+            print("WRONG INPUT\n")
+            continue
+        
+    # In case of PLAYLIST:
+    elif user_answer_link_or_playlist == '2':
+        a_playlist = input("Insert the playlist link: ")
+        list_of_links = get_video_urls_from_playlist(a_playlist)
         break
-    elif user_answer == "y" or user_answer == "Y":
-        continue
-    else:
-        print("WRONG INPUT\n")
-        continue
+        
+        
+        
 
 # ---------------------------------------------------------------------
 
