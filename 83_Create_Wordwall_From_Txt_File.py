@@ -11,6 +11,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 import pyperclip
 import os
+from emoji import emojize
 
 
 start = time.time()
@@ -20,10 +21,27 @@ WORDWALL_EMAIL = os.environ.get("WORDWALL_USER")
 WORDWALL_PASSWORD = os.environ.get("WORDWALL_PASSWORD")
 CHROME_DRIVER_PATH = "C:/Development/chromedriver.exe"
 
-print("HELLO! Welcome to the Wordwall Creator")
-print("Make sure the text file is in the same folder as this script!")
-print(":)")
-FILE = input("insert name of file: ")
+
+# ** WELCOME **
+print("-" * 60)
+print(
+    emojize(
+        ":beaming_face_with_smiling_eyes:" + " HELLO! Welcome to the Wordwall Creator"
+    )
+)
+print("-" * 60)
+print(
+    emojize(":backhand_index_pointing_right: A WordWall Premium Account is required.")
+)
+print("-" * 60)
+print(
+    emojize(
+        ":red_circle:"
+        + " Make sure the text file is in the same folder as this script!"
+    )
+)
+print()
+FILE = input(emojize(":file_folder: Insert name of file: "))
 
 # go to wordwall.net -> log in
 
