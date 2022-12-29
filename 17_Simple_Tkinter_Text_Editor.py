@@ -6,7 +6,7 @@ from tkinter import font
 
 root = Tk()
 root.title("Gero's Text Editor")
-root.iconbitmap("./text.ico")
+# root.iconbitmap("./text.ico")
 root.geometry("1200x660")
 
 # Set variable for open file name
@@ -24,7 +24,7 @@ def open_popup(action, message):
     top = Toplevel(root)
     x = len(message) * 10 + 30
     y = 70
-    top.geometry(f'{x}x{y}')
+    top.geometry(f"{x}x{y}")
     top.title(f"{action}")
     Label(top, text=message, font=("Helvetica", 16)).place(x=10, y=20)
 
@@ -33,7 +33,7 @@ def open_popup(action, message):
 def new_file():
     my_text.delete("1.0", END)  # first line is 1.0 and the last one is END
     # Update status bars
-    root.title('New File - TextPad!')
+    root.title("New File - TextPad!")
     status_bar.config(text="New File        ")
     global open_status_name
     open_status_name = False
@@ -48,10 +48,13 @@ def open_file():
     text_file = filedialog.askopenfilename(
         initialdir="./",
         title="Open File",
-        filetypes=(("Text Files", "*.txt"),
-                   ("HTML Files", "*.html"),
-                   ("Python Files", "*.py"),
-                   ("All files", "*.*")))
+        filetypes=(
+            ("Text Files", "*.txt"),
+            ("HTML Files", "*.html"),
+            ("Python Files", "*.py"),
+            ("All files", "*.*"),
+        ),
+    )
 
     # check to see if there's a file name
     if text_file:
@@ -62,11 +65,14 @@ def open_file():
     # Update the Status bars
     name = text_file
     status_bar.config(text=f"{name}        ")
-    name = name.replace("C:/Users/Gero Zayas/Downloads/CODING/0 GERO PYTHON/2022/03 Marzo/05 marzo 2022/", '')
-    root.title(f'{name} - TextPad!')
+    name = name.replace(
+        "C:/Users/Gero Zayas/Downloads/CODING/0 GERO PYTHON/2022/03 Marzo/05 marzo 2022/",
+        "",
+    )
+    root.title(f"{name} - TextPad!")
 
     # Open the file
-    text_file = open(text_file, 'r')
+    text_file = open(text_file, "r")
     stuff = text_file.read()
 
     # Add file to textbox
@@ -77,22 +83,29 @@ def open_file():
 
 
 def save_as_file():
-    text_file = filedialog.asksaveasfilename(defaultextension='.*',
-                                             initialdir="./",
-                                             title="Save file",
-                                             filetypes=(("Text Files", "*.txt"),
-                                                        ("HTML Files", "*.html"),
-                                                        ("Python Files", "*.py"),
-                                                        ("All files", "*.*")))
+    text_file = filedialog.asksaveasfilename(
+        defaultextension=".*",
+        initialdir="./",
+        title="Save file",
+        filetypes=(
+            ("Text Files", "*.txt"),
+            ("HTML Files", "*.html"),
+            ("Python Files", "*.py"),
+            ("All files", "*.*"),
+        ),
+    )
     if text_file:
         # update status bar
         name = text_file
         status_bar.config(text=f"Saved: {name}        ")
-        name = name.replace("C:/Users/Gero Zayas/Downloads/CODING/0 GERO PYTHON/2022/03 Marzo/05 marzo 2022/", '')
+        name = name.replace(
+            "C:/Users/Gero Zayas/Downloads/CODING/0 GERO PYTHON/2022/03 Marzo/05 marzo 2022/",
+            "",
+        )
         root.title(f"{name} - TextPad!")
 
         # Save the file
-        text_file = open(text_file, 'w')
+        text_file = open(text_file, "w")
         text_file.write(my_text.get(1.0, END))
         # Close the file
         text_file.close()
@@ -105,7 +118,7 @@ def save_as_file():
 def save_file():
     global open_status_name
     if open_status_name:
-        text_file = open(open_status_name, 'w')
+        text_file = open(open_status_name, "w")
         text_file.write(my_text.get(1.0, END))
         # Close the file
         text_file.close()
@@ -130,6 +143,7 @@ def cut_text(e):
             # Clear the clipboard then append
             root.clipboard_clear()
             root.clipboard_append(selected)
+
 
 # Copy text
 def copy_text(e):
@@ -166,9 +180,15 @@ text_scroll.pack(side=RIGHT, fill=Y)
 
 # Create text box
 my_text = Text(
-    my_frame, width=97, height=25, font=("Helvetica", 16),
-    selectbackground="yellow", selectforeground="black", undo=True,
-    yscrollcommand=text_scroll.set)
+    my_frame,
+    width=97,
+    height=25,
+    font=("Helvetica", 16),
+    selectbackground="yellow",
+    selectforeground="black",
+    undo=True,
+    yscrollcommand=text_scroll.set,
+)
 my_text.pack()
 
 # Configure the Scrollbar
@@ -181,7 +201,7 @@ root.config(menu=my_menu)
 
 # add File Menu
 file_menu = Menu(my_menu, tearoff=False)
-my_menu.add_cascade(label='File', menu=file_menu)
+my_menu.add_cascade(label="File", menu=file_menu)
 file_menu.add_command(label="New", command=new_file)
 file_menu.add_command(label="Open", command=open_file)
 file_menu.add_command(label="Save", command=save_file)
@@ -191,21 +211,33 @@ file_menu.add_command(label="Exit", command=quit)
 
 # Add Edit Menu
 edit_menu = Menu(my_menu, tearoff=False)
-my_menu.add_cascade(label='Edit', menu=edit_menu)
-edit_menu.add_command(label="Cut", command=lambda: cut_text(False), accelerator="(Control + x)")
-edit_menu.add_command(label="Copy", command=lambda: copy_text(False), accelerator="(Control + c)")
-edit_menu.add_command(label="Paste             ", command=lambda: paste_text(False), accelerator="(Control + v)")
+my_menu.add_cascade(label="Edit", menu=edit_menu)
+edit_menu.add_command(
+    label="Cut", command=lambda: cut_text(False), accelerator="(Control + x)"
+)
+edit_menu.add_command(
+    label="Copy", command=lambda: copy_text(False), accelerator="(Control + c)"
+)
+edit_menu.add_command(
+    label="Paste             ",
+    command=lambda: paste_text(False),
+    accelerator="(Control + v)",
+)
 edit_menu.add_separator()
-edit_menu.add_command(label="Undo", command=my_text.edit_undo, accelerator="(Control+z)")
-edit_menu.add_command(label="Redo", command=my_text.edit_redo, accelerator="(Control+y)")
+edit_menu.add_command(
+    label="Undo", command=my_text.edit_undo, accelerator="(Control+z)"
+)
+edit_menu.add_command(
+    label="Redo", command=my_text.edit_redo, accelerator="(Control+y)"
+)
 
 # Add Status Bar to bottom of App
 status_bar = Label(root, text="Ready        ", anchor=E)
 status_bar.pack(fill=X, side=BOTTOM, ipady=5)
 
 # Edit bindings
-root.bind('<Control-Key-x>', cut_text)
-root.bind('<Control-Key-c>', copy_text)
-root.bind('<Control-Key-v>', paste_text)
+root.bind("<Control-Key-x>", cut_text)
+root.bind("<Control-Key-c>", copy_text)
+root.bind("<Control-Key-v>", paste_text)
 
 root.mainloop()
