@@ -28,7 +28,7 @@ layout = [
         )
     ],
     [sg.ProgressBar(max_value=1000, orientation="h", size=(73, 15), key="-PROG-")],
-    [sg.Button("Ok", font=FONT), sg.Button("Quit", font=FONT)],
+    [sg.Button("Ok", font=FONT, bind_return_key=True), sg.Button("Quit", font=FONT)],
 ]
 
 # Create the window
