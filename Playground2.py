@@ -1,4 +1,5 @@
-from emoji import emojize
+from Extract_Vocab_From_Memrise_Courses_to_Excel import extract_vocab
 
-print(emojize(":backhand_index_pointing_right:"))
+link = input("Insert Valid Memrise Course Link: ")
 
+extract_vocab(link=link)
