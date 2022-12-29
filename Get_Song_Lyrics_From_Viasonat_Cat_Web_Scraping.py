@@ -3,6 +3,7 @@ import requests
 import csv
 
 # TODO -> create a GUI to run this program
+# TODO -> use TYPER for CLI implementation
 
 
 def get_lyric_save_on_txt_file(link=None):

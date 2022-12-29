@@ -3,6 +3,8 @@
 # b) scrapes the info about the word
 # c) creates a file with the info
 
+# TODO -> use TYPER for CLI implementation
+
 from bs4 import BeautifulSoup
 import requests
 
