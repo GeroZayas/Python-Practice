@@ -99,13 +99,17 @@ def extract_vocab(link):
         course_name_string = course_name.get_text().strip()
         if "/" in course_name_string:
             course_name_string = course_name_string.replace("/", "-")
+        elif ":" in course_name_string:
+            course_name_string = course_name_string.replace(":", "-")
         # level_string = level.get_text().strip()
 
         if not os.path.exists(CURRENT_PATH + f"\{course_name_string}"):
             os.makedirs(f"{course_name_string}")
 
         # Create a workbook and add a worksheet.
-        workbook = xlsxwriter.Workbook(f"{course_name_string}/{course_name_string}_{counter_level}.xlsx")
+        workbook = xlsxwriter.Workbook(
+            f"{course_name_string}/{course_name_string}_{counter_level}.xlsx"
+        )
         worksheet = workbook.add_worksheet()
 
         # Start from the first cell. Rows and columns are zero indexed.
@@ -137,4 +141,6 @@ def extract_vocab(link):
 
 
 if __name__ == "__main__":
-    extract_vocab()
+    link = input("Insert Valid Memrise Course Link: ")
+
+    extract_vocab(link=link)
