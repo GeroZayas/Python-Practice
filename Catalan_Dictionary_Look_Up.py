@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 import requests
 
 
-def lookup_word_save_txt_file():
+def lookup_word_save_txt_file(word=None):
     """This functions receives an optional argument 'word'\n
     It looks up on www.wordreference.com Catalan dictionary the input word\n
     It adds the found definition to a txt file
@@ -15,12 +15,14 @@ def lookup_word_save_txt_file():
     word: str
 
     """
+    if word == None:
+        # The User Inserts a word here
 
-    # The User Inserts a word here
+        print("Insert Catalan Word:\n")
 
-    print("Insert Catalan Word:\n")
-
-    WORD = input()
+        WORD = input()
+    else:
+        WORD = word
 
     response = requests.get(f"https://www.wordreference.com/definicio/{WORD}")
 
