@@ -11,7 +11,7 @@ import os
 
 os.system("cls")
 
-FONT = "Consolas 16"
+FONT = "Consolas 14"
 
 sg.theme("Sandy Beach")
 
@@ -27,6 +27,7 @@ layout = [
             font=FONT,
         )
     ],
+    [sg.ProgressBar(max_value=1000, orientation="h", size=(73, 15), key="-PROG-")],
     [sg.Button("Ok", font=FONT), sg.Button("Quit", font=FONT)],
 ]
 
@@ -36,6 +37,7 @@ window = sg.Window("Get Vocabulary from Memrise Course", layout)
 # Display and interact with the Window using an Event Loop
 while True:
     event, values = window.read()
+
     # See if user wants to quit or window was closed
     if event == sg.WINDOW_CLOSED or event == "Quit":
         break
@@ -46,8 +48,11 @@ while True:
     # GET THE LINK
     extract_vocab(link=values["-INPUT-"])
 
+    the_percentage = extract_vocab.percentage
+
     window["-OUTPUT-"].update("OK! DONE!")
 
+    # print(the_percentage)
 
 # Finish up by removing from the screen
 window.close()

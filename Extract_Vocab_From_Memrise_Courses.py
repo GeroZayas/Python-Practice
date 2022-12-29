@@ -51,12 +51,12 @@ def extract_vocab(link):
         # ***** Progress Bar *****
 
         os.system("cls")
-        percentage = (counter_level / LEVELS) * 100
+        extract_vocab.percentage = (counter_level / LEVELS) * 100
         progress_bar = "*"
         print(
             progress_bar * counter_level
             + " " * (LEVELS - counter_level)
-            + f" {percentage:.1f}%"
+            + f" {extract_vocab.percentage:.1f}%"
         )
 
         # ***** END Progress Bar *****
