@@ -6,19 +6,31 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 import pyperclip
+import rich
 
-
+# ------------------------------------------------------------------------------
 WORDWALL_EMAIL = os.environ.get("WORDWALL_USER")
 WORDWALL_PASSWORD = os.environ.get("WORDWALL_PASSWORD")
 CHROME_DRIVER_PATH = "C:/Development/chromedriver.exe"
+# ------------------------------------------------------------------------------
 
+line_breaker = "-" * 65
 
-print("HELLO! Welcome to the Wordwall Creator")
-print("Make sure the text file is in the same folder as this script!")
-print(":)")
+# ----------------- Presentation------------------------------------------------
 
+rich.print(f"[bold blue]{line_breaker}[/bold blue]")
+rich.print("[bold yellow]HELLO! Welcome to the Wordwall Creator[/bold yellow]")
+rich.print(f"[bold blue]{line_breaker}[/bold blue]")
 
-NAME_OF_FOLDER = input("insert name of FOLDER: ")
+rich.print(
+    "[bold red]Make sure the text file is in the same folder as this script![/bold red]"
+)
+rich.print(f"[bold blue]{line_breaker}[/bold blue]")
+rich.print("[bold green] -- You must have a premium Wordwall account -- [/bold green]")
+rich.print(f"[bold blue]{line_breaker}[/bold blue]")
+
+# ----------------- Insert Folder Name -----------------------------------------
+NAME_OF_FOLDER = input("Insert name of FOLDER: ")
 
 
 def create_worwall(file_name):
