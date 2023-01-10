@@ -65,22 +65,22 @@ def extract_vocab(link):
 
         course_name = soup.find(name="h1", attrs={"class": "course-name"})
 
-        catalan_words = soup.find_all(name="div", attrs={"class": "col_a col text"})
-        english_words = soup.find_all(name="div", attrs={"class": "col_b col text"})
+        first_language = soup.find_all(name="div", attrs={"class": "col_a col text"})
+        second_language = soup.find_all(name="div", attrs={"class": "col_b col text"})
 
-        catalan_words_list = []
-        english_words_list = []
+        first_language_list = []
+        second_language_list = []
 
-        for cat in catalan_words:
-            catalan_words_list.append(cat.get_text())
+        for word in first_language:
+            first_language_list.append(word.get_text())
 
-        for eng in english_words:
-            english_words_list.append(eng.get_text())
+        for word in second_language:
+            second_language_list.append(word.get_text())
 
-        print(len(english_words_list))
+        print(len(second_language_list))
 
         # how to put two lists into a dictionary
-        words_dict = dict(zip(catalan_words_list, english_words_list))
+        words_dict = dict(zip(first_language_list, second_language_list))
 
 
         course_name_string = course_name.get_text().strip()
