@@ -1,9 +1,4 @@
-    # IDEA:
-# Write a script that goes file for file inside folder and creates a wordwall for each file.
-
-# Also, sometimes it appears to need the utf-8 *encoding* to work properly.
-# Which I took away
-
+# A script that goes file for file inside a folder and creates a Wordwall for each file.
 
 import time
 import os
