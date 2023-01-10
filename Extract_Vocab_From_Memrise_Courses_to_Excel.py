@@ -77,11 +77,10 @@ def extract_vocab(link):
         for word in second_language:
             second_language_list.append(word.get_text())
 
-        print(len(second_language_list))
+        # print(len(second_language_list))
 
         # how to put two lists into a dictionary
         words_dict = dict(zip(first_language_list, second_language_list))
-
 
         course_name_string = course_name.get_text().strip()
         if "/" in course_name_string:
