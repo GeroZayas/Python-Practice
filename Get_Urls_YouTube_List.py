@@ -3,8 +3,6 @@ def get_video_urls_from_playlist(the_playlist):
 
     playlist = Playlist(the_playlist)
 
-    # print('Number Of Videos In playlist: %s' % len(playlist.video_urls))
-
     list_of_video_urls = []
     for video in playlist:
         list_of_video_urls.append(video)
