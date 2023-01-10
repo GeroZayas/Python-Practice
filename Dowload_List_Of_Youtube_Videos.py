@@ -21,14 +21,13 @@ date_time = datetime.datetime.now()
 the_date = date_time.strftime("%B %d %Y - %I %M %p")
 
 
-def progress_callback(the_stream: Stream, data_chunk: bytes,
-                      bytes_remaining: int) -> None:
+def progress_callback(
+    the_stream: Stream, data_chunk: bytes, bytes_remaining: int
+) -> None:
     pbar.update(len(data_chunk))
 
 
 # ---------- PRINT TITLE ---------------
-
-# print(f"[bold yellow]{title}[/bold yellow]")
 
 print(
     """
@@ -43,7 +42,6 @@ print(
 )
 
 # ---------- END OF PRINT TITLE ---------------
-# -----------------------------------------------------------------------
 
 
 # We create a list of links to save them and be able to iterate over them later
@@ -54,14 +52,13 @@ running = True
 
 while running:
     print("If you want to add [bold red]Link by Link[/bold red] insert '1'")
-    print() # ADD SOME SPACE
+    print()  # ADD SOME SPACE
     print("If you want to add a [bold red]Playlist[/bold red] link insert '2'")
-    print() # ADD SOME SPACE
+    print()  # ADD SOME SPACE
     user_answer_link_or_playlist = input(">>> ")
-    
-    
+
     # In case of LINK BY LINK:
-    if user_answer_link_or_playlist == '1':
+    if user_answer_link_or_playlist == "1":
         print("[bold yellow]Insert Link[/bold yellow]")
         new_link = input("HERE: ")
         list_of_links.append(new_link)
@@ -84,15 +81,13 @@ while running:
         else:
             print("WRONG INPUT\n")
             continue
-        
+
     # In case of PLAYLIST:
-    elif user_answer_link_or_playlist == '2':
+    elif user_answer_link_or_playlist == "2":
         a_playlist = input("Insert the playlist link: ")
         list_of_links = get_video_urls_from_playlist(a_playlist)
         break
-        
-        
-        
+
 
 # ---------------------------------------------------------------------
 
@@ -123,8 +118,7 @@ for link in list_of_links:
 
         # # we convert bytes to megabytes to make more readable
         video_size_mb = f"{video_size_bytes / 1048576:.2f} MB"
-        print("[bold blue]This is the video's size ->[/bold blue]",
-              video_size_mb, "\n")
+        print("[bold blue]This is the video's size ->[/bold blue]", video_size_mb, "\n")
 
         # video_name = url.streams[0].title
 
@@ -149,7 +143,7 @@ for link in list_of_links:
 
             try:
                 with open(
-                        f"{path_to_download_folder}\Downloaded Videos.txt", "a"
+                    f"{path_to_download_folder}\Downloaded Videos.txt", "a"
                 ) as file:
                     file.write(
                         f"""
