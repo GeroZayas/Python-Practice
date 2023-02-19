@@ -1,6 +1,11 @@
+# These collections imports are necessary to avoid this error:
+# AttributeError: module 'collections' has no attribute 'Container'
 import collections
 import collections.abc
+# ----------------------------------------------------------------
 from pptx import Presentation
+# ----------------------------------------------------------------
+
 
 prs = Presentation()
 title_slide_layout = prs.slide_layouts[0]
