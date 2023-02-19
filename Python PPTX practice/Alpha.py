@@ -8,15 +8,25 @@ from pptx import Presentation
 
 
 prs = Presentation()
-title_slide_layout = prs.slide_layouts[2]
-slide = prs.slides.add_slide(title_slide_layout)
-title = slide.shapes.title
-subtitle = slide.placeholders[1]
+bullet_slide_layout = prs.slide_layouts[1]
 
-title.text = "Hello, my name is Gero!"
-subtitle.text = "this is pretty cool!"
+slide = prs.slides.add_slide(bullet_slide_layout)
+shapes = slide.shapes
 
-for s in range(5):
-    prs.slides.add_slide(prs.slide_layouts[5])
+title_shape = shapes.title
+body_shape = shapes.placeholders[1]
+
+title_shape.text = 'Adding a Bullet Slide'
+
+tf = body_shape.text_frame
+tf.text = 'Find the bullet slide layout'
+
+p = tf.add_paragraph()
+p.text = 'Use _TextFrame.text for first bullet'
+p.level = 1
+
+p = tf.add_paragraph()
+p.text = 'Use _TextFrame.add_paragraph() for subsequent bullets'
+p.level = 2
 
 prs.save('Gero Zayas.pptx')
