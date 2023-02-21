@@ -1,6 +1,5 @@
 from bs4 import BeautifulSoup
 import requests
-import csv
 
 # TODO -> create a GUI to run this program
 # TODO -> use TYPER for CLI implementation
@@ -9,7 +8,7 @@ import csv
 def get_lyric_save_on_txt_file(link=None):
     # The User Inserts here a valid viasona.cat link of a song lyric
 
-    if link == None:
+    if link is None:
         print("Insert Web Link from Viasona.Cat:\n")
         WEB = input()
 

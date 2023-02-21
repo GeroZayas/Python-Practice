@@ -43,7 +43,7 @@ while run:
             + " <- [bold green]has been successfully downloaded.[/bold green]"
         )
 
-        if repeat_process() == True:
+        if repeat_process() is True:
             continue
         else:
             print("[bold lightblue]BYE BYE![/bold lightblue]")

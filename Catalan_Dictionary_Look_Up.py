@@ -17,7 +17,7 @@ def lookup_word_save_txt_file(word=None):
     word: str
 
     """
-    if word == None:
+    if word is None:
         # The User Inserts a word here
 
         print("Insert Catalan Word:\n")
@@ -60,7 +60,7 @@ def lookup_word_save_txt_file(word=None):
     # for line in word_definition_list:
     #     print(line)
 
-    with open(f"Looked Up Catalan words.txt", "a") as def_file:
+    with open("Looked Up Catalan words.txt", "a") as def_file:
         for word in word_list:
             def_file.write("***" + str(word).upper() + "***" + "\n")
         for line in word_definition_list:

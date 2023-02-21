@@ -1,7 +1,6 @@
 def get_RTVE_news_to_txt_file():
     from bs4 import BeautifulSoup
     import requests
-    import csv
 
     response = requests.get("https://www.rtve.es/noticias/")
     noticias_rtve = response.text

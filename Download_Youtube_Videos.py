@@ -1,8 +1,6 @@
 # Youtube Downloade.remove()
 
 from pytube import YouTube
-import os
-from pathlib import Path
 
 link = input("Enter link here: ")
 

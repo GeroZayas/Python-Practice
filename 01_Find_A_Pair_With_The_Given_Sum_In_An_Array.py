@@ -5,7 +5,6 @@ target = 10
 
 def find_pair_for_sum(array, target):
     pair = []
-    list_of_pairs = []
     # For loop that takes first num in array and checks if
     # there is another number with which, if added together,
     # they yield target (example, if target = 10, and
