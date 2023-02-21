@@ -6,7 +6,6 @@ from itertools import (
     accumulate,
     groupby,
 )
-import operator
 
 prod = product([1, 2], [3, 4])
 print(list(prod))  # note that we convert the iterator to a list for printing

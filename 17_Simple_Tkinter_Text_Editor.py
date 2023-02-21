@@ -2,7 +2,6 @@
 
 from tkinter import *
 from tkinter import filedialog
-from tkinter import font
 
 root = Tk()
 root.title("Gero's Text Editor")

@@ -1,6 +1,5 @@
 from bs4 import BeautifulSoup
 import requests
-import csv
 
 response = requests.get(
     "https://elcatalacomcal.blogspot.com/2008/03/sentir-i-escoltar.html"

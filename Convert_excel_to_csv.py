@@ -7,7 +7,7 @@ def convert_excel_to_csv(file=None):
     print("-" * 30)
     # ----------------------------------------------------------------
 
-    if file == None:
+    if file is None:
 
         print("Insert file name: ")
         file_name = input(">>> ")

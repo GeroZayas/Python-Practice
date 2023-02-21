@@ -1,7 +1,5 @@
 # These collections imports are necessary to avoid this error:
 # AttributeError: module 'collections' has no attribute 'Container'
-import collections
-import collections.abc
 # ----------------------------------------------------------------
 
 import csv

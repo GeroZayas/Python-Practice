@@ -30,20 +30,20 @@ def find_outlier(integers):
     found_outlier = False
 
     # We create a while loop to find the outlier, and one we find it found_outlier becomes true and breaks the while loop
-    while found_outlier == False:
+    while found_outlier is False:
         if nums_are_even:
             for num in integers:
                 if num % 2 != 0 or num % -2 != 0:
                     outlier = num
                     found_outlier = True
-                    if found_outlier == True:
+                    if found_outlier is True:
                         break
         else:
             for num in integers:
                 if num % 2 == 0 or num % -2 == 0:
                     outlier = num
                     found_outlier = True
-                    if found_outlier == True:
+                    if found_outlier is True:
                         break
     return outlier
 

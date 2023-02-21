@@ -51,7 +51,7 @@ def create_wordwall() -> None:
 
     driver = webdriver.Chrome(executable_path=CHROME_DRIVER_PATH)
 
-    wordwall_website = driver.get("https://wordwall.net/account/login")
+    driver.get("https://wordwall.net/account/login")
     time.sleep(2)
 
     email = driver.find_element(By.ID, "Email")
@@ -72,7 +72,7 @@ def create_wordwall() -> None:
 
     # select match up
 
-    match_up_template = driver.get(
+    driver.get(
         "https://wordwall.net/create/entercontent?templateId=3"
     )
 
@@ -103,8 +103,6 @@ def create_wordwall() -> None:
 
     # paste first column data into keyword column
 
-    example_dict = {"one": "uno", "two": "dos", "three": "tres"}
-    example_list = ["one", "two", "three"]
 
     keyword_input = driver.find_element(
         By.XPATH,
