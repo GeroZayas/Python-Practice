@@ -17,19 +17,14 @@ import pandas as pd
 from pathlib import Path
 
 # Read in the remote data file
-df = pd.read_csv(
-    "https://github.com/chris1610/pbpython/blob/master/data/sample-sales-tax.csv?raw=True"
-)
+df = pd.read_csv("./Python PPTX practice/questions_and_answers.csv")
 
 # Define the full path for the output file
-out_file = Path.cwd() / "tax_summary.xlsx"
+out_file = Path.cwd() / "questions_and_answers.xlsx"
 
-# Do some summary calcs
-# In the real world, this would likely be much more involved
-df_summary = df.groupby("category")["ext price", "Tax amount"].sum()
 
 # Save the file as Excel
-df_summary.to_excel(out_file)
+df.to_excel(out_file)
 
 # Open up Excel and make it visible
 excel = win32.gencache.EnsureDispatch("Excel.Application")
