@@ -1,21 +1,43 @@
-import win32com.client
+# THIS OPENS EXCEL
+# ----------------------------------------------------------------
+# import win32com.client as win32
 
-# Create a new PowerPoint application
-powerpoint = win32com.client.Dispatch("PowerPoint.Application")
+# excel = win32.gencache.EnsureDispatch("Excel.Application")
 
-# Create a new presentation
-presentation = powerpoint.Presentations.Add()
+# excel.Visible = True
+# _ = input("Press ENTER to quit:")
 
-# Add a new slide with a title and subtitle
-slide = presentation.Slides.Add(1, 11)  # 11 is the slide layout for title and subtitle
-title = slide.Shapes.Title
-title.TextFrame.Text = "My Title"
-subtitle = slide.Shapes.Placeholders(2)
-subtitle.TextFrame.Text = "My Subtitle"
+# excel.Application.Quit()
 
-# Save the presentation
-presentation.SaveAs("my_presentation.pptx")
+# ----------------------------------------------------------------
 
-# Close the presentation and the PowerPoint application
-presentation.Close()
-powerpoint.Quit()
+# SOMETHING DIFFERENT:
+import win32com.client as win32
+import pandas as pd
+from pathlib import Path
+
+# Read in the remote data file
+df = pd.read_csv(
+    "https://github.com/chris1610/pbpython/blob/master/data/sample-sales-tax.csv?raw=True"
+)
+
+# Define the full path for the output file
+out_file = Path.cwd() / "tax_summary.xlsx"
+
+# Do some summary calcs
+# In the real world, this would likely be much more involved
+df_summary = df.groupby("category")["ext price", "Tax amount"].sum()
+
+# Save the file as Excel
+df_summary.to_excel(out_file)
+
+# Open up Excel and make it visible
+excel = win32.gencache.EnsureDispatch("Excel.Application")
+excel.Visible = True
+
+# Open up the file
+excel.Workbooks.Open(out_file)
+
+# Wait before closing it
+_ = input("Press enter to close Excel")
+excel.Application.Quit()
