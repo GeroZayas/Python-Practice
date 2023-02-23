@@ -1,10 +1,12 @@
 # Python-Practice
 Exercises and ideas to improve my Python Skills + Cool CLI and GUI programs to make our lives better.
 
+---
+
 ## NOTABLE PROGRAMS
 
 ### Automatic Creation of Wordwalls From All Files In A Folder CLI 
----> [LINK](https://github.com/GeroZayas/Python-Practice/blob/main/Create_Wordwalls_From_All_Files_In_Folder.py) <---
+---> [LINK to code](https://github.com/GeroZayas/Python-Practice/blob/main/Create_Wordwalls_From_All_Files_In_Folder.py) <---
 
 The purpose of this program is to automatically get all the vocabulary text files in a folder to create Wordwall Quizzes on the wordwall online platform in a fast and efficient manner.
 
@@ -14,9 +16,9 @@ The purpose of this program is to automatically get all the vocabulary text file
 ---
 
 ### Scrape Memrise Vocabulary Lists to Excel CLI
----> [LINK](https://github.com/GeroZayas/Python-Practice/blob/main/Extract_Vocab_From_Memrise_Courses_to_Excel.py) <---
+---> [LINK to code](https://github.com/GeroZayas/Python-Practice/blob/main/Extract_Vocab_From_Memrise_Courses_to_Excel.py) <---
 
-The purpose of this program is to automatically get all the vocabulary text files in a folder to create Wordwall Quizzes on the wordwall online platform in a fast and efficient manner.
+A CLI program to scrape Vocabulary Lists from Memrise.com and save them as Excel Files for learning languages.
 
 
 
