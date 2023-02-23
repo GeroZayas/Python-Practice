@@ -8,7 +8,10 @@ Exercises and ideas to improve my Python Skills + Cool CLI and GUI programs to m
 
 The purpose of this program is to automatically get all the vocabulary text files in a folder to create Wordwall Quizzes on the wordwall online platform in a fast and efficient manner.
 
+### Scrape Memrise Vocabulary Lists to Excel CLI
+---> [LINK](https://github.com/GeroZayas/Python-Practice/blob/main/Extract_Vocab_From_Memrise_Courses_to_Excel.py) <---
 
+The purpose of this program is to automatically get all the vocabulary text files in a folder to create Wordwall Quizzes on the wordwall online platform in a fast and efficient manner.
 
 
 
