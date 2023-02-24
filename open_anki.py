@@ -11,3 +11,5 @@ user_answer = input("y or n: ")
 if user_answer == "y":
     subprocess.Popen("C:\Program Files\Anki\Anki.exe")
     print("Anki.exe opened")
+
+# subprocess.Popen("C:\Program Files\Anki\Anki.exe")
