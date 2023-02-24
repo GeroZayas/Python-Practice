@@ -19,3 +19,5 @@ console = Console()
 md = Markdown(MARKDOWN)
 console.print(md)
 
+print("\n\n" + "-" * 60)
+input("Hit enter to quit")
