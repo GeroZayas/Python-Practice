@@ -57,7 +57,3 @@ for sentence in text_sentences:
     print(sentence)
 else:
     print("SUCCESS")
-
-spanish = python_text_ex.translate(to="es")
-
-print(spanish)
