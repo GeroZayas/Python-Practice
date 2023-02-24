@@ -11,7 +11,7 @@ print("-" * 15)
 
 # This prints the tuple of all three of those values
 for value in zip(names, part_family, job):
-    print(value)
+    print(list(value))
 
 print("-" * 15)
 
