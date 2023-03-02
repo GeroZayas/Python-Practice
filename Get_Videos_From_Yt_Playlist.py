@@ -40,6 +40,9 @@ def write_markdown(file, title, author, url):
     print(title)
 
 
+errors = []
+
+
 def extraction():
     counter = 1
 
@@ -65,23 +68,22 @@ def extraction():
                 continue
 
 
-# extraction()
-
-errors = []
-
-for e in errors:
-    print(e)
+extraction()
 
 
-with open(f"{playlist_name}_errors.md", "w", encoding="utf-8") as html_file:
-    for i, video in enumerate(errors):
-        index, video_url = i, video
-        try:
-            write_markdown(
-                file=html_file,
-                title=YouTube(video).title,
-                author=YouTube(video).title,
-                url=video,
-            )
-        except Exception as e:
-            print(e)
+if len(errors) > 0:
+    for e in errors:
+        print(e)
+
+    with open(f"{playlist_name}_errors.md", "w", encoding="utf-8") as html_file:
+        for i, video in enumerate(errors):
+            index, video_url = i, video
+            try:
+                write_markdown(
+                    file=html_file,
+                    title=YouTube(video).title,
+                    author=YouTube(video).title,
+                    url=video,
+                )
+            except Exception as e:
+                print(e)
