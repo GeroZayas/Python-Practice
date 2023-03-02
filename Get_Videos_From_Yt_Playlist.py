@@ -44,7 +44,7 @@ errors = []
 
 
 def extraction():
-    counter = 1
+    counter: int = 1
 
     with open(f"{playlist_name}.md", "w", encoding="utf-8") as html_file:
         for i, video in enumerate(list_of_video_urls):
