@@ -4,45 +4,84 @@ from pytube import Playlist, YouTube
 import json
 from itertools import groupby
 from tqdm import tqdm
+from markdown import markdown
+import time
+import re
 
-# playlist_link = input("Insert playlist lisk: \n>>>")
+playlist_link = input("Insert playlist: \n>>> ")
 
-# # Playlist Python Gero Zayas:
+# Playlist Python Gero Zayas:
 # playlist_link = (
 #     "https://www.youtube.com/playlist?list=PLKLTYrrEuv2OahdLdELlP0X5XXYmWFb-B"
 # )
 
 
-# Playlist Python pywin32 series
-playlist_link = (
-    "https://www.youtube.com/playlist?list=PL3JVwFmb_BnT0MYLMQsNKql_gec_W2tja"
-)
+# # Playlist to tinker
+# playlist_link = (
+#     "https://www.youtube.com/playlist?list=PLOkVupluCIjtA034kJfn1ulwBoGjmKJ_2"
+# )
 
 
 list_of_video_urls = Playlist(playlist_link)
 
-
-for i, video in enumerate(list_of_video_urls):
-    try:
-        print("-" * 60)  # space
-        print("The title: ", YouTube(video).title)
-        print("The author: ", YouTube(video).author)
-        print("The video url: ", list_of_video_urls[i])
-    except Exception as e:
-        print(f"This ocurred: {e}\n")
-        continue
+lenght_of_playlist = list_of_video_urls.length
 
 
-# list_of_authors = []
+playlist_name = list_of_video_urls.title
 
-# # for url in tqdm(list_of_video_urls):
-# #     list_of_authors.append(YouTube(url).author)
-
-# print(list_of_authors)
+print(f"Playlist Title: {playlist_name}")
 
 
-# def group_videos_by_author(x):
-#     return x[0]
+def write_markdown(file, title, author, url):
+    file.write(markdown("-" * 3))  # space
+    file.write(markdown(f"**Title**: *{title}*"))
+    file.write(markdown(f"**Author**: {author}"))
+    file.write(markdown(f"**Url**: [link]({url})"))
+    print(title)
 
 
-# group_data = groupby(list_of_video_urls)
+def extraction():
+    counter = 1
+
+    with open(f"{playlist_name}.md", "w", encoding="utf-8") as html_file:
+        for i, video in enumerate(list_of_video_urls):
+            index, video_url = i, video
+            try:
+                write_markdown(
+                    file=html_file,
+                    author=YouTube(video).author,
+                    title=YouTube(video).title,
+                    url=list_of_video_urls[i],
+                )
+                print(counter, f"/{lenght_of_playlist}")
+                counter += 1
+            except Exception as e:
+                print("-" * 60)
+                print(f"This ocurred: {e}\n")
+                url = re.search("(?P<url>https?://[^\s]+)", str(e)).group("url")[:-1]
+                errors.append(url)
+
+            finally:
+                continue
+
+
+# extraction()
+
+errors = []
+
+for e in errors:
+    print(e)
+
+
+with open(f"{playlist_name}_errors.md", "w", encoding="utf-8") as html_file:
+    for i, video in enumerate(errors):
+        index, video_url = i, video
+        try:
+            write_markdown(
+                file=html_file,
+                title=YouTube(video).title,
+                author=YouTube(video).title,
+                url=video,
+            )
+        except Exception as e:
+            print(e)
