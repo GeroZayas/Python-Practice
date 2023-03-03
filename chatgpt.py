@@ -93,15 +93,24 @@ while program_run:
 
     # APPLY SOME MD FORMATTING
     # ----------------------------------------------------------------
-    md_prompt = f"<h2>{prompt}<h2>"
-    md_response = f"<p>{response}<p>"
+    md_prompt = f"###{prompt}"
+    md_response = f"{response}"
+
+    # PATH
+    # ----------------------------------------------------------------
+    path = "C:/Users/Gero Zayas/Downloads/ChatGPT/"
 
     # SAVE RESPONSE TO MARKDOWN FILE
     # ----------------------------------------------------------------
-    with open(f"./ChatGPT_Interaction_{today}.md", "a", encoding="utf-8") as md_file:
+    with open(
+        f"{path}ChatGPT_Interaction_{today}.md", "a", encoding="utf-8"
+    ) as md_file:
         md_file.write(markdown(md_prompt))
+        md_file.write("\n")
         md_file.write(markdown(md_response))
-        md_file.write(markdown("<br>"))
+        md_file.write("\n")
+        md_file.write(markdown("---"))
+        md_file.write("\n")
 
 
 # FINISH PROGRAM
