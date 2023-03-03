@@ -75,6 +75,12 @@ if len(errors) > 0:
     for e in errors:
         print(e)
 
+    with open(f"{playlist_name}_errors.txt", "w", encoding="utf-8") as txt_file:
+        txt_file.write("These videos couldn't be fetched:")
+        for i, video in enumerate(errors):
+            index, video_url = i, video
+            txt_file.write(video)
+
     with open(f"{playlist_name}_errors.md", "w", encoding="utf-8") as html_file:
         for i, video in enumerate(errors):
             index, video_url = i, video
