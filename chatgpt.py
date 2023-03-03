@@ -1,22 +1,26 @@
 import os
 import time
-from rich import print
-import pyperclip
-from markdown import markdown
+from datetime import date
 
+import pyperclip
 from dotenv import load_dotenv
+from markdown import markdown
+from rich import print
 
 load_dotenv()
 
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 
+# DATE
+# ----------------------------------------------------------------
+today = date.today()
+
+# OPENAI IMPORT AND INIT
 # ----------------------------------------------------------------
 
 import openai
 
 openai.api_key = OPENAI_API_KEY
-
-# TODO save interaction to md file
 
 
 # FUNCTION DEFINITIONS
@@ -85,7 +89,19 @@ while program_run:
 
     print("-" * 60)  # separator
     print("[bold blue]Copied to clipboard![bold blue]\n")
-# ----------------------------------------------------------------
+    # ----------------------------------------------------------------
+
+    # APPLY SOME MD FORMATTING
+    # ----------------------------------------------------------------
+    md_prompt = f"<h2>{prompt}<h2>"
+    md_response = f"<p>{response}<p>"
+
+    # SAVE RESPONSE TO MARKDOWN FILE
+    # ----------------------------------------------------------------
+    with open(f"./ChatGPT_Interaction_{today}.md", "a", encoding="utf-8") as md_file:
+        md_file.write(markdown(md_prompt))
+        md_file.write(markdown(md_response))
+        md_file.write(markdown("<br>"))
 
 
 # FINISH PROGRAM
