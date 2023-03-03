@@ -16,10 +16,11 @@ import openai
 
 openai.api_key = OPENAI_API_KEY
 
-# TODO improve the flow, do not ask for press ENTER to continue
 # TODO save interaction to md file
 
 
+# FUNCTION DEFINITIONS
+# ----------------------------------------------------------------
 def generate_response(prompt):
     response = openai.Completion.create(
         engine="text-davinci-003",
@@ -37,16 +38,15 @@ def generate_response(prompt):
 
 print("-" * 60)
 
-# ----------------------------------------------------------------
 # MAIN LOOP
-
+# ----------------------------------------------------------------
 program_run = True
-
 
 print()  # blank line
 
-
 while program_run:
+    # ASK USER CHOICE
+    # ----------------------------------------------------------------
     prompt = input(
         """
                    (type 'qq' to quit) 
@@ -56,10 +56,14 @@ while program_run:
                    >>> """
     )
 
+    # TERMINATE PROGRAM IF 'qq'
+    # ----------------------------------------------------------------
     if prompt == "qq":
         print()
         break
 
+    # LET USER KNOW THE PROGRAM IS RUNNING WELL
+    # ----------------------------------------------------------------
     wait_string = "answer is coming...\n"
     for letter in wait_string:
         print(f"[bold red]{letter}[/bold red]", end="")
@@ -72,14 +76,20 @@ while program_run:
     # copy response to clipboard
     pyperclip.copy(prompt_and_response)
 
+    # PRINT RESPONSE
+    # ----------------------------------------------------------------
+
     print("-" * 60)  # separator
 
     print(f"[bold yellow]{response}[/bold yellow]")
 
-    print("[bold blue]Copied to clipboard![bold blue]")
-
     print("-" * 60)  # separator
+    print("[bold blue]Copied to clipboard![bold blue]\n")
+# ----------------------------------------------------------------
 
+
+# FINISH PROGRAM
+# ----------------------------------------------------------------
 bye_string = "\nThis program is finished now. Have a great day"
 
 for word in bye_string.split():
