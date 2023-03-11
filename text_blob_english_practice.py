@@ -1,6 +1,6 @@
 from textblob import TextBlob
 
-text = "Python’s iterators and iterables are two different but related tools that come in handy when you need to iterate over a data stream or container. Iterators power and control the iteration process, while iterables typically hold data that you want to iterate over one value at a time. Iterators and iterables are fundamental components of Python programming, and you’ll have to deal with them in almost all your programs. Learning how they work and how to create them is key for you as a Python developer."
+text = "Generating realistic location data for users for testing or modeling simulations is a hard problem. Current approaches just create random locations inside a box, placing users in waterways or on top of buildings. This inability to make accurate, synthetic location data stifles a lot of innovative projects that require diverse and complex datasets to fuel their work."
 
 
 # print(text)
