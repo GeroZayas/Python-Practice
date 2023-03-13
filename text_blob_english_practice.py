@@ -7,6 +7,7 @@ text = "Generating realistic location data for users for testing or modeling sim
 
 # ----------------------------------------------------------------
 
+# Creating a TextBlob object.
 blob = TextBlob(text)
 
 # print(blob)
@@ -16,6 +17,9 @@ blob = TextBlob(text)
 
 
 def the_tags():
+    """
+    It prints the tags of the text.
+    """
     print("\nThis is TAGS:\n")
 
     for tag in blob.tags:
@@ -34,6 +38,9 @@ verbs = ("VB", "VBG", "VBD", "VBN", "VBP")
 
 
 def the_verbs():
+    """
+    This function prints out the verbs in the text
+    """
     print("\nThis is VERBS:\n")
 
     for tag in blob.tags:
