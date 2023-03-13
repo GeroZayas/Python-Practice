@@ -79,6 +79,9 @@ the_sentences()
 
 
 def the_sentiment():
+    """
+    It prints the sentiment of the text.
+    """
     print("\nThis is SENTIMENT:\n")
 
     # print(blob.sentiment._asdict())
