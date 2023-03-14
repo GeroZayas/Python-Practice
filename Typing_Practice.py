@@ -1,5 +1,6 @@
 # Importing the `randint` function from the `random` module.
 from random import randint
+import pydantic
 
 # This is a list comprehension. It is a way to create a list in one line.
 num_list_1 = [randint(1, 10) for x in range(11)]
