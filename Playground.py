@@ -1,9 +1,9 @@
-# create function return random numbers
-import random
+class Person:
+    def __init__(self, name, age):
+        self._name = name
+        self._age = age
 
 
-def choose_random_nums():
-    return random.randint(1, 100)
+person1 = Person("John", 36)
 
-
-print(choose_random_nums())
+print()
