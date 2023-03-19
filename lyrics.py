@@ -7,7 +7,10 @@ title = input("Insert Song Title:\n>>> ")
 
 
 API.artist = artist
+print("artist: ", artist)
 API.title = title
+print("title: ", title)
+
 
 API.getLyrics(save=True, ext="lrc")
 
