@@ -8,7 +8,7 @@ b) capitalizes every word in the name
 ex. "file number 1" -> "File_Number_1"
 """
 
-# Get path
+# Getting the current working directory.
 current_folder = os.getcwd()
 print(current_folder)
 
@@ -20,8 +20,16 @@ files_and_directories = os.listdir(current_folder)
 def new_name_undescored(old_name):
     name, extension = old_name.split(".")
     name = name.replace(" ", "_")
-    return name.title() + f".{extension}"
+    return f"{name.title()}.{extension}"
 
+
+# IF NAME STARTS WITH DIGITS, DELETE TE NUMBERS
+# ----------------------------------------------------------------
+def eliminate_digits_at_beginning_of_name():
+    ...
+
+
+# ----------------------------------------------------------------
 
 extension = input(
     """What type of files do you want to change?
