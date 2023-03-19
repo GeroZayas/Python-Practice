@@ -59,9 +59,14 @@ for file in files_and_directories:
     if file.endswith(f".{extension}"):
         try:
             os.rename(file, eliminate_digits_at_beginning_of_name(file))
+<<<<<<< HEAD
         except Exception as e:
             print("Exception: ", e)
             os.rename(file, f"Different {eliminate_digits_at_beginning_of_name(file)}")
+=======
+        except Exception:
+            print("Exception: ", Exception)
+>>>>>>> 3237ed435c02484fe3ee86c30bdde2cb797e9240
         finally:
             continue
 
