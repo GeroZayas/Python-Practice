@@ -25,8 +25,20 @@ def new_name_undescored(old_name):
 
 # IF NAME STARTS WITH DIGITS, DELETE TE NUMBERS
 # ----------------------------------------------------------------
-def eliminate_digits_at_beginning_of_name():
-    ...
+def eliminate_digits_at_beginning_of_name(file_name):
+    if file_name[0].isdigit():
+        for e in file_name:
+            if e.isdigit():
+                file_name = file_name.replace(e, "")
+    print("file_name: ", file_name)
+
+    new_file_name = ""
+
+    if file_name.startswith("_"):
+        new_file_name = file_name[1:]
+        print("new_file_name : ", new_file_name)
+
+    return new_file_name
 
 
 # ----------------------------------------------------------------
@@ -42,6 +54,16 @@ for file in files_and_directories:
     if file.endswith(f".{extension}"):
         os.rename(file, new_name_undescored(file))
         counter += 1
+
+for file in files_and_directories:
+    if file.endswith(f".{extension}"):
+        try:
+            os.rename(file, eliminate_digits_at_beginning_of_name(file))
+        except Exception:
+            print("Exception: ", Exception)
+        finally:
+            continue
+
 
 if counter > 0:
     print(f"DONE in {counter} files!")
