@@ -61,7 +61,7 @@ for file in files_and_directories:
             os.rename(file, eliminate_digits_at_beginning_of_name(file))
         except Exception as e:
             print("Exception: ", e)
-            os.rename(file, f"{eliminate_digits_at_beginning_of_name(file)}II")
+            os.rename(file, f"Different {eliminate_digits_at_beginning_of_name(file)}")
         finally:
             continue
 
