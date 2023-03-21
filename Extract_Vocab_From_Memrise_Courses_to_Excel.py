@@ -23,10 +23,12 @@ def extract_vocab(link):
 
     soup = BeautifulSoup(data, "html.parser")
 
+    # Finding all the divs with the class level-index.
     level_number = soup.find_all(name="div", attrs={"class": "level-index"})
 
     level_number_list = []
 
+    # Iterating over the list of levels and appending the text of each level to the list.
     for level in level_number:
         level_number_list.append(level.getText())
 
@@ -41,7 +43,6 @@ def extract_vocab(link):
     print(CURRENT_PATH)
 
     for time in range(LEVELS):
-
         counter_level += 1
 
         # ***** Progress Bar *****
