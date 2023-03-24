@@ -1,11 +1,11 @@
-my_str = "My name is Gero and I am a programmer"
+from faker import Faker
 
-my_str = my_str.casefold()
+faker = Faker()
 
-my_list = my_str.split()
+random_words = []
 
-print(type(my_list))
+for x in range(10):
+    random_words.append(faker.word())
 
-my_list.sort()
 
-print(" ".join(my_list))
+print("random_words: ", random_words)
