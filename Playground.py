@@ -1,55 +1,44 @@
-numbers = [4,5,3,2,1,7,6]
-print("This is numbers", numbers)
+numbers= [7,6,5,4,3,8,2,1]
+print(numbers)
 
-# quick sort | merge sort | insertion sort | selection sort
+# insertion sort
+def insertion_sort(nums):
+    if len(nums)<=1:
+        return nums
+    sorted_nums = []
+    for num in nums:
+        for i in range(len(sorted_nums)):
+            if num < sorted_nums[i]:
+                sorted_nums.insert(i, num)
+                break
+        else:
+            sorted_nums.append(num)
 
-# Sort the numbers array using selection sort
+    return sorted_nums
+
+result = insertion_sort(numbers)
+
+print(result)
+
+# SELECTION SORT (in place)
 def selection_sort(nums):
     if len(nums) <= 1:
         return nums
-        
-    min_index = 0
 
-    for i in range(min_index + 1, len(nums)):
-        if nums[i] < nums[min_index]:
-            min_index = i
-    nums[min_index], nums[0] = nums[0], nums[min_index]
+    for i in range(len(nums) - 1):
+        index_min = i
+        for j in range(index_min + 1, len(nums)):
+            if nums[j] < nums[index_min]:
+                index_min = j
+            nums[i], nums[index_min] = \
+            nums[index_min], nums[i]
 
-    return [nums[0]] + selection_sort(nums[1:])
+selection_sort(numbers)
+
+print("Selection sorted numbers: ", numbers)
+
+# merge sort
+# quick sort
 
 # binary search
-
-sorted_nums = selection_sort(numbers)
-
-print("""
-this is sorted_nums
-""")
-print(sorted_nums)
-
-# Binary search
-
-target = 5
-
-def binary_search(arr, left, right, target):
-    if left > right:
-        return "Element not found"
-
-    mid = (left + right) // 2
-
-    if  target == arr[mid]:
-        return f"Element {target} found at index {mid}"
-    elif target < arr[mid]:
-        return binary_search(arr, left, mid - 1, target)
-    else:
-        return binary_search(arr, mid + 1, right, target)
-
-result = binary_search(sorted_nums, 0, len(sorted_nums) - 1, target)
-
-print(
-    f"""
-    This is the result:
-
-    {result}
-
-    """
-)
+ 
