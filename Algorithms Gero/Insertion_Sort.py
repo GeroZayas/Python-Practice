@@ -1,9 +1,4 @@
-# from random import randint
-
-# numbers = [randint(1, 30) for _ in range(9)]
-# print("numbers: ", numbers)
-
-numbers = [19, 12, 20, 15, 22, 17, 18, 16, 29]
+numbers = [34, 56, 12, 32, 54, 47, 8, 43]
 
 
 def insertion_sort(nums: list) -> list:
