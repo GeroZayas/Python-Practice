@@ -107,4 +107,4 @@ def binary_search(arr, left, right, target):
     else:
         return binary_search(arr, mid + 1, right, target)
 
-print("\n\n",binary_search(sorted_numbers, 0, len(sorted_numbers)-1, 4))
+print(binary_search(sorted_numbers, 0, len(sorted_numbers)-1, 4))
