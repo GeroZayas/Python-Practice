@@ -7,23 +7,10 @@ def caesarCipher(s, k):
         if ch.isupper() == True:
             capital = True
         ch = ch.lower()
-        ##############
-        print("ch", ch)
-        ###############
         if ch.isalpha() == True:
-            ############
-            print("alpha_list.index(ch) => ",alpha_list.index(ch))
-            ############
             rot = alpha_list.index(ch) + k
-            ##################
-            print("rot", rot)
-            ##################
             if rot > 25:
                 rot = rot % 26
-            #####################    
-            print("rot 2 = ", rot)
-            print("alpha_list[rot] ", alpha_list[rot] )
-            ############################
             rotated_string += alpha_list[rot] if not capital else alpha_list[rot].upper()
             capital = False
         else:
