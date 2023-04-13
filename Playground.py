@@ -99,12 +99,30 @@ def selection_sort(arr:list):
 			if arr[j] < arr[min_idx]:
 				min_idx = j
 		arr[i], arr[min_idx] = arr[min_idx], arr[i]
-		
-
-
-selection_sort_result = selection_sort(numbers)
-
-print(selection_sort_result)
-print(selection_sort_result == quicksort_result)
 
 ###########################################################
+
+selection_sort(numbers) # sorted in-place
+
+print(numbers)
+
+###########################################################
+
+def binary_search(arr, left, right, target):
+	if left > right:
+		return 'Element not found'
+
+	mid = (left + right) // 2
+
+	if target == arr[mid]:
+		return f'Element found at index {mid}'
+	elif target < arr[mid]:
+		return binary_search(arr, left, mid - 1, target)
+	else:
+		return binary_search(arr, mid + 1, right, target)
+
+
+print(binary_search(arr = numbers, left = 0, right = len(numbers), target = 32))
+
+###########################################################
+
