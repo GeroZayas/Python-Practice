@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # a function that multiplies all input numbers
 def multiply(*args):
     result = 1
@@ -8,7 +8,6 @@ def multiply(*args):
 
 print(multiply(1, 4, 5))
 
-=======
 def caesarCipher(s, k):
     alpha= 'abcdefghijklmnopqrstuvwxyz'
     alpha_list = [ch for ch in alpha]
@@ -18,23 +17,23 @@ def caesarCipher(s, k):
         if ch.isupper() == True:
             capital = True
         ch = ch.lower()
-        ##############
+        
         print("ch", ch)
-        ###############
+        
         if ch.isalpha() == True:
-            ############
+            
             print("alpha_list.index(ch) => ",alpha_list.index(ch))
-            ############
+            
             rot = alpha_list.index(ch) + k
-            ##################
+            
             print("rot", rot)
-            ##################
+            
             if rot > 25:
                 rot = rot % 26
-            #####################    
+                
             print("rot 2 = ", rot)
             print("alpha_list[rot] ", alpha_list[rot] )
-            ############################
+            
             rotated_string += alpha_list[rot] if not capital else alpha_list[rot].upper()
             capital = False
         else:
@@ -55,4 +54,3 @@ print(r)
 expected = 'Lipps_Asvph!' 
 
 print(" => ", r == expected)
->>>>>>> da9161e272ef04900ab3b001417c7e89b88cbd6f
