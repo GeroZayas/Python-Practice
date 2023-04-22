@@ -1,39 +1,23 @@
-numbers = [5, 4, 3, 7, 3, 2, 97, 68, 23, 56]
-print(numbers)
+arr = [-2, 45, 0, 11, -9,88,-97,-202,747]
 
+print("This is arr => ",arr)
 
-def quicksort(nums):
-    if len(nums) <= 1:
-        return nums
-    pivot = nums[0]
-    left = []
-    right = []
+def selection_sort(arr):
+    size = len(arr)
+    if size <= 1:
+        return arr
+    
+    min_idx = 0
 
-    for num in nums[1:]:
-        if num < pivot:
-            left.append(num)
-        else:
-            right.append(num)
+    for i in range(size):
+        min_idx = i
+        for j in range(i+1, size):
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
 
-    return quicksort(left) + [pivot] + quicksort(right)
+selection_sort(arr)
 
+print('This is sorted arr => ', arr)
 
-sorted_numbers = quicksort(numbers)
-print(sorted_numbers)
-
-
-def binary_search(arr, target):
-    left, right = 0, len(arr) - 1
-    while left <= right:
-        mid = (left + right) // 2
-        if target == arr[mid]:
-            return f'Element found at index {mid}'
-        elif target < arr[mid]:
-            right -= 1
-        else:
-            left += 1
-    return 'Element not found in array'
-
-
-print(binary_search(sorted_numbers, target=7))
 
