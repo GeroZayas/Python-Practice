@@ -12,7 +12,15 @@ class Human:
         print(self.age)
         return self
 
+print(dir(Human))
 
-gero = Human('Gero', 31, 'Programmer')
+Human.alive = "I am alive"
+Human.place = 'Earth'
 
-print(gero.show_name().show_age().show_name())
+print(Human.alive)
+
+print(dir(Human))
+
+print(Human.place)
+
+print()
