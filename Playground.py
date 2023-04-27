@@ -1,18 +1,18 @@
-arr = [-2, 45, 0, 11, -9,88,-97,-202,747]
+class Human:
+    def __init__(self, name, age, job):
+        self.name = name
+        self.age = age
+        self.job = job
 
-print("This is arr => ",arr)
-
-def quicksort(arr):
-    size = len(arr)
-    if size <= 1:
-        return arr
-    pivot = arr[0]
-    left = [x for x in arr[1:] if x <= pivot]
-    right = [x for x in arr[1:] if x > pivot]
-    return quicksort(left) + [pivot] + quicksort(right)
-                
-        
-        
-print('This is sorted arr => ', quicksort(arr))
+    def show_name():
+        print(self.name)
+        return self
+    
+    def show_age():
+        print(self.age)
+        return self
 
 
+gero = Human('Gero', 31, 'Programmer')
+
+print(gero.show_name.show_age)
