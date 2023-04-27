@@ -1,4 +1,5 @@
 class Human:
+    """A class for a Human"""
     def __init__(self, name, age, job):
         self.name = name
         self.age = age
@@ -12,15 +13,6 @@ class Human:
         print(self.age)
         return self
 
-print(dir(Human))
 
 Human.alive = "I am alive"
 Human.place = 'Earth'
-
-print(Human.alive)
-
-print(dir(Human))
-
-print(Human.place)
-
-print()
