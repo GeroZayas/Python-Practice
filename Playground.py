@@ -23,4 +23,24 @@ print("-" * 60)
 
 def binary_search(arr, target):
     left, right = 0, len(arr)
-    
+    while left <+ right:
+        mid = (left + right) // 2
+        
+        if target == arr[mid]:
+            return f"Element {target} found at index {mid}"
+        elif target < arr[mid]:
+            return binary_search(arr[:mid], target)
+        else:
+            return binary_search(arr[mid:], target)
+        
+    return "Element not found in array"
+
+r = binary_search(sorted_numbers, 6)
+
+print(r)
+
+
+
+
+
+
