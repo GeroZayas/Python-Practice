@@ -16,3 +16,11 @@ def quicksort(arr):
 sorted_numbers = quicksort(numbers)
 
 print('sorted_numbers : ', sorted_numbers )
+
+##########################################################
+print("-" * 60)
+##########################################################
+
+def binary_search(arr, target):
+    left, right = 0, len(arr)
+    
