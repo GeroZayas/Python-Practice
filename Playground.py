@@ -1,4 +1,4 @@
-from random import randint
+from random import randint, choice
 
 numbers = [randint(1,30) for _ in range(9)]
 
@@ -22,20 +22,23 @@ print("-" * 60)
 ##########################################################
 
 def binary_search(arr, target):
-    left, right = 0, len(arr)
-    while left <+ right:
+    left, right = 0, len(arr) - 1
+    while left < right:
         mid = (left + right) // 2
         
         if target == arr[mid]:
             return f"Element {target} found at index {mid}"
         elif target < arr[mid]:
-            return binary_search(arr[:mid], target)
+            return binary_search(arr[:mid-1], target)
         else:
-            return binary_search(arr[mid:], target)
+            return binary_search(arr[mid+1:], target)
         
     return "Element not found in array"
 
-r = binary_search(sorted_numbers, 6)
+target = choice(sorted_numbers)
+print(target)
+
+r = binary_search(sorted_numbers, target)
 
 print(r)
 
