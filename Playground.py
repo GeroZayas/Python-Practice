@@ -1,8 +1,41 @@
-import heapq
+from random import choice
 
-H = [3,7,6,3,9,2,5]
-print('H: ', H)
+numbers = [7,3,2,54,8,24,85,23]
+print('numbers: ', numbers)
 
-heapq.heapify(H)
+# Quicksort
+def quicksort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[0]
+    
+    left = [x for x in arr[1:] if x < pivot]
+    right = [x for x in arr[1:] if x >= pivot]
+    
+    return quicksort(left) + [pivot] + quicksort(right)
 
-print('Heapified H: ', H)
+sorted_numbers = quicksort(numbers)
+print('sorted_numbers: ', sorted_numbers)
+
+
+# Binary Search
+def binary_search(arr, target):
+    left = 0
+    right = len(arr) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if target == arr[mid]:
+            return f"Element found at index {mid}"
+        elif target < arr[mid]:
+            right = mid - 1
+        else:
+            left = mid + 1
+    return 'Element not found'
+
+target = choice(sorted_numbers)
+print('target : ', target )
+
+print('type(choice(sorted_numbers)): ', type(choice(sorted_numbers)))
+
+r = binary_search(sorted_numbers, target)
+print('r = binary_search: ', r)
