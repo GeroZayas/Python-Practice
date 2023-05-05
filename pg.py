@@ -1,22 +1,11 @@
-from collections import deque
+from collections import namedtuple
 
-def bfs(graph, start):
-    visited = set()
-    queue = deque([start])
+Person = namedtuple('Person', ['name', 'age', 'gender'])
 
-    while queue:
-        vertex = queue.popleft()
-        if vertex not in visited:
-            visited.add(vertex)
-            print(vertex) # or, do something with the vertex here
-            queue.extend(graph[vertex] - visited)
+# Create a new Person object
+p = Person('Bob', 30, 'Male')
 
-# Example usage
-graph = {'A': set(['B', 'C']),
-         'B': set(['A', 'D', 'E']),
-         'C': set(['A', 'F']),
-         'D': set(['B']),
-         'E': set(['B', 'F']),
-         'F': set(['C', 'E'])}
-
-bfs(graph, 'E')
+# Access the fields using dot notation
+print(p.name)   # Output: 'Bob'
+print(p.age)    # Output: 30
+print(p.gender) # Output: 'Male'
