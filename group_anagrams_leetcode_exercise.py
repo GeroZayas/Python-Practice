@@ -1,6 +1,14 @@
 import typing, collections
 
 def groupAnagrams(strs: typing.List[str]) -> typing.List[typing.List[str]]:
+    """
+    The function takes a list of strings and groups them into lists of anagrams using a dictionary with
+    character count tuples as keys.
+    
+    :param strs: A list of strings that we want to group into anagrams
+    :type strs: typing.List[str]
+    :return: a list of lists of strings, where each inner list contains a group of anagrams.
+    """
     ans = collections.defaultdict(list)
 
     for s in strs:
