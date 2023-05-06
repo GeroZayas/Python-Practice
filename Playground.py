@@ -6,6 +6,7 @@ def sliding_window(arr, k):
     window_sum = sum(arr[:k])
     max_sum = window_sum
     for i in range(size-k):
+        window_sum = window_sum - arr[i]
     
     
 """
