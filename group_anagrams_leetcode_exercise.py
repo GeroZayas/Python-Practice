@@ -1,13 +1,15 @@
 from typing import List
-from collections import defaultdict
+from collections import defaultdict, Counter
 
 def groupAnagrams(strs: List[str]) -> List[List[str]]:
-    ans = defaultdict(list)
+    ans = defaultdict(list) 
     for s in strs:
         count = [0] * 26
         for c in s:
             count[ord(c) - ord('a')] += 1
-        ans[count].append(s)
+        ans[tuple(count)].append(s)
+        
+    return ans.values()
 
 strs = ["eat","tea","tan","ate","nat","bat"]
 
