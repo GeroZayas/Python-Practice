@@ -1,61 +1,24 @@
-def bfs(graph, start):
-    visited = set()
-    queue = [start]
-    visited.add(start)
+nums = [1,1,1,2,2,3,4,4,4,4,4,4]; k = 2
 
-    while queue:
-        vertex = queue.pop(0)
-        print(f"{str(vertex)} ", end="")
+def topK_frequent(nums, k):
+    count = {} 
+    
+    freq = [ [] for _ in range(len(nums) + 1)]
+    
+    for n in nums:
+        count[n] = 1 + count.get(n, 0)
+    
+    for n, c in count.items():
+        freq[c].append(n)
+    
+    res = []
+    for i in range(len(freq) - 1, 0, -1):
+        for n in freq[i]:
+            res.append(n)
+            if len(res) == k:
+                return res
+    
 
-        for neighbor in graph[vertex]:
-            if neighbor not in visited:
-                visited.add(neighbor)
-                queue.append(neighbor)
 
-# Example graph
-graph = {
-    'A': ['B', 'C'],
-    'B': ['D', 'E'],
-    'C': ['F'],
-    'D': [],
-    'E': ['F'],
-    'F': []
-}
-
-# Starting node
-start = 'B'
-
-# Call BFS function
-bfs(graph, start)
-
-# ----------------------------------------------------------------
-print()
-print("-" * 60)
-
-def dfs(graph, start, visited=None):
-    if visited is None:
-        visited = set()
-    visited.add(start)
-    print(start, end=' ')
-
-    for neighbor in graph[start]:
-        if neighbor not in visited:
-            dfs(graph, neighbor, visited)
-
-# Example graph
-graph = {
-    'A': ['B', 'C'],
-    'B': ['D', 'E'],
-    'C': ['F'],
-    'D': [],
-    'E': ['F'],
-    'F': []
-}
-
-# Starting node
-start = 'B'
-
-# Call DFS function
-dfs(graph, start)
-
-print()
+r = topK_frequent(nums, k)
+print('r: ', r)
