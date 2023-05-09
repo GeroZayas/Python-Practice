@@ -22,7 +22,7 @@ Output: [0,0,9,0,0]
 '''
 
 def productExceptSelf(nums: List[int]) -> List[int]:
-    
+    ...
 
 nums = [1,2,3,4]
 
