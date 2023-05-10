@@ -36,3 +36,10 @@ def binary_search(arr, target):
             left = mid + 1
     return "Element not found in array"
 
+target = randint(1,20)
+print('target : ', target )
+
+bs_res = binary_search(arr=res, target=target)
+
+print('bs_res: ', bs_res)
+
