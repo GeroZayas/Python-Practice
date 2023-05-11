@@ -54,8 +54,8 @@ def topK_frequent(nums:list, k:int)->list[int]:
     for n, c in count.items():
         freq[c].append(n)
         
-    # print(count)
-    # print(freq)
+    print(count)
+    print(freq)
 
     res = []
     
