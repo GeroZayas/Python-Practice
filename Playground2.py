@@ -1,43 +1,41 @@
-from random import randint, choice
-from typing import List
+# PROMPT:
+# Example code for Linear Regression in Python>
 
-numbers = [randint(1,100) for _ in range(10)]
+# ANSWER:
+import numpy as np
+import matplotlib.pyplot as plt
 
-print('numbers: ', numbers)
+# Generate random data-set
+np.random.seed(0)
+x = np.random.rand(100, 1)
+y = 2 + 3 * x + np.random.rand(100, 1)
 
-# ----------------------------------------------------------------
+# Plot the data-set
+plt.scatter(x,y,s=10)
+plt.xlabel('x')
+plt.ylabel('y')
+plt.show()
 
-def quicksort(arr:List[int])-> List[int]:
-    if len(arr) <= 1:
-        return arr
-    pivot = arr[0]
-    left = [x for x in arr[1:] if x < pivot]
-    right = [x for x in arr[1:] if x >= pivot]
-    
-    return quicksort(left) + [pivot] + quicksort(right)
+# Building Xbar 
+one = np.ones((x.shape[0],1))
+Xbar = np.concatenate((one, x), axis = 1)
 
-sorted_nums = quicksort(numbers)
+# Calculating weights of the fitting line 
+A = np.dot(Xbar.T, Xbar)
+b = np.dot(Xbar.T, y)
+w = np.dot(np.linalg.pinv(A), b)
+print('w = ', w)
 
-print('sorted_nums : ', sorted_nums )
+# Preparing the fitting line 
+w_0 = w[0][0]
+w_1 = w[1][0]
+x0 = np.linspace(0, 1, 2, endpoint=True)
+y0 = w_0 + w_1*x0
 
-# ----------------------------------------------------------------
-
-def binary_search(arr: List[int], target:int):
-    left = 0
-    right = len(arr) - 1
-    while left <= right:
-        mid = (left + right) // 2
-        if target == arr[mid]:
-            return f"Element {target} found at index {mid}"
-        elif target < arr[mid]:
-            right = mid - 1
-        else:
-            left = mid + 1
-            
-    return "Element not found in array"
-
-target = choice(sorted_nums)
-print('target: ', target)
-
-res = binary_search(sorted_nums, target)
-print('binary_search: ', res)
+# Drawing the fitting line 
+plt.plot(x0, y0, 'r', label = 'fitting line')
+plt.scatter(x, y, s=10)
+plt.xlabel('x')
+plt.ylabel('y')
+plt.legend()
+plt.show()
