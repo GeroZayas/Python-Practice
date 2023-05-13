@@ -1,4 +1,4 @@
-from random import randint
+from random import randint, choice
 from typing import List
 
 numbers = [randint(1,100) for _ in range(10)]
@@ -36,3 +36,8 @@ def binary_search(arr: List[int], target:int):
             
     return "Element not found in array"
 
+target = choice(sorted_nums)
+print('target: ', target)
+
+res = binary_search(sorted_nums, target)
+print('binary_search: ', res)
