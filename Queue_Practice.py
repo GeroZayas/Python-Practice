@@ -1,5 +1,5 @@
 class Queue:
-    def __init__(self):x
+    def __init__(self):
         self.items = []
 
     def print_queue(self):
