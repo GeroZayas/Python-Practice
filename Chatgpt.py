@@ -91,26 +91,26 @@ while program_run:
     print("[bold blue]Copied to clipboard![bold blue]\n")
     # ----------------------------------------------------------------
 
-    # APPLY SOME MD FORMATTING
-    # ----------------------------------------------------------------
-    md_prompt = f"###{prompt}"
-    md_response = f"{response}"
+    # # APPLY SOME MD FORMATTING
+    # # ----------------------------------------------------------------
+    # md_prompt = f"###{prompt}"
+    # md_response = f"{response}"
 
-    # PATH
-    # ----------------------------------------------------------------
-    path = "C:/Users/Gero Zayas/Downloads/ChatGPT/"
+    # # PATH
+    # # ----------------------------------------------------------------
+    # path = "C:/Users/Gero Zayas/Downloads/ChatGPT/"
 
-    # SAVE RESPONSE TO MARKDOWN FILE
-    # ----------------------------------------------------------------
-    with open(
-        f"{path}ChatGPT_Interaction_{today}.md", "a", encoding="utf-8"
-    ) as md_file:
-        md_file.write(markdown(md_prompt))
-        md_file.write("\n")
-        md_file.write(markdown(md_response))
-        md_file.write("\n")
-        md_file.write(markdown("---"))
-        md_file.write("\n")
+    # # SAVE RESPONSE TO MARKDOWN FILE
+    # # ----------------------------------------------------------------
+    # with open(
+    #     f"{path}ChatGPT_Interaction_{today}.md", "a", encoding="utf-8"
+    # ) as md_file:
+    #     md_file.write(markdown(md_prompt))
+    #     md_file.write("\n")
+    #     md_file.write(markdown(md_response))
+    #     md_file.write("\n")
+    #     md_file.write(markdown("---"))
+    #     md_file.write("\n")
 
 
 # FINISH PROGRAM
