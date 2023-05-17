@@ -3,6 +3,7 @@ from typing import List
 
 
 def groupAnagrams(strs: List[str]) -> List[List[str]]: # type: ignore
+    res = defaultdict(list)
     
         
 strs = ["eat","tea","tan","ate","nat","bat"]
