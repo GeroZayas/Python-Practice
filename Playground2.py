@@ -1,17 +1,25 @@
-from random import randint
 
-def quicksort(arr):
-	if len(arr) <= 1:
-		return arr
-	pivot = arr[0]
-	left = [x for x in arr[1:] if x < pivot]
-	right = [x for x in arr[1:] if x >= pivot]
+def topK_frequent(nums:list, k:int)->list[int]:
+	count = {}
+	freq = [[] for _ in range(len(nums)+1)]
 
-	return quicksort(left) + [pivot] + quicksort(right)
+	for n in nums:
+		count[n] = 1 + count.get(n, 0)
 
-numbers = [randint(1,89) for _ in range(20)]
-print(numbers)
+	for n, c in count.items():
+		freq[c].append(n)
+	
 
-res = quicksort(numbers)
+	res = []
 
-print(res)
+	for i in range(len(freq) - 1, 0, -1):
+		for n in freq[i]:
+			res.append(n)
+			if len(res) == k:
+				return res
+
+
+nums = [3,3,3,4,4,5,7,7,7,7]; k = 2 # [7,3]
+
+r = topK_frequent(nums, k)
+print('r: ', r)
