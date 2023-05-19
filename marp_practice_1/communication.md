@@ -2,9 +2,8 @@
 marp: true
 author: Gero Zayas
 theme: uncover
-class: invert
 transition: slide
-backgroundImage: url('./images/cool-background.png')
+backgroundImage: url("./images/Elegant-Blue-Presentation-Template.jpg")
 ---
 
 <style>
@@ -23,3 +22,9 @@ backgroundImage: url('./images/cool-background.png')
 
 # How do you think about failure?
 ## Do you let it take over your life? 
+
+---
+
+Important link
+
+https://www.gerozayas.com
