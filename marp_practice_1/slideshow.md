@@ -16,7 +16,7 @@ theme: uncover
 - Something in python:
     -**Bold**
     - Something Else
-    -```python
+      -```python
         print('Hello World')```
 
 ---
@@ -25,3 +25,13 @@ theme: uncover
 - something
 
 ![Gero Zayas](https://media.licdn.com/dms/image/D4D16AQHMUz-kxTrigA/profile-displaybackgroundimage-shrink_350_1400/0/1674127073642?e=1689206400&v=beta&t=GEzHw3ifV2rPHslghxa1YLAHGkMWjh5vmxDicgaKfE4)
+
+---
+
+# Third Slide
+
+```python
+def my_name(name):
+    return 'Hello' + name
+```
+
