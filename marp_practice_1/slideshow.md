@@ -2,6 +2,7 @@
 marp: true
 author: Gero Zayas
 theme: uncover
+class: invert
 ---
 
 <style>
@@ -55,3 +56,30 @@ Gero Zayas
 - Have you ever **been** to Europe?
 - What **have** you read about history?
 - What **have** you learned recently?
+
+---
+This is an Example of **Quick Sort in Python3**
+```python
+numbers = [12, 93, 67, 68, 53, 7, 25, 40]
+
+
+# SORT the numbers using quick sort
+def quick_sort(nums: list) -> list:
+    if len(nums) <= 1:
+        return nums
+    pivot, left, right = nums[0], [], []
+
+    for num in nums[1:]:
+        if num < pivot:
+            left.append(num)
+        else:
+            right.append(num)
+
+    return quick_sort(left) + [pivot] + quick_sort(right)
+
+
+sorted_numbers = quick_sort(numbers)
+print("sorted_numbers: ", sorted_numbers)
+```
+
+---
