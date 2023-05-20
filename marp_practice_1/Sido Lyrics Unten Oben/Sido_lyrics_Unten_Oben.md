@@ -101,3 +101,8 @@ Ich muss los
 #### Bin zu hoch geflogen
 
 ---
+
+Im Viertel geht's nicht aufwärts, nur bergab (aha)
+Er will nach oben, doch er weiß nichts über Schwerkraft (aha)
+Im Viertel geht's nicht aufwärts, nur bergab (aha)
+Er will nach oben, doch er weiß nichts über Schwerkraft (ah)
