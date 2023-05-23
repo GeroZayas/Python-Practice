@@ -9,7 +9,13 @@ numbers = [12, 93, 67, 68, 53, 7, 25, 40, 4, 60, 65, 35, 80, 58, 30, 18, 11, 76,
 
 # SORT the numbers using quick sort
 def quick_sort(nums: list) -> list:
-    ...
+    if len(nums) <= 1:
+        return nums
+    pivot = nums[0]
+    left = [x for x in nums[1:] if x < pivot]
+    right = [x for x in nums[1:] if x >= pivot]
+    
+    return quick_sort(left) + [pivot] + quick_sort(right)
 
 sorted_numbers = quick_sort(numbers)
 print("sorted_numbers: ", sorted_numbers)
