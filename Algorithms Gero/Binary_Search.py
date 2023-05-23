@@ -25,4 +25,4 @@ target, left, right = 80, 0, len(sorted_numbers) - 1
 
 r = binary_search(nums=sorted_numbers, left=left, right=right, target=target)
 
-print(f"binary_search: ", r)
+print("binary_search: ", r)
