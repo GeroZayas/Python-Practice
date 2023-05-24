@@ -138,8 +138,7 @@ Y casi vivo de gasolineras
 
 ---
 
-**
-Ben vaak alleen, het is alleen gelukt
+**Ben vaak alleen, het is alleen gelukt
 Dit is keihard werk, dit is geen geluk**
 
 A menudo estoy solo, sólo resultó
@@ -165,4 +164,27 @@ Me llaman loco cuando digo 'Somos los mejores' en el espejo
 Gelukkig maar alleen**
 Lo he hecho todo sola y sé que volveré a ir sola también
 Feliz pero solo
+
 ---
+**Ben gelukkig maar alleen, en alleen maar gelukkig
+Nee ik twijfel niet, ik leef, en ineens gaat het lukken**
+Soy feliz pero solo, y solo feliz
+No dudo, vivo, y de repente todo saldrá bien
+
+---
+
+**Ben gelukkig maar alleen, en alleen maar gelukkig, mmm
+Geen berg te hoog en geen zee te diep
+En ik heb bijna alle dingen in mijn leven lief, ey**
+Soy feliz pero solo, y solo feliz, mmm
+No hay montaña demasiado alta ni mar demasiado profundo
+Y amo casi todas las cosas en mi vida, ey
+
+---
+
+**Geen stress ik heb dit, oeh
+Geen stress ik heb dit, oeh
+Geen stress ik heb dit, oeh
+Geen stress ik heb dit**
+
+No hay estrés tengo esto, ooh
