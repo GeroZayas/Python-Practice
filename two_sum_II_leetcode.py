@@ -1,4 +1,4 @@
-'''
+"""
 
 167. Two Sum II - Input Array Is Sorted
 
@@ -42,9 +42,30 @@ Constraints:
     The tests are generated such that there is exactly one solution.
 
 
-'''
+"""
 
 from typing import List
 
+
+# we use two pointers, optimal solution since
+# we don't use extra memory, we don't need to iterate
+# more than once over the array
 def twoSum(numbers: List[int], target: int) -> List[int]:
-    ...
+    l, r = 0, len(numbers) - 1
+
+    while l < r:
+        current_sum = numbers[l] + numbers[r]
+        if current_sum > target:
+            r -= 1
+        elif current_sum < target:
+            l += 1
+        else:
+            return [l + 1, r + 1]
+    
+    return []
+
+
+numbers = [2,7,11,15]; target = 9
+
+res = twoSum(numbers=numbers, target=target)
+print('res: ', res)
