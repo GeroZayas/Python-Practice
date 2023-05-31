@@ -1,4 +1,6 @@
 import markdown
+from ebooklib import epub
+
 
 file_path = input('Path to file:\n>>> ')
 
@@ -10,7 +12,6 @@ with open(f"{file_path}", "r") as f:
 
 html_string = markdown.markdown(markdown_file)
 
-from ebooklib import epub
 
 book = epub.EpubBook()
 
