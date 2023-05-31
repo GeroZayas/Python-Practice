@@ -1,6 +1,10 @@
 import markdown
 
-markdown_file = input("Epub filepath:\n >>>")
+file_path = input('Path to file:\n>>> ')
+
+# Replace 'your_file.md' with the path to your Markdown file
+with open(f"{file_path}", "r") as f:
+    markdown_file = f.read()
 
 html_string = markdown.markdown(markdown_file)
 
