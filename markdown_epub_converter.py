@@ -2,6 +2,8 @@ import markdown
 
 file_path = input('Path to file:\n>>> ')
 
+print()
+
 # Replace 'your_file.md' with the path to your Markdown file
 with open(f"{file_path}", "r") as f:
     markdown_file = f.read()
@@ -33,5 +35,7 @@ book.toc = (epub.Link(epub.EpubNcx(), "ncx", "nav"),)
 # Define the spine
 book.spine = ["nav", chapter]
 
+name = input('Insert name: ')
+
 # Save the EPUB file
-epub.write_epub("sample.epub", book)
+epub.write_epub(f"{name}.epub", book)
