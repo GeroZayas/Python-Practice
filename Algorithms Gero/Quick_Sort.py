@@ -12,14 +12,8 @@ def quick_sort(nums: List[int]) -> List[int]:
     if len(nums) <= 1:
         return nums
     pivot = nums[0]
-    left = []
-    right = []
-    for num in nums[1:]:
-        if num < pivot:
-            left.append(num)
-        else:
-            right.append(num)
-
+    left = [x for x in nums[1:] if x < pivot]
+    right = [x for x in nums[1:] if x >= pivot]
     return quick_sort(left) + [pivot] + quick_sort(right)
 
 
