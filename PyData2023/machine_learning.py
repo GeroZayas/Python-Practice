@@ -12,4 +12,7 @@ Common uses of Machine Learning:
 - Time Series (stock predictions, sales, etc)
 - Anomaly detections (e.g., someone steals your credit card)
 
+It's all about understanding patterns
+
 """
+
