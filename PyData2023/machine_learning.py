@@ -14,5 +14,11 @@ Common uses of Machine Learning:
 
 It's all about understanding patterns
 
+
+
+Deep learning is about complet input (photos, audio, videos, and so on)
+
+
+
 """
 
