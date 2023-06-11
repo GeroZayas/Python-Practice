@@ -7,6 +7,7 @@ Deep learning -> multiple blocks, several algorithms put together
 Common uses of Machine Learning:
 
 - Computer Vision
+
 - Recommendation Engines (Netflix)
 - Natural language Processing
 - Time Series (stock predictions, sales, etc)
