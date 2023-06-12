@@ -7,3 +7,5 @@ ages = [57, 61, 57, 57, 58, 57, 61, 54, 68, 51, 49, 64, 50, 48, 65, 52, 56, 46, 
 heights_and_ages = heights + ages
 heights_and_ages_arr = np.array(heights_and_ages)
 heights_and_ages_arr = heights_and_ages_arr.reshape((2,45))
+
+print(heights_and_ages_arr[0])
