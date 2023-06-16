@@ -1,6 +1,18 @@
 from textblob import TextBlob
 
-text = "Generating realistic location data for users for testing or modeling simulations is a hard problem. Current approaches just create random locations inside a box, placing users in waterways or on top of buildings. This inability to make accurate, synthetic location data stifles a lot of innovative projects that require diverse and complex datasets to fuel their work."
+text = """LONDON -- A delegation of African leaders has arrived in Ukraine, kicking off the African Peace Initiative Mission in a bid to find a peaceful resolution to the war in Ukraine.
+
+The mission is headed by South African President Cyril Ramaphosa and comprised of leaders from Egypt, Senegal, Zambia and the Comoros.
+
+Uganda’s president, Yoweri Museveni, was due to join the delegation but had to bow out after testing positive for COVID. Uganda’s special envoy for special duties will now represent the East African nation.
+
+This is the first foreign delegation to meet with leaders of both Ukraine and Russia. Jean-Yves Olliver, a French businessman with a long history in peace negotiations in Africa, helped assemble the delegation.
+
+The delegation is also expected to discuss continued grain exports and the shipment of Russian fertilizers to help alleviate food insecurity on the continent. Up to 20 million people in the Horn of Africa could go hungry this year.
+
+"The African Peace Mission brings an African perspective and an appeal for a peace process to deliberations that are underway in various parts of the world and within different formations of nations on how to address the conflict in Ukraine and Russia," Ramaphosa said on the eve of the mission.
+
+He added, "This peace initiative should be seen as completing other peace initiatives that other parties have put forward. The strength of this mission is that African leaders will be engaging with both parties."""
 
 
 # print(text)
