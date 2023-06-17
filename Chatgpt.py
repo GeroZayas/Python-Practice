@@ -119,7 +119,7 @@ bye_string = "\nThis program is finished now. Have a great day"
 
 for word in bye_string.split():
     print()
-    print("          " + word)
+    print(f"          {word}")
     time.sleep(0.2)
 
 time.sleep(1)
