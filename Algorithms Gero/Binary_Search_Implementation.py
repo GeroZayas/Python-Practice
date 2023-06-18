@@ -1,9 +1,11 @@
 from random import choice
+
 # numbers = [randint(1,30) for _ in range(1,20)]
 
-numbers = [45,32,22,1,78,20,48]
+numbers = [45, 32, 22, 1, 78, 20, 48]
 
 print("This is numbers:\n", numbers, "\n\n")
+
 
 def quicksort(nums):
     if len(nums) <= 1:
@@ -28,7 +30,8 @@ sorted_numbers = quicksort(numbers)
 
 # IMPLEMENT BINARY SEARCH RECURSIVELY TO FIND A TARGET ELEMENT IN NUMBERS ARRAY
 
-def binary_search(nums:list, left, right, target:int):
+
+def binary_search(nums: list, left, right, target: int):
     if left > right:
         return f"Element {target} not found in array."
 
@@ -42,14 +45,14 @@ def binary_search(nums:list, left, right, target:int):
     else:
         return binary_search(nums, mid + 1, right, target)
 
+
 target = choice(sorted_numbers)
 
 print(f"\n This is target {target}")
 
-result = binary_search(sorted_numbers, 0, (len(sorted_numbers) -1), target)
+result = binary_search(sorted_numbers, 0, (len(sorted_numbers) - 1), target)
 
-print();print()
+print()
+print()
 
 print(result)
-
-    

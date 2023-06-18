@@ -2,13 +2,12 @@ import os
 import time
 from datetime import date
 
-import pyperclip
+#import pyperclip
 from dotenv import load_dotenv
-from markdown import markdown
 from rich import print
 
 load_dotenv()
-
+# some comment here
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 
 # DATE
@@ -34,8 +33,10 @@ def generate_response(prompt):
         stop=None,
         # temperature -> specifies the "creativity" of the language model.
         # A higher temperature value will result
-        # in more creative and varied responses, while a lower temperature value will result in more predictable and conservative responses.
-        temperature=0.5,
+        # in more creative and varied responses, while a 
+        # lower temperature value will result in 
+        # more predictable and conservative responses.
+        temperature=0.2,
     )
     return response.choices[0].text.strip()
 
@@ -78,7 +79,7 @@ while program_run:
     prompt_and_response = str(f"PROMPT:\n{prompt}\n\nANSWER:\n{response}")
 
     # copy response to clipboard
-    pyperclip.copy(prompt_and_response)
+    #pyperclip.copy(prompt_and_response)
 
     # PRINT RESPONSE
     # ----------------------------------------------------------------
@@ -88,7 +89,7 @@ while program_run:
     print(f"[bold yellow]{response}[/bold yellow]")
 
     print("-" * 60)  # separator
-    print("[bold blue]Copied to clipboard![bold blue]\n")
+#print("[bold blue]Copied to clipboard![bold blue]\n")
     # ----------------------------------------------------------------
 
     # # APPLY SOME MD FORMATTING

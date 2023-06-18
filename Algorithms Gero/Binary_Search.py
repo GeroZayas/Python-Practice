@@ -14,14 +14,14 @@ def quick_sort(nums: list) -> list:
     pivot = nums[0]
     left = [x for x in nums[1:] if x < pivot]
     right = [x for x in nums[1:] if x >= pivot]
-    
+
     return quick_sort(left) + [pivot] + quick_sort(right)
+
 
 sorted_numbers = quick_sort(numbers)
 print("sorted_numbers: ", sorted_numbers)
 
 # IMPLEMENT Binary Search (recursively) to find a target num
-
 
 
 def binary_search(nums, target):
@@ -35,7 +35,6 @@ def binary_search(nums, target):
         else:
             left = mid + 1
     return f"Element {target} not found in array"
-    
 
 
 target = 68
