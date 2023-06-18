@@ -1,6 +1,14 @@
-import pandas as pd
+def quicksort(arr:int)->int:
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[0]
+    left = [x for x in arr[1:] if x < pivot]
+    right = [x for x in arr[1:] if x >= pivot]
+    return quicksort(left) + [pivot] + quicksort(right)
 
-df = pd.read_csv("./Notebooks/2020_renda_neta_mitjana_per_llar.csv")
+from random import randint
 
-print(df)
-
+numbers = [randint(1,100) for _ in range(10)]
+print(f"This is numbers: {numbers}")
+sorted_numbers = quicksort(numbers)
+print(f"This is sorted numbers: {sorted_numbers}")
