@@ -1,14 +1,10 @@
-def quicksort(arr:int)->int:
-    if len(arr) <= 1:
-        return arr
-    pivot = arr[0]
-    left = [x for x in arr[1:] if x < pivot]
-    right = [x for x in arr[1:] if x >= pivot]
-    return quicksort(left) + [pivot] + quicksort(right)
+import math
+def divide_or_square(num:float)->float:
+    if num % 5 == 0:
+        return math.sqrt(num)
+    else:
+        return num % 5
 
-from random import randint
+print("Divide of square challege 1:")
+print(divide_or_square(10))
 
-numbers = [randint(1,100) for _ in range(10)]
-print(f"This is numbers: {numbers}")
-sorted_numbers = quicksort(numbers)
-print(f"This is sorted numbers: {sorted_numbers}")
