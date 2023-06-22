@@ -9,7 +9,14 @@ st.write(
          1. One
          2. Two
          3. Three
-         [Google](https://www.google.com)
+         4. [Google](https://www.google.com/search?q=Gero+Zayas)
+         5. Some code:
+            ```python
+            import streamlit as st
+            import pandas as pd
+            import numpy as np
+            ```
+            
          """
 )
 
