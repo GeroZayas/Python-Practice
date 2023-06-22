@@ -4,14 +4,30 @@
 
 # assert is_rich_great
 
+from faker import Faker 
+
+faker = Faker()
+
+paragraph = faker.paragraph(10) 
+
+# MARKDOWN = f"""
+# # HEllO
+# {paragraph}
+# ## My name is Gero
+# {paragraph}
+# ### I love Python!
+# {paragraph}
+# - 1
+# - 2
+# - 3 
+# """
+
 MARKDOWN = """
-# This is an h1
-
-Rich can do a pretty *decent* job of rendering markdown.
-
-1. This is a list item
-2. This is another list item
 """
+with open("./Advanced Python Stuff.md", 'r') as file:
+    MARKDOWN = file.read()
+
+
 from rich.console import Console
 from rich.markdown import Markdown
 
