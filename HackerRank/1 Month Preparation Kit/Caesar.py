@@ -4,10 +4,10 @@ def caesarCipher(s, k):
     rotated_string = ''
     capital = False
     for ch in s:
-        if ch.isupper() == True:
+        if ch.isupper() is True:
             capital = True
         ch = ch.lower()
-        if ch.isalpha() == True:
+        if ch.isalpha() is True:
             rot = alpha_list.index(ch) + k
             if rot > 25:
                 rot = rot % 26

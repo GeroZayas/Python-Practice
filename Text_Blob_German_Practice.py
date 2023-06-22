@@ -53,7 +53,7 @@ print("This is the words: \n")
 def the_words(text=None):
     global blob
     the_len = 0
-    if text == None:
+    if text is None:
         text = blob
 
     for word in blob.words:
@@ -108,7 +108,7 @@ def the_sentences():
 
 
 def the_sentiment(text=None):
-    if text == None:
+    if text is None:
         text = blob
     return print(blob.sentiment)
 

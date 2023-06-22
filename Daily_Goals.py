@@ -16,7 +16,7 @@ class Goal:
         self.difficulty = difficulty
 
     def is_completed(self, completed=False):
-        return "Goal completed" if completed == True else "Goal NOT completed YET"
+        return "Goal completed" if completed is True else "Goal NOT completed YET"
 
 
 list_of_goals = []

@@ -14,7 +14,7 @@ def findZigZagSequence(a, n):
     print(a)
 
     st = mid + 1
-    print('st', st, 'a[st]', a[st]); 
+    print('st', st, 'a[st]', a[st]) 
 
     ed = st + 1
     print('ed',ed, 'a[ed]', a[ed])
