@@ -1,5 +1,4 @@
 # install prettytable module
-import prettytable as pt
 
 # get random words from faker module
 import faker

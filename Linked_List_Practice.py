@@ -25,7 +25,7 @@ class LinkedList:
 
     def print_list(self):
         n = self.head
-        while n != None:
+        while n is not None:
             print(n.data, end=" => ")
             n = n.pointer
         print()

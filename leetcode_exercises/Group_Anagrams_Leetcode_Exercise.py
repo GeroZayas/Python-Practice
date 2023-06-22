@@ -1,7 +1,7 @@
 
 
 from typing import List
-from collections import defaultdict, Counter
+from collections import defaultdict
 
 def groupAnagrams(strs:List[str])->List[List[str]]:
     res = defaultdict(list)

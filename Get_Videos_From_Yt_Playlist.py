@@ -1,11 +1,7 @@
 # PURPOSE Get video names, links and duration from a given youtube playlist
 # ----------------------------------------------------------------
 from pytube import Playlist, YouTube
-import json
-from itertools import groupby
-from tqdm import tqdm
 from markdown import markdown
-import time
 import re
 
 playlist_link = input("Insert playlist: \n>>> ")

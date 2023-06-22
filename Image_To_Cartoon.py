@@ -1,5 +1,4 @@
 import cv2
-import numpy as np
 
 image = cv2.imread("images/mar_y_yo.jpg")
 
