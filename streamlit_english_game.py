@@ -1,16 +1,25 @@
 import streamlit as st
-from random import choice
-import csv
+from random import choice, sample
 import pandas as pd
 
+
+[theme]
+base="dark"
+primaryColor="#39ff10"
+secondaryBackgroundColor="#242b71"
+textColor="#fff616"
+font="monospace"
+
+
 # PAGE CONFIGURATION
-st.set_page_config(layout="centered", page_title="English Vocabulary Game")
+# st.set_page_config(layout="centered", page_title="English Vocabulary Game")
 
 # Insert Image in the Page
 from PIL import Image
 
 image = Image.open("./images/english.jpeg")
 st.image(image, width=400)
+
 # WELCOME MESSAGE
 st.markdown(
     """
@@ -26,34 +35,16 @@ total_rows = len(data)
 # Track user progress
 progress = st.empty()
 
-# Get 4 random rows from the DataFrame
-random_rows = data.sample(n=4)
+# Initialize variables
+correct_count = 0
 
-question_row = random_rows.sample()
-
-# Select a random row to ask the question
-question_row = random_rows.sample()
-
-# Get the Spanish word from the selected row
-spanish_word = question_row["Spanish"].values[0]
-
-# Get the corresponding English word from the selected row
-correct_english_word = question_row["English"].values[0]
+# Create a list of English words for the question
+question_words = sample(data["English"].tolist(), 4)
 
 # Display the question
-st.write("What is '" + spanish_word + "' in English?")
+spanish_word = choice(data["Spanish"].tolist())
 
-message = ""
-st.markdown(f"{message}")
+st.write("### What is *'" + spanish_word + "'* in English?")
 
-# Create buttons for the English words
-for index, row in random_rows.iterrows():
-    english_word = row["English"]
-    if st.button(english_word):
-        # Check if the selected word is correct
-        if english_word == correct_english_word:
-            st.write("CORRECT")
-            message = "CORRECT"
-        else:
-            st.write("INCORRECT")
-            st.write("The correct answer is: " + correct_english_word)
+buttons = [st.button(word) for word in question_words]
+
