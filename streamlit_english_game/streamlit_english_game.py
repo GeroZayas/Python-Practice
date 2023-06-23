@@ -27,15 +27,41 @@ total_rows = len(data)
 progress = st.empty()
 
 # Initialize variables
-correct_count = 0
 
 # Create a list of English words for the question
 question_words = sample(data["English"].tolist(), 4)
 
-# Display the question
-spanish_word = choice(data["Spanish"].tolist())
+current_word = choice(question_words)
+
+spanish_word = data.iloc[data[data["English"] == current_word].index[0]]["Spanish"]
 
 st.write("### What is *'" + spanish_word + "'* in English?")
 
-buttons = [st.button(word) for word in question_words]
+# create buttons with the 4 options
 
+button_container = st.container()
+
+with button_container:    
+    col1, col2 = st.columns(2)
+    with col1:
+        button1 = st.button(question_words[0])
+        button2 = st.button(question_words[1])
+    with col2:
+        button3 = st.button(question_words[2])
+        button4 = st.button(question_words[3])
+
+# get value from the button pressed
+user_answer = None
+
+if button1:
+    user_answer = question_words[0]
+elif button2:
+    user_answer = question_words[1]
+elif button3:
+    user_answer = question_words[2]
+elif button4:
+    user_answer = question_words[3]
+
+
+if user_answer == current_word:
+    button_container.write("Correct!")

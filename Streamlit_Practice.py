@@ -1,23 +1,11 @@
 import streamlit as st
+from random import choice, sample
 
-# change theme to dark
-st.set_page_config(layout="centered", page_title="Streamlit Practice")
-st.bar_chart({"Gero": 11, "Mar": 27, "Elisa": 17})
+data = {
+    "1": "one",
+    "2": "two",
+    "3": "three",
+    "4": "four",
+}
 
-message = """
-# My name is ***Gero***
-### This is What I Like a lot:
-- Programming 
-- Reading
-- Learning Languages
-"""
-
-
-st.markdown(message)
-st.markdown(
-    """
-# Advanced Python Stuff
-
----
-            """
-)
+question_container = st.container()
