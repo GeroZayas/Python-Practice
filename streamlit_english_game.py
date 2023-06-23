@@ -1,5 +1,6 @@
 import streamlit as st
 from random import choice
+import csv
 
 # PAGE CONFIGURATION
 st.set_page_config(layout="centered", page_title="English Vocabulary Game")
@@ -17,10 +18,16 @@ st.markdown(
             """
 )
 
-words = open("./words.txt", "r").read().split("\n")
+spanish_words = []
 
-"## How do you say?"
+with open("./words.csv", "r", newline='') as csvfile:
+    reader = csv.DictReader(csvfile)
+    for row in reader:
+        spanish_words.append(row["spanish"])
 
-
-for word in words:
-    st.button(word,help="Click to see the translation")
+question = st.write(f"What is the translation of ***{choice(spanish_words)}*** in Spanish?")
+# READ CSV FILE
+with open("./words.csv", "r", newline='') as csvfile:
+    reader = csv.DictReader(csvfile)
+    for row in reader:
+        answer = st.button(row["english"])
