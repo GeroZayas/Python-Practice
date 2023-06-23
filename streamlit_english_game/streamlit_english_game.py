@@ -2,15 +2,6 @@ import streamlit as st
 from random import choice, sample
 import pandas as pd
 
-
-[theme]
-base="dark"
-primaryColor="#39ff10"
-secondaryBackgroundColor="#242b71"
-textColor="#fff616"
-font="monospace"
-
-
 # PAGE CONFIGURATION
 # st.set_page_config(layout="centered", page_title="English Vocabulary Game")
 
