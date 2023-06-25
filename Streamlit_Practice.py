@@ -3,10 +3,7 @@ import streamlit as st
 from random import choice, sample
 import pandas as pd
 import altair as alt
-<<<<<<< HEAD
-=======
 import numpy as np
->>>>>>> ffefabe1 (Initial)
 
 st.title("Streamlit Practice")
 
@@ -18,45 +15,43 @@ data = {
 }
 question_container = st.container()
 
-st.write('### Hello, *World!* :sunglasses:')
+st.write("### Hello, *World!* :sunglasses:")
 
-df = pd.DataFrame({
-     'Name': ["Geronimo", "Pocahontas", "Sitting Bull", "Crazy Horse"],
-     'Job': ["Doctor", "Lawyer", "Teacher", "Engineer"]
-     })
-st.write(df)    
+df = pd.DataFrame(
+    {
+        "Name": ["Geronimo", "Pocahontas", "Sitting Bull", "Crazy Horse"],
+        "Job": ["Doctor", "Lawyer", "Teacher", "Engineer"],
+    }
+)
+st.write(df)
 
 # SLIDER
-st.subheader('Slider')
+st.subheader("Slider")
 
-age = st.slider('How old are you?', 0, 130, 25)
-st.write("I'm ", age, 'years old')
+age = st.slider("How old are you?", 0, 130, 25)
+st.write("I'm ", age, "years old")
 
 # Example 2
 
-st.subheader('Range slider')
+st.subheader("Range slider")
 
-values = st.slider(
-     'Select a range of values',
-     0.0, 100.0, (25.0, 75.0))
-st.write('Values:', values)
+values = st.slider("Select a range of values", 0.0, 100.0, (25.0, 75.0))
+st.write("Values:", values)
 
 # Example 3
 
-st.subheader('Range time slider')
+st.subheader("Range time slider")
 
 appointment = st.slider(
-     "Schedule your appointment:",
-     value=(time(11, 30), time(12, 45)))
+    "Schedule your appointment:", value=(time(11, 30), time(12, 45))
+)
 st.write("You're scheduled for:", appointment)
 
 # Example 4
 
-st.subheader('Datetime slider')
+st.subheader("Datetime slider")
 
 start_time = st.slider(
-     "When do you start?",
-     value=datetime(2020, 1, 1, 9, 30),
-     format="MM/DD/YY - hh:mm")
+    "When do you start?", value=datetime(2020, 1, 1, 9, 30), format="MM/DD/YY - hh:mm"
+)
 st.write("Start time:", start_time)
-
