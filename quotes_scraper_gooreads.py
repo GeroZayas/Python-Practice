@@ -6,7 +6,8 @@ from scrapy.selector import Selector
 
 class GoodreadsSpider(scrapy.Spider):
     name = 'goodreads'
-    start_urls = ['https://www.goodreads.com/work/quotes/69320126-the-madness-of-crowds']
+    start_url = input("Enter the URL of the book you want to scrape: ") 
+    start_urls = [start_url]
     output_file = 'quotes_{}.txt'
     current_page = 1
     max_retries = 4
