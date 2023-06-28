@@ -70,6 +70,7 @@ def main():
                     f"<h6 style='color: #4a008f;display: inline;'>{books[i]}</h6>",
                     unsafe_allow_html=True,
                 )
+                st.markdown("<br>", unsafe_allow_html=True)
                 if (i + 1) % 15 == 0 and i != len(quotes) - 1:
                     st.markdown(separator)
 
