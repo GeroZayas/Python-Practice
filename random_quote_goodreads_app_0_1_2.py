@@ -44,9 +44,9 @@ def main():
         "Matthew Syed": "https://www.goodreads.com/author/quotes/3414480.Matthew_Syed",
     }
     for author, url in suggested_quotes.items():
-        st.sidebar.write(author)
-        st.sidebar.write(url)
-        st.sidebar.write("---")
+        # st.sidebar.markdown(f"Goodreads: {author}")
+        st.sidebar.markdown(f"[{author}]({url})\n---")
+        # st.sidebar.write("---")
 
     st.title("Goodreads Author Quotes Scraper")
     st.write("Enter the Goodreads author quotes page URL:")
