@@ -1,26 +1,26 @@
 import requests
-import streamlit as st
 from bs4 import BeautifulSoup
+import streamlit as st
 
-# Function to fetch the quote from the website
-def get_quote():
-    url = "https://www.goodreads.com/work/quotes/"
-    response = requests.get(url)
+def scrape_quotes(page_url):
+    response = requests.get(page_url)
     soup = BeautifulSoup(response.text, 'html.parser')
-    quote_div = soup.find('div', class_='leftContainer mediumText')
-    return quote_div.find('p').text.strip()
+    quotes = soup.find_all('div', class_='quoteText')
+    return [quote.get_text(strip=True) for quote in quotes]
 
-
-
-# Main Streamlit app
 def main():
-    st.markdown("<h1 style='text-align: center; color: darkred;'>Quote of the Day</h1>", unsafe_allow_html=True)
-    st.markdown("<h2 style='text-align: center; color: #555;'>Click below to get a new quote:</h2>", unsafe_allow_html=True)
-    
-    # Button to fetch and display the quote
-    if st.button("Get Quote"):
-        quote = get_quote()
-        st.markdown(f"<h2 style='text-align: center; color: #111;'>{quote}</h2>", unsafe_allow_html=True)
+    st.title("Goodreads Author Quotes Scraper")
+    st.write("Enter the Goodreads author quotes page URL:")
+
+    page_url = st.text_input("Page URL", "")
+    if st.button("Scrape Quotes"):
+        if page_url:
+            quotes = scrape_quotes(page_url)
+            st.write("Scraped Quotes:")
+            for quote in quotes:
+                st.write(quote)
+        else:
+            st.write("Please enter a valid page URL.")
 
 if __name__ == "__main__":
     main()
