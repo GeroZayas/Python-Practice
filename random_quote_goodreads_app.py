@@ -35,16 +35,21 @@ def main():
     page_url = st.text_input("Page URL", "")
     if st.button("Scrape Quotes"):
         if page_url:
-            quotes = scrape_quotes(page_url)
-            st.write("Scraped Quotes:")
-            st.write(f"Total Quotes: {len(quotes)}")
-
-            separator = "\n---\n"
-            quotes_with_separator = separator.join(quotes)
-            quotes_markdown = "\n".join(f"### {quote}" for quote in quotes_with_separator.split(separator))
-            st.markdown(quotes_markdown)
+            _extracted_from_main_19(page_url)
         else:
             st.write("Please enter a valid page URL.")
+
+
+# TODO Rename this here and in `main`
+def _extracted_from_main_19(page_url):
+    quotes = scrape_quotes(page_url)
+    st.write("Scraped Quotes:")
+    st.write(f"Total Quotes: {len(quotes)}")
+
+    separator = "\n---\n"
+    quotes_with_separator = separator.join(quotes)
+    quotes_markdown = "\n".join(f"### {quote}" for quote in quotes_with_separator.split(separator))
+    st.markdown(quotes_markdown)
 
 if __name__ == "__main__":
     main()
