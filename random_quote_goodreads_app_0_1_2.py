@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import streamlit as st
-import random
+
 
 
 @st.cache_data()
@@ -21,9 +21,9 @@ def scrape_quotes(page_url):
             break
 
         for quote_div, author_span, book_a in zip(quotes_divs, authors_span, books_a):
-            quote_text = ''
+            quote_text = ""
             for elem in quote_div.contents:
-                if elem.name == 'br':
+                if elem.name == "br":
                     break
                 if isinstance(elem, str):
                     quote_text += elem.strip()
@@ -34,7 +34,6 @@ def scrape_quotes(page_url):
         page_num += 1
 
     return quotes, authors, books
-
 
 
 def main():
@@ -56,7 +55,6 @@ def main():
     if st.button("Scrape Quotes"):
         if page_url:
             quotes, authors, books = scrape_quotes(page_url)
-            # st.write("Scraped Quotes:")
             st.write(f"Total Quotes: {len(quotes)}")
             separator = "\n---\n"
 
@@ -73,7 +71,6 @@ def main():
                 st.markdown("<br>", unsafe_allow_html=True)
                 if (i + 1) % 15 == 0 and i != len(quotes) - 1:
                     st.markdown(separator)
-
         else:
             st.write("Please enter a valid page URL.")
 
