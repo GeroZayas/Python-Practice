@@ -6,10 +6,7 @@ import streamlit as st
 def scrape_quotes(page_url):
     quotes = []
     page_num = 1
-    while True:
-        if page_num > 15:
-            break
-
+    while page_num <= 15:
         response = requests.get(f"{page_url}?page={page_num}")
         soup = BeautifulSoup(response.text, 'html.parser')
         quotes_divs = soup.find_all('div', class_='quoteText')
