@@ -7,10 +7,7 @@ import random
 def scrape_quotes(page_url):
     quotes = []
     page_num = 1
-    while True:
-        if page_num > 15:
-            break
-
+    while page_num <= 15:
         response = requests.get(f"{page_url}?page={page_num}")
         soup = BeautifulSoup(response.text, 'html.parser')
         quotes_divs = soup.find_all('div', class_='quoteText')
@@ -50,10 +47,10 @@ def _extracted_from_main_19(page_url):
     st.write("Scraped Quotes:")
     st.write(f"Total Quotes: {len(quotes)}")
     
-    # FIXME: This is not working
-    if st.button("Random Quote"):
-        random_quote = random.choice(quotes)
-        st.markdown(f"### {random_quote}")
+    # # FIXME: This is not working
+    # if st.button("Random Quote"):
+    #     random_quote = random.choice(quotes)
+    #     st.markdown(f"### {random_quote}")
     
     # TODO: Add a button to save the quotes to a file markdown file and txt file
 
