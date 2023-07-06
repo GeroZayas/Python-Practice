@@ -1,7 +1,6 @@
 #################################
 # STREAMLIT COMPONENTS TUTORIAL #
 #################################
-
 import streamlit as st
 import pandas as pd
 import pandas_profiling   # noqa: F401
