@@ -1,7 +1,6 @@
 .vscode/settings.json
 news_scraped/
 lyrics_from_viasona/
-new_env/
 Looked Up Catalan words.txt
 catalan_phrases.txt
 my_data.csv
@@ -32,3 +31,14 @@ make_gifs_practice/images/IMG_20210413_171259.jpg
 TEST.md
 ⚛️ CURSO DE REACT 2023.md
 datasets/youtube_data_gero.zip
+new_env/
+env/
+__pycache__/
+.vscode/
+.jupyter/
+.ipynb_checkpoints/
+*.png
+*.txt
+*.mp3
+.mypy_cache/
+.ruff_cache/
