@@ -2,6 +2,7 @@ import streamlit as st
 from datetime import time, datetime
 import numpy as np
 import pandas as pd
+import time as tm
 
 ################# BUTTON #############################
 
@@ -121,4 +122,24 @@ st.latex(
 st.write("---")
 
 ################# SECRETS ############################
-st.title("Secrets")
+st.header("Secrets")
+st.write(st.secrets["message"])
+
+
+st.write("---")
+
+################# PROGRESS ############################
+st.header("st.progress")
+
+with st.expander("About this app"):
+    st.write(
+        "You can now display the progress of your calculations in a Streamlit app with the `st.progress` command."  # noqa: E501
+    )
+
+my_bar = st.progress(0)
+
+for percent_complete in range(100):
+    tm.sleep(0.05)
+    my_bar.progress(percent_complete + 1)
+
+st.balloons()
