@@ -95,10 +95,15 @@ start_time = st.slider(
 st.write("Start time:", start_time)
 
 st.write("---")
-################# LINE CHART ###########################
+
+################# LINE CHART ############################
 
 st.header("Line chart")
 
 chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["a", "b", "c"])
 
 st.line_chart(chart_data)
+
+st.write("---")
+
+#################            ############################
