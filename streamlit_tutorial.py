@@ -201,8 +201,10 @@ st.write("---")
 
 ################# INFO and EXPANDER ############################
 
-
+st.header("st.info")
 st.info('This is a purely informational message', icon="📡")
+
+st.header("st.expander")
 with st.expander('See explanation'):
     st.write("""
         The chart above shows some numbers I picked for you.
