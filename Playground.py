@@ -11,3 +11,18 @@ numbers = [5, 3, 2, 1, 4]
 
 res = quicksort(numbers)
 print(f"==>> res: {res}")
+
+def binary_search(arr, target):
+    if len(arr) == 0:
+        return -1
+    mid = len(arr) // 2
+    if arr[mid] == target:
+        return mid
+    elif arr[mid] < target:
+        return binary_search(arr[mid + 1:], target)
+    else:
+        return binary_search(arr[:mid], target)
+
+res = binary_search(res, 3)
+print(f"==>> res: {res}")
+
