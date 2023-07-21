@@ -14,7 +14,7 @@ def goodbye(
     formal: bool = False,
 ):
     if formal:
-        print(f"Good bye MR. {name}. Have a good day")
+        print(f"Good bye MR. {name}. Have a great day")
     else:
         print("Good bye motherlover")
         
