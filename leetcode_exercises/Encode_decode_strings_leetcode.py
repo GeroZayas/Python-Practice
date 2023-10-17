@@ -1,9 +1,6 @@
 
-def encode(strs:list[str])->str:
-	res = ''
-	for s in strs:
-		res += str(len(s)) + '#' + s
-	return res
+def encode(strs:list[str]) -> str:
+	return ''.join(f'{len(s)}#{s}' for s in strs)
 
 x = encode(['gero', 'zayas'])
 
