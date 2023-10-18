@@ -2,6 +2,7 @@ from typing import List
 
 numbers = [19, 12, 20, 15, 22, 17, 18, 16, 29]
 
+
 def quick_sort(nums: List[int]) -> List[int]:
     if len(nums) <= 1:
         return nums
@@ -19,27 +20,28 @@ print("quick_sort(numbers): ", quick_sort(numbers))
 # Happy Path Tests
 def test_quick_sort_happy_path():
     """
-    # Arrange
-    nums = [4, 2, 7, 1, 9]
+# Arrange
+nums = [4, 2, 7, 1, 9]
 
-    # Act
-    sorted_nums = quick_sort(nums)
+# Act
+sorted_nums = quick_sort(nums)
 
-    # Assert
-    assert sorted_nums == [1, 2, 4, 7, 9]
+# Assert
+assert sorted_nums == [1, 2, 4, 7, 9]
+
 
 def test_quick_sort_empty_list():
     """
-    # Arrange
-    nums = []
+        # Arrange
+        nums = []
 
-    # Act
-    sorted_nums = quick_sort(nums)
+        # Act
+        sorted_nums = quick_sort(nums)
 
-    # Assert
-    assert sorted_nums == []
+        # Assert
+        assert sorted_nums == []
 
-def test_quick_sort_single_element():
+    def test_quick_sort_single_element():
     """
     # Arrange
     nums = [5]
@@ -50,19 +52,20 @@ def test_quick_sort_single_element():
     # Assert
     assert sorted_nums == [5]
 
+
 # Edge Cases
 def test_quick_sort_duplicate_elements():
     """
-    # Arrange
-    nums = [3, 2, 1, 2, 3]
+        # Arrange
+        nums = [3, 2, 1, 2, 3]
 
-    # Act
-    sorted_nums = quick_sort(nums)
+        # Act
+        sorted_nums = quick_sort(nums)
 
-    # Assert
-    assert sorted_nums == [1, 2, 2, 3, 3]
+        # Assert
+        assert sorted_nums == [1, 2, 2, 3, 3]
 
-def test_quick_sort_already_sorted():
+    def test_quick_sort_already_sorted():
     """
     # Arrange
     nums = [1, 2, 3, 4, 5]
@@ -71,4 +74,3 @@ def test_quick_sort_already_sorted():
     sorted_nums = quick_sort(nums)
 
     # Assert
-   
