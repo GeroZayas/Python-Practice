@@ -1,11 +1,7 @@
 import itertools
 from random import randint
 
-num_list = []
-
-for num in range(10):
-    num_list.append(randint(1, 2000))
-
+num_list = [randint(1, 2000) for _ in range(10)]
 print(num_list)
 
 
