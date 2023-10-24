@@ -11,3 +11,9 @@ print(f"==>> lower_letters: {lower_letters}")
 ##########################################
 
 the_digits = (string.digits)
+print(f"==>> the_digits: {the_digits}")
+
+##########################################
+
+puntuation = (string.punctuation)
+print(f"==>> puntuation: {puntuation}")
