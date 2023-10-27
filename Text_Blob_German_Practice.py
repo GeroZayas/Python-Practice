@@ -1,8 +1,6 @@
 import os
 from enum import Enum
 
-os.system("cls")
-
 
 from textblob_de import TextBlobDE
 
