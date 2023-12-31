@@ -1,0 +1,58 @@
+from time import sleep
+
+"""
+Let's create a class to show how to use getters and setters in Python
+"""
+
+class Human:
+    def __init__(self, name, age, job):
+        self._name = name
+        self._age = age
+        self._job = job
+
+    @property
+    def name(self):
+        """The name property."""
+        return self._name
+    
+    @name.setter
+    def name(self, value):
+        if not type(name) == str:
+            raise ValueError("Name has to be str")
+        self._name = value
+
+
+    @property
+    def age(self):
+        """The age property."""
+        return self._age
+    
+    @age.setter
+    def age(self, value):
+        if not type(age) == int:
+            raise ValueError("Age has to be int")
+        self._age = value
+
+    @property
+    def job(self):
+        """The job property."""
+        return self._job
+    
+    @job.setter
+    def job(self, value):
+        if not type(job) == str:
+            raise ValueError("Job has to be str")
+        self._job = value
+
+person1 = Human(name="Gero", age=32, job="Programmer")
+
+print(person1.name, person1.age, person1.job)
+
+# change the values to incorrect typed ones
+person1.name, person1.age, person1.job = 45, "viejito", True
+
+print("Values have changed now")
+
+
+print(person1.name, person1.age, person1.job)
+
