@@ -17,27 +17,27 @@ today = date.today()
 # OPENAI IMPORT AND INIT
 # ----------------------------------------------------------------
 
-import openai
+from openai import OpenAI
 
-openai.api_key = OPENAI_API_KEY
+client = OpenAI(api_key=OPENAI_API_KEY)
+
+
 
 
 # FUNCTION DEFINITIONS
 # ----------------------------------------------------------------
 def generate_response(prompt):
-    response = openai.Completion.create(
-        engine="text-davinci-003",
-        prompt=prompt,
-        max_tokens=2000,
-        n=1,  # number of responses
-        stop=None,
-        # temperature -> specifies the "creativity" of the language model.
-        # A higher temperature value will result
-        # in more creative and varied responses, while a 
-        # lower temperature value will result in 
-        # more predictable and conservative responses.
-        temperature=0.2,
-    )
+    response = client.completions.create(engine="text-davinci-003",
+    prompt=prompt,
+    max_tokens=2000,
+    n=1,  # number of responses
+    stop=None,
+    # temperature -> specifies the "creativity" of the language model.
+    # A higher temperature value will result
+    # in more creative and varied responses, while a 
+    # lower temperature value will result in 
+    # more predictable and conservative responses.
+    temperature=0.2)
     return response.choices[0].text.strip()
 
 
