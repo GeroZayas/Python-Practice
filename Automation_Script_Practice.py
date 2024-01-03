@@ -14,7 +14,6 @@ program_run = True
 
 
 while program_run:
-
     # Receives imput form as command
     user_command = input("insert command e.g. [o g] or [o z] or h for help:")
 
