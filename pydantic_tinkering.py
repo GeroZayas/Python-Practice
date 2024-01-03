@@ -1,4 +1,5 @@
 from pydantic import BaseModel, ValidationError
+from pprint import PrettyPrinter
 
 
 class Address(BaseModel):
@@ -35,8 +36,7 @@ person2.is_active = True
 print(person2)
 
 person_3_dict = {
-    "name": "Fernand",
-    "age": 56,
+    "age": "old",
     "is_active": True,
     "adress": {
         "street": "Provenca",
@@ -48,6 +48,9 @@ try:
     person3 = Person(**person_3_dict)
     print(person3)
 except ValidationError as e:
-    print(e)
+    # print("Exception as string:")
+    # print(e)
+    print("Exception as json:")
+    PrettyPrinter(indent=8).pprint(e.json())
 
 print(person1.age)
