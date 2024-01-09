@@ -4,11 +4,11 @@
 
 # assert is_rich_great
 
-from faker import Faker 
+from faker import Faker
 
 faker = Faker()
 
-paragraph = faker.paragraph(10) 
+paragraph = faker.paragraph(10)
 
 # MARKDOWN = f"""
 # # HEllO
@@ -19,12 +19,12 @@ paragraph = faker.paragraph(10)
 # {paragraph}
 # - 1
 # - 2
-# - 3 
+# - 3
 # """
 
 MARKDOWN = """
 """
-with open("./Advanced Python Stuff.md", 'r') as file:
+with open("./Advanced Python Stuff.md", "r") as file:
     MARKDOWN = file.read()
 
 
