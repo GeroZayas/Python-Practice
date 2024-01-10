@@ -32,7 +32,7 @@ def binarysearch(nums, target):
             right = mid - 1
         else:
             left = mid + 1
-            
+
     return f"Target {target} not found in array"
 
 r = binarysearch(sorted_numbers, target)
