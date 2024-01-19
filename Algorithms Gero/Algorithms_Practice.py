@@ -5,6 +5,7 @@ numbers = [5, 4, 7, 6, 9, 2, 1, 3, 8]
 print("\nThis is our array of numbers:\n")
 print(numbers)
 
+
 #########################################################################
 # Insertion Sort
 def insertion_sort(nums: list) -> list:
@@ -24,6 +25,7 @@ def insertion_sort(nums: list) -> list:
 
 
 print("\nInsertion sort:", insertion_sort(numbers))
+
 
 #########################################################################
 # Quick Sort
@@ -48,6 +50,7 @@ def quick_sort(nums: list) -> list:
 sorted_numbers = quick_sort(numbers)
 
 print("\nQuick sort:", quick_sort(numbers))
+
 
 #########################################################################
 # Merge Sort
@@ -86,6 +89,7 @@ def merge(left, right):
 
 print("\nMerge sort:", merge_sort(numbers))
 
+
 #########################################################################
 # Selection Sort
 def selection_sort(nums: list):
@@ -102,6 +106,7 @@ def selection_sort(nums: list):
 
 
 print("\nSelection sort:", selection_sort(numbers))
+
 
 #########################################################################
 # Binary Search Sort
