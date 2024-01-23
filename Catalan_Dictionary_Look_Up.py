@@ -34,7 +34,8 @@ def lookup_word_save_txt_file(word=None):
     soup = BeautifulSoup(word_definition, "html.parser")
     # print(soup.prettify)
 
-    # word_definition = soup.find_all(name="div", attrs={"class": "entryLa trans clickable"})
+    # word_definition = soup.find_all(name="div", 
+    # attrs={"class": "entryLa trans clickable"})
 
     word_not_found = soup.find(name="div", attrs={"id": "noTransFound"})
 

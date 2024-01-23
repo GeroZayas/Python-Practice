@@ -6,7 +6,6 @@ The user inputs a list of activities and the programs shows them only one at ran
 """
 from dataclasses import dataclass
 
-
 @dataclass
 class Goal:
     def __init__(self, title, dealine=None, area=None, difficulty=None):
