@@ -5,6 +5,7 @@ class TreeNode:
     def __init__(self, data):
         self.data = data
         self.children = []
+        
     def __repr__(self):
         if not isinstance(self.data, str):
             self.data = str(self.data)
@@ -81,23 +82,52 @@ print("This is BFS Traversal:")
 separator()
 print(bfs_traversal(root))
 
+# -------------------------------------------
+
 # SEARCH in N-ary Tree
 
 separator()
 
-# DFS 
-def depth_first_search(root):
+# BFS
+def bfs_search(root):
     if not root:
         return None
     queue = deque([root])
+    counter = 0
     while queue:
+        counter +=1
         node = queue.popleft()
         if node.data == target:
-            return f"Target found in node {node}"
+            return f"Target found in node {node}, counter {counter}"
         for child in node.children:
             queue.append(child)
 
 target = 'MMA'
 print(f"This is BFS search of target {target}")
 
-print(depth_first_search(root))
+print(bfs_search(root))
+
+separator()
+
+# -------------------------------------------
+
+# DFS 
+def dfs_search(root):
+    if not root:
+        return None
+    stack = [root]
+    counter = 0
+    while stack:
+        # print("This is stack",stack)
+        counter +=1
+        node = stack.pop()
+        if node.data == target:
+            return f"Target found in node {node}, counter {counter}"
+        for child in node.children:
+            stack.append(child)
+
+print(f"This is DFS search of target {target}")
+
+print(dfs_search(root))
+
+
