@@ -1,3 +1,4 @@
+from collections import deque
 # BINARY TREE IMPLEMENTATION
 class TreeNode:
     def __init__(self, data):
@@ -55,3 +56,38 @@ def preorder_dfs(root):
 
 print(preorder_dfs(root))
 
+
+
+# BFS traversal
+def bfs_traversal(root):
+    if root:
+        queue = deque([root])
+        while queue:
+            node = queue.popleft()
+            print(node.data)
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+
+separator()
+print("BFS traversal:")
+separator()
+print(bfs_traversal(root))
+
+def reverse_bfs_traversal(root):
+    if root:
+        queue = deque([root])
+        reverse = deque()
+        while queue:
+            node = queue.popleft()
+            reverse.appendleft(node.data)
+            #print(node.data)
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+    return " ".join(reverse)
+
+separator()
+print(reverse_bfs_traversal(root))
