@@ -114,3 +114,35 @@ inorder(root_2)
 separator()
 print("BFS Traversal Root 2")
 bfs_traversal(root_2)
+
+# Recursive function to search in a given BST
+def search(root, key, parent):
+ 
+    # if the key is not present in the key
+    if root is None:
+        print('Key not found')
+        return
+ 
+    # if the key is found
+    if root.data == key:
+ 
+        if parent is None:
+            print(f'The node with key {key} is root node')
+        elif key < parent.data:
+            print('The given key is the left node of the node with key', parent.data)
+        else:
+            print('The given key is the right node of the node with key', parent.data)
+ 
+        return
+ 
+    # if the given key is less than the root node, recur for the left subtree;
+    # otherwise, recur for the right subtree
+ 
+    if key < root.data:
+        search(root.left, key, root)
+    else:
+        search(root.right, key, root)
+
+separator()
+print("SEARCH")
+search(root_2, 16, None)
