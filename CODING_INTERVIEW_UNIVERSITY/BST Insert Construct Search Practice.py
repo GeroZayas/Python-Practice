@@ -8,9 +8,9 @@ class TreeNode:
 
 # DEFINE THE **INSERT** FUNCTION
 def insert(root, key):
-	"""
-	Insert key in Tree
-	"""
+    """
+    Insert key in Tree
+    """
     if not root:
         return TreeNode(key)
     if key < root.data:
@@ -22,9 +22,9 @@ def insert(root, key):
 
 # DEFINE THE **CONSTRUCTOR of BST** FUNCTION
 def constructBST(keys):
-	"""
-	Construct Binary Search Tree based on given keys
-	"""
+    """
+    Construct Binary Search Tree based on given keys
+    """
     root = None
     for key in keys:
         root = insert(root, key)
@@ -42,10 +42,10 @@ root = constructBST(keys)
 # DEFINE the Breadth First Search function
 def BFS(root):
     """
-	Breadth First Traversal of Tree
-	
-	root: TreeNode
-	"""
+    Breadth First Traversal of Tree
+
+    root: TreeNode
+    """
     if not root:
         return
     queue = [root]
@@ -60,9 +60,9 @@ def BFS(root):
 
 # DEFINE the In Order DFS Traversal function
 def inorder_traversal(root):
-	"""
-	In Order Traversal of Tree
-	"""
+    """
+    In Order Traversal of Tree
+    """
     if root:
         inorder_traversal(root.left)
         print(root.data, end=" ")
@@ -84,9 +84,9 @@ print("Search for key:")
 
 # DEFINE the SEARCH for KEY in the BST function
 def search(root, key, parent):
-	"""
-	Search for given key in Binary Search Tree
-	"""
+    """
+    Search for given key in Binary Search Tree
+    """
     if root is None:
         print("Key not found")
         return
@@ -95,13 +95,11 @@ def search(root, key, parent):
             print(f"The node with the key {key} is root node")
         elif key < parent.data:
             print(
-                f"The node with the key {key} is the left \
-node of the node with key {parent.data}"
+                f"The node with the key {key} is the left node of the node with key {parent.data}"
             )
         else:
             print(
-                f"The node with the key {key} is the right \
-node of the node with key {parent.data}"
+                f"The node with the key {key} is the right node of the node with key {parent.data}"
             )
         return
     if key < root.data:
