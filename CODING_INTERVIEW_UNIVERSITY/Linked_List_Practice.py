@@ -8,12 +8,14 @@ class LinkedList:
                 node.next = Node(data=elem)
                 node = node.next
 
+    # =============ITERATOR=================
     def __iter__(self):
         node = self.head
         while node is not None:
             yield node
             node = node.next
 
+    # =============INSERT NODE BEGINNING=================
     # inserting nodes at the beginning
     def add_first(self, node):
         # the new node points to the old self.head
@@ -21,6 +23,7 @@ class LinkedList:
         # the inserted node is the new head now
         self.head = node
 
+    # =============INSERT NODE END=================
     # inserting nodes at the end
     def add_last(self, node):
         if self.head is None:
@@ -33,6 +36,7 @@ class LinkedList:
         # add the new node as the next value of that current_node
         current_node.next = node
 
+    # =============INSERT NODE AFTER ANOTHER NODE=================
     # add after a particular node
     def add_after(self, target_node_data, new_node):
         if self.head is None:
@@ -44,6 +48,7 @@ class LinkedList:
                 return
         raise Exception(f"Node with data {target_node_data} not found")
 
+    # =============INSERT NODE BEFORE ANOTHER NODE=================
     # add before a particular node
     def add_before(self, target_node_data, new_node):
         if self.head is None:
@@ -67,6 +72,7 @@ class LinkedList:
 
         raise Exception(f"Node with data {target_node_data} not found")
 
+    # =============REMOVE NODE=================
     # remove node
     def remove_node(self, target_node_data):
         if self.head is None:
@@ -85,6 +91,7 @@ class LinkedList:
 
         raise Exception(f"Node with data {target_node_data} not found")
 
+    # =============REPR LIST=================
     def __repr__(self) -> str:
         node = self.head
         nodes = []
@@ -95,6 +102,7 @@ class LinkedList:
         return " -> ".join(nodes)
 
 
+# ========================================================#
 class Node:
     def __init__(self, data):
         self.data = data
@@ -102,3 +110,6 @@ class Node:
 
     def __repr__(self) -> str:
         return self.data
+
+
+# ========================================================#
