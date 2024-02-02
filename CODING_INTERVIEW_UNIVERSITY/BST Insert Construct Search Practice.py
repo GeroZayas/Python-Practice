@@ -119,3 +119,21 @@ search(root, key, parent=None)
 key = 9
 
 search(root, key, parent=None)
+
+key = 8
+
+search(root, key, parent=None)
+
+
+key = 3
+
+search(root, key, parent=None)
+
+print("*" * 40)
+
+print()
+print("Search in For Loop on each key:")
+for key in keys:
+    search(root, key, parent=None)
+
+print("*" * 40)
