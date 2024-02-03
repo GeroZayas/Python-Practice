@@ -1,4 +1,6 @@
 from collections import deque
+
+
 # BINARY TREE IMPLEMENTATION
 class TreeNode:
     def __init__(self, data):
@@ -13,11 +15,11 @@ class TreeNode:
 
 
 # Initialize the Tree
-root = TreeNode('Hobbies')
-child1 = TreeNode('Physical')
-child2 = TreeNode('Intellectual')
+root = TreeNode("Hobbies")
+child1 = TreeNode("Physical")
+child2 = TreeNode("Intellectual")
 root.left = child1
-root.right = child2 
+root.right = child2
 
 child1.left = TreeNode("Football")
 child1.right = TreeNode("MMA")
@@ -28,8 +30,9 @@ separator = lambda: print("-" * 45)
 
 
 separator()
-print("Inorder Traversal:") 
+print("Inorder Traversal:")
 separator()
+
 
 # IMPLEMENT DFS Traversals
 # in order
@@ -44,8 +47,10 @@ print(inorder_dfs(root))
 
 separator()
 
-print("Preorder Traversal:") 
+print("Preorder Traversal:")
 separator()
+
+
 # IMPLEMENT DFS Traversals
 # preorder
 def preorder_dfs(root):
@@ -54,8 +59,8 @@ def preorder_dfs(root):
         preorder_dfs(root.left)
         preorder_dfs(root.right)
 
-print(preorder_dfs(root))
 
+print(preorder_dfs(root))
 
 
 # BFS traversal
@@ -70,10 +75,12 @@ def bfs_traversal(root):
             if node.right:
                 queue.append(node.right)
 
+
 separator()
 print("BFS traversal:")
 separator()
 print(bfs_traversal(root))
+
 
 def reverse_bfs_traversal(root):
     if root:
@@ -82,12 +89,13 @@ def reverse_bfs_traversal(root):
         while queue:
             node = queue.popleft()
             reverse.appendleft(node.data)
-            #print(node.data)
+            # print(node.data)
             if node.left:
                 queue.append(node.left)
             if node.right:
                 queue.append(node.right)
     return " ".join(reverse)
+
 
 separator()
 print(reverse_bfs_traversal(root))
