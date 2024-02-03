@@ -1,15 +1,11 @@
-def insert(root, key):
-    if not root:
-        return TreeNode(key)
-    if key < root.data:
-        root.left = insert(root.left, key)
-    else:
-        root.right = insert(root.right, key)
-    return root
+from collections import Counter
 
+string = "This is my string and my name is Gero"
 
-def constructBST(keys):
-    root = None
-    for key in keys:
-        root = insert(root, key)
-    return root
+counter = Counter(string)
+
+print(counter.most_common()[3])
+
+print(dir(Counter))
+
+print(sorted(counter.items(), key=lambda x: x[1]))
