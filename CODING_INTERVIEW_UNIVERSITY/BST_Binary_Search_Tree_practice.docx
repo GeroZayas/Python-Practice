@@ -1,4 +1,4 @@
-# ======================================
+﻿# ======================================
 # CLASS NODE
 # ======================================
 class Node:
@@ -50,7 +50,7 @@ child2.right = Node(10)
 # ======================================
 # Terminal Separator printer
 # ======================================
-separator = lambda: print("\n", "=" * 90)
+separator = lambda: print("\n", "=" * 45)
 
 separator()
 
@@ -184,7 +184,7 @@ def create_adj_list(root, adjacency_list):
 
 adjacency_list = {}
 res = create_adj_list(root, adjacency_list)
-print("This is the adjacency_list de root 1:\n")
+print("This is the adjacency_list de root:")
 for node, neighbor in adjacency_list.items():
     print(node, neighbor)
 
@@ -192,30 +192,6 @@ for node, neighbor in adjacency_list.items():
 separator()
 adjacency_list = {}
 res = create_adj_list(root_2, adjacency_list)
-print("This is the adjacency_list of root_2:\n")
+print("This is the adjacency_list of root_2:")
 for node, neighbor in adjacency_list.items():
     print(node, neighbor)
-
-separator()
-
-
-# ======================================
-# GET NODE COUNT Function
-# ======================================
-def get_node_count(node):
-    if not node:
-        return 0
-    return 1 + get_node_count(node.left) + get_node_count(node.right)
-
-
-print(
-    f"""
-    == Get Node Count Function == 
-    
-    Root 1:
-    -> {get_node_count(root)}
-    
-    Root 2:
-    -> {get_node_count(root_2)}
-    """
-)

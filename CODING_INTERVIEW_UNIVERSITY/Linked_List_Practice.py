@@ -16,7 +16,6 @@ class LinkedList:
             node = node.next
 
     # =============INSERT NODE BEGINNING=================
-    # inserting nodes at the beginning
     def add_first(self, node):
         # the new node points to the old self.head
         node.next = self.head

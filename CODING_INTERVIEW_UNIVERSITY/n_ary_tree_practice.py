@@ -3,6 +3,7 @@ class TreeNode:
     def __init__(self, data):
         self.data = data
         self.children = []
+
     def __repr__(self):
         if not isinstance(self.data, str):
             self.data = str(self.data)
@@ -11,10 +12,11 @@ class TreeNode:
     def add_child(self, new_child):
         self.children.append(new_child)
 
+
 # Initialize the Tree
-root = TreeNode('Hobbies')
-child1 = TreeNode('Physical')
-child2 = TreeNode('Intellectual')
+root = TreeNode("Hobbies")
+child1 = TreeNode("Physical")
+child2 = TreeNode("Intellectual")
 root.add_child(child1)
 root.add_child(child2)
 
@@ -26,6 +28,7 @@ child2.add_child(TreeNode("Reading"))
 
 print(root.children)
 
+
 # IMPLEMENT DF Traversals in N-ary trees
 # DF Traversal N-Ary tree
 def preorder_df_traversal(root):
@@ -35,11 +38,13 @@ def preorder_df_traversal(root):
             for child in root.children:
                 preorder_df_traversal(child)
 
+
 print(preorder_df_traversal(root))
 
-separator = '*' * 40
+separator = "*" * 40
 
 print(separator)
+
 
 # DF Traversal N-Ary tree
 def postorder_df_traversal(root):
@@ -49,5 +54,5 @@ def postorder_df_traversal(root):
                 postorder_df_traversal(child)
         print(root.data)
 
-print(postorder_df_traversal(root))
 
+print(postorder_df_traversal(root))
