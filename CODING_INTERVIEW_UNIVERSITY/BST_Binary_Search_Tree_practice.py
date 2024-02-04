@@ -1,3 +1,6 @@
+from collections import deque
+
+
 # ======================================
 # CLASS NODE
 # ======================================
@@ -219,3 +222,38 @@ print(
     -> {get_node_count(root_2)}
     """
 )
+
+separator()
+
+
+# ======================================
+# GET MIN VALUE Function
+# ======================================
+"""
+FIX THIS , IT IS NOT WORKING!!!
+"""
+
+
+def get_min(root):
+    the_min = None
+
+    def bfs(root):
+        nonlocal the_min
+        if root:
+            queue = deque([root])
+            while queue:
+                node = queue.popleft()
+                if node is not None:
+                    if node.data < the_min:
+                        the_min = node.data
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+
+    bfs(root)
+    return the_min
+
+
+print("Trying to find the Min Value:")
+print(get_min(root_2))
