@@ -1,1 +1,2 @@
-print(float("inf"))
+ans = float("inf"), None, None
+print(ans)
