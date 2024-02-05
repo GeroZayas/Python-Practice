@@ -100,6 +100,8 @@ separator()
 print("BFS traversal: ")
 bfs_traversal(root)
 
+root.right.right.right.right = Node(-4)
+
 
 # ======================================
 # BST Constructor Function
@@ -112,11 +114,13 @@ def constructBST(keys):
     return root
 
 
-# ---------------------------------------------------
+# --------------------------------------- #
+# ----------- NEW ROOT 2 TREE ----------- #
+# --------------------------------------- #
 
 separator()
 # Construct new Tree
-tree_2 = [15, 10, 20, 8, 12, 16, 25]
+tree_2 = [15, 10, 20, 8, 12, 16, 25, 4]
 
 # We construct root_2 BST here:
 root_2 = constructBST(tree_2)
@@ -249,23 +253,36 @@ separator()
 # ======================================
 # GET MIN VALUE Function
 # ======================================
-"""
-"""
 
 
 def get_min(root):
-    the_min = int()
-
-    def inorder_dfs(root):
-        nonlocal the_min
-        if root:
-            the_min = min(the_min, root.data)
-            inorder(root.left)
-            inorder(root.right)
-
-    inorder_dfs(root)
-    return the_min
+    current = root
+    while current.left is not None:
+        current = current.left
+    return current.data
 
 
 print("Trying to find the Min Value:")
 print(get_min(root))
+
+
+separator()
+
+
+# ======================================
+# IS BST Function
+# ======================================
+def is_bst(root, min_value, max_value):
+    node = root
+    if node is None:
+        return True
+    if node.data < min_value or node.data > max_value:
+        return False
+    return is_bst(node.left, min_value, node.data - 1) and (
+        is_bst(node.right, node.data + 1, max_value)
+    )
+
+
+print("Is BST?:")
+print("Root 1 = ", is_bst(root, min_value=float("-inf"), max_value=float("inf")))
+print("Root 2 = ", is_bst(root_2, min_value=float("-inf"), max_value=float("inf")))
