@@ -118,10 +118,17 @@ separator()
 # Construct new Tree
 tree_2 = [15, 10, 20, 8, 12, 16, 25]
 
+# We construct root_2 BST here:
 root_2 = constructBST(tree_2)
+
+# ---------------------------------------------------
 print("\nIn order Root 2")
 inorder(root_2)
+
+# ---------------------------------------------------
 separator()
+
+# ---------------------------------------------------
 print("BFS Traversal Root 2")
 bfs_traversal(root_2)
 
@@ -161,10 +168,13 @@ def search(root, key, parent):
         search(root.right, key, root)
 
 
+# ---------------------------------------------------
 separator()
+# ---------------------------------------------------
 print("SEARCH")
 search(root_2, 16, None)
 
+# ---------------------------------------------------
 separator()
 
 
@@ -185,15 +195,25 @@ def create_adj_list(root, adjacency_list):
             create_adj_list(root.right, adjacency_list)
 
 
+# ---------------------------------------------------
 adjacency_list = {}
+
+# ---------------------------------------------------
 res = create_adj_list(root, adjacency_list)
+
+# ---------------------------------------------------
 print("This is the adjacency_list de root 1:\n")
 for node, neighbor in adjacency_list.items():
     print(node, neighbor)
 
 
+# ---------------------------------------------------
 separator()
+
+# ---------------------------------------------------
 adjacency_list = {}
+
+# ---------------------------------------------------
 res = create_adj_list(root_2, adjacency_list)
 print("This is the adjacency_list of root_2:\n")
 for node, neighbor in adjacency_list.items():
@@ -230,30 +250,22 @@ separator()
 # GET MIN VALUE Function
 # ======================================
 """
-FIX THIS , IT IS NOT WORKING!!!
 """
 
 
 def get_min(root):
-    the_min = None
+    the_min = int()
 
-    def bfs(root):
+    def inorder_dfs(root):
         nonlocal the_min
         if root:
-            queue = deque([root])
-            while queue:
-                node = queue.popleft()
-                if node is not None:
-                    if node.data < the_min:
-                        the_min = node.data
-                if node.left:
-                    queue.append(node.left)
-                if node.right:
-                    queue.append(node.right)
+            the_min = min(the_min, root.data)
+            inorder(root.left)
+            inorder(root.right)
 
-    bfs(root)
+    inorder_dfs(root)
     return the_min
 
 
 print("Trying to find the Min Value:")
-print(get_min(root_2))
+print(get_min(root))

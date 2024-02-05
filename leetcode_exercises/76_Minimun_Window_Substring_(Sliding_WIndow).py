@@ -50,8 +50,8 @@ def min_window(s, t):
     if not s or not t:
         return ""
     t_count = Counter(t)
-    print("t_count", t_count)
-    required = len
+    # print("t_count", t_count)
+    required = len(t_count)
     formed = 0
     window_counts = 0
 
@@ -61,3 +61,9 @@ def min_window(s, t):
     while right < len(s):
         char = s[right]
         window_counts[char] = window_counts.get(char, 0) + 1
+        if char in t_count and window_counts[char] == t_count[char]:
+            formed += 1
+
+        while left <= right and formed == required:
+            char = s[left]
+            if right - left + 1 < ans[0]
