@@ -253,8 +253,6 @@ separator()
 # ======================================
 # GET MIN VALUE Function
 # ======================================
-
-
 def get_min(root):
     current = root
     while current.left is not None:
