@@ -26,9 +26,9 @@ def inorder(root):
 def bfs_traversal(root):
     if not root:
         return
-    queue = [root]
+    queue = deque([root])
     while queue:
-        node = queue.pop(0)
+        node = queue.popleft()
         print(node.data, end=" ")
         if node.left:
             queue.append(node.left)
@@ -57,6 +57,8 @@ separator = lambda: print("\n", "=" * 90)
 
 separator()
 
+
+# ==================================
 print("In order traversal: ")
 inorder(root)
 
@@ -73,6 +75,30 @@ def insert(root, key):
     else:
         root.right = insert(root.right, key)
 
+    return root
+
+
+# ---------------------------------------------------
+
+
+# ======================================
+# Iterative INSERT Function
+# ======================================
+def iterative_insert(root, key):
+    current = root  # we start with the root node
+    parent = None  # pointer to store the parent of the current node
+    if root is None:  # if there's no root (tree is empty), we create one
+        return Node(key)
+    while current:  # traverse the tree and find parent node of given key
+        parent = current
+        if key < current.data:  # if key is less, we go to left subtree
+            current = current.left
+        else:
+            current = current.right  # otherwise, we go to the right subtree
+    if key < parent.data:  # construct a node and assign it to appropiate parent pointer
+        parent.left = Node(key)
+    else:
+        parent.right = Node(key)
     return root
 
 
@@ -101,6 +127,8 @@ print("BFS traversal: ")
 bfs_traversal(root)
 
 root.right.right.right.right = Node(-4)
+
+insert(root, 1)
 
 
 # ======================================
@@ -171,6 +199,34 @@ def search(root, key, parent):
     else:
         search(root.right, key, root)
 
+
+# ============================================
+# IS IN? -> Recursive function to check if Key is in BST
+# ============================================
+def is_in_tree(root, key):
+    if not root:
+        return False
+    if root.data == key:
+        return True
+    elif key < root.data:
+        return is_in_tree(root.left, key)
+    else:
+        return is_in_tree(root.right, key)
+
+
+# -------------------------------------------
+separator()
+check_key = 8
+print("Is key {} in tree 'root 1'?".format(check_key))
+print(is_in_tree(root, check_key), end="\n\n")
+
+check_key = 14
+print("Is key {} in tree 'root 1'?".format(check_key))
+print(is_in_tree(root, check_key), end="\n\n")
+
+check_key = 25
+print("Is key {} in tree 'root 2'?".format(check_key))
+print(is_in_tree(root_2, check_key), end="\n\n")
 
 # ---------------------------------------------------
 separator()
@@ -260,8 +316,11 @@ def get_min(root):
     return current.data
 
 
-print("Trying to find the Min Value:")
+print("Min Value in Root 1:")
 print(get_min(root))
+
+print("Min Value in Root 2:")
+print(get_min(root_2))
 
 
 separator()

@@ -1,5 +1,5 @@
 # CREATE A TREENODE CLASS
- TreeNode:
+class TreeNode:
     def __init__(self, data):
         self.data = data
         self.left = None
@@ -7,6 +7,7 @@
 
 
 # DEFINE THE **INSERT** FUNCTION
+# ==================================
 def insert(root, key):
     """
     Insert key in Tree
@@ -21,6 +22,7 @@ def insert(root, key):
 
 
 # DEFINE THE **CONSTRUCTOR of BST** FUNCTION
+# ==================================
 def constructBST(keys):
     """
     Construct Binary Search Tree based on given keys
@@ -32,14 +34,17 @@ def constructBST(keys):
 
 
 # Some keys to create the BST
+# ==================================
 keys = [5, 4, 6, 2, 9, 3, 8]
 
 
 # Initialize the BST
+# ==================================
 root = constructBST(keys)
 
 
 # DEFINE the Breadth First Search function
+# ==================================
 def BFS(root):
     """
     Breadth First Traversal of Tree
@@ -59,6 +64,7 @@ def BFS(root):
 
 
 # DEFINE the In Order DFS Traversal function
+# ==================================
 def inorder_traversal(root):
     """
     In Order Traversal of Tree
@@ -72,6 +78,7 @@ def inorder_traversal(root):
 print("BFS")
 BFS(root)
 
+# ==================================
 print()
 print("In Order Traversal")
 inorder_traversal(root)
@@ -79,6 +86,7 @@ inorder_traversal(root)
 print()
 print("*" * 40)
 
+# ==================================
 print("Search for key:")
 
 
@@ -108,29 +116,35 @@ def search(root, key, parent):
         search(root.right, key, root)
 
 
+# ==================================
 key = 5
 
 search(root, key, parent=None)
 
+# ==================================
 key = 6
 
 search(root, key, parent=None)
 
+# ==================================
 key = 9
 
 search(root, key, parent=None)
 
+# ==================================
 key = 8
 
 search(root, key, parent=None)
 
 
+# ==================================
 key = 3
 
 search(root, key, parent=None)
 
 print("*" * 40)
 
+# ==================================
 print()
 print("Search in For Loop on each key:")
 for key in keys:
