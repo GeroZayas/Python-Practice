@@ -166,7 +166,7 @@ bfs_traversal(root_2)
 
 
 # ============================================
-# Recursive function to search in a given BST
+# Recursive function to SEARCH in a given BST
 # ============================================
 def search(root, key, parent):
     # if the key is not present in the key
