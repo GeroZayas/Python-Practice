@@ -1,5 +1,6 @@
 from collections import deque
 from rich import print
+import pprint
 
 
 # ======================================
@@ -134,8 +135,6 @@ separator()
 print("BFS traversal: ")
 bfs_traversal(root)
 
-root.right.right.right.right = Node(-4)
-
 insert(root, 1)
 
 
@@ -265,29 +264,22 @@ def create_adj_list(root, adjacency_list):
 
 
 # ---------------------------------------------------
-adjacency_list = {}
+# Create separate dictionaries for each adjacency list
+adjacency_list_root_1 = {}
+adjacency_list_root_2 = {}
 
-# ---------------------------------------------------
-# create_adj_list(root, adjacency_list)
-adjacency_list_root_1 = create_adj_list(root, adjacency_list)
+# Call create_adj_list with separate dictionaries
+create_adj_list(root, adjacency_list_root_1)
+create_adj_list(root_2, adjacency_list_root_2)
 
-# ---------------------------------------------------
-print("This is the adjacency_list de root 1:\n")
+# Print the adjacency lists using pprint
+pprint.pprint("This is the adjacency_list of root  1:")
+pprint.pprint(adjacency_list_root_1, sort_dicts=False)
 
-print(adjacency_list_root_1)
 
-# ---------------------------------------------------
-separator()
-
-# ---------------------------------------------------
-adjacency_list_2 = {}
-
-# ---------------------------------------------------
-adjacency_list_root_2 = create_adj_list(root_2, adjacency_list_2)
-print("This is the adjacency_list of root_2:\n")
-
-print(adjacency_list_root_2)
-
+print()
+pprint.pprint("This is the adjacency_list of root  2:")
+pprint.pprint(adjacency_list_root_2, sort_dicts=False)
 # ---------------------------------------------------
 separator()
 
@@ -408,9 +400,77 @@ def get_height(root):
     return 1 + max(left_height, right_height)
 
 
-print("Get Height of the roots: \n")
+print(
+    """
+    * ------------------------ *
+    * Get Height of the roots: *
+    * ------------------------ *
+"""
+)
 print("Height of root 1:")
 print(get_height(root))
 
 print("Height of root 2:")
 print(get_height(root_2))
+
+
+separator()
+
+
+# ======================================
+# GET MAX VALUE of TREE Function
+# ======================================
+def get_max_value(root):
+    while root and root.right:
+        root = root.right
+    return root.data
+
+
+print("")
+print(
+    f"""
+    * ------------- *
+    * Get Max Value *
+    * ------------- *
+
+Max Value from Root 1:
+    {get_max_value(root)}
+Max Value from Root 2:
+    {get_max_value(root_2)}
+    """
+)
+
+
+# ======================================
+# DELETE VALUE in TREE Function
+# ======================================
+def delete_node(root, key):
+    parent = None  # we get hold of the parent of current node
+    current = root
+    while current and current.data != key:
+        parent = current  # update parent to current node
+        if key < current.data:
+            current = current.left
+        else:
+            current = current.right
+        if current is None:
+            return root
+
+        # CASE 1: Node to be deleted has no children (leaf node)
+        if current.left is None and current.right is None:
+            if current != root:
+                if parent.left == current:
+                    parent.left = None
+                else:
+                    parent.right = None
+            else:
+                root = None
+        # CASE 2: Node to be deleted has 2 children
+        elif current.left and current.right:
+            # find its in-order successor
+            successor = get_min(current.right)  # min value in the right child subtree
+            val = successor.data  # store successor value
+            # recursively delete the successor
+            delete_node(root, successor.data)
+            # copy value of successor to current node
+            current.data = val
