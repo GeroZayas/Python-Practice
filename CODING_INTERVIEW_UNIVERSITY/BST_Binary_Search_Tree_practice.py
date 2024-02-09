@@ -1,4 +1,5 @@
 from collections import deque
+from rich import print
 
 
 # ======================================
@@ -260,32 +261,34 @@ def create_adj_list(root, adjacency_list):
         if root.right:
             adjacency_list[root.data].append(root.right.data)
             create_adj_list(root.right, adjacency_list)
+    return adjacency_list
 
 
 # ---------------------------------------------------
 adjacency_list = {}
 
 # ---------------------------------------------------
-res = create_adj_list(root, adjacency_list)
+# create_adj_list(root, adjacency_list)
+adjacency_list_root_1 = create_adj_list(root, adjacency_list)
 
 # ---------------------------------------------------
 print("This is the adjacency_list de root 1:\n")
-for node, neighbor in adjacency_list.items():
-    print(node, neighbor)
 
+print(adjacency_list_root_1)
 
 # ---------------------------------------------------
 separator()
 
 # ---------------------------------------------------
-adjacency_list = {}
+adjacency_list_2 = {}
 
 # ---------------------------------------------------
-res = create_adj_list(root_2, adjacency_list)
+adjacency_list_root_2 = create_adj_list(root_2, adjacency_list_2)
 print("This is the adjacency_list of root_2:\n")
-for node, neighbor in adjacency_list.items():
-    print(node, neighbor)
 
+print(adjacency_list_root_2)
+
+# ---------------------------------------------------
 separator()
 
 
