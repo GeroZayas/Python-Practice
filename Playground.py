@@ -3,6 +3,9 @@ class Node:
         self.data = data
         self.right = self.left = None
 
+    def __repr__(self):
+        return f"{self.data}"
+
 
 class BST:
     def __init__(self):
@@ -92,7 +95,7 @@ for key in keys:
 successor_key = 30
 successor_node = bst.get_successor(bst.root, successor_key)
 
-if successor_node is not None:
-    print(f"El sucesor de {successor_key} es {successor_node.data}")
-else:
-    print(f"No se encontró sucesor para {successor_key}")
+# if successor_node is not None:
+#   print(f"El sucesor de {successor_key} es {successor_node.data}")
+# else:
+#   print(f"No se encontró sucesor para {successor_key}")

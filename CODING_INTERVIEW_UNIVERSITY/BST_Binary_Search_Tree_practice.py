@@ -9,6 +9,9 @@ class Node:
         self.data = data
         self.right = self.left = None
 
+    def __repr__(self):
+        return f"{self.data}"
+
 
 # ======================================
 # IN ORDER Traversal
@@ -50,10 +53,14 @@ child1.right = Node(4)
 child2.left = Node(6)
 child2.right = Node(10)
 
+
 # ======================================
 # Terminal Separator printer
 # ======================================
-separator = lambda: print("\n", "=" * 90)
+def separator():
+    print()
+    print("=" * 60)
+
 
 separator()
 
@@ -343,3 +350,64 @@ def is_bst(root, min_value, max_value):
 print("Is BST?:")
 print("Root 1 = ", is_bst(root, min_value=float("-inf"), max_value=float("inf")))
 print("Root 2 = ", is_bst(root_2, min_value=float("-inf"), max_value=float("inf")))
+
+
+# ======================================
+# GET SUCCESSOR Function
+# ======================================
+def get_successor(root, node):
+    if node.right:
+        return get_min(node)
+    successor = None
+    while root:
+        if node.data < root.data:
+            successor = root
+            root = root.left
+        else:
+            root = root.right
+    return successor
+
+
+separator()
+print(
+    """
+    Get Sucessor Function:
+    -----------------------
+    """
+)
+node = Node(8)
+print("Successor of -> {} <- in Tree 2".format(node))
+print(">>> ", get_successor(root_2, node))
+separator()
+
+
+# ======================================
+# DELETE TREE Function
+# ======================================
+def delete_tree(root):
+    if node is None:
+        return
+    delete_tree(root.left)
+    delete_tree(root.right)
+    print("Deleting Node: {}".format(root.data))
+    del root
+
+
+# ======================================
+# GET HEIGHT of TREE Function
+# ======================================
+def get_height(root):
+    if not root:
+        return 0
+    left_height = get_height(root.left)
+    right_height = get_height(root.right)
+
+    return 1 + max(left_height, right_height)
+
+
+print("Get Height of the roots: \n")
+print("Height of root 1:")
+print(get_height(root))
+
+print("Height of root 2:")
+print(get_height(root_2))
