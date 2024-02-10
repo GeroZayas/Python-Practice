@@ -315,7 +315,7 @@ def get_min(root):
     current = root
     while current.left is not None:
         current = current.left
-    return current.data
+    return current
 
 
 print("Min Value in Root 1:")
@@ -440,37 +440,73 @@ Max Value from Root 2:
     """
 )
 
+separator()
+
 
 # ======================================
 # DELETE VALUE in TREE Function
 # ======================================
 def delete_node(root, key):
-    parent = None  # we get hold of the parent of current node
-    current = root
-    while current and current.data != key:
-        parent = current  # update parent to current node
-        if key < current.data:
-            current = current.left
+    parent = None
+    curr = root
+    while curr and curr.data != key:
+        parent = curr
+        if key < curr.data:
+            curr = curr.left
         else:
-            current = current.right
-        if current is None:
-            return root
-
-        # CASE 1: Node to be deleted has no children (leaf node)
-        if current.left is None and current.right is None:
-            if current != root:
-                if parent.left == current:
-                    parent.left = None
-                else:
-                    parent.right = None
+            curr = curr.right
+    if curr is None:
+        return root
+    # case 1 when key has no children
+    if curr.left is None and curr.right is None:
+        if curr != root:
+            if parent.left == curr:
+                parent.left = None
             else:
-                root = None
-        # CASE 2: Node to be deleted has 2 children
-        elif current.left and current.right:
-            # find its in-order successor
-            successor = get_min(current.right)  # min value in the right child subtree
-            val = successor.data  # store successor value
-            # recursively delete the successor
-            delete_node(root, successor.data)
-            # copy value of successor to current node
-            current.data = val
+                parent.right = None
+        else:
+            root = None
+    # case 2 when key has wo children
+    elif curr.left and curr.right:
+        successor = get_min(curr.right)
+        val = successor.data
+        delete_node(root, successor.data)
+        curr.data = val
+    # case 3 when key has only one child
+    else:
+        if curr.left:
+            child = curr.left
+        else:
+            child = curr.right
+        if curr != root:
+            if curr == parent.left:
+                parent.left = child
+            else:
+                parent.right = child
+        else:
+            root = child
+    return root
+
+
+key = 3
+print(f"Root 1 before deleting {key}")
+print(adjacency_list_root_1)
+
+print(
+    f"""
+    ************
+    Deleting...
+    ************
+    """
+)
+delete_node(root, key=key)
+
+print(f"Root 1 after deleting {key}")
+# Create separate dictionaries for each adjacency list
+adjacency_list_root_1 = {}
+
+# Call create_adj_list with separate dictionaries
+create_adj_list(root, adjacency_list_root_1)
+# Print the adjacency lists using pprint
+pprint.pprint("This is the adjacency_list of root  1:")
+pprint.pprint(adjacency_list_root_1, sort_dicts=False)
