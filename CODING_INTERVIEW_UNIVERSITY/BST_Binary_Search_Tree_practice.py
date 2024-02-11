@@ -510,3 +510,5 @@ create_adj_list(root, adjacency_list_root_1)
 # Print the adjacency lists using pprint
 pprint.pprint("This is the adjacency_list of root  1:")
 pprint.pprint(adjacency_list_root_1, sort_dicts=False)
+
+# =====================================================
