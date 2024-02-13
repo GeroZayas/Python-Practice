@@ -16,3 +16,6 @@ heapq.heapify(my_array)
 print(my_array)
 heapq.heappop(my_array)
 print(my_array)
+
+print(f"The 2 nmallest are {heapq.nsmallest(2, my_array)}")
+print(f"The 2 nlargest are {heapq.nlargest(2, my_array)}")
