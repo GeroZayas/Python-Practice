@@ -5,3 +5,22 @@ heapq.heapify(arr)
 
 print(arr)
 
+heapq.heappop(arr)
+
+print(arr)
+
+heapq.heappop(arr)
+
+print(arr)
+
+heapq.heappop(arr)
+
+print(arr)
+
+heapq.heappop(arr)
+
+print(arr)
+
+heapq.heappop(arr)
+
+print(arr)
