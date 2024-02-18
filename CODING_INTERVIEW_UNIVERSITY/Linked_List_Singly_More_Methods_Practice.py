@@ -1,5 +1,5 @@
 # Implement a Singly LinkedList
-# We have nodes and each node has a poiunter to the next one
+# We have nodes and each node has a pointer to the next one
 
 class Node:
 	def __init__(self, data):
@@ -173,3 +173,4 @@ linked_list.display()
 linked_list.remove_value(2)
 print("Linked list after removing value 2:")
 linked_list.display()
+
