@@ -1,47 +1,47 @@
-# ============= BITWISE OPERATIONS ================
+# Binary Search Tree
+from collections import deque
 
 
-# ============ AND =============
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.left = self.right = None
 
-a = 10
-b = 6
+    def __repr__(self):
+        return f"{self.data}"
 
-and_result = a & b
-
-print("a:", bin(a)[2:], "b:", bin(b)[2:])
-print("a and b -> ", a, ",", b)
-
-print("And result:", bin(and_result)[2:])
-print(and_result)
-
-# ============ OR =============
-or_result = a | b
-
-print("Or result", bin(or_result)[2:])
-print(or_result)
-
-# ============ XOR =============
-xor_result = a ^ b
-
-print("XOR result", bin(xor_result)[2:])
-print(xor_result)
+    def bfs(self):
+        if self:
+            queue = deque([self])
+            while queue:
+                node = queue.popleft()
+                print(node.data, end=" ")
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
 
 
-# ============ NOT =============
-not_result = ~a
-
-print("NOT result", bin(not_result))
-print(not_result)
+keys_to_build_bst = [1, 2, 3, 4, 5, 6]
 
 
-# ============ LEFT SHIFT =============
-left_shift = a << 2
+def constructBST(keys):
+    root = None
+    for key in keys:
+        root = insert(root, key)
+    return root
 
-print("Left Shift result", bin(left_shift)[2:])
-print(left_shift)
 
-# ============ right SHIFT =============
-right_shift = a >> 2
+def insert(root, key):
+    if not root:
+        return Node(key)
+    if key < root.data:
+        root.left = insert(root.left, key)
+    else:
+        root.right = insert(root.right, key)
+    return root
 
-print("Right Shift result", bin(right_shift)[2:])
-print(right_shift)
+
+BST = constructBST(keys_to_build_bst)
+
+print(BST.bfs())
