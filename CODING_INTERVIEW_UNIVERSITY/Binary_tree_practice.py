@@ -1,70 +1,41 @@
 from collections import deque
 
 
-# BINARY TREE IMPLEMENTATION
-class TreeNode:
+# Binary Tree
+class Node:
     def __init__(self, data):
         self.data = data
-        self.left = None
-        self.right = None
+        self.left = self.right = None
 
     def __repr__(self):
-        if not isinstance(self.data, str):
-            self.data = str(self.data)
         return f"{self.data}"
 
 
 # Initialize the Tree
-root = TreeNode("Hobbies")
-child1 = TreeNode("Physical")
-child2 = TreeNode("Intellectual")
+root = Node("Hobbies")
+child1 = Node("Physical")
+child2 = Node("Intellectual")
 root.left = child1
 root.right = child2
 
-child1.left = TreeNode("Football")
-child1.right = TreeNode("MMA")
-child2.left = TreeNode("Chess")
-child2.right = TreeNode("Writing")
+child1.left = Node("Football")
+child1.right = Node("MMA")
+child2.left = Node("Chess")
+child2.right = Node("Writing")
 
 separator = lambda: print("-" * 45)
 
 
-separator()
-print("Inorder Traversal:")
-separator()
-
-
-# IMPLEMENT DFS Traversals
-# in order
-def inorder_dfs(root):
+# ==================================
+def inorder(root):
     if root:
-        inorder_dfs(root.left)
+        inorder(root.left)
         print(root.data)
-        inorder_dfs(root.right)
+        inorder(root.right)
 
 
-print(inorder_dfs(root))
-
-separator()
-
-print("Preorder Traversal:")
-separator()
-
-
-# IMPLEMENT DFS Traversals
-# preorder
-def preorder_dfs(root):
-    if root:
-        print(root.data)
-        preorder_dfs(root.left)
-        preorder_dfs(root.right)
-
-
-print(preorder_dfs(root))
-
-
-# BFS traversal
-def bfs_traversal(root):
+# ==================================
+def bfs(root):
     if root:
         queue = deque([root])
         while queue:
@@ -76,26 +47,54 @@ def bfs_traversal(root):
                 queue.append(node.right)
 
 
-separator()
-print("BFS traversal:")
-separator()
-print(bfs_traversal(root))
-
-
-def reverse_bfs_traversal(root):
+# ==================================
+def bfs_reversed(root):
+    revrsd = deque()
     if root:
         queue = deque([root])
-        reverse = deque()
         while queue:
             node = queue.popleft()
-            reverse.appendleft(node.data)
-            # print(node.data)
+            revrsd.appendleft(node.data)
             if node.left:
                 queue.append(node.left)
             if node.right:
                 queue.append(node.right)
-    return " ".join(reverse)
+    print("\n".join(list(revrsd)))
 
 
+# ==================================
+def preorder_dfs(root):
+    if root:
+        print(root.data)
+        preorder_dfs(root.left)
+        preorder_dfs(root.right)
+
+
+# ==================================
 separator()
-print(reverse_bfs_traversal(root))
+print("Preorder Traversal:")
+separator()
+
+preorder_dfs(root)
+
+
+# ==================================
+separator()
+print("Inorder Traversal:")
+separator()
+
+inorder(root)
+
+# ==================================
+separator()
+print("BFS Traversal:")
+separator()
+
+bfs(root)
+
+# ==================================
+separator()
+print("Reversed BFS Traversal:")
+separator()
+
+bfs_reversed(root)

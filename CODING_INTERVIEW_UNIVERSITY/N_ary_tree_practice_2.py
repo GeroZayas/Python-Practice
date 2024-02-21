@@ -7,14 +7,13 @@ class TreeNode:
         self.data = data
         self.children = []
 
+    def add_child(self, new_child):
+        self.children.append(new_child)
+
     def __repr__(self):
         if not isinstance(self.data, str):
             self.data = str(self.data)
-
         return f"{self.data}"
-
-    def add_child(self, new_child):
-        self.children.append(new_child)
 
 
 # Initialize the Tree
@@ -99,7 +98,7 @@ separator()
 
 
 # BFS
-def bfs_search(root):
+def bfs_search(root, target):
     if not root:
         return None
     queue = deque([root])
@@ -111,12 +110,13 @@ def bfs_search(root):
             return f"Target found in node {node}, counter {counter}"
         for child in node.children:
             queue.append(child)
+    return f"{target} Not Found in Tree"
 
 
 target = "MMA"
 print(f"This is BFS search of target {target}")
 
-print(bfs_search(root))
+print(bfs_search(root, target))
 
 separator()
 
@@ -124,7 +124,7 @@ separator()
 
 
 # DFS
-def dfs_search(root):
+def dfs_search(root, target):
     if not root:
         return None
     stack = [root]
@@ -138,7 +138,9 @@ def dfs_search(root):
         for child in node.children:
             stack.append(child)
 
+    return f"{target} Not Found"
+
 
 print(f"This is DFS search of target {target}")
 
-print(dfs_search(root))
+print(dfs_search(root, target))
