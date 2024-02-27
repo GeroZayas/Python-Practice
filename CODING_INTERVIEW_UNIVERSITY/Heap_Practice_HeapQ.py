@@ -6,6 +6,7 @@ my_array = [3, 6, 5, 2, 8, 1, 9, 10]
 def separator():
     print("=" * 80)
 
+# This is a comment
 
 separator()
 print(dir(heapq))
