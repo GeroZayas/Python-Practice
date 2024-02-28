@@ -1,37 +1,33 @@
-import unittest
+import heapq
 
-my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+class Solution:
+    def lastStoneWeight(self, stones: list[int]) -> int:
+        stones = [-s for s in stones]
+        heapq.heapify(stones)
+
+        while len(stones) > 1:
+            first = heapq.heappop(stones)
+            second = heapq.heappop(stones)
+            if second > first:
+                heapq.heappush(stones, first - second)
+
+        stones.append(0)
+        return abs(stones[0])
+
+# # There's a private _heapify_max method.
+# # https://github.com/python/cpython/blob/1170d5a292b46f754cd29c245a040f1602f70301/Lib/heapq.py#L198
+# class Solution2(object):
+#     def lastStoneWeight(self, stones):
+#         heapq._heapify_max(stones)
+#         while len(stones) > 1:
+#             max_stone = heapq._heappop_max(stones)
+#             diff = max_stone - stones[0]
+#             if diff:
+#                 heapq._heapreplace_max(stones, diff)
+#             else:
+#                 heapq._heappop_max(stones)
+        
+#         stones.append(0)
+#         return stones[0]
 
 
-def binary_search(nums, target):
-    l, r = 0, len(nums) - 1
-    while l <= r:
-        mid = (l + r) // 2
-        if target == nums[mid]:
-            return f"Target found at index {mid}"
-        elif target < nums[mid]:
-            r = mid - 1
-        else:
-            l = mid + 1
-    return f"Target not found"
-
-
-target = 2
-print(binary_search(my_list, target))
-
-
-# =============== TEST ====================
-class TestBinarySearch(unittest.TestCase):
-    def test_find_target_3(self):
-        self.assertEqual(binary_search(my_list, 3), "Target found at index 2")
-
-    def test_find_target_3(self):
-        self.assertEqual(binary_search(my_list, 9), "Target found at index 8")
-
-    def test_find_target_3(self):
-        self.assertEqual(binary_search(my_list, 10), "Target not found")
-
-
-# =============== Run The Tests ====================
-if __name__ == "__main__":
-    unittest.main()
