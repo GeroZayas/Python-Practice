@@ -19,7 +19,7 @@ class MinHeap:
 
     def extract_min(self):
         if len(self.heap) == 0:
-            return None7
+            return None
         if len(self.heap) == 1:
             return self.heap.pop()
 
