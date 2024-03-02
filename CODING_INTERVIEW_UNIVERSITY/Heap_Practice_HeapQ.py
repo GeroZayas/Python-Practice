@@ -12,46 +12,57 @@ separator()
 print(dir(heapq))
 separator()
 
+print("\nHeapifying the array\n")
 heapq.heapify(my_array)
-
 print(my_array)
+
+
+print("\nPopping from the array\n")
 heapq.heappop(my_array)
 print(my_array)
 
-print(f"The 2 nmallest are {heapq.nsmallest(2, my_array)}")
-print(f"The 2 nlargest are {heapq.nlargest(2, my_array)}")
+print(f"\nThe 2 nmallest are {heapq.nsmallest(2, my_array)}")
+print(f"\nThe 2 nlargest are {heapq.nlargest(2, my_array)}")
 
 # ---------------------- SECOND PRACTICE --------------------------
 
+print()
+
+separator()
+print("SECOND PRACTICE")
+separator()
+
 numbers = [2, 1, 23, 5, 11, 24]
 
-print("Before heapify:")
+print("\nBefore heapify:\n")
 print(numbers)
 
 heapq.heapify(numbers)
 
-
-separator()
-print("After heapify Min Heap:")
+print("\nAfter heapify Min Heap:\n")
 print(numbers)
 
-print("Popping from the Min Heap")
+print("\nPopping from the Min Heap\n")
 print(heapq.heappop(numbers))
 
 
+print()
+
+separator()
+print("MAX HEAP PRACTICE")
 separator()
 
-print("Let's make it a MAx Heap")
+print("\n\nLet's make it a MAx Heap\n\n")
 numbers = [-n for n in numbers]
 heapq.heapify(numbers)
 numbers = [abs(n) for n in numbers]
 
 print(numbers)
 
-print("3 Largest numbers")
+print("\n3 Largest numbers")
 print(heapq.nlargest(3, numbers))
-print("3 smallest numbers")
+print("\n3 smallest numbers")
 print(heapq.nsmallest(3, numbers))
 
-print("Popping from the Max Heap")
+print("\nPopping from the Max Heap")
 print(heapq.heappop(numbers))

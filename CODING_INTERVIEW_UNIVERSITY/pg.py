@@ -1,16 +1,15 @@
 import heapq
 
-numbers = [4, 2, 7, 1, 9, 5]
-
-heapq._heapify_max(numbers)
-
-print(numbers)
-
-max_num = heapq._heappop_max(numbers)
-
-print(max_num)
-print(numbers)
-
-heapq._heapreplace_max(numbers, 3)
-
-print(numbers)
+class Solution:
+    def kClosest(self, points: list[list[int]], k: int) -> list[list[int]]:
+        minHeap = []
+        for x, y in points:
+            dist = (x ** 2) + (y ** 2)
+            minHeap.append((dist, x, y))
+        
+        heapq.heapify(minHeap)
+        res = []
+        for _ in range(k):
+            _, x, y = heapq.heappop(minHeap)
+            res.append((x, y))
+        return res
