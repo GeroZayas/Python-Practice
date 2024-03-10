@@ -83,5 +83,10 @@ heapq._heapify_max(numbers)
 
 print(numbers)
 
-print([])
+print("\nPrivate Methods in Heapq:\n")
+print([m for m in dir(heapq) if m.startswith("_")])
+
+print()
+print("Largest 2 numbers:")
+print(heapq.nlargest(2,numbers))
 
