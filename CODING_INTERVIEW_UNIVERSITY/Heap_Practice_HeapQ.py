@@ -48,6 +48,8 @@ print(heapq.heappop(numbers))
 
 print()
 
+# ---------------------- MAX PRACTICE --------------------------
+
 separator()
 print("MAX HEAP PRACTICE")
 separator()
@@ -66,3 +68,11 @@ print(heapq.nsmallest(3, numbers))
 
 print("\nPopping from the Max Heap")
 print(heapq.heappop(numbers))
+
+
+# ---------------------- MAX PRACTICE WITH PRIVATE METHODS --------------------------
+
+separator()
+print("MAX HEAP PRACTICE WITH PRIVATE METHODS")
+separator()
+
