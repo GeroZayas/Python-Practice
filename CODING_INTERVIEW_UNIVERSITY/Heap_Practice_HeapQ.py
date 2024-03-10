@@ -76,3 +76,12 @@ separator()
 print("MAX HEAP PRACTICE WITH PRIVATE METHODS")
 separator()
 
+print("\n\nLet's make it a MAx Heap\n\n")
+numbers = [7,3,6,4,9,2,10,3]
+
+heapq._heapify_max(numbers)
+
+print(numbers)
+
+print([])
+
