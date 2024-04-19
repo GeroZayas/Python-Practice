@@ -3,7 +3,7 @@ import unittest
 
 def square(x):
     # print(f"The square of {x} is:")
-    return x * 2
+    return x**2
 
 
 print(square(4))
