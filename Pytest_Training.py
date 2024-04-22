@@ -4,6 +4,10 @@ def square(x):
     return x**2
 
 
+def hello(name):
+    return f"Hello {name}"
+
+
 # ========================================
 # PYTEST tests
 def test_square_4():
@@ -20,3 +24,7 @@ def test_square_9():
 
 def test_square_10():
     assert square(10) == 100
+
+
+# ========================================
+# PYTEST tests
