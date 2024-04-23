@@ -28,3 +28,5 @@ def test_square_10():
 
 # ========================================
 # PYTEST tests
+def test_hello_gero():
+    assert hello("Gero") == "Hello Gero"
