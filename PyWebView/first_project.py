@@ -1,4 +1,26 @@
 import webview
+from enum import Enum
 
-webview.create_window("Woah dude!", html="<h1>Woah dude!<h1>")
+
+class Names(Enum):
+    MAR = 1
+    GERO = 2
+    ELISA = 3
+
+
+html = f"<h2>HELLO</h2>"
+
+webview.create_window(
+    title="Testing Gero",
+    background_color="#fcba03",
+    draggable=False,
+    resizable=False,
+    height=500,
+    width=500,
+    shadow=True,
+    html=html,
+)
+
+webview.screens
+
 webview.start()
