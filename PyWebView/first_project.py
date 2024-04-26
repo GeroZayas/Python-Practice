@@ -11,7 +11,7 @@ class Names(Enum):
 html = f"<h2>HELLO</h2>"
 
 webview.create_window(
-    title="Testing Gero",
+    title="First Project Gero",
     background_color="#fcba03",
     draggable=False,
     resizable=False,
