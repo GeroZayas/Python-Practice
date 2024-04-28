@@ -11,6 +11,6 @@ def open_confirmation_dialog(window):
 
 if __name__ == "__main__":
     window = webview.create_window(
-        "Confirmation dialog example", "https://pywebview.flowrl.com/hello"
+        "Confirmation dialog example", "https://www.gerozayas.com"
     )
     webview.start(open_confirmation_dialog, window)
