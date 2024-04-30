@@ -1,0 +1,5 @@
+[account]
+api_key = "R9WH83AWR3TV"
+
+[app.Test]
+command = "python3 test.py"

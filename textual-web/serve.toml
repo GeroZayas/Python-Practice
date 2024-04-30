@@ -1,0 +1,2 @@
+[app.Faker]
+command = "python3 test.py"
