@@ -36,7 +36,7 @@ class TreeNode:
         return self.data
 
 
-def findReverseLevelOrderTraversal(root: TreeNode) -> list[int]:
+def find_reverse_level_order(root: TreeNode) -> list[int]:
     from collections import deque
 
     result = deque()
@@ -70,5 +70,5 @@ if __name__ == "__main__":
     root.left.right = TreeNode("MMA")
     root.right.left = TreeNode("Reading")
     root.right.right = TreeNode("Coding")
-    r = findReverseLevelOrderTraversal(root)
+    r = find_reverse_level_order(root)
     print(r)
