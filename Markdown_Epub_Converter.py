@@ -2,7 +2,7 @@ import markdown
 from ebooklib import epub
 
 
-file_path = input('Path to file:\n>>> ')
+file_path = input("Path to file:\n>>> ")
 
 print()
 
@@ -36,7 +36,7 @@ book.toc = (epub.Link(epub.EpubNcx(), "ncx", "nav"),)
 # Define the spine
 book.spine = ["nav", chapter]
 
-name = input('Insert name: ')
+name = input("Insert name: ")
 
 # Save the EPUB file
 epub.write_epub(f"{name}.epub", book)
