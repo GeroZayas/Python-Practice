@@ -35,7 +35,7 @@ def dig_pow(n: int, p: int) -> int:
     sum_total = 0
     # We do a for loop to get the sum
     for el in split_n_int:
-        sum_total += el ** p
+        sum_total += el**p
         # We increase p by one each time, to make it successive
         p += 1
 

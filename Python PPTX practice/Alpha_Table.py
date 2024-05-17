@@ -27,10 +27,10 @@ left = top = Inches(1.0)
 table = slide.shapes.add_table(rows, cols, left, top, width, height).table
 
 # Add data to the table
-data = [['A', 'B', 'C', 'D'], [1, 2, 3, 4], [5, 6, 7, 8]]
+data = [["A", "B", "C", "D"], [1, 2, 3, 4], [5, 6, 7, 8]]
 for row in range(rows):
     for col in range(cols):
         table.cell(row, col).text = str(data[row][col])
 
 # Save the PowerPoint presentation
-prs.save('table_example.pptx')
+prs.save("table_example.pptx")

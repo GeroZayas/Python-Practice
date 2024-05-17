@@ -17,6 +17,7 @@ Input: The colors in my studyroom are blue, green, and yellow.
 Output:
 [['The', 'colors', 'in', 'my', 'studyroom', 'are', 'blue', 'green', 'and', 'yellow.'], [' ', ' ', ' ', ' ', ' ', ' ', ', ', ', ', ' ']]
 """
+
 first_input = "W3resource Python, Exercises."
 second_input = "The dance, held in the school gym, ended at midnight."
 third_input = "The colors in my studyroom are blue, green, and yellow."

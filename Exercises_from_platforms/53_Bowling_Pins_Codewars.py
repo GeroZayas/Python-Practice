@@ -14,8 +14,8 @@ You will get an Array with Numbers, e.g.: [3,5,9] and remove them from the field
 
 I I   I
  I   I
-  I   
-   I   
+  I
+   I
 
 Return a string with the current field.
 

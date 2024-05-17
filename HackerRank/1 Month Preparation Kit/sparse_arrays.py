@@ -1,4 +1,3 @@
-
 def matchingStrings(strings, queries):
     fin_count = []
     for q in queries:

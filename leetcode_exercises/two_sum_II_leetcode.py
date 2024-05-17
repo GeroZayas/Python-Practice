@@ -11,7 +11,7 @@ The tests are generated such that there is exactly one solution. You may not use
 
 Your solution must use only constant extra space.
 
- 
+
 
 Example 1:
 
@@ -31,7 +31,7 @@ Input: numbers = [-1,0], target = -1
 Output: [1,2]
 Explanation: The sum of -1 and 0 is -1. Therefore index1 = 1, index2 = 2. We return [1, 2].
 
- 
+
 
 Constraints:
 
@@ -61,11 +61,12 @@ def twoSum(numbers: List[int], target: int) -> List[int]:
             l += 1
         else:
             return [l + 1, r + 1]
-    
+
     return []
 
 
-numbers = [2,7,11,15]; target = 9
+numbers = [2, 7, 11, 15]
+target = 9
 
 res = twoSum(numbers=numbers, target=target)
-print('res: ', res)
+print("res: ", res)

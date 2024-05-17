@@ -19,7 +19,7 @@ def square(number):
 
 def total():
     total_amount = 0
-    for sq  in range(1, (64+1)):
+    for sq in range(1, (64 + 1)):
         total_amount += square(sq)
     return total_amount
 
@@ -28,4 +28,4 @@ def total():
 print("{:,}".format(square(2)))
 print("\nThe total amount of grains would be: ")
 print("{:,}".format(total()))
-#print("{:,}".format(18446744073709551615))
+# print("{:,}".format(18446744073709551615))

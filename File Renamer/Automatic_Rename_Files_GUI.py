@@ -47,7 +47,9 @@ while True:
                         doc = docx.Document(os.path.join(directory, filename))
                         first_line = doc.paragraphs[0].text
                     elif filename.endswith(".md"):
-                        with open(os.path.join(directory, filename), "r", encoding='utf-8') as f:
+                        with open(
+                            os.path.join(directory, filename), "r", encoding="utf-8"
+                        ) as f:
                             try:
                                 first_line = f.readline()
                             except UnicodeDecodeError:

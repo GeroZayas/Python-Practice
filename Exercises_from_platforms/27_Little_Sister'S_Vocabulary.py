@@ -8,7 +8,7 @@ def add_prefix_un(word):
     returns a new word with an 'un' prefix.
     """
 
-    return 'un' + word
+    return "un" + word
 
 
 def make_word_groups(vocab_words):
@@ -23,10 +23,10 @@ def make_word_groups(vocab_words):
      by ' :: '.
     """
     prefix = vocab_words[0]
-    new_string = ''
+    new_string = ""
     for word in vocab_words:
         if word != prefix:
-            new_string += (' :: ' + prefix + word)
+            new_string += " :: " + prefix + word
 
     return prefix + new_string
 
@@ -44,16 +44,16 @@ def remove_suffix_ness(word):
     This function takes in a word and returns the base word with `ness` removed.
     """
     # This eliminates the last four letters ness:
-    root_word = word[: -4]
+    root_word = word[:-4]
 
     # If it end in 'i' we change it to 'y'
-    if root_word[-1] == 'i':
-        root_word = (root_word[: -1]) + 'y'
+    if root_word[-1] == "i":
+        root_word = (root_word[:-1]) + "y"
 
     return root_word
 
 
-print(remove_suffix_ness('artiness'))
+print(remove_suffix_ness("artiness"))
 
 
 def adjective_to_verb(sentence, index):
@@ -70,9 +70,9 @@ def adjective_to_verb(sentence, index):
     """
     # This if deals with the '.' at the end, in case the index is negative, it eiminates it
     if index < 0:
-        sentence = sentence[: -1]
+        sentence = sentence[:-1]
 
     # We split the sentece, which makes it a list, and then we can use the index to select the word, instead just a letter, if we hadn't splited it
     sent_list = sentence.split()
-    new_verb = sent_list[index] + 'en'
+    new_verb = sent_list[index] + "en"
     return new_verb

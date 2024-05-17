@@ -18,19 +18,20 @@ with col1:
 with col2:
     kilogram = st.number_input("Kilograms:", key="kg", on_change=kg_to_lbs)
 
-st.session_state.name, st.session_state.age = 'Gero Zayas', 32
+st.session_state.name, st.session_state.age = "Gero Zayas", 32
 
 ss = st.session_state
 
 ss.family = [
-    'Sonia',
-    'Basilio',
-    'Carly',
-    ['More People',
-    'Some More People',
-    ['uno', 'dos', 'tres'],
+    "Sonia",
+    "Basilio",
+    "Carly",
+    [
+        "More People",
+        "Some More People",
+        ["uno", "dos", "tres"],
     ],
-    ]
+]
 
 printeame_esto = st.write
 

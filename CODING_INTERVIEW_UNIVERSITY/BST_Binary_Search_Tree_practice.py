@@ -493,7 +493,7 @@ print(f"Root 1 before deleting {key}")
 print(adjacency_list_root_1)
 
 print(
-    f"""
+    """
     ************
     Deleting...
     ************

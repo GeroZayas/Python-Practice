@@ -15,10 +15,10 @@ while has_next_page:
     soup = BeautifulSoup(response.content, "html.parser")
 
     # Find all the links to blog posts
-    links = soup.find_all("header", class_="entry-header") 
+    links = soup.find_all("header", class_="entry-header")
 
     # Extract and print the URLs
     for link in links:
-        print(link.a.text, link.a, '\n\n')
-    
+        print(link.a.text, link.a, "\n\n")
+
     page_number += 1

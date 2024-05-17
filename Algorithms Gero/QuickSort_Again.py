@@ -6,7 +6,8 @@ numbers = [15, 27, 23, 4, 8, 23, 9, 21, 26, 25]
 
 print(numbers)
 
-def quicksort(nums:list):
+
+def quicksort(nums: list):
     if len(nums) <= 1:
         return nums
     pivot = nums[0]
@@ -15,12 +16,14 @@ def quicksort(nums:list):
 
     return quicksort(left) + [pivot] + quicksort(right)
 
+
 sorted_numbers = quicksort(numbers)
 print(sorted_numbers)
 
-# Binary Search 
+# Binary Search
 target = 23
 print(f"Target = {target}")
+
 
 def binarysearch(nums, target):
     left, right = 0, len(nums) - 1
@@ -34,6 +37,7 @@ def binarysearch(nums, target):
             left = mid + 1
 
     return f"Target {target} not found in array"
+
 
 r = binarysearch(sorted_numbers, target)
 print(r)

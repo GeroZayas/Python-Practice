@@ -13,7 +13,7 @@ of s such that every character in t (including duplicates) is included in the wi
 
 The testcases will be generated such that the answer is unique.
 
- 
+
 
 Example 1:
 
@@ -34,7 +34,7 @@ Output: ""
 Explanation: Both 'a's from t must be included in the window.
 Since the largest window of s only has one 'a', return empty string.
 
- 
+
 
 Constraints:
 
@@ -43,6 +43,7 @@ Constraints:
     1 <= m, n <= 105
     s and t consist of uppercase and lowercase English letters.
 """
+
 from collections import Counter
 
 
@@ -64,6 +65,6 @@ def min_window(s, t):
         if char in t_count and window_counts[char] == t_count[char]:
             formed += 1
 
-        while left <= right and formed == required:
-            char = s[left]
-            if right - left + 1 < ans[0]
+        # while left <= right and formed == required:
+        #     char = s[left]
+        #     if right - left + 1 < ans[0]

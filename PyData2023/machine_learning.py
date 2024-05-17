@@ -1,5 +1,5 @@
 # PyData2024 June 10, Canodrom Ateneu Machine Learning Intro Talk
-""" Linear Regression -> foundational algorithms
+"""Linear Regression -> foundational algorithms
 
 Deep learning is inside Machine Learning:
 Deep learning -> multiple blocks, several algorithms put together
@@ -22,4 +22,3 @@ Deep learning is about complet input (photos, audio, videos, and so on)
 
 
 """
-

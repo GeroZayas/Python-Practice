@@ -18,7 +18,6 @@ For the sake of simplicity, you can assume that any numbers passed into the func
 
 """
 
-
 vowel_dict = {"a": 1, "e": 2, "i": 3, "o": 4, "u": 5}
 
 

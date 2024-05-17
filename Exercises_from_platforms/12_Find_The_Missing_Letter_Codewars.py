@@ -16,15 +16,67 @@ Example:
 """
 
 # upper and lowercase alphabets here:
-lower_case_alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
-                    'u', 'v', 'w', 'x', 'y', 'z']
-upper_case_alpha = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
-                    'U', 'V', 'W', 'X', 'Y', 'Z']
+lower_case_alpha = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+]
+upper_case_alpha = [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+]
 
 
 def find_missing_letter(chars: list) -> str:
     # We declare the var that we will return, missing_letter:
-    missing_letter = ''
+    missing_letter = ""
     # we declare a var to later check and get hold of which list we are going to work with
     list_to_use = list
     # to determine with which list we are going to work (lower or upper case) we check the 1st char with the .isupper()
@@ -37,7 +89,7 @@ def find_missing_letter(chars: list) -> str:
     index_first_letter = list_to_use.index(chars[0])
     index_last_letter = list_to_use.index(chars[-1])
     # we iterate through both lists and determine which element is different, missing in the given list 'chars'
-    for element in list_to_use[index_first_letter: index_last_letter]:
+    for element in list_to_use[index_first_letter:index_last_letter]:
         if element not in chars:
             missing_letter = element
     return missing_letter
