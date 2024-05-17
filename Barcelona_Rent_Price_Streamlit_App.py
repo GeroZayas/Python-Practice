@@ -1,5 +1,6 @@
 import streamlit as st
-from random import choice, sample
+
+# from random import choice, sample
 import pandas as pd
 
 st.title("Rent Price in Barcelona 2014-2022")
@@ -21,5 +22,3 @@ districts = df["District"].unique()
 district = st.selectbox("Select District", districts)
 data_district = df[df["District"] == district]
 st.write(data_district)
-
-

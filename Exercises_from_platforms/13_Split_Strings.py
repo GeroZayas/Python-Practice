@@ -13,7 +13,7 @@ def solution(s: str) -> list:
     list_of_letter_pairs = []
     # We add '_' in case the string's len is odd, so we still have a pair
     if len(s) % 2 != 0:
-        s += '_'
+        s += "_"
     # We declare two vars for indexes to move iterate through the given string
     index_1 = 0
     index_2 = 2
@@ -28,5 +28,5 @@ def solution(s: str) -> list:
     return list_of_letter_pairs
 
 
-print(solution('abc'))  # ['ab', 'c_']
-print(solution('abcdef'))  # ['ab', 'cd', 'ef']
+print(solution("abc"))  # ['ab', 'c_']
+print(solution("abcdef"))  # ['ab', 'cd', 'ef']

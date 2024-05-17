@@ -1,4 +1,4 @@
-def reverse_words(sentence:str)->str:
+def reverse_words(sentence: str) -> str:
     """
     A function that reverses the input string.
     """
@@ -8,5 +8,5 @@ def reverse_words(sentence:str)->str:
         res.append(word[::-1])
     print(" ".join(res))
 
-reverse_words("Hello Gero")
 
+reverse_words("Hello Gero")

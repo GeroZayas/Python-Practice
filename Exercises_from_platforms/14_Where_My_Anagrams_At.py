@@ -34,6 +34,8 @@ def anagrams(word: str, words: list) -> list:
     return anagram_list
 
 
-print(anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']))  # => ['aabb', 'bbaa']
-print(anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']))  # => ['carer', 'racer']
-print(anagrams('laser', ['lazing', 'lazy', 'lacer']))  # => []
+print(anagrams("abba", ["aabb", "abcd", "bbaa", "dada"]))  # => ['aabb', 'bbaa']
+print(
+    anagrams("racer", ["crazer", "carer", "racar", "caers", "racer"])
+)  # => ['carer', 'racer']
+print(anagrams("laser", ["lazing", "lazy", "lacer"]))  # => []

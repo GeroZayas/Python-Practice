@@ -41,7 +41,7 @@ st.write("### What is *'" + spanish_word + "'* in English?")
 
 button_container = st.container()
 
-with button_container:    
+with button_container:
     col1, col2 = st.columns(2)
     with col1:
         button1 = st.button(question_words[0])

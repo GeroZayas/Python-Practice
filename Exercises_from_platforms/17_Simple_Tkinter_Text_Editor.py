@@ -18,6 +18,7 @@ selected = False
 
 # # # FUNCTIONS -------------------------
 
+
 # Open Popup Box when we perform a command
 def open_popup(action, message):
     top = Toplevel(root)

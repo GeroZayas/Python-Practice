@@ -1,6 +1,6 @@
 # this is from cses.fi/problemset
 """
-input: n 
+input: n
 
 while n > 1:
 
@@ -10,7 +10,7 @@ else:
     n = n * 3 + 1
 
 
-output: print line with all the outputs with all values of n 
+output: print line with all the outputs with all values of n
 """
 
 

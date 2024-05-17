@@ -6,6 +6,7 @@ my_array = [3, 6, 5, 2, 8, 1, 9, 10]
 def separator():
     print("=" * 80)
 
+
 # This is a comment
 
 separator()
@@ -77,7 +78,7 @@ print("MAX HEAP PRACTICE WITH PRIVATE METHODS")
 separator()
 
 print("\n\nLet's make it a MAx Heap\n\n")
-numbers = [7,3,6,4,9,2,10,3]
+numbers = [7, 3, 6, 4, 9, 2, 10, 3]
 
 heapq._heapify_max(numbers)
 
@@ -88,5 +89,4 @@ print([m for m in dir(heapq) if m.startswith("_")])
 
 print()
 print("Largest 2 numbers:")
-print(heapq.nlargest(2,numbers))
-
+print(heapq.nlargest(2, numbers))

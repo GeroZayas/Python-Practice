@@ -14,15 +14,38 @@ Please note that using encode is considered cheating.
 
 
 def rot13(message: str) -> str:
-    low_alphabet_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
-                         'l',
-                         'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w',
-                         'x',
-                         'y', 'z']
+    low_alphabet_list = [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z",
+    ]
     capital_alphabet_list = []
     for l in low_alphabet_list:
         capital_alphabet_list.append(l.upper())
-    final_message = ''
+    final_message = ""
     for letter in message:
         if letter in low_alphabet_list:
             the_index = low_alphabet_list.index(letter)

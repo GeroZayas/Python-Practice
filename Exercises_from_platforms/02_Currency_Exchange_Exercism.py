@@ -1,5 +1,6 @@
 # https://exercism.org/tracks/python/exercises/currency-exchange
 
+
 def exchange_money(budget, exchange_rate):
     return budget / exchange_rate
 
@@ -28,13 +29,13 @@ def exchangeable_value(budget, exchange_rate, spread, denomination):
 
 def non_exchangeable_value(budget, exchange_rate, spread, denomination):
     spread_rate = exchange_rate * spread / 100
-    print('spread rate: ', spread_rate)
+    print("spread rate: ", spread_rate)
     money = budget / (exchange_rate + spread_rate)
-    print('money: ', money)
+    print("money: ", money)
     bills = get_number_of_bills(money, denomination)
-    print('bills: ', bills)
+    print("bills: ", bills)
     total_money = get_value_of_bills(denomination, bills)
-    print('total: ', total_money)
+    print("total: ", total_money)
     money_lost_in_exchange = int(money - total_money)
     return money_lost_in_exchange
 
