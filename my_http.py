@@ -1,5 +1,4 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
-from random import choice
 
 
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):

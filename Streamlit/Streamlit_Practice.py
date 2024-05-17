@@ -1,8 +1,5 @@
-from datetime import time, datetime
 import streamlit as st
-from random import choice, sample
 import pandas as pd
-import altair as alt
 import numpy as np
 
 st.title("Streamlit Practice")

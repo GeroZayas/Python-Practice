@@ -8,7 +8,7 @@ class Names(Enum):
     ELISA = 3
 
 
-html = f"<h2>HELLO</h2>"
+html = "<h2>HELLO</h2>"
 
 webview.create_window(
     title="First Project Gero",
