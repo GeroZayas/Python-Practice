@@ -15,9 +15,6 @@ class Professions:
 class Teacher(Professions):
     def __init__(self, name: str, salary: int, experience: str, subject: str):
         super().__init__(name, salary, experience)
-        self.name = name
-        self.salary = salary
-        self.experience = experience
         self.subject = subject
 
     def __repr__(self) -> str:
