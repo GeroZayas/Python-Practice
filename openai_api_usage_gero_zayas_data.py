@@ -22,3 +22,4 @@ if response.status_code == 200:
     print("Connection successful")
 else:
     print("Connection failed")
+    print(response.text)  # Print the response text for more information on the failure
