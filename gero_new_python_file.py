@@ -9,3 +9,8 @@ class Gero:
 
     def study_programming(self):
         print(f"{self.name} is studying programming.")
+
+
+gero = Gero(name="Gero", age=32, work="programmer")
+
+print(gero)
