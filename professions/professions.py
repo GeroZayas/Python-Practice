@@ -21,5 +21,14 @@ class Teacher(Professions):
         return super().__repr__() + f" || Subject: {self.subject}"
 
 
+class EnglishTeacher(Teacher):
+    def __init__(self, name: str, salary: int, experience: str, subject: str, certificates: int):
+        super().__init__(name, salary, experience, subject)
+        self.certificates = certificates
+
+    def __repr__(self) -> str:
+        return super().__repr__() + f" || Certificates: {self.certificates}"
+
+
 if __name__ == "__main__":
     pass
