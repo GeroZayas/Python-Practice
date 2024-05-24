@@ -5,16 +5,13 @@ url = "https://platform.openai.com/organization/usage"
 
 # Google login credentials
 email = "gerozayas@gmail.com"
-password = "your_google_password_here"
+password = "Clavegerozayas7"
 
 # Create a session
 session = requests.Session()
 
 # Perform login with Google
-login_data = {
-    "email": email,
-    "password": password
-}
+login_data = {"email": email, "password": password}
 session.post("https://accounts.google.com/signin/v2/identifier", data=login_data)
 
 # Access the OpenAI usage page
