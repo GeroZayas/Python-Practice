@@ -4,8 +4,8 @@ import requests
 url = "https://platform.openai.com/organization/usage"
 
 # Google login credentials
-email = "gerozayas@gmail.com"
-password = "Clavegerozayas7"
+email = "**********"
+password = "**********"
 
 # Create a session
 session = requests.Session()
