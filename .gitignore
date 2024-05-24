@@ -41,3 +41,4 @@ __pycache__/
 *.mp3
 .mypy_cache/
 .ruff_cache/
+.aider*
