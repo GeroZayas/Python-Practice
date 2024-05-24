@@ -14,6 +14,6 @@ class Gero:
         return f"Gero(name='{self.name}', age={self.age}, work='{self.work}')"
 
 
-gero = Gero(name="Gero", age=32, work="programmer")
-
-print(gero)
+if __name__ == "__main__":
+    gero = Gero(name="Gero", age=32, work="programmer")
+    print(gero)
