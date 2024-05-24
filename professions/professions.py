@@ -5,8 +5,7 @@ class Professions:
         self.experience = experience
 
     def __repr__(self) -> str:
-        print("---")
-        return f"Name: {self.name}, Salary: {self.salary} and Experience: {self.experience}"
+        return f"Name: {self.name}\n======\nSalary: {self.salary}\n======\nExperience: {self.experience}"
 
     def is_working(self, working_now: bool):
         return f"{self.name} Is it working now? -> {working_now}"
@@ -18,7 +17,7 @@ class Teacher(Professions):
         self.subject = subject
 
     def __repr__(self) -> str:
-        return super().__repr__() + f" || Subject: {self.subject}"
+        return super().__repr__() + f"\n======\nSubject: {self.subject}"
 
 
 class EnglishTeacher(Teacher):
@@ -27,7 +26,7 @@ class EnglishTeacher(Teacher):
         self.certificates = certificates
 
     def __repr__(self) -> str:
-        return super().__repr__() + f" || Certificates: {self.certificates}"
+        return super().__repr__() + f"\n======\nCertificates: {self.certificates}"
 
 
 if __name__ == "__main__":
