@@ -1,6 +1,7 @@
 # The class `Professions` in Python defines attributes for name, salary, and experience of a
 # profession.
 from professions.professions import Professions, Teacher, EnglishTeacher
+from gero_new_python_file import Gero
 
 firefighter = Professions("Firefighter", 24000, "A lot")
 
@@ -23,4 +24,9 @@ english_teacher = EnglishTeacher(
     salary=45000,
 )
 
+
 print(english_teacher)
+
+
+new_gero_instance = Gero("Gero The Second", age=23, work="Python")
+print(new_gero_instance)

@@ -15,5 +15,4 @@ class Gero:
 
 
 if __name__ == "__main__":
-    gero = Gero(name="Gero", age=32, work="programmer")
-    print(gero)
+    pass
