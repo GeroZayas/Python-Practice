@@ -22,3 +22,6 @@ while has_next_page:
         print(link.a.text, link.a, "\n\n")
 
     page_number += 1
+
+if __name__ == "__main__":
+    pass
