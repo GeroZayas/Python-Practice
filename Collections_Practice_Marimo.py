@@ -66,6 +66,54 @@ def __(counter):
 
 
 @app.cell
+def __(collections, inspect):
+    inspect(collections.defaultdict, methods=True, docs=True)
+    return
+
+
+@app.cell
+def __(collections):
+    new_def_dict = collections.defaultdict(list)
+    return new_def_dict,
+
+
+@app.cell
+def __(new_def_dict):
+    new_def_dict
+    return
+
+
+@app.cell
+def __(new_def_dict):
+    new_def_dict["names"]
+    return
+
+
+@app.cell
+def __(new_def_dict):
+    type(new_def_dict["names"])
+    return
+
+
+@app.cell
+def __(new_def_dict):
+    new_def_dict["names"].append(34)
+    return
+
+
+@app.cell
+def __(new_def_dict):
+    new_def_dict
+    return
+
+
+@app.cell
+def __(new_def_dict):
+    type(new_def_dict["names"][0])
+    return
+
+
+@app.cell
 def __():
     return
 
