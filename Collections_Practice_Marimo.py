@@ -114,6 +114,61 @@ def __(new_def_dict):
 
 
 @app.cell
+def __(collections):
+    new_deque = collections.deque()
+    return new_deque,
+
+
+@app.cell
+def __(new_deque):
+    new_deque
+    return
+
+
+@app.cell
+def __(new_deque):
+    new_deque.append(34)
+    return
+
+
+@app.cell
+def __(new_deque):
+    new_deque.append(23)
+    return
+
+
+@app.cell
+def __(new_deque):
+    new_deque
+    return
+
+
+@app.cell
+def __(new_deque):
+    new_deque.appendleft(88)
+    return
+
+
+@app.cell
+def __(new_deque):
+    new_deque
+    return
+
+
+@app.cell
+def __(new_deque):
+    new_deque.rotate(1)
+
+    return
+
+
+@app.cell
+def __(new_deque):
+    new_deque
+    return
+
+
+@app.cell
 def __():
     return
 
