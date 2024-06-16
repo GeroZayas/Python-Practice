@@ -73,98 +73,24 @@ def __(collections, inspect):
 
 @app.cell
 def __(collections):
-    new_def_dict = collections.defaultdict(list)
-    return new_def_dict,
+    people = collections.namedtuple("People", ["name", "age"])
+    return people,
 
 
 @app.cell
-def __(new_def_dict):
-    new_def_dict
+def __(people):
+    gero = people("gero", 32)
+    return gero,
+
+
+@app.cell
+def __(gero):
+    gero
     return
 
 
 @app.cell
-def __(new_def_dict):
-    new_def_dict["names"]
-    return
-
-
-@app.cell
-def __(new_def_dict):
-    type(new_def_dict["names"])
-    return
-
-
-@app.cell
-def __(new_def_dict):
-    new_def_dict["names"].append(34)
-    return
-
-
-@app.cell
-def __(new_def_dict):
-    new_def_dict
-    return
-
-
-@app.cell
-def __(new_def_dict):
-    type(new_def_dict["names"][0])
-    return
-
-
-@app.cell
-def __(collections):
-    new_deque = collections.deque()
-    return new_deque,
-
-
-@app.cell
-def __(new_deque):
-    new_deque
-    return
-
-
-@app.cell
-def __(new_deque):
-    new_deque.append(34)
-    return
-
-
-@app.cell
-def __(new_deque):
-    new_deque.append(23)
-    return
-
-
-@app.cell
-def __(new_deque):
-    new_deque
-    return
-
-
-@app.cell
-def __(new_deque):
-    new_deque.appendleft(88)
-    return
-
-
-@app.cell
-def __(new_deque):
-    new_deque
-    return
-
-
-@app.cell
-def __(new_deque):
-    new_deque.rotate(1)
-
-    return
-
-
-@app.cell
-def __(new_deque):
-    new_deque
+def __():
     return
 
 
