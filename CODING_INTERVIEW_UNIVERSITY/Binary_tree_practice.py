@@ -49,17 +49,17 @@ def bfs(root):
 
 # ==================================
 def bfs_reversed(root):
-    revrsd = deque()
+    reversed_ = deque()
     if root:
         queue = deque([root])
         while queue:
             node = queue.popleft()
-            revrsd.appendleft(node.data)
+            reversed_.appendleft(node.data)
             if node.left:
                 queue.append(node.left)
             if node.right:
                 queue.append(node.right)
-    print("\n".join(list(revrsd)))
+    print("\n".join(list(reversed_)))
 
 
 # ==================================
