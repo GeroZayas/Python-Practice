@@ -90,7 +90,14 @@ def __(gero):
 
 
 @app.cell
-def __():
+def __(gero):
+    gero.age
+    return
+
+
+@app.cell
+def __(gero):
+    gero.name
     return
 
 
