@@ -8,8 +8,8 @@ import pandas as pd
 # Insert Image in the Page
 from PIL import Image
 
-image = Image.open("./images/english.jpeg")
-st.image(image, width=400)
+# image = Image.open("./images/english.jpeg")
+# st.image(image, width=400)
 
 # WELCOME MESSAGE
 st.markdown(
