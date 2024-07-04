@@ -102,6 +102,61 @@ def __(gero):
 
 
 @app.cell
+def __(collections):
+    personas_prop = ["age", "name", "job"]
+    personas = collections.namedtuple("People", personas_prop)
+    return personas, personas_prop
+
+
+@app.cell
+def __(personas):
+    mar = personas(33, "Mar", "HR")
+    return mar,
+
+
+@app.cell
+def __(mar):
+    mar
+    return
+
+
+@app.cell
+def __(mar):
+    type(mar)
+    return
+
+
+@app.cell
+def __(mar):
+    mar.name
+    return
+
+
+@app.cell
+def __(mar):
+    mar.age
+    return
+
+
+@app.cell
+def __(mar):
+    mar.index("HR")
+    return
+
+
+@app.cell
+def __(mar):
+    mar.count("Mar")
+    return
+
+
+@app.cell
+def __(mar):
+    mar.job
+    return
+
+
+@app.cell
 def __():
     return
 
