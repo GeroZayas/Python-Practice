@@ -61,6 +61,32 @@ def __(json_top_resources):
 
 
 @app.cell
+def __(json_top_resources):
+    len(json_top_resources[0])
+    return
+
+
+@app.cell
+def __(json_top_resources):
+    for _ in json_top_resources[0]:
+        print(_)
+    return
+
+
+@app.cell
+def __(json_top_resources):
+    type(json_top_resources[0])
+    return
+
+
+@app.cell
+def __(json_top_resources):
+    for key, value in json_top_resources[0].items():
+        print(f"{key:15}", "->",f"{value}")
+    return key, value
+
+
+@app.cell
 def __():
     return
 
