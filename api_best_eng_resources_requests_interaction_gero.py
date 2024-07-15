@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.6.0"
+__generated_with = "0.6.19"
 app = marimo.App()
 
 
@@ -12,9 +12,9 @@ def __():
 
 @app.cell
 def __(requests):
-    url = "https://best-english-resources-api.onrender.com/resources"
-    response = requests.get(url)
-    return response, url
+    url_top_resources = "https://api-english-resources.up.railway.app/resources/top"
+    response = requests.get(url_top_resources)
+    return response, url_top_resources
 
 
 @app.cell
@@ -25,37 +25,43 @@ def __(response):
 
 @app.cell
 def __(response):
-    response.json()
+    response
     return
 
 
 @app.cell
 def __(response):
-    top_cat = response.json()
-    return top_cat,
+    json_top_resources = response.json()
+    return json_top_resources,
 
 
 @app.cell
-def __(top_cat):
-    top_cat_name_url= [(e["name"], e["url"]) for e in top_cat if e["category"] == "top"] 
-    return top_cat_name_url,
-
-
-@app.cell
-def __(top_cat_name_url):
-    top_cat_name_url
+def __(json_top_resources):
+    json_top_resources
     return
 
 
 @app.cell
-def __(top_cat):
-    CAE_cat_name_url= [(e["name"], e["url"]) for e in top_cat if e["category"] == "CAE"] 
-    return CAE_cat_name_url,
+def __(json_top_resources):
+    type(json_top_resources)
+    return
 
 
 @app.cell
-def __(CAE_cat_name_url):
-    CAE_cat_name_url
+def __(json_top_resources):
+    len(json_top_resources)
+    return
+
+
+@app.cell
+def __(json_top_resources):
+    for _ in json_top_resources:
+        print(_)
+    return
+
+
+@app.cell
+def __():
     return
 
 
