@@ -36,11 +36,11 @@ def __(BeautifulSoup, response_1):
 
 
 @app.cell
-def __():
-    # paragraphs = soup_1.find_all('p')
-    # for p in paragraphs:
-    #     print(p.text)
-    return
+def __(soup_1):
+    paragraphs = soup_1.find_all('p')
+    for p in paragraphs:
+        print(p.text)
+    return p, paragraphs
 
 
 @app.cell
@@ -57,40 +57,30 @@ def __(BeautifulSoup, requests):
 
 
 @app.cell
-def __(BeautifulSoup, article_links, requests, soup):
-    for article_url in article_links:
-        response_article = requests.get(article_url)
-        soup_article = BeautifulSoup(response_article.text, 'html.parser')
+def __():
+    # for article_url in article_links:
+    #     response_article = requests.get(article_url)
+    #     soup_article = BeautifulSoup(response_article.text, 'html.parser')
 
-        paragraphs = soup_article.find_all('p')
-        for p in paragraphs:
-            print(p.text.strip())
-        
-        # Buscar la sección "1 QUESTION FOR YOU"
-        start_section = soup.find('h2', string='1 QUESTION FOR YOU')
-        
-        if start_section:
-            # Buscar hacia adelante desde la sección "1 QUESTION FOR YOU" hasta encontrar "Until next week,"
-            end_section = start_section.find_next_sibling('h2', string='Until next week,')
-            
-            if end_section:
-                # Extraer todo el contenido desde la sección "1 QUESTION FOR YOU" hasta "Until next week,"
-                content_between_sections = start_section.find_next_sibling().decompose()
-                
-                # Ahora, content_between_sections contiene todo el contenido entre ambas secciones
-                # Puedes procesar este contenido como necesites
-                print(content_between_sections.text.strip())
+    #     paragraphs = soup_article.find_all('p')
+    #     for p in paragraphs:
+    #         print(p.text.strip())
 
-    return (
-        article_url,
-        content_between_sections,
-        end_section,
-        p,
-        paragraphs,
-        response_article,
-        soup_article,
-        start_section,
-    )
+    #     # Buscar la sección "1 QUESTION FOR YOU"
+    #     start_section = soup.find('h2', string='1 QUESTION FOR YOU')
+
+    #     if start_section:
+    #         # Buscar hacia adelante desde la sección "1 QUESTION FOR YOU" hasta encontrar "Until next week,"
+    #         end_section = start_section.find_next_sibling('h2', string='Until next week,')
+
+    #         if end_section:
+    #             # Extraer todo el contenido desde la sección "1 QUESTION FOR YOU" hasta "Until next week,"
+    #             content_between_sections = start_section.find_next_sibling().decompose()
+
+    #             # Ahora, content_between_sections contiene todo el contenido entre ambas secciones
+    #             # Puedes procesar este contenido como necesites
+    #             print(content_between_sections.text.strip())
+    return
 
 
 @app.cell
