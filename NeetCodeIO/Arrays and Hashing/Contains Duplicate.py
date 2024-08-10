@@ -1,6 +1,11 @@
 from typing import List
 
+"""
+What can we learn from this program?
+- whenever we need to check duplicity, we can create a hashset (unique elements)
+- 
 
+"""
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
         hashset = set()
