@@ -9,7 +9,7 @@ def __(List):
     class Solution:
         def maxProfit(self, prices: List[int]) -> int:
             res = 0
-            
+
             lowest = prices[0]
             for price in prices:
                 if price < lowest:
@@ -23,7 +23,6 @@ def __(List):
 def __(Solution):
     solution = Solution()
     prices = [10,1,5,6,7,1]
-
     return prices, solution
 
 
@@ -34,8 +33,10 @@ def __(prices, solution):
 
 
 @app.cell
-def __():
-    return
+def __(solution):
+    prices_2 = [13,43,32,67,3,11]
+    print(solution.maxProfit(prices_2))
+    return prices_2,
 
 
 if __name__ == "__main__":
