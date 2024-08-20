@@ -49,12 +49,43 @@ def __(Solution):
     solution = Solution()
     s1 = "abc"
     s2 = "lecabee"
-    return s1, s2, solution
+    s3 = "gero"
+    s4 = "relojero"
+    return s1, s2, s3, s4, solution
 
 
 @app.cell
 def __(s1, s2, solution):
     solution.checkInclusion(s1,s2)
+    return
+
+
+@app.cell
+def __(solution):
+    check = solution.checkInclusion
+    return check,
+
+
+@app.cell
+def __(check, s3, s4):
+    check(s3,s4)
+    return
+
+
+@app.cell
+def __():
+    s5, s6 = "Aaa", "Abadacadabra"
+    return s5, s6
+
+
+@app.cell
+def __(check, s5, s6):
+    check(s6,s5)
+    return
+
+
+@app.cell
+def __():
     return
 
 
