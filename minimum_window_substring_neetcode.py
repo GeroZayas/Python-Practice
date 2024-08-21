@@ -43,12 +43,19 @@ def __():
 @app.cell
 def __(Solution):
     solution = Solution()
-    return solution,
+    s = "OUZODYXAZV"
+    t = "XYZ"
+    return s, solution, t
 
 
 @app.cell
-def __(solution):
-    solution.minWindow()
+def __(s, solution, t):
+    solution.minWindow(s, t)
+    return
+
+
+@app.cell
+def __():
     return
 
 
