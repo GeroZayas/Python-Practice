@@ -24,5 +24,28 @@ def __():
     return Solution,
 
 
+@app.cell
+def __(Solution):
+    solution = Solution()
+    return solution,
+
+
+@app.cell
+def __():
+    s = "([{}])"
+    return s,
+
+
+@app.cell
+def __(s, solution):
+    solution.isValid(s)
+    return
+
+
+@app.cell
+def __():
+    return
+
+
 if __name__ == "__main__":
     app.run()
