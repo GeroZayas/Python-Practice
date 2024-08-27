@@ -35,6 +35,18 @@ def __(Solution):
 
 @app.cell
 def __():
+    tokens = ["1","2","+","3","*","4","-"]
+    return tokens,
+
+
+@app.cell
+def __(solution, tokens):
+    solution.evalRPN(tokens)
+    return
+
+
+@app.cell
+def __():
     return
 
 
