@@ -39,6 +39,18 @@ def __(Solution):
 
 @app.cell
 def __():
+    n = 3
+    return n,
+
+
+@app.cell
+def __(n, solution):
+    solution.generateParenthesis(n)
+    return
+
+
+@app.cell
+def __():
     return
 
 
