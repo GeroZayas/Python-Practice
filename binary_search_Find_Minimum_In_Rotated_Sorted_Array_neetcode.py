@@ -53,6 +53,12 @@ def __(s):
 
 
 @app.cell
+def __(s):
+    s.findMin(nums = [2,34,1,56])
+    return
+
+
+@app.cell
 def __():
     return
 
