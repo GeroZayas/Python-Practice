@@ -35,3 +35,32 @@ nums2 = [2, 4]
 r = solution.findMedianSortedArrays(nums1, nums2)
 
 print(r)
+
+
+nums1 = [56, 89]
+nums2 = [34, 67]
+
+r = solution.findMedianSortedArrays(nums1, nums2)
+
+print(r)
+
+nums1 = [12, 45]
+nums2 = [23, 78]
+
+r = solution.findMedianSortedArrays(nums1, nums2)
+
+print(r)
+
+nums1 = [67, 91]
+nums2 = [4, 36]
+
+r = solution.findMedianSortedArrays(nums1, nums2)
+
+print(r)
+
+nums1 = [18, 54]
+nums2 = [29, 82]
+
+r = solution.findMedianSortedArrays(nums1, nums2)
+
+print(r)
