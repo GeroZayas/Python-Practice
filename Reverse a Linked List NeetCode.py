@@ -15,3 +15,12 @@ class Solution:
             prev = curr
             curr = temp
         return prev
+
+
+head = ListNode([0, 1, 2, 3])
+
+solution = Solution()
+
+r = solution.reverseList(head)
+
+print(r)
