@@ -56,18 +56,23 @@ class Solution:
                 i += 1
             j += 1
         return i == len(s)
-    
-# -------------------------------
 
-class Solution {
-    fun lengthOfLastWord(s: String): Int {
-        var p = s.length-1
-        while(s[p].isWhitespace()) p--
-        var count = 0
-        while(p >= 0 && !s[p].isWhitespace()){
-            count++
-            p--
-        }
-        return count
-    }
-}
+
+# -------------------------------
+class Solution:
+    def lengthOfLastWord(self, s: str) -> int:
+        """
+        one shortcut
+        """
+        # 	return len(s.split()[-1])
+        c = 0
+        for i in s[::-1]:
+            if i == " ":
+                if c >= 1:
+                    return c
+            else:
+                c += 1
+        return c
+
+
+# -------------------------------
