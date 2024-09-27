@@ -182,3 +182,120 @@ Note: The example above and some examples in the next sections use Python’s AB
 This update closes the class to modifications. Now you can add new shapes to your class design without the need to modify Shape. In every case, you’ll have to implement the required interface, which also makes your classes polymorphic.
 
 ---
+
+## Liskov Substitution Principle (LSP)
+
+The Liskov substitution principle (LSP) was introduced by Barbara Liskov at an OOPSLA conference in 1987. Since then, this principle has been a fundamental part of object-oriented programming. The principle states that:
+
+    Subtypes must be substitutable for their base types.
+
+For example, if you have a piece of code that works with a Shape class, then you should be able to substitute that class with any of its subclasses, such as Circle or Rectangle, without breaking the code.
+
+Note: You can read the conference proceedings from the keynote where Barbara Liskov first shared this principle, or you can watch a short fragment of an interview with her for more context.
+
+In practice, this principle is about making your subclasses behave like their base classes without breaking anyone’s expectations when they call the same methods. To continue with shape-related examples, say you have a Rectangle class like the following:
+
+```python
+# shapes_lsp.py
+
+class Rectangle:
+def **init**(self, width, height):
+self.width = width
+self.height = height
+
+    def calculate_area(self):
+        return self.width * self.height
+
+```
+
+In Rectangle, you’ve provided the .calculate_area() method, which operates with the .width and .height instance attributes.
+
+Because a square is a special case of a rectangle with equal sides, you think of deriving a Square class from Rectangle in order to reuse the code. Then, you override the setter method for the .width and .height attributes so that when one side changes, the other side also changes:
+
+```python
+# shapes_lsp.py
+
+# ...
+
+class Square(Rectangle):
+def **init**(self, side):
+super().**init**(side, side)
+
+    def __setattr__(self, key, value):
+        super().__setattr__(key, value)
+        if key in ("width", "height"):
+            self.__dict__["width"] = value
+            self.__dict__["height"] = value
+
+```
+
+In this snippet of code, you’ve defined Square as a subclass of Rectangle. As a user might expect, the class constructor takes only the side of the square as an argument. Internally, the .**init**() method initializes the parent’s attributes, .width and .height, with the side argument.
+
+You’ve also defined a special method, .**setattr**(), to hook into Python’s attribute-setting mechanism and intercept the assignment of a new value to either the .width or .height attribute. Specifically, when you set one of those attributes, the other attribute is also set to the same value:
+
+```python
+> > > from shapes_lsp import Square
+
+> > > square = Square(5)
+> > > vars(square)
+> > > {'width': 5, 'height': 5}
+
+> > > square.width = 7
+> > > vars(square)
+> > > {'width': 7, 'height': 7}
+
+> > > square.height = 9
+> > > vars(square)
+> > > {'width': 9, 'height': 9}
+
+```
+
+Now you’ve ensured that the Square object always remains a valid square, making your life easier for the small price of a bit of wasted memory. Unfortunately, this violates the Liskov substitution principle because you can’t replace instances of Rectangle with their Square counterparts.
+
+When someone expects a rectangle object in their code, they might assume that it’ll behave like one by exposing two independent .width and .height attributes. Meanwhile, your Square class breaks that assumption by changing the behavior promised by the object’s interface. That could have surprising and unwanted consequences, which would likely be hard to debug.
+
+While a square is a specific type of rectangle in mathematics, the classes that represent those shapes shouldn’t be in a parent-child relationship if you want them to comply with the Liskov substitution principle. One way to solve this problem is to create a base class for both Rectangle and Square to extend:
+
+```python
+# shapes_lsp.py
+
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+@abstractmethod
+def calculate_area(self):
+pass
+
+class Rectangle(Shape):
+def **init**(self, width, height):
+self.width = width
+self.height = height
+
+    def calculate_area(self):
+        return self.width * self.height
+
+class Square(Shape):
+def **init**(self, side):
+self.side = side
+
+    def calculate_area(self):
+        return self.side ** 2
+```
+
+Shape becomes the type that you can substitute through polymorphism with either Rectangle or Square, which are now siblings rather than a parent and a child. Notice that both concrete shape types have distinct sets of attributes, different initializer methods, and could potentially implement even more separate behaviors. The only thing that they have in common is the ability to calculate their area.
+
+With this implementation in place, you can use the Shape type interchangeably with its Square and Rectangle subtypes when you only care about their common behavior:
+
+```python
+
+>>> from shapes_lsp import Rectangle, Square
+
+>>> def get_total_area(shapes):
+...     return sum(shape.calculate_area() for shape in shapes)
+
+>>> get_total_area([Rectangle(10, 5), Square(5)])
+75
+
+```
+
+Here, you pass a pair consisting of a rectangle and a square into a function that calculates their total area. Because the function only cares about the .calculate_area() method, it doesn’t matter that the shapes are different. This is the essence of the Liskov substitution principle.
