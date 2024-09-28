@@ -306,9 +306,11 @@ Here, you pass a pair consisting of a rectangle and a square into a function tha
 
 The interface segregation principle (ISP) comes from the same mind as the single-responsibility principle. Yes, it’s another feather in Uncle Bob’s cap. The principle’s main idea is that:
 
-    Clients should not be forced to depend upon methods that they do not use. Interfaces belong to clients, not to hierarchies.
+`Clients should not be forced to depend upon methods that they do not use. Interfaces belong to clients, not to hierarchies.`
 
 In this case, clients are classes and subclasses, and interfaces consist of methods and attributes. In other words, if a class doesn’t use particular methods or attributes, then those methods and attributes should be segregated into more specific classes.
+
+---
 
 Consider the following example of class hierarchy to model printing machines:
 
@@ -354,6 +356,8 @@ print(f"Printing {document} in color...")
 ```
 
 In this example, the base class, Printer, provides the interface that its subclasses must implement. OldPrinter inherits from Printer and must implement the same interface. However, OldPrinter doesn’t use the .fax() and .scan() methods because this type of printer doesn’t support these functionalities.
+
+---
 
 This implementation violates the ISP because it forces OldPrinter to expose an interface that the class doesn’t implement or need. To fix this issue, you should separate the interfaces into smaller and more specific classes. Then you can create concrete classes by inheriting from multiple interface classes as needed:
 
