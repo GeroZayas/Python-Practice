@@ -64,7 +64,7 @@ class Solution:
         """
         one shortcut
         """
-        # 	return len(s.split()[-1])
+        #   return len(s.split()[-1])
         c = 0
         for i in s[::-1]:
             if i == " ":
@@ -91,12 +91,11 @@ class Solution:
 
 # -------------------------------
 class Solution:
-    def longestCommonPrefix(self, strs: List[str]) -> str:
-        for i in range(len(strs[0])):
-            for s in strs:
-                if i >= len(s) or s[i] != strs[0][i]:
-                    return strs[0][:i]
-        return strs[0]
+    for i in range(len(strs[0])):
+        for s in strs:
+            if i >= len(s) or s[i] != strs[0][i]:
+                return strs[0][:i]
+    return strs[0]
 
 
 # -------------------------------
