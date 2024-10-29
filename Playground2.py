@@ -1,9 +1,8 @@
-class Person:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
+import collections
 
+people = collections.namedtuple("People", "name job age")
 
-gero = Person("Gero", 33)
+gero = people("Gero", "Full Stack Programmer", 33)
 
-print(gero.age)
+for ele in gero:
+    print(ele)
