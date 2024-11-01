@@ -28,3 +28,6 @@ gero = Person("Gero", 33, "Full Stack Developer")
 print(gero)
 
 print(gero.age, gero.profession)
+
+print(gero.age)
+
