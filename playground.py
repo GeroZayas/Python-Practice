@@ -1,33 +1,23 @@
-from rich import inspect
+import requests
 
-from dataclasses import dataclass
+# Hacer una solicitud GET simple
+response = requests.get(
+    "https://api-english-resources.up.railway.app/resources/random",
+)
 
+# Verificar el estado de la respuesta
+if response.status_code == 200:
+    # Procesar los datos JSON
+    data = response.json()
+    for e in data:
+        print(
+            f"""
+        {e} \t\t-> {data[e]}
+        """
+        )
+else:
+    print(f"Error: {response.status_code}")
 
-# class Person:
-#     def __init__(self, name: str, age: int, profession: str) -> None:
-#         self.age = age
-#         self.name = name
-#         self.profession = profession
-
-#     def is_alive(self, confirmation: bool) -> bool:
-#         return confirmation
-
-
-# gero = Person("Gero", 33, "Full Stack Developer")
-
-
-@dataclass(frozen=True)
-class Person:
-    name: str
-    age: int
-    profession: str
-
-
-gero = Person("Gero", 33, "Full Stack Developer")
-
-print(gero)
-
-print(gero.age, gero.profession)
-
-print(gero.age)
-
+# Hacer una solicitud POST con datos
+# payload = {"key": "value"}
+# response = requests.post("https://api.example.com/post", data=payload)
