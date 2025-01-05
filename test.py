@@ -1,7 +1,6 @@
 # Class from typing namedtuple with called person wiht name age and profession
 from typing import NamedTuple
 
-
 class Person(NamedTuple):
     name: str
     age: int
