@@ -4,6 +4,8 @@
 # print("numbers: ", numbers)
 
 numbers = [19, 12, 20, 15, 22, 17, 18, 16, 29]
+names = ["Gero", "Mar", "Elisa"]
+last_names = ["Gero", "Mar", "Elisa"]
 
 
 def merge_sort(nums: list) -> list:

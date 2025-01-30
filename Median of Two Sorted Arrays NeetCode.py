@@ -1,3 +1,5 @@
+import pydoc
+
 class Solution:
     def findMedianSortedArrays(self, nums1: list[int], nums2: list[int]) -> float:
         A, B = nums1, nums2
@@ -64,3 +66,5 @@ nums2 = [29, 82]
 r = solution.findMedianSortedArrays(nums1, nums2)
 
 print(r)
+
+pydoc.writedoc("Median of Two Sorted Arrays NeetCode")
