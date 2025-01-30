@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import sys
 import sqlite3
+import pydoc
 
 from prompt_toolkit import PromptSession
 from prompt_toolkit.completion import WordCompleter
@@ -179,5 +180,7 @@ if __name__ == "__main__":
         db = ":memory:"
     else:
         db = sys.argv[1]
+        
+    pydoc.writedoc("promptoolkit")
 
     main(db)

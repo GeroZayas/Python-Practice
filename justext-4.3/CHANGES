@@ -1,0 +1,39 @@
+= Changelog for jusText =
+
+== version 4.2.5 (2023-11-08)
+* HTML 5 parser used instead of the old XHTML parser. The specific problem we are solving here is the need to replace HTML5 entities in addition to the XML ones.
+* Added a dependency to library html5-parser which is much faster than lxml.html.html5parser.
+* More compatible tag namespace processing.
+* BOM treated as whitespace.
+* Many wordlists updated/fixed.
+
+== v3.1 (2022-03-28) ==
+ * Updated wordlists
+
+== v3.0 (06 Feb 2019) ==
+
+== v1.5 (05 Feb 2019) ==
+ * Python 3.6 & Python 2.7 compatible
+ * Joining text separated by <br/> or inline tags prevented
+ * Lowercased stoplist
+
+== v1.4 (24 Aug 2017) ==
+ * max_good_distance, a new context classification parameter
+ * Web demo
+
+== v1.3 (30 Jun 2017) ==
+ * Filter out HTML(5) elements
+ * Preprocess split to get_html_root and preprocess_html_root
+ * See the git log for more
+
+== v1.2 (8 Aug 2011) ==
+ * FEATURE: Character counts used instead of word counts where possible in
+            order to make the algorithm work well in the language independent
+            mode (without a stoplist) for languages where counting words is
+            not easy (Japanese, Chinese, Thai, etc).
+ * BUG FIX: More robust parsing of meta tags containing the information about
+            used charset.
+ * BUG FIX: Corrected decoding of HTML entities &#128; to &#159;
+
+== v1.1 (9 Mar 2011) ==
+ * First public release.
