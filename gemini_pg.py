@@ -13,6 +13,7 @@ import time
 import threading
 from datetime import datetime
 from icecream import ic
+import pyperclip
 
 # ============== GLOBALS ==================
 MODEL = "gemini-2.0-flash"
@@ -27,7 +28,7 @@ ic(SESSION_TIMESTAMP)
 def input_no_echo(prompt: str = "", move_cursor_up: int = 2) -> str:
     print(prompt, end="")
     user_input= input()
-    sys.stdout.write('\033[F ' * move_cursor_up)  # Move cursor up n lines
+    sys.stdout.write('\033[F \033[F')  # Move cursor up n lines
     sys.stdout.write('\033[K')  # Clear the line
     return user_input
 
@@ -139,6 +140,12 @@ while program_on:
         markdown = Markdown(markdown_text) # type: ignore
         console.print(Panel(markdown, title="Gemini response", border_style="green"))
         print("\n" * 3)
+        
+        # COPY RESPONSE TO CLIPBOARD
+        pyperclip.copy(markdown_text)
+        print("[bold green]Response copied to clipboard[/bold green]")
+        time.sleep(2)
+        sys.stdout.write('\033[F ')  # Move cursor up 1 line
         
         CONVERSATION += f"""
 ## 🧑‍💻 User:
