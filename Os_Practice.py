@@ -16,5 +16,6 @@ class Main:
         os.mkdir(os.path.join(root_path, directory))
 
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     pass 
+
