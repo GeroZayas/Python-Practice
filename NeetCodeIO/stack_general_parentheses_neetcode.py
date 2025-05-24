@@ -28,19 +28,19 @@ def __(List):
             backtrack(0, 0)
             return res
 
-    return Solution,
+    return (Solution,)
 
 
 @app.cell
 def __(Solution):
     solution = Solution()
-    return solution,
+    return (solution,)
 
 
 @app.cell
 def __():
     n = 3
-    return n,
+    return (n,)
 
 
 @app.cell

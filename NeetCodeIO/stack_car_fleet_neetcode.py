@@ -17,15 +17,15 @@ def __(List):
                     stack.pop()
             return len(stack)
 
-    return Solution,
+    return (Solution,)
 
 
 @app.cell
 def __(Solution):
     solution = Solution()
     target = 10
-    position = [1,4]
-    speed = [3,2]
+    position = [1, 4]
+    speed = [3, 2]
     return position, solution, speed, target
 
 

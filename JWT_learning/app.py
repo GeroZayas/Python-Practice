@@ -12,7 +12,6 @@ In Python we use the lib PyJWT.
 """
 
 from icecream import ic
-from loguru import logger
 from datetime import UTC, datetime, timedelta
 
 # Lets see an example:

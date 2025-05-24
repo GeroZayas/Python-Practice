@@ -7,7 +7,6 @@ app = marimo.App(width="medium")
 @app.cell
 def __():
     class TimeMap:
-
         def __init__(self):
             self.keyStore = {}  # key : list of [val, timestamp]
 
@@ -28,14 +27,14 @@ def __():
                     r = m - 1
             return res
 
-    return TimeMap,
+    return (TimeMap,)
 
 
 @app.cell
 def __(TimeMap):
     timemap = TimeMap()
     timemap.set("alice", "happy", 1)
-    return timemap,
+    return (timemap,)
 
 
 @app.cell

@@ -180,7 +180,7 @@ if __name__ == "__main__":
         db = ":memory:"
     else:
         db = sys.argv[1]
-        
+
     pydoc.writedoc("promptoolkit")
 
     main(db)

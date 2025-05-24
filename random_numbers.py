@@ -7,13 +7,14 @@ app = marimo.App(width="medium")
 @app.cell
 def __():
     import random
-    return random,
+
+    return (random,)
 
 
 @app.cell
 def __(random):
     number = random.randint(0, 9)
-    return number,
+    return (number,)
 
 
 @app.cell

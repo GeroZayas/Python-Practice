@@ -15,4 +15,3 @@ p = Person(name="John", age=30, profession="Programmer")
 print(p.name)
 print(p.age)
 print(p.profession)
-

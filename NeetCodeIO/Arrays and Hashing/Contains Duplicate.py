@@ -6,6 +6,8 @@ What can we learn from this program?
 - 
 
 """
+
+
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
         hashset = set()

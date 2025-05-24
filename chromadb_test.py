@@ -1,4 +1,4 @@
-from icecream import ic 
+from icecream import ic
 import chromadb
 
 # chroma_client = chromadb.Client()
@@ -15,7 +15,7 @@ collection.add(
     ids=[
         "id1",
         "id2",
-    ]
+    ],
 )
 
 results = collection.query(

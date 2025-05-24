@@ -41,7 +41,7 @@ def __():
                 l += 1
             return matches == 26
 
-    return Solution,
+    return (Solution,)
 
 
 @app.cell
@@ -56,19 +56,19 @@ def __(Solution):
 
 @app.cell
 def __(s1, s2, solution):
-    solution.checkInclusion(s1,s2)
+    solution.checkInclusion(s1, s2)
     return
 
 
 @app.cell
 def __(solution):
     check = solution.checkInclusion
-    return check,
+    return (check,)
 
 
 @app.cell
 def __(check, s3, s4):
-    check(s3,s4)
+    check(s3, s4)
     return
 
 
@@ -80,7 +80,7 @@ def __():
 
 @app.cell
 def __(check, s5, s6):
-    check(s6,s5)
+    check(s6, s5)
     return
 
 

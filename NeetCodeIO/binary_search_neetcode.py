@@ -20,18 +20,18 @@ def __(List):
                     return m
             return -1
 
-    return Solution,
+    return (Solution,)
 
 
 @app.cell
 def __(Solution):
     s = Solution()
-    return s,
+    return (s,)
 
 
 @app.cell
 def __():
-    nums = [-1,0,2,4,6,8]
+    nums = [-1, 0, 2, 4, 6, 8]
     target = 4
     return nums, target
 
@@ -44,7 +44,7 @@ def __(nums, s, target):
 
 @app.cell
 def __(s):
-    nums2 = [-1,0,2,4,6,8]
+    nums2 = [-1, 0, 2, 4, 6, 8]
     target2 = 3
     s.search(nums2, target2)
     return nums2, target2

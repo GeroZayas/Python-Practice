@@ -18,19 +18,19 @@ def __(List):
                 stack.append((t, i))
             return res
 
-    return Solution,
+    return (Solution,)
 
 
 @app.cell
 def __(Solution):
     solution = Solution()
-    return solution,
+    return (solution,)
 
 
 @app.cell
 def __():
-    temperatures = [30,38,30,36,35,40,28]
-    return temperatures,
+    temperatures = [30, 38, 30, 36, 35, 40, 28]
+    return (temperatures,)
 
 
 @app.cell

@@ -1,13 +1,13 @@
 import streamlit as st
 from markdownify import markdownify as md
 from bs4 import BeautifulSoup
-import emoji
 import re
+
 
 # Function to beautify HTML and convert it to Markdown
 def beautify_html_to_markdown(html_content):
     # Parse the HTML with BeautifulSoup
-    soup = BeautifulSoup(html_content, 'html.parser')
+    soup = BeautifulSoup(html_content, "html.parser")
 
     # Remove unwanted tags or content
     for script in soup(["script", "style"]):
@@ -21,6 +21,7 @@ def beautify_html_to_markdown(html_content):
 
     return markdown_content
 
+
 # Function to add emojis based on sections
 def add_emoji_to_headings(content):
     # Define emojis for common topics
@@ -33,11 +34,12 @@ def add_emoji_to_headings(content):
         "Deployment": "🚀",
         "Design Patterns": "🔧",
     }
-    
+
     for key, value in emoji_dict.items():
         content = re.sub(f"(#{key})", f"{value} \\1", content, flags=re.IGNORECASE)
-    
+
     return content
+
 
 # Streamlit UI
 st.title("HTML to Beautified Markdown Converter")
@@ -61,5 +63,5 @@ if uploaded_file is not None:
         label="Download Beautified Markdown",
         data=beautified_markdown,
         file_name="beautified_markdown.md",
-        mime="text/markdown"
+        mime="text/markdown",
     )

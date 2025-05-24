@@ -34,18 +34,18 @@ def __(List):
                     return True
             return False
 
-    return Solution,
+    return (Solution,)
 
 
 @app.cell
 def __(Solution):
     s = Solution()
-    return s,
+    return (s,)
 
 
 @app.cell
 def __():
-    matrix = [[1,2,4,8],[10,11,12,13],[14,20,30,40]]
+    matrix = [[1, 2, 4, 8], [10, 11, 12, 13], [14, 20, 30, 40]]
     target = 15
     return matrix, target
 

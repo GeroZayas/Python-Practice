@@ -7,13 +7,15 @@ app = marimo.App(width="medium")
 @app.cell
 def __():
     import collections
-    return collections,
+
+    return (collections,)
 
 
 @app.cell
 def __():
     from rich import inspect
-    return inspect,
+
+    return (inspect,)
 
 
 @app.cell
@@ -25,19 +27,19 @@ def __(collections, inspect):
 @app.cell
 def __():
     dict_one = {"name": "Gero", "age": 32}
-    return dict_one,
+    return (dict_one,)
 
 
 @app.cell
 def __():
     dict_two = {"profession": "programmer", "job": "BBVA"}
-    return dict_two,
+    return (dict_two,)
 
 
 @app.cell
 def __(collections, dict_one, dict_two):
     together = collections.ChainMap(dict_one, dict_two)
-    return together,
+    return (together,)
 
 
 @app.cell
@@ -56,7 +58,7 @@ def __(together):
 @app.cell
 def __(collections, together):
     counter = collections.Counter(together)
-    return counter,
+    return (counter,)
 
 
 @app.cell
@@ -74,13 +76,13 @@ def __(collections, inspect):
 @app.cell
 def __(collections):
     people = collections.namedtuple("People", ["name", "age"])
-    return people,
+    return (people,)
 
 
 @app.cell
 def __(people):
     gero = people("gero", 32)
-    return gero,
+    return (gero,)
 
 
 @app.cell
@@ -111,7 +113,7 @@ def __(collections):
 @app.cell
 def __(personas):
     mar = personas(33, "Mar", "HR")
-    return mar,
+    return (mar,)
 
 
 @app.cell

@@ -32,7 +32,7 @@ def find_pair_for_sum(array, target):
             # I set it counter < len(pair) so it does not yield a out of
             # index error
             while counter < len(pair):
-                print("Pair found ", f"({pair[counter]}, {pair[counter+1]})")
+                print("Pair found ", f"({pair[counter]}, {pair[counter + 1]})")
                 counter += 2  # to move two indexes and print the next pair
                 if counter < len(
                     pair

@@ -29,7 +29,7 @@ def __():
                     if (r - l + 1) < resLen:
                         res = [l, r]
                         resLen = r - l + 1
-                        
+
                     window[s[l]] -= 1
                     if s[l] in countT and window[s[l]] < countT[s[l]]:
                         have -= 1
@@ -37,7 +37,7 @@ def __():
             l, r = res
             return s[l : r + 1] if resLen != float("infinity") else ""
 
-    return Solution,
+    return (Solution,)
 
 
 @app.cell

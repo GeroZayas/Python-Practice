@@ -1,6 +1,5 @@
 import click
 import faker
-import rich
 
 
 # from trogon import tui

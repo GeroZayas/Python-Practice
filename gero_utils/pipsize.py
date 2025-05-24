@@ -32,7 +32,7 @@ for dist in dists:
         path = os.path.join(dist.location, dist.project_name)
         size = calc_container(path)
         if size / 1000 > 1.0:
-            print(f"{dist}: {size/1000} KB")
+            print(f"{dist}: {size / 1000} KB")
             print("-" * 40)
     except OSError:
         "{} no longer exists".format(dist.project_name)

@@ -20,20 +20,20 @@ def __():
                 stack.pop()
 
             return not stack
-        
-    return Solution,
+
+    return (Solution,)
 
 
 @app.cell
 def __(Solution):
     solution = Solution()
-    return solution,
+    return (solution,)
 
 
 @app.cell
 def __():
     s = "([{}])"
-    return s,
+    return (s,)
 
 
 @app.cell

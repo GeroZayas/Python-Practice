@@ -23,24 +23,24 @@ def __(List):
                 maxArea = max(maxArea, h * (len(heights) - i))
             return maxArea
 
-    return Solution,
+    return (Solution,)
 
 
 @app.cell
 def __(Solution):
     s = Solution()
-    return s,
+    return (s,)
 
 
 @app.cell
 def __(s):
-    s.largestRectangleArea(heights = [7,1,7,2,2,4])
+    s.largestRectangleArea(heights=[7, 1, 7, 2, 2, 4])
     return
 
 
 @app.cell
 def __(s):
-    s.largestRectangleArea(heights = [1,3,7])
+    s.largestRectangleArea(heights=[1, 3, 7])
     return
 
 

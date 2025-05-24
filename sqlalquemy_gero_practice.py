@@ -7,25 +7,27 @@ app = marimo.App()
 @app.cell
 def __():
     from sqlalchemy import create_engine, Column, Integer, String, Sequence, inspect
+
     return Column, Integer, Sequence, String, create_engine, inspect
 
 
 @app.cell
 def __():
     from sqlalchemy.orm import sessionmaker, declarative_base
+
     return declarative_base, sessionmaker
 
 
 @app.cell
 def __(create_engine):
-    engine = create_engine('sqlite:///tutorial.db')
-    return engine,
+    engine = create_engine("sqlite:///tutorial.db")
+    return (engine,)
 
 
 @app.cell
 def __(declarative_base):
     Base = declarative_base()
-    return Base,
+    return (Base,)
 
 
 @app.cell
@@ -38,13 +40,13 @@ def __(engine, sessionmaker):
 @app.cell
 def __(engine, inspect):
     inspector = inspect(engine)
-    return inspector,
+    return (inspector,)
 
 
 @app.cell
 def __(inspector):
     tables = inspector.get_table_names()
-    return tables,
+    return (tables,)
 
 
 @app.cell
@@ -53,20 +55,19 @@ def __(tables):
     for table_name in tables:
         print(table_name)
 
-    return table_name,
+    return (table_name,)
 
 
 @app.cell
 def __():
     the_table_name = "people"
-    return the_table_name,
+    return (the_table_name,)
 
 
 @app.cell
 def __(inspector, the_table_name):
-
     columns = inspector.get_columns(the_table_name)
-    return columns,
+    return (columns,)
 
 
 @app.cell
@@ -74,7 +75,7 @@ def __(columns, the_table_name):
     print(f"Columns in table '{the_table_name}':")
     for column in columns:
         print(f"  {column['name']} ({column['type']})")
-    return column,
+    return (column,)
 
 
 if __name__ == "__main__":

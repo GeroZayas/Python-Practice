@@ -7,7 +7,8 @@ app = marimo.App()
 @app.cell
 def __():
     import requests
-    return requests,
+
+    return (requests,)
 
 
 @app.cell
@@ -32,7 +33,7 @@ def __(response):
 @app.cell
 def __(response):
     json_top_resources = response.json()
-    return json_top_resources,
+    return (json_top_resources,)
 
 
 @app.cell
@@ -82,7 +83,7 @@ def __(json_top_resources):
 @app.cell
 def __(json_top_resources):
     for key, value in json_top_resources[0].items():
-        print(f"{key:15}", "->",f"{value}")
+        print(f"{key:15}", "->", f"{value}")
     return key, value
 
 

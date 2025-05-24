@@ -7,7 +7,8 @@ app = marimo.App(width="medium")
 @app.cell
 def __():
     import numpy as np
-    return np,
+
+    return (np,)
 
 
 @app.cell

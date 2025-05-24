@@ -21,7 +21,9 @@ class Teacher(Professions):
 
 
 class EnglishTeacher(Teacher):
-    def __init__(self, name: str, salary: int, experience: str, subject: str, certificates: str):
+    def __init__(
+        self, name: str, salary: int, experience: str, subject: str, certificates: str
+    ):
         super().__init__(name, salary, experience, subject)
         self.certificates = certificates
 

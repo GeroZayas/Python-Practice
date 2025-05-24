@@ -54,7 +54,7 @@ def find_kth_smallest_element(nums, k=1):
         ending = endings[3]
 
     return f"""
-	The {k}{ending} smallest element is {sorted_nums[k-1]}
+	The {k}{ending} smallest element is {sorted_nums[k - 1]}
 	"""
 
 

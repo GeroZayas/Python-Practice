@@ -7,7 +7,8 @@ app = marimo.App(width="medium")
 @app.cell
 def __():
     import math
-    return math,
+
+    return (math,)
 
 
 @app.cell
@@ -30,18 +31,18 @@ def __(List, math):
                     l = k + 1
             return res
 
-    return Solution,
+    return (Solution,)
 
 
 @app.cell
 def __(Solution):
     s = Solution()
-    return s,
+    return (s,)
 
 
 @app.cell
 def __():
-    piles = [25,10,23,4]
+    piles = [25, 10, 23, 4]
     h = 4
     return h, piles
 

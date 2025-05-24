@@ -14,47 +14,47 @@ def __():
 def __(List):
     class Solution:
         def findMin(self, nums: List[int]) -> int:
-            start , end = 0, len(nums) - 1 
+            start, end = 0, len(nums) - 1
             curr_min = float("inf")
-            
-            while start  <  end :
-                mid = start + (end - start ) // 2
-                curr_min = min(curr_min,nums[mid])
-                
-                # right has the min 
+
+            while start < end:
+                mid = start + (end - start) // 2
+                curr_min = min(curr_min, nums[mid])
+
+                # right has the min
                 if nums[mid] > nums[end]:
                     start = mid + 1
-                    
-                # left has the  min 
+
+                # left has the  min
                 else:
-                    end = mid - 1 
-                    
-            return min(curr_min,nums[start])
-        
-    return Solution,
+                    end = mid - 1
+
+            return min(curr_min, nums[start])
+
+    return (Solution,)
 
 
 @app.cell
 def __(Solution):
     s = Solution()
-    return s,
+    return (s,)
 
 
 @app.cell
 def __(s):
-    s.findMin(nums = [3,4,5,6,1,2])
+    s.findMin(nums=[3, 4, 5, 6, 1, 2])
     return
 
 
 @app.cell
 def __(s):
-    s.findMin(nums = [4,5,6,7])
+    s.findMin(nums=[4, 5, 6, 7])
     return
 
 
 @app.cell
 def __(s):
-    s.findMin(nums = [2,34,1,56])
+    s.findMin(nums=[2, 34, 1, 56])
     return
 
 

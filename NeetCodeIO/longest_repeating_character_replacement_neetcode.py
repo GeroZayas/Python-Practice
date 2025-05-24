@@ -9,7 +9,7 @@ def __():
     class Solution:
         def characterReplacement(self, s: str, k: int) -> int:
             count = {}
-            
+
             l = 0
             maxf = 0
             for r in range(len(s)):
@@ -20,15 +20,15 @@ def __():
                     count[s[l]] -= 1
                     l += 1
 
-            return (r - l + 1)
+            return r - l + 1
 
-    return Solution,
+    return (Solution,)
 
 
 @app.cell
 def __(Solution):
     solution = Solution()
-    return solution,
+    return (solution,)
 
 
 @app.cell

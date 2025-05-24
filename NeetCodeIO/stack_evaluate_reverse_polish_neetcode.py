@@ -24,19 +24,19 @@ def __(List):
                     stack.append(int(c))
             return stack[0]
 
-    return Solution,
+    return (Solution,)
 
 
 @app.cell
 def __(Solution):
     solution = Solution()
-    return solution,
+    return (solution,)
 
 
 @app.cell
 def __():
-    tokens = ["1","2","+","3","*","4","-"]
-    return tokens,
+    tokens = ["1", "2", "+", "3", "*", "4", "-"]
+    return (tokens,)
 
 
 @app.cell

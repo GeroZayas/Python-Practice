@@ -7,6 +7,6 @@
 from justext.core import justext, get_stoplists, get_stoplist, main
 
 try:
-    __version__ = __import__('pkg_resources').get_distribution('justext').version
+    __version__ = __import__("pkg_resources").get_distribution("justext").version
 except:
-    __version__ = '?'
+    __version__ = "?"

@@ -27,13 +27,14 @@ def __(List, deque):
 
             return output
 
-    return Solution,
+    return (Solution,)
 
 
 @app.cell
 def __():
     from collections import deque
-    nums = [1,2,1,0,4,2,6]
+
+    nums = [1, 2, 1, 0, 4, 2, 6]
     k = 3
     return deque, k, nums
 
@@ -41,7 +42,7 @@ def __():
 @app.cell
 def __(Solution):
     solution = Solution()
-    return solution,
+    return (solution,)
 
 
 @app.cell

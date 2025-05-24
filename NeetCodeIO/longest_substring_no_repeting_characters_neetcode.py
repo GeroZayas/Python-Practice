@@ -20,7 +20,7 @@ def __():
                 res = max(res, r - l + 1)
             return res
 
-    return Solution,
+    return (Solution,)
 
 
 @app.cell

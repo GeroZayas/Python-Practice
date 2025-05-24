@@ -1,8 +1,8 @@
 class Vector:
     def __init__(self) -> None:
-        self._data: list[int | float] = (
-            []
-        )  # create a list for def funcname(self, parameter_list):
+        self._data: list[
+            int | float
+        ] = []  # create a list for def funcname(self, parameter_list):
 
     def append(self, value: float) -> None:
         self._data.append(value)

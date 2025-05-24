@@ -26,13 +26,13 @@ def __():
         def getMin(self) -> int:
             return self.minStack[-1]
 
-    return MinStack,
+    return (MinStack,)
 
 
 @app.cell
 def __(MinStack):
     minStack = MinStack()
-    return minStack,
+    return (minStack,)
 
 
 @app.cell
