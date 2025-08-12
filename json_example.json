@@ -1,0 +1,10 @@
+{
+  "name":"json programme",
+  "version":"1.0",
+  "description":"A simple JSON example",
+  "author":"Gero Zayas",
+  "properties":{
+    "property1":"value1",
+    "property2":"value2",
+    "property3":"value3"}
+}

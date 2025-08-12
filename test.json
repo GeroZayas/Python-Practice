@@ -1,18 +1,26 @@
 {
-    "name": "Alice Smith",
-    "role": "Python Developer",
-    "skills": ["Python", "Django", "Flask", "FastAPI"],
-    "experience": 5,
-    "projects": [
-        {
-            "name": "Web Scraper",
-            "description": "A tool for extracting data from websites",
-            "technologies": ["Python", "BeautifulSoup", "Requests"]
-        },
-        {
-            "name": "API Gateway",
-            "description": "A microservices API gateway",
-            "technologies": ["Python", "FastAPI", "Docker"]
+  "company": {
+    "name": "TechCorp",
+    "workers": ["Juanito", "Pedrito", "Ramoncito"],
+    "location": {
+      "city": "Barcelona",
+      "country": "Spain",
+      "address": {
+        "street": "Carrer de la Tecnologia",
+        "number": 42,
+        "zip": "08018"
+      }
+    },
+    "department": {
+      "name": "Engineering",
+      "manager": {
+        "name": "Alice Smith",
+        "email": "alice@techcorp.com",
+        "office": {
+          "floor": 5,
+          "room": "E-502"
         }
-    ]
+      }
+    }
+  }
 }

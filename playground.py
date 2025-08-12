@@ -50,4 +50,3 @@ def extract_symbols_with_inspect(filepath):
 
 # Example usage:
 file_symbols = extract_symbols_with_inspect("rich")
-print(file_symbols)
