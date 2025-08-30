@@ -1,0 +1,1 @@
+Your random name for today is Basilio! It means "King" or "Emperor" in Greek, but in some ancient, forgotten dialect of the moon-dwelling sentient fungi, it actually translates to "He who smells faintly of elderberries and is prone to spontaneous interpretive dance." So, go forth and dance, Basilio!
