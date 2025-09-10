@@ -20,7 +20,7 @@ files_and_directories = os.listdir(current_folder)
 def new_name_undescored(old_name):
     name, extension = old_name.split(".")
     name = name.replace(" ", "_")
-    return f"{name.title()}.{extension}"
+    return f"{name.lower()}.{extension}"
 
 
 # IF NAME STARTS WITH DIGITS, DELETE THE NUMBERS
