@@ -1,164 +1,42 @@
-# IDEA:
-# Write a script that goes file for file inside folder and creates a wordwall for each file.
-
-# Also, sometimes it appears to need the utf-8 *encoding* to work properly.
-# Which I took away
+import markdown
+from ebooklib import epub
 
 
-import time
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-import pyperclip
-import os
-from emoji import emojize
+file_path = input("Path to file:\n>>> ")
 
-os.system("cls")
+print()
 
+# Replace 'your_file.md' with the path to your Markdown file
+with open(f"{file_path}", "r") as f:
+    markdown_file = f.read()
 
-def create_wordwall() -> None:
-    start = time.time()
-
-    WORDWALL_EMAIL = os.environ.get("WORDWALL_USER")
-    WORDWALL_PASSWORD = os.environ.get("WORDWALL_PASSWORD")
-    CHROME_DRIVER_PATH = "C:/Development/chromedriver.exe"
-
-    # ** WELCOME **
-    print("-" * 60)
-    print(
-        emojize(
-            ":beaming_face_with_smiling_eyes:"
-            + " HELLO! Welcome to the Wordwall Creator"
-        )
-    )
-    print("-" * 60)
-    print(
-        emojize(
-            ":backhand_index_pointing_right: A WordWall Premium Account is required."
-        )
-    )
-    print("-" * 60)
-    print(
-        emojize(
-            ":red_circle:"
-            + " Make sure the text file is in the same folder as this script!"
-        )
-    )
-    print()
-    FILE = input(emojize(":file_folder: Insert name of file: "))
-
-    # go to wordwall.net -> log in
-
-    driver = webdriver.Chrome(executable_path=CHROME_DRIVER_PATH)
-
-    driver.get("https://wordwall.net/account/login")
-    time.sleep(2)
-
-    email = driver.find_element(By.ID, "Email")
-    password = driver.find_element(By.ID, "Password")
-    email.send_keys(WORDWALL_EMAIL)
-    time.sleep(1)
-    password.send_keys(WORDWALL_PASSWORD)
-    time.sleep(1)
-
-    log_in_btn = driver.find_element(
-        By.XPATH, "/html/body/div[2]/div[2]/form/div[4]/div/button"
-    )
-
-    log_in_btn.click()
-    time.sleep(2)
-
-    # go to create activity
-
-    # select match up
-
-    driver.get(
-        "https://wordwall.net/create/entercontent?templateId=3"
-    )
-
-    time.sleep(2)
-
-    # type in name in activity title
-
-    activity_title = driver.find_element(By.CLASS_NAME, "js-activity-title")
-
-    activity_title.send_keys(Keys.CONTROL + "a")
-    activity_title.send_keys(Keys.DELETE)
-    time.sleep(1)
-
-    # # get activity title from file
-    # with open(f"{FILE}", "r") as file:
-    #     activity_name = file.readlines()[0]
-
-    activity_title_string = FILE[:-4].split("_")[0]
-    activity_level_string = FILE[:-4].split("_")[1]
-
-    # print(f"{activity_title_string} - {activity_level_string}")
-
-    activity_title.send_keys(
-        f"{activity_title_string} - Level {activity_level_string} from Memrise"
-    )
-
-    # copy from text file first column
-
-    # paste first column data into keyword column
+html_string = markdown.markdown(markdown_file)
 
 
-    keyword_input = driver.find_element(
-        By.XPATH,
-        "/html/body/div[2]/div[2]/div[6]/div[2]/div[3]/div/div[1]/div[3]/div[1]/div[5]/div",
-    )
+book = epub.EpubBook()
 
-    # ***** DETERMINE LIST LENGTH *****
-    list_length = 0
+# Add a cover image (optional)
+# book.set_cover("cover.jpg", open("cover.jpg", "rb").read())
 
-    with open(f"{FILE}", "r") as file:
-        list_length += len(file.readlines())
+# Create an EPUB chapter
+chapter = epub.EpubHtml(title="Hello World", file_name="hello_world.xhtml", lang="en")
+chapter.content = html_string
 
-    list_length = list_length // 2 - 2
-    # print(list_length)
+# Add the chapter to the book
+book.add_item(chapter)
 
-    # ***** END of DETERMINE LIST LENGTH *****
+# Define metadata
+book.set_identifier("sample123456")
+book.set_title("Sample EPUB")
+book.set_language("en")
 
-    with open(f"{FILE}", "r", encoding="utf-8") as file:
-        first_column = file.readlines()[4 : list_length + 4]
+# Define table of contents
+book.toc = (epub.Link(epub.EpubNcx(), "ncx", "nav"),)
 
-    string_first_column = "".join(first_column)
+# Define the spine
+book.spine = ["nav", chapter]
 
-    pyperclip.copy(string_first_column)
+name = input("Insert name: ")
 
-    keyword_input.send_keys(Keys.CONTROL + "v")
-
-    time.sleep(1)
-
-    # copy from text file second column
-    # paste first column data into definition column
-
-    definition_input = driver.find_element(
-        By.XPATH,
-        '//*[@id="editor_component_0"]/div[3]/div/div[1]/div[3]/div[2]/div[4]/div',
-    )
-
-    with open(f"{FILE}", "r", encoding="utf-8") as file:
-        second_column = file.readlines()[list_length + 5 :]
-
-    string_second_column = "".join(second_column)
-
-    pyperclip.copy(string_second_column)
-
-    definition_input.send_keys(Keys.CONTROL + "v")
-
-    time.sleep(1)
-
-    # click on Done
-
-    done_btn = driver.find_element(By.CLASS_NAME, "default-btn.large.js-done-button")
-    done_btn.click()
-
-    end = time.time()
-
-    print("TOTAL TIME OF EXECUTION:", int(end - start), "seconds")
-
-
-if __name__ == "__main__":
-    create_wordwall()
+# Save the EPUB file
+epub.write_epub(f"{name}.epub", book)

@@ -23,7 +23,7 @@ def new_name_undescored(old_name):
     return f"{name.title()}.{extension}"
 
 
-# IF NAME STARTS WITH DIGITS, DELETE TE NUMBERS
+# IF NAME STARTS WITH DIGITS, DELETE THE NUMBERS
 # ----------------------------------------------------------------
 def eliminate_digits_at_beginning_of_name(file_name):
     if file_name[0].isdigit():
