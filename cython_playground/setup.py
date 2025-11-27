@@ -3,7 +3,5 @@ from Cython.Build import cythonize
 
 
 setup(
-    ext_modules = cythonize(
-        "powerful.pyx", compiler_directives={"language_level": "3"}
-        )
-    )
+    ext_modules=cythonize("powerful.pyx", compiler_directives={"language_level": "3"})
+)

@@ -8,13 +8,13 @@ sys.set_int_max_str_digits(32000)
 
 cube = powerful.cube
 
+
 def main(processes: int = 2):
     print(f"{multiprocessing.cpu_count()= }")
 
     # breakpoint()
-    
-    my_iterable = range(1, 8000)
 
+    my_iterable = range(1, 8000)
 
     start = perf_counter()
 
@@ -30,6 +30,7 @@ def main(processes: int = 2):
     print("==" * 50)
     print("TIME", end - start)
     print("==" * 50)
+
 
 if __name__ == "__main__":
     main(2)

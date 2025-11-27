@@ -8,6 +8,7 @@ app = marimo.App(width="medium", auto_download=["html", "ipynb"])
 def _():
     import compileall
     from rich import inspect
+
     return compileall, inspect
 
 
@@ -15,6 +16,7 @@ def _():
 def _(inspect):
     def show(module):
         return inspect(module, methods=True, help=True)
+
     return (show,)
 
 

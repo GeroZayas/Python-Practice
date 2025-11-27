@@ -6,11 +6,14 @@ from rich import print
 
 # ------------------------------ STRUCTS ------------------------------
 class Todo:
-    __slots__ = ("name") 
+    __slots__ = "name"
+
     def __init__(self, name: str):
         self.name = name
+
     def __str__(self):
         return f"Todo: {self.name}"
+
 
 # ------------------------------ ARRAYS ------------------------------
 
@@ -21,26 +24,31 @@ def add_todo(todo: Todo) -> str:
         f.write(todo)
     print("TODO ADDED")
 
+
 def see_todo() -> np.array:
     with open("todos.txt", "r") as f:
         f.read(todo)
 
+
 def clear():
-    os.system('cls' if os.name == 'nt' else 'clear')
+    os.system("cls" if os.name == "nt" else "clear")
+
 
 def especial_print(data: str):
-    to_print= f"""
+    to_print = f"""
 ========================================
 --- {data}
 ========================================
-    """ 
+    """
     print(to_print)
+
 
 # ------------------------------ PROCEDURES DISPATCH ------------------------------
 commands = {
     "add": add_todo,
     "see": see_todo,
 }
+
 
 # ------------------------------ APP ENTRY POINT ------------------------------
 def main():
@@ -55,15 +63,14 @@ def main():
 
     especial_print(add_parser_args)
 
-    see_parser = sub.add_parser("see",  help="Remove a tasks from list of todos")
+    see_parser = sub.add_parser("see", help="Remove a tasks from list of todos")
 
     args = parser.parse_args()
 
     title = " TODO APP "
 
     print()
-    print("="*10, title.center(30, "-"), "="*10, end="\n\n")
-
+    print("=" * 10, title.center(30, "-"), "=" * 10, end="\n\n")
 
     if args.command == "add":
         r = add_todo()
@@ -73,12 +80,10 @@ def main():
         especial_print("SEE CALLED")
 
 
-
 # ------------------------------ RUN THE APP ------------------------------
-if __name__ == "__main__":    
+if __name__ == "__main__":
     main()
 
     input()
 
-    clear() # Clean Term screen when leaving the program
-    
+    clear()  # Clean Term screen when leaving the program

@@ -1,19 +1,23 @@
-from pydantic_ai                import Agent
-from pydantic_ai.models.test    import TestModel
-from pydantic_ai.toolsets       import FunctionToolset
+from pydantic_ai import Agent
+from pydantic_ai.models.test import TestModel
+from pydantic_ai.toolsets import FunctionToolset
+
 
 def agent_tool():
     return "I'm registered directly on the agent"
 
+
 def extra_tool():
     return "I'm passed as an extra tool for a speficic run"
+
 
 def override_tool():
     return "I override all other tools"
 
-agent_toolset = FunctionToolset(tools = [agent_tool])
-extra_toolset = FunctionToolset(tools = [extra_tool])
-override_toolset = FunctionToolset(tools = [override_tool])
+
+agent_toolset = FunctionToolset(tools=[agent_tool])
+extra_toolset = FunctionToolset(tools=[extra_tool])
+override_toolset = FunctionToolset(tools=[override_tool])
 
 test_model = TestModel()
 agent = Agent(test_model, toolsets=[agent_toolset])

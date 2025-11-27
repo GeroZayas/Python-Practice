@@ -1,6 +1,5 @@
 # Glom testing
 from rich import print
-from loguru import logger
 from glom import glom
 import json
 
