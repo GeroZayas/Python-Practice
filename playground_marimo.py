@@ -1,48 +1,26 @@
 import marimo
 
-__generated_with = "0.14.13"
-app = marimo.App(width="medium")
+__generated_with = "0.18.0"
+app = marimo.App(width="medium", auto_download=["html", "ipynb"])
 
 
 @app.cell
 def _():
-    from sys import getsizeof
-    import numpy as np
-    from collections import namedtuple
-    return (np,)
+    import compileall
+    from rich import inspect
+    return compileall, inspect
 
 
 @app.cell
-def _(np):
-    id(np)
-    return
+def _(inspect):
+    def show(module):
+        return inspect(module, methods=True, help=True)
+    return (show,)
 
 
 @app.cell
-def _():
-    name = "Gero"
-    return (name,)
-
-
-@app.cell
-def _(name):
-    id(name)
-    return
-
-
-@app.cell
-def _():
-    nombre = "Gero"
-    return
-
-
-@app.cell
-def _():
-    return
-
-
-@app.cell
-def _():
+def _(compileall, show):
+    show(compileall.filecmp)
     return
 
 

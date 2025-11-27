@@ -7,11 +7,15 @@ class Person(NamedTuple):
     age: int
     profession: str
 
+def main():
+    # Create a person object
+    p = Person(name="John", age=30, profession="Programmer")
 
-# Create a person object
-p = Person(name="John", age=30, profession="Programmer")
+    # Access the fields
+    print(p.name)
+    print(p.age)
+    print(p.profession)
 
-# Access the fields
-print(p.name)
-print(p.age)
-print(p.profession)
+if __name__ == "__main__":
+    main()
+
