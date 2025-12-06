@@ -1,41 +1,34 @@
-# memory_test.py
-from memory_profiler import profile
-from collections import namedtuple
-from dataclasses import dataclass
+from io import StringIO 
+from icecream import ic
+import json
 
+string_buffer = StringIO()
 
-@profile
-def test_slots():
-    class A:
-        __slots__ = ("x", "y")
+initial_value_text = "This is a sentence for testing my string Io stuff."
+secondary_value_text = "THIS IS THE SECOND text value i will be writing to the buffer"
 
-        def __init__(self, x, y):
-            self.x = x
-            self.y = y
+ic(string_buffer.write(initial_value_text))
+string_buffer.seek(0)
 
-    return [A(1, 2) for _ in range(10_000)]
+ic(string_buffer.read())
 
+string_buffer.writelines(secondary_value_text)
+string_buffer.write("\n\n\n")
+string_buffer.seek(0)
+ic(string_buffer.read())
 
-@profile
-def test_dataclass():
-    @dataclass
-    class B:
-        x: int
-        y: int
+with open("./tinydb-practice/todo_db.json", "r") as f:
+    my_json_content = f.read()
 
-    return [B(1, 2) for _ in range(10_000)]
+string_buffer.write(my_json_content) 
+ic(string_buffer.read())
+string_buffer.seek(0)
+ic(string_buffer.read())
 
+print("This is something completely new now, using print()", file=string_buffer)
 
-@profile
-def test_namedtuple():
-    C = namedtuple("C", ["x", "y"])
-    return [C(1, 2) for _ in range(10_000)]
+ic(string_buffer.seekable())
 
+string_buffer.seek(0)
 
-if __name__ == "__main__":
-    print("Testing class with __slots__")
-    test_slots()
-    print("\nTesting dataclass")
-    test_dataclass()
-    print("\nTesting NamedTuple")
-    test_namedtuple()
+ic(string_buffer.read())
