@@ -10,6 +10,7 @@ import shutil
 from loguru import logger
 from typing import Set, List
 from rich import print
+import sys
 
 # ==============================================================================
 # EXCEPTIONS
@@ -33,13 +34,17 @@ IMAGE_EXTENSIONS : Set[str] = {".png", ".jpg", ".jpeg", ".webm", ".webp", ".gif"
 def get_all_images(root_dir: Path) -> List[str]:
     logger.info("Getting all the images")
     try:
-        images: List = []
+        files_found: List[Path] = []
 
         for img_ext in IMAGE_EXTENSIONS:
-            images.extend(glob.glob(f"*{img_ext}"))
+            files_found.extend(root_dir.glob(f"*{img_ext}"))
 
         logger.info("🖼️ IMAGES FOUND:")
-        logger.info(images)
+        logger.info(files_found)
+
+        images = [file.name for file in files_found]
+        
+    
         return images
     
     except Exception as exception:
@@ -71,7 +76,8 @@ def main():
     images: list = get_all_images(ROOT_DIR)
     if not images:
         logger.info("🟡 NO IMAGES FOUND.")
-        exit()
+        sys.exit(0)
+
     move_images_to_destination(elements_to_move = images, from_dir = ROOT_DIR, to_dir = Path("attachments"))
 
 if __name__ == '__main__':
