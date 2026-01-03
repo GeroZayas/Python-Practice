@@ -1,0 +1,11 @@
+[project]
+name = "pyvideo-test"
+version = "0.1.0"
+description = "A project to practice with moviepy and turning videos into gifs"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "ipython>=9.8.0",
+    "moviepy>=2.2.1",
+    "rich>=14.2.0",
+]

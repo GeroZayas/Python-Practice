@@ -8,7 +8,7 @@ import json
 # target: el dato (dict/list/etc.)
 # spec: lo que quieres extraer o transformar
 
-with open("test.json") as json_file:
+with open("./json/test.json") as json_file:
     data = json.loads(json_file.read())
 
 
@@ -18,4 +18,5 @@ workers = glom(data, "company.workers")
 
 print(elem)
 
+print(" Workers ".center(30, "="))
 print(workers)
