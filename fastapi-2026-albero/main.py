@@ -1,6 +1,6 @@
 from fastapi import FastAPI, status, HTTPException
 from scalar_fastapi import get_scalar_api_reference
-from services.db import all_data_dict, add_data, get_item_data
+from services.db import all_data_dict, add_data, get_item_data, update_item_data
 
 app = FastAPI(title="App ALBERO")
 
@@ -35,9 +35,9 @@ async def add_idea_to_database(idea: str, note: str):
         return {"status": "ERROR: {e}".format(e=e)}
 
 @app.put("/database", status_code=status.HTTP_200_OK)
-async def update_idea_in_database(idea: str, note: str):
+async def update_idea_in_database(id:int, idea: str, note: str):
     try:
-        add_data(idea=idea, note=note)
+        update_item_data(id=id, idea=idea, note=note)
         return {"status": "SUCCESS"}
     except Exception as e:
         return {"status": "ERROR: {e}".format(e=e)}

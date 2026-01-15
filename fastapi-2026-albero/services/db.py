@@ -54,14 +54,11 @@ WHERE id={id};
 
 update_statment = """ 
 UPDATE gero_things
-SET idea = new_value_1,
-    notes = new_value_2
+SET idea = "{idea_}",
+    notes = "{note_}"
 WHERE
-    search_condition 
-ORDER column_or_expression
-LIMIT row_count OFFSET offset;
+    id={id} 
 """
-
 
 
 def add_data(idea: str, note: str): 
@@ -116,6 +113,16 @@ def get_item_data(id: int):
         return {"status": "ERROR Fetching Data"}
 
 
+def update_item_data(id:int, idea: str, note: str): 
+    try:
+        with sqlite3.connect(DB_PATH) as conn:
+            cursor = conn.cursor()
+            exec_statement = cursor.execute(update_statment.format(id=id, idea_=idea, note_=note))
+            conn.commit()
 
+            print("UPDATED {idea} and {note}".format(idea=idea, note=note))
+    except sqlite3.OperationalError as e:
+        print("Failed to write to database:", e)
+        return {"status": "ERROR Writing Data"}
 
 all_data_dict = get_all_data()
