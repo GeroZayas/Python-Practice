@@ -1,0 +1,1817 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ins",
+				"insert_statement"
+			],
+			[
+				"No",
+				"HTTP_404_NOT_FOUND"
+			],
+			[
+				"all",
+				"all_data_dict"
+			],
+			[
+				"serv",
+				"services"
+			],
+			[
+				"rea",
+				"read_statement"
+			],
+			[
+				"c",
+				"commit"
+			],
+			[
+				"statu",
+				"status_code="
+			],
+			[
+				"mi",
+				"mi_lista_ptr"
+			],
+			[
+				"my",
+				"my_fields"
+			],
+			[
+				"dest",
+				"destination_folder"
+			],
+			[
+				"sele",
+				"select_source_dest_folders"
+			],
+			[
+				"choo",
+				"choose_destination_folder"
+			],
+			[
+				"com",
+				"com1\tpython_comment"
+			],
+			[
+				"exe",
+				"exceptions"
+			],
+			[
+				"DEST",
+				"DESTINATION_FOLDER"
+			],
+			[
+				"buc",
+				"bucket"
+			],
+			[
+				"files",
+				"files_found"
+			],
+			[
+				"PY",
+				"PYPRACTICE_PATH"
+			],
+			[
+				"APP",
+				"APP_NAME"
+			],
+			[
+				"mem",
+				"memory_service"
+			],
+			[
+				"agen",
+				"agentgemini\tagent-gemini"
+			],
+			[
+				"cod",
+				"code\t<code>"
+			],
+			[
+				"se",
+				"session_convo_1"
+			],
+			[
+				"InMe",
+				"InMemoryMemoryService"
+			],
+			[
+				"user_i",
+				"user_info"
+			],
+			[
+				"ro",
+				"root_agent"
+			],
+			[
+				"user",
+				"user_path_input"
+			],
+			[
+				"Ne",
+				"NewAgent"
+			],
+			[
+				"if",
+				"ifmain\tif __name__ == '__main__'"
+			],
+			[
+				"run",
+				"run_session"
+			],
+			[
+				"session",
+				"session_service"
+			],
+			[
+				"sess",
+				"session_service"
+			],
+			[
+				"app",
+				"app_name"
+			],
+			[
+				"sim",
+				"agentSimple\tagent-gemini-simple"
+			],
+			[
+				"gemi",
+				"agentgemini\tagent-gemini"
+			],
+			[
+				"runn",
+				"runner_instance"
+			],
+			[
+				"use",
+				"user_queries"
+			],
+			[
+				"ses",
+				"session_name"
+			],
+			[
+				"star",
+				"start-adk-server"
+			],
+			[
+				"p",
+				"procs_list"
+			],
+			[
+				"RUN",
+				"run_http_server"
+			],
+			[
+				"Agen",
+				"AgentTool"
+			],
+			[
+				"gem",
+				"agentgemini\tagent-gemini"
+			],
+			[
+				"GEMI",
+				"agentgemini\tagent-gemini"
+			],
+			[
+				"gemin",
+				"agentgemini\tagent-gemini"
+			],
+			[
+				"SE",
+				"SESSION_ID"
+			],
+			[
+				"nam",
+				"snippet_name"
+			],
+			[
+				"in",
+				"input"
+			],
+			[
+				"jok",
+				"jokes_session"
+			],
+			[
+				"jokes",
+				"jokes_dir_path"
+			],
+			[
+				"too",
+				"tool_context"
+			],
+			[
+				"A",
+				"App"
+			],
+			[
+				"user_",
+				"user_input"
+			],
+			[
+				"resp",
+				"reports_sent"
+			],
+			[
+				"Func",
+				"FunctionTool"
+			],
+			[
+				"creat",
+				"create_approval_response"
+			],
+			[
+				"appr",
+				"approval_info"
+			],
+			[
+				"conf",
+				"confirmation_response"
+			],
+			[
+				"con",
+				"containers_amount"
+			],
+			[
+				"tool",
+				"tool_context"
+			],
+			[
+				"St",
+				"StdioServerParameters"
+			],
+			[
+				"mcp",
+				"mcp_image_server"
+			],
+			[
+				"re",
+				"redirect_stdout"
+			],
+			[
+				"file",
+				"file_system_assistant_agent"
+			],
+			[
+				"arti",
+				"artifact_service"
+			],
+			[
+				"m",
+				"my_agent"
+			],
+			[
+				"In",
+				"InMemoryArtifactService"
+			],
+			[
+				"pdf",
+				"pdf_bytes"
+			],
+			[
+				"fil",
+				"file_name"
+			],
+			[
+				"ini",
+				"initial_writer_agent"
+			],
+			[
+				"st",
+				"current_story"
+			],
+			[
+				"ag",
+				"aggregator_agent"
+			],
+			[
+				"Para",
+				"ParallelAgent"
+			],
+			[
+				"c_",
+				"c_research"
+			],
+			[
+				"goog",
+				"google_search"
+			],
+			[
+				"blo",
+				"blog_draft"
+			],
+			[
+				"Sum",
+				"SummarizerAgent"
+			],
+			[
+				"Rese",
+				"ResearchAgent"
+			],
+			[
+				"repo",
+				"response"
+			],
+			[
+				"que",
+				"query_and"
+			],
+			[
+				"page",
+				"page_token"
+			],
+			[
+				"prin",
+				"printed_token"
+			],
+			[
+				"som",
+				"some_str"
+			],
+			[
+				"adre",
+				"adress_of_list_people"
+			],
+			[
+				"list",
+				"my_list_names"
+			],
+			[
+				"retu",
+				"return_a"
+			],
+			[
+				"i",
+				"i_like_reading"
+			],
+			[
+				"dyn",
+				"dyn_array"
+			],
+			[
+				"lan",
+				"language_year_map"
+			],
+			[
+				"inp",
+				"input"
+			],
+			[
+				"temp",
+				"temp_service"
+			],
+			[
+				"db",
+				"db_service"
+			],
+			[
+				"database",
+				"DatabaseSessionService"
+			],
+			[
+				"font-fami",
+				"font-family"
+			],
+			[
+				"len",
+				"length="
+			],
+			[
+				"bre",
+				"breakpoint"
+			],
+			[
+				"todos",
+				"todos_group_create(todos_group_name: string)"
+			],
+			[
+				"o",
+				"os"
+			],
+			[
+				"digi",
+				"digital_ad"
+			],
+			[
+				"pro",
+				"profession"
+			],
+			[
+				"print",
+				"printfln(fmt: string, args: ..any, flush := true) -> int"
+			],
+			[
+				"pr",
+				"Programmer"
+			],
+			[
+				"type",
+				"type_of"
+			],
+			[
+				"str",
+				"string"
+			],
+			[
+				"Setc",
+				"SetConfigFlags(flags: ConfigFlags)"
+			],
+			[
+				"pri",
+				"printfln(fmt: string, args: ..any, flush := true) -> int"
+			],
+			[
+				"tem",
+				"temp_amplified_audio"
+			],
+			[
+				"rem",
+				"remove"
+			],
+			[
+				"ap",
+				"api_url"
+			],
+			[
+				"objet",
+				"object_hook="
+			],
+			[
+				"item",
+				"items()"
+			],
+			[
+				"cache",
+				"cache_dict"
+			],
+			[
+				"el",
+				"elapsed"
+			],
+			[
+				"time",
+				"time"
+			],
+			[
+				"api",
+				"api_url"
+			],
+			[
+				"get_url",
+				"get_url_cache(url, cache)"
+			],
+			[
+				"trace",
+				"traceback"
+			],
+			[
+				"name",
+				"namedtuple"
+			],
+			[
+				"test",
+				"test_dict"
+			],
+			[
+				"lis",
+				"list2"
+			],
+			[
+				"w",
+				"wrapper"
+			],
+			[
+				"get_mu",
+				"get_multiple_files()"
+			],
+			[
+				"enter",
+				"enter_async_context"
+			],
+			[
+				"__",
+				"__itemsize__"
+			],
+			[
+				"class",
+				"classmethod"
+			],
+			[
+				"fin",
+				"final_count"
+			],
+			[
+				"final",
+				"final_count"
+			],
+			[
+				"flush",
+				"flush()"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/home/gero/Downloads/INDARU/recipe-agent-seo-gero-version/backend/uv.lock",
+			"settings":
+			{
+				"buffer_size": 367385,
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+			]
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				],
+				[
+					"Packages/User/bun-run.sublime-build",
+					""
+				],
+				[
+					"Packages/User/python3.sublime-build",
+					""
+				],
+				[
+					"Packages/User/run_python_repl.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/User/python3.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"lspres",
+				"LSP: Restart Server"
+			],
+			[
+				"pyrigh",
+				"LSP-pyright: Create Pyright Configuration File"
+			],
+			[
+				"main",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"restar",
+				"LSP: Restart Server"
+			],
+			[
+				"pyri",
+				"LSP-pyright: Create Pyright Configuration File"
+			],
+			[
+				"lspre",
+				"LSP: Restart Server"
+			],
+			[
+				"pyright",
+				"LSP-pyright: Create Pyright Configuration File"
+			],
+			[
+				"lsp res",
+				"LSP: Restart Server"
+			],
+			[
+				"python",
+				"LSP-pyright: Create Pyright Configuration File"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"lsp",
+				"Preferences: LSP Settings"
+			],
+			[
+				"wrap",
+				"Word Wrap: Toggle"
+			],
+			[
+				"termin",
+				"Terminus: Toggle Panel"
+			],
+			[
+				"theme",
+				"UI: Select Color Scheme"
+			],
+			[
+				"snippe",
+				"Snippet: #!/usr/bin/env"
+			],
+			[
+				"build",
+				"Build With: pyVenv"
+			],
+			[
+				"virtual",
+				"SublimeREPL: Python - virtualenv"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"temrintab",
+				"Terminus: Open Default Shell in Tab (View)"
+			],
+			[
+				"ipython",
+				"SublimeREPL: Python - Sublime Text Console"
+			],
+			[
+				"ipyth",
+				"SublimeREPL: Python - IPython"
+			],
+			[
+				"termtab",
+				"Terminus: Open Default Shell in Tab (View)"
+			],
+			[
+				"ma",
+				"Markdown Preview: Save to HTML"
+			],
+			[
+				"makr",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"termin tab",
+				"Terminus: Open Default Shell in Tab (View)"
+			],
+			[
+				"warp",
+				"Word Wrap: Toggle"
+			],
+			[
+				"ter tab",
+				"Terminus: Open Default Shell in Tab (View)"
+			],
+			[
+				"term tab",
+				"Terminus: Open Default Shell in Tab (View)"
+			],
+			[
+				"beai",
+				"HTMLBeautify"
+			],
+			[
+				"term",
+				"Terminus: List Shells"
+			],
+			[
+				"new s",
+				"Snippet: New Class"
+			],
+			[
+				"snippet c",
+				"Snippet: Try/Except/Finally"
+			],
+			[
+				" comme",
+				"Toggle Comment"
+			],
+			[
+				"installp",
+				"Package Control: Install Package"
+			],
+			[
+				"packagre",
+				"Package Control: Remove Package"
+			],
+			[
+				"commen",
+				"Snippet: Comment - Section header comment"
+			],
+			[
+				"packins",
+				"Package Control: Install Package"
+			],
+			[
+				"unfold a",
+				"Code Folding: Unfold All"
+			],
+			[
+				"sele",
+				"Selection: Expand"
+			],
+			[
+				"word",
+				"Word Wrap: Toggle"
+			],
+			[
+				"beaut",
+				"HTMLBeautify"
+			],
+			[
+				"html",
+				"Snippet: htmlboiler"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"termi",
+				"Terminus: Toggle Panel"
+			],
+			[
+				"go t",
+				"SublimeLinter: Goto Error"
+			],
+			[
+				"mouse",
+				"Preferences: Mouse Bindings"
+			],
+			[
+				"comment",
+				"Toggle Comment"
+			],
+			[
+				"syntax odi",
+				"Set Syntax: Odin"
+			],
+			[
+				"come",
+				"Set Syntax: Git Commit Message"
+			],
+			[
+				"forma",
+				"AutoPEP8: Format Code"
+			],
+			[
+				"packeg",
+				"Package Control: Install Package"
+			],
+			[
+				"ter",
+				"Terminus: Toggle Panel"
+			],
+			[
+				"comm",
+				"Toggle Comment"
+			],
+			[
+				"comme",
+				"Toggle Comment"
+			],
+			[
+				"com",
+				"Toggle Comment"
+			],
+			[
+				"togg",
+				"Toggle Comment"
+			],
+			[
+				"remove pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"intall",
+				"Package Control: Install Package"
+			],
+			[
+				"terminus",
+				"SublimeLinter: Reload SublimeLinter and its Plugins"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"goog",
+				"Open Google (OG)"
+			],
+			[
+				"markdo",
+				"MarkdownLivePreview: Open Preview"
+			],
+			[
+				"project",
+				"Project: Refresh Folders"
+			],
+			[
+				"ui",
+				"UI: Select Color Scheme"
+			],
+			[
+				"syntax js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"synt  plain",
+				"Set Syntax: Plain Text"
+			],
+			[
+				"synt java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"syntax pla",
+				"Set Syntax: Plain Text"
+			],
+			[
+				"syntax plain",
+				"Set Syntax: Plain Text"
+			],
+			[
+				"bookma",
+				"Bookmarks: Toggle"
+			],
+			[
+				"temrinu",
+				"Terminus: Toggle Panel"
+			],
+			[
+				"mark",
+				"Markdown Preview: Save to HTML"
+			],
+			[
+				"package ins",
+				"Package Control: Install Package"
+			],
+			[
+				"format",
+				"Preferences: Formatter Settings"
+			],
+			[
+				"setting format",
+				"Preferences: Formatter Settings"
+			],
+			[
+				"settings",
+				"Preferences: Settings"
+			],
+			[
+				"settinf",
+				"Preferences: Settings – Distraction Free"
+			],
+			[
+				"formta on",
+				"Preferences: Formatter Quick Options"
+			],
+			[
+				"cooome",
+				"Package Control: Enable Debug Mode"
+			],
+			[
+				"settin",
+				"Preferences: LSP-pylsp Settings"
+			],
+			[
+				"settings ",
+				"Preferences: Settings"
+			],
+			[
+				"setting use",
+				"Preferences: LSP Utils Settings"
+			],
+			[
+				"open",
+				"OpenAI: Chat Select Mode"
+			],
+			[
+				"chat",
+				"OpenAI: Chat Model Select"
+			],
+			[
+				"form",
+				"LSP: Format File"
+			],
+			[
+				"toggle com",
+				"Toggle Comment"
+			],
+			[
+				"termin tog",
+				"Terminus: Toggle Panel"
+			],
+			[
+				"termini",
+				"Terminus: Open Default Shell in Panel"
+			],
+			[
+				"remove package",
+				"Package Control: Remove Package"
+			],
+			[
+				"remove pa",
+				"Package Control: Remove Channel"
+			],
+			[
+				"lsp ena",
+				"LSP: Enable Language Server in Project"
+			],
+			[
+				"packa",
+				"Package Control: Remove Package"
+			],
+			[
+				"instakl",
+				"Package Control: Install Package"
+			],
+			[
+				"commet",
+				"Toggle Comment"
+			],
+			[
+				"theme ",
+				"UI: Select Theme"
+			],
+			[
+				"color",
+				"UI: Select Color Scheme"
+			],
+			[
+				"packain",
+				"Package Control: Install Package"
+			],
+			[
+				"view",
+				"View Package File"
+			],
+			[
+				"sidebar ",
+				"View: Toggle Side Bar"
+			],
+			[
+				"cha",
+				"Help: Changelog"
+			],
+			[
+				"refa",
+				"LSP: Refactor"
+			],
+			[
+				":tab",
+				"View: Toggle Tabs"
+			],
+			[
+				":w",
+				":w - Save"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"vim",
+				"View: Toggle Menu"
+			],
+			[
+				"7",
+				"Terminus: Toggle Panel"
+			],
+			[
+				"repl",
+				"SublimeREPL: Python"
+			],
+			[
+				"temrin",
+				"Terminus: Close"
+			],
+			[
+				"preview",
+				"MarkdownLivePreview: Open Preview"
+			],
+			[
+				"split ",
+				"File: Split View"
+			],
+			[
+				"LSP ",
+				"Preferences: LSP Settings"
+			],
+			[
+				"go to prev",
+				"Emmet: Go to Previous Edit Point"
+			],
+			[
+				"go to sym",
+				"LSP: Goto Symbol"
+			],
+			[
+				"go to",
+				"Emmet: Go to Previous Edit Point"
+			],
+			[
+				"goto",
+				"Emmet: Go to Tag Pair"
+			],
+			[
+				"preference",
+				"Preferences: Settings"
+			],
+			[
+				"projetc",
+				"Project: Add Folder"
+			],
+			[
+				"terminu",
+				"Terminus: Toggle Panel"
+			],
+			[
+				"termo",
+				"Terminus: Open Default Shell in Tab (View)"
+			],
+			[
+				"repl py",
+				"SublimeREPL: Python"
+			],
+			[
+				"prefere",
+				"Preferences: Settings"
+			],
+			[
+				"",
+				"BracketHighlighter: Jump to Left Bracket"
+			],
+			[
+				"black",
+				"python-black: Format the selected code or the code of the entire file"
+			],
+			[
+				"balck",
+				"python-black: Format the selected code or the code of the entire file"
+			],
+			[
+				"pysl",
+				"Preferences: LSP-pylsp Settings"
+			],
+			[
+				"lsp se",
+				"Preferences: LSP Settings"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 240.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/gero/Downloads/INDARU/recipe-agent-seo-gero-version/backend"
+	],
+	"file_history":
+	[
+		"/home/gero/Downloads/Coding/Gero Python/Python-Practice/fastapi-2026-albero/services/db.py",
+		"/home/gero/Downloads/Coding/Gero Python/Python-Practice/fastapi-2026-albero/main.py",
+		"/home/gero/.bashrc",
+		"/home/gero/Downloads/Coding/Gero Python/Python-Practice/fastapi-2026-albero/pyrightconfig.json",
+		"/home/gero/Downloads/Coding/Gero Python/Python-Practice/fastapi-2026-albero/services/__init__.py",
+		"/home/gero/Downloads/INDARU/recipe-agent-seo-gero-version/backend/services/excel_files_handler.py",
+		"/home/gero/Downloads/INDARU/recipe-agent-seo-gero-version/backend/backend_docs/notes_gero.txt",
+		"/home/gero/Downloads/INDARU/recipe-agent-seo-gero-version/backend/.python-version",
+		"/home/gero/Downloads/INDARU/recipe-agent-seo-gero-version/backend/main.py",
+		"/home/gero/Downloads/INDARU/recipe-agent-seo-gero-version/backend/Makefile",
+		"/home/gero/Downloads/INDARU/recipe-agent-seo-gero-version/backend/config/config.py",
+		"/home/gero/Downloads/INDARU/recipe-agent-seo-gero-version/backend/utils/__init__.py",
+		"/home/gero/Downloads/INDARU/recipe-agent-seo-gero-version/backend/services/__init__.py",
+		"/home/gero/Downloads/INDARU/recipe-agent-seo-gero-version/backend/config/__init__.py",
+		"/home/gero/Downloads/INDARU/recipe-agent-seo-gero-version/backend/pyproject.toml",
+		"/home/gero/Downloads/INDARU/recipe-agent-seo-gero-version/pyrightconfig.json",
+		"/home/gero/Downloads/Coding/COURSERA_Materials_and_Courses/Ultimate-Guide-to-FastAPI-and-Backend-Development/02-Getting Started/8-api-docs.py",
+		"/home/gero/Downloads/Coding/COURSERA_Materials_and_Courses/Ultimate-Guide-to-FastAPI-and-Backend-Development/pyrightconfig.json",
+		"/home/gero/Downloads/INDARU/indaru-seo-agent/recipe_agent/schema.json",
+		"/home/gero/Downloads/INDARU/indaru-seo-agent/enrich_excel.py",
+		"/home/gero/Downloads/INDARU/indaru-seo-agent/app.py",
+		"/home/gero/Downloads/INDARU/indaru-seo-agent/analyze_excel.py",
+		"/home/gero/Downloads/INDARU/indaru-seo-agent/recipe_agent/adk_app.py",
+		"/home/gero/Downloads/INDARU/indaru-seo-agent/requirements.txt",
+		"/home/gero/Downloads/INDARU/indaru-seo-agent/recipe_agent/sub_agent.py",
+		"/home/gero/Downloads/INDARU/indaru-seo-agent/recipe_agent/enrichment_tools.py",
+		"/home/gero/Downloads/INDARU/indaru-seo-agent/PLAN_GENERALIZACION.md",
+		"/home/gero/Downloads/INDARU/indaru-seo-agent/adk.yaml",
+		"/home/gero/Downloads/INDARU/indaru-seo-agent/__init__.py",
+		"/home/gero/Downloads/INDARU/indaru-seo-agent/.python-version",
+		"/home/gero/Downloads/INDARU/indaru-seo-agent/recipe_agent/io_utils.py",
+		"/home/gero/Downloads/INDARU/indaru-seo-agent/recipe_agent/tools.py",
+		"/home/gero/Downloads/INDARU/indaru-seo-agent/pyrightconfig.json",
+		"/home/gero/Downloads/Coding/Odin_Programs/examples/console/raw_console/main.odin",
+		"/home/gero/Downloads/Coding/Odin_Programs/examples/console/read_console_input/read_console_input.odin",
+		"/home/gero/Downloads/Coding/Odin_Programs/examples/console/raw_console/raw_console",
+		"/home/gero/Downloads/Coding/Odin_Programs/examples/console/raw_console/raw_posix.odin",
+		"/home/gero/Downloads/Coding/Odin_Programs/examples/command_line_arguments/main.odin",
+		"/home/gero/Downloads/Coding/Odin_Programs/examples/code_generation/main.odin",
+		"/home/gero/Downloads/Coding/Odin_Programs/examples/code_generation/images.odin",
+		"/home/gero/Downloads/Coding/Odin_Programs/examples/code_generation/generate_image_info/generate_image_info.odin",
+		"/home/gero/Odin/odin-linux-amd64-dev-2025-07/core/os/dir_unix.odin",
+		"/home/gero/Downloads/Coding/Odin_Programs/examples/code_generation/images/round_cat.png",
+		"/home/gero/Downloads/Coding/Odin_Programs/examples/arena_allocator/arena_allocator.odin",
+		"/home/gero/Downloads/Coding/Odin_Programs/examples/absolute_beginners/1_main.odin",
+		"/home/gero/Downloads/Coding/Odin_Programs/examples/absolute_beginners/6_pointers.odin",
+		"/home/gero/Downloads/Coding/Odin_Programs/examples/absolute_beginners/5_structs.odin",
+		"/home/gero/Downloads/Coding/Odin_Programs/examples/absolute_beginners/4_if_statements.odin",
+		"/home/gero/Downloads/Coding/Odin_Programs/examples/absolute_beginners/2_variables.odin",
+		"/home/gero/Downloads/Coding/Odin_Programs/examples/absolute_beginners/3_loops.odin",
+		"/home/gero/Downloads/Coding/Odin_Programs/00_playground_odin/pointer_practice.odin",
+		"/home/gero/Downloads/Coding/Odin_Programs/00_playground_odin/main.odin",
+		"/home/gero/Downloads/Coding/Odin_Programs/00_playground_odin/string_practice.odin",
+		"/home/gero/Downloads/Coding/Odin_Programs/00_playground_odin/type_practice.odin",
+		"/home/gero/Downloads/Coding/Odin_Programs/00_playground_odin/Makefile",
+		"/home/gero/Downloads/Coding/Odin_Programs/00_playground_odin/typeid_practice.odin",
+		"/home/gero/Downloads/Coding/Odin_Programs/00_playground_odin/make_practice.odin",
+		"/home/gero/Downloads/INDARU/indaru-utils/cloud_storage_move_files_CMD.py",
+		"/home/gero/Downloads/Simple_Notes_Gero/Makefile",
+		"/home/gero/Downloads/INDARU/indaru-utils/cloud_storage_move_files.py",
+		"/home/gero/Downloads/INDARU/indaru-utils/.venv/lib/python3.13/site-packages/google/auth/exceptions.py",
+		"/home/gero/Downloads/INDARU/indaru-utils/.venv/lib/python3.13/site-packages/google/oauth2/reauth.py",
+		"/home/gero/Downloads/INDARU/indaru-utils/Makefile",
+		"/home/gero/Downloads/Coding/Gero Python/Python-Practice/pg.py",
+		"/home/gero/Downloads/Coding/Gero Python/Python-Practice/organize_files_by_extension.py",
+		"/home/gero/.config/sublime-text/Packages/User/pyVenv.sublime-build",
+		"/home/gero/Downloads/Coding/Gero Python/Python-Practice/pypractice-python3.sublime-build",
+		"/home/gero/Downloads/Coding/Gero Python/Python-Practice/api_best_eng_resources_requests_interaction_gero.py",
+		"/home/gero/Downloads/Coding/Gero Python/Python-Practice/python3.sublime-build",
+		"/home/gero/.config/sublime-text/Packages/User/python3.sublime-build",
+		"/home/gero/Downloads/Coding/Gero Python/Python-Practice/move_img_to_attachments_dir.py",
+		"/home/gero/Downloads/Databank/raylib/src/raylib.h",
+		"/home/gero/Downloads/Coding/Gero C/raylib-c-january-andares/main.c",
+		"/home/gero/Downloads/Coding/Gero C/raylib-c-january-andares/Makefile",
+		"/home/gero/Downloads/Coding/Gero Python/google-adk-December-25-ALPHA/ResearchAgent/agent.py",
+		"/home/gero/Downloads/Coding/Gero Python/google-adk-December-25-ALPHA/pg.py",
+		"/home/gero/Downloads/Coding/Gero Python/google-adk-December-25-ALPHA/ObservabilityAgent/agent.py",
+		"/home/gero/Downloads/Coding/Gero Python/google-adk-December-25-ALPHA/NewMemoryAgent/agent.py",
+		"/home/gero/Downloads/Coding/Gero Python/google-adk-December-25-ALPHA/NewAutoMemoryAgent/agent.py",
+		"/home/gero/Downloads/Coding/Gero Python/google-adk-December-25-ALPHA/NewAutoMemoryAgent/.env",
+		"/home/gero/Downloads/Coding/Gero Python/google-adk-December-25-ALPHA/CallbackAgent/agent.py",
+		"/home/gero/Downloads/Coding/Gero Python/google-adk-December-25-ALPHA/CallbackAgent/__init__.py",
+		"/home/gero/Downloads/Coding/Gero Python/agent-development-kit-crash-course/9-callbacks/before_after_model/agent.py",
+		"/home/gero/Downloads/Coding/Gero Python/agent-development-kit-crash-course/9-callbacks/before_after_agent/agent.py",
+		"/home/gero/Downloads/Coding/Gero Python/agent-development-kit-crash-course/9-callbacks/before_after_tool/agent.py",
+		"/home/gero/Downloads/Coding/Gero Python/agent-development-kit-crash-course/9-callbacks/README.md",
+		"/home/gero/Downloads/Coding/Gero Python/agent-development-kit-crash-course/8-stateful-multi-agent/customer_service_agent/agent.py",
+		"/home/gero/Downloads/Coding/Gero Python/agent-development-kit-crash-course/8-stateful-multi-agent/customer_service_agent/sub_agents/sales_agent/agent.py",
+		"/home/gero/Downloads/Coding/Gero Python/agent-development-kit-crash-course/8-stateful-multi-agent/customer_service_agent/sub_agents/policy_agent/agent.py",
+		"/home/gero/Downloads/Coding/Gero Python/agent-development-kit-crash-course/pg.md",
+		"/home/gero/Downloads/Coding/Gero Python/agent-development-kit-crash-course/pg.py",
+		"/home/gero/Downloads/Coding/Gero Python/agent-development-kit-crash-course/8-stateful-multi-agent/utils.py",
+		"/home/gero/Downloads/Coding/Gero Python/agent-development-kit-crash-course/8-stateful-multi-agent/main.py",
+		"/home/gero/Downloads/Coding/Gero Python/agent-development-kit-crash-course/8-stateful-multi-agent/customer_service_agent/sub_agents/order_agent/agent.py",
+		"/home/gero/Downloads/Coding/Gero Python/agent-development-kit-crash-course/8-stateful-multi-agent/customer_service_agent/sub_agents/policy_agent/__init__.py",
+		"/home/gero/Downloads/Coding/Gero Python/agent-development-kit-crash-course/8-stateful-multi-agent/customer_service_agent/sub_agents/course_support_agent/agent.py",
+		"/home/gero/Downloads/Coding/Gero Python/agent-development-kit-crash-course/8-stateful-multi-agent/customer_service_agent/sub_agents/course_support_agent/__init__.py",
+		"/home/gero/Downloads/Coding/Gero Python/agent-development-kit-crash-course/6-persistent-storage/utils.py",
+		"/home/gero/Downloads/Coding/Gero Python/agent-development-kit-crash-course/7-multi-agent/manager/sub_agents/__init__.py",
+		"/home/gero/Downloads/Coding/Gero Python/agent-development-kit-crash-course/7-multi-agent/manager/tools/tools.py",
+		"/home/gero/Downloads/Coding/Gero Python/agent-development-kit-crash-course/7-multi-agent/manager/__init__.py",
+		"/home/gero/Downloads/Coding/Gero Python/agent-development-kit-crash-course/7-multi-agent/manager/sub_agents/news_analyst/agent.py",
+		"/home/gero/Downloads/Coding/Gero Python/agent-development-kit-crash-course/7-multi-agent/manager/sub_agents/stock_analyst/agent.py",
+		"/home/gero/Downloads/Coding/Gero Python/agent-development-kit-crash-course/6-persistent-storage/main.py",
+		"/home/gero/Downloads/Coding/Gero Python/agent-development-kit-crash-course/6-persistent-storage/memory_agent/agent.py",
+		"/home/gero/Downloads/Coding/Gero Python/agent-development-kit-crash-course/7-multi-agent/manager/agent.py",
+		"/home/gero/Downloads/INDARU/indaru-ecometrics-selfservice/frontend/src/pages/EditDataset.jsx",
+		"/home/gero/Downloads/INDARU/indaru-ecometrics-selfservice/frontend/src/context/HomeDataContext.jsx",
+		"/home/gero/Downloads/INDARU/indaru-ecometrics-selfservice/pg.py",
+		"/home/gero/Downloads/INDARU/indaru-ecometrics-selfservice/docker_helper_streamlit_gui.py",
+		"/home/gero/.config/sublime-text/Packages/User/code-block-markdown.sublime-snippet",
+		"/home/gero/Downloads/Coding/Gero Python/google-adk-December-25-ALPHA/NewMemoryAgent/test.md",
+		"/home/gero/Downloads/Coding/Gero Python/google-adk-December-25-ALPHA/NewMemoryAgent/test.html",
+		"/home/gero/Downloads/Coding/Gero Python/google-adk-December-25-ALPHA/SongLyricsAgent/agent.py",
+		"/home/gero/Downloads/Coding/Gero Python/google-adk-December-25-ALPHA/PythonCoachAgent/agent.py",
+		"/home/gero/Downloads/Coding/Gero Python/google-adk-December-25-ALPHA/SongLyricsAgent/.env",
+		"/home/gero/Downloads/Coding/Gero Python/google-adk-December-25-ALPHA/Makefile",
+		"/home/gero/Downloads/Coding/Gero Python/google-adk-December-25-ALPHA/bug_buster.py",
+		"/home/gero/Downloads/Coding/Gero Python/google-adk-December-25-ALPHA/JokesAgent/frontend/index.html",
+		"/home/gero/Downloads/Coding/Gero Python/google-adk-December-25-ALPHA/JokesAgent/Bug_Buster_Reports/agent.py_flake8_report.txt",
+		"/home/gero/Downloads/Coding/Gero Python/google-adk-December-25-ALPHA/.venv/share/jupyter/labextensions/@jupyter-widgets/jupyterlab-manager/static/vendors-node_modules_base64-js_index_js-node_modules_sanitize-html_index_js.c79fc2bcc3f69676beda.js",
+		"/home/gero/Downloads/Coding/Gero Python/google-adk-December-25-ALPHA/NewAgent/agent.py",
+		"/home/gero/Downloads/Coding/Gero Python/google-adk-December-25-ALPHA/PythonSnippetsAgent/agent.py",
+		"/home/gero/Downloads/Coding/Gero Python/Python-Practice/pydantic_settings_pratice.py",
+		"/home/gero/Downloads/Coding/Gero Python/google-adk-December-25-ALPHA/ReportAgent/agent.py",
+		"/home/gero/Downloads/Coding/Gero Python/google-adk-December-25-ALPHA/pyproject.toml",
+		"/home/gero/Downloads/Coding/Gero Python/google-adk-December-25-ALPHA/JokesAgent/run_front_back_servers.sh",
+		"/home/gero/Downloads/Coding/Gero Python/google-adk-December-25-ALPHA/JokesAgent/agent.py"
+	],
+	"find":
+	{
+		"height": 31.0
+	},
+	"find_in_files":
+	{
+		"height": 319.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": true,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/home/gero/Downloads/INDARU/recipe-agent-seo-gero-version/backend/uv.lock",
+					"selected": true,
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 367385,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								315,
+								315
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										315,
+										316
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"region.purplish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										293,
+										294
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"git_gutter_is_enabled": true,
+							"lsp_uri": "file:///home/gero/Downloads/INDARU/recipe-agent-seo-gero-version/backend/uv.lock",
+							"syntax": "Packages/TOML/TOML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 31.0
+	},
+	"input":
+	{
+		"height": 248.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.LSP Log Panel":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"output.SublimeLinter":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"output.SublimeLinter Messages":
+	{
+		"height": 174.0,
+		"history":
+		[
+		]
+	},
+	"output.Terminus":
+	{
+		"height": 867.0,
+		"history":
+		[
+		]
+	},
+	"output.Terminus 2":
+	{
+		"height": 180.0,
+		"history":
+		[
+		]
+	},
+	"output.autopep8":
+	{
+		"height": 174.0,
+		"history":
+		[
+		]
+	},
+	"output.diagnostics":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"output.exec":
+	{
+		"height": 410.0,
+		"history":
+		[
+			"act",
+			"exit",
+			"next",
+			"hello",
+			"exit",
+			"33",
+			"Gero",
+			"33",
+			"Gero",
+			"GERO",
+			"print(__locals__)",
+			"print",
+			"gero",
+			"Gero"
+		]
+	},
+	"output.find_results":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"pinned_build_system": "Packages/Python 3/Python3.sublime-build",
+	"project": "recipe-agent-gero.sublime-project",
+	"replace":
+	{
+		"height": 58.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"main",
+				"backend/main.py"
+			],
+			[
+				"requie",
+				"requirements.txt"
+			],
+			[
+				"requirem",
+				"requirements.txt"
+			],
+			[
+				"io",
+				"recipe_agent/io_utils.py"
+			],
+			[
+				"make",
+				"Makefile"
+			],
+			[
+				"makefile",
+				"Makefile"
+			],
+			[
+				"",
+				"cloud_storage_move_files.py"
+			],
+			[
+				"pg.",
+				"pg.py"
+			],
+			[
+				"organiz",
+				"organize_files_by_extension.py"
+			],
+			[
+				"pypract",
+				"pypractice-python3.sublime-build"
+			],
+			[
+				"utils",
+				"6-persistent-storage/utils.py"
+			],
+			[
+				"terminust tab",
+				".venv/share/jupyter/labextensions/@jupyter-widgets/jupyterlab-manager/static/vendors-node_modules_base64-js_index_js-node_modules_sanitize-html_index_js.c79fc2bcc3f69676beda.js"
+			],
+			[
+				"agent",
+				"ReportAgent/agent.py"
+			],
+			[
+				"pyto",
+				"pyproject.toml"
+			],
+			[
+				"Make",
+				"Makefile"
+			],
+			[
+				"makef",
+				"Makefile"
+			],
+			[
+				".env",
+				"agent/.env"
+			],
+			[
+				"agen",
+				"agent/agent.py"
+			],
+			[
+				"a",
+				"agent/agent.py"
+			],
+			[
+				"pypro",
+				"pyproject.toml"
+			],
+			[
+				"data",
+				"templates/dataset.html"
+			],
+			[
+				"base",
+				"templates/base.html"
+			],
+			[
+				"index",
+				"templates/index.html"
+			],
+			[
+				"app",
+				"langchain_rag_app/app.py"
+			],
+			[
+				"calc",
+				"calcfuncs/calcfuncs_overview.py"
+			],
+			[
+				"notes",
+				"NOTES_GERO.txt"
+			],
+			[
+				"that",
+				"test/that_graph.py"
+			],
+			[
+				"playg",
+				"playground.py"
+			],
+			[
+				"pla",
+				"playwright.py"
+			],
+			[
+				"scripts",
+				"static/scripts.js"
+			],
+			[
+				"style",
+				"static/styles.css"
+			],
+			[
+				"ini",
+				"services/__init__.py"
+			],
+			[
+				"ray",
+				"raylib/raylib.odin"
+			],
+			[
+				"play",
+				"playground.py"
+			],
+			[
+				"gr",
+				"static/js/graph_handler.js"
+			],
+			[
+				"sort",
+				"core/slice/sort.odin"
+			],
+			[
+				"rayli",
+				"raylib/raylib.odin"
+			],
+			[
+				"cal",
+				"backend/api/endpoints/calculate.py"
+			],
+			[
+				"bigqyer",
+				"backend/services/BigQueryHandler.py"
+			],
+			[
+				"calcu",
+				"backend/api/endpoints/calculate.py"
+			],
+			[
+				"scr",
+				"scratch_buffer.py"
+			],
+			[
+				"sc",
+				"scratch_buffer.py"
+			],
+			[
+				"hand",
+				"static/js/graph_handler.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Downloads/INDARU/recipe-agent-seo-gero-version/recipe_agent_gero.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 168.0,
+		"last_filter": "digital",
+		"selected_items":
+		[
+			[
+				"digital",
+				"Digital_Ads_Type"
+			],
+			[
+				"isMOur",
+				"IsMouseButtonPressed"
+			],
+			[
+				"getcalc",
+				"get_calc_ratio"
+			],
+			[
+				"getcal",
+				"getCalcRatio"
+			]
+		],
+		"width": 592.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"lsp_show_inlay_hints": false
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 381.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
